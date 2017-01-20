@@ -1,0 +1,46 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 14
+VisualStudioVersion = 14.0.25420.1
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OfflineARM", "OfflineARM\OfflineARM.csproj", "{9A6477EE-A266-44FE-AE9E-AC3B3E6ACC5E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OfflineARM.DAO", "OfflineARM.DAO\OfflineARM.DAO.csproj", "{26C4EA32-8D5E-49CC-BBC6-474F295C88EB}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OfflineARM.Business", "OfflineARM.Business\OfflineARM.Business.csproj", "{EAD7C1B5-ED07-4D09-8950-E16DB02760D5}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OfflineARM.Services", "OfflineARM.Services\OfflineARM.Services.csproj", "{899808C0-8641-4044-B131-8B130B47DD81}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OfflineARM.Repositories", "OfflineARM.Repositories\OfflineARM.Repositories.csproj", "{EEBC4D82-49DB-4129-9B56-0203985A6C38}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{9A6477EE-A266-44FE-AE9E-AC3B3E6ACC5E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9A6477EE-A266-44FE-AE9E-AC3B3E6ACC5E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9A6477EE-A266-44FE-AE9E-AC3B3E6ACC5E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9A6477EE-A266-44FE-AE9E-AC3B3E6ACC5E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{26C4EA32-8D5E-49CC-BBC6-474F295C88EB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{26C4EA32-8D5E-49CC-BBC6-474F295C88EB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{26C4EA32-8D5E-49CC-BBC6-474F295C88EB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{26C4EA32-8D5E-49CC-BBC6-474F295C88EB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{EAD7C1B5-ED07-4D09-8950-E16DB02760D5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EAD7C1B5-ED07-4D09-8950-E16DB02760D5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EAD7C1B5-ED07-4D09-8950-E16DB02760D5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EAD7C1B5-ED07-4D09-8950-E16DB02760D5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{899808C0-8641-4044-B131-8B130B47DD81}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{899808C0-8641-4044-B131-8B130B47DD81}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{899808C0-8641-4044-B131-8B130B47DD81}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{899808C0-8641-4044-B131-8B130B47DD81}.Release|Any CPU.Build.0 = Release|Any CPU
+		{EEBC4D82-49DB-4129-9B56-0203985A6C38}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EEBC4D82-49DB-4129-9B56-0203985A6C38}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EEBC4D82-49DB-4129-9B56-0203985A6C38}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EEBC4D82-49DB-4129-9B56-0203985A6C38}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
