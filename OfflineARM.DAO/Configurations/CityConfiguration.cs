@@ -15,7 +15,10 @@ namespace OfflineARM.DAO.Configurations
         public CityConfiguration()
             : base("Citys")
         {
-
+            this.Property(p => p.Name)
+                .IsRequired()
+                .HasColumnType("varchar")
+                .HasMaxLength(255);
         }
 
         #endregion
