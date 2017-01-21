@@ -19,7 +19,7 @@ namespace OfflineARM
                 var rep = new UnitOfWork();
                 rep.CityRepository.Insert(new City()
                 {
-                    Guid = Guid.NewGuid()
+                 //   Guid = Guid.NewGuid()
                 });
                 rep.Save();
             }
