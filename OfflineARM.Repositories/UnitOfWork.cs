@@ -2,7 +2,7 @@
 using System.Data.Entity.Validation;
 using OfflineARM.DAO;
 using OfflineARM.Repositories.Repositories;
-using OfflineARM.Repositories.Repositories.Interfaces;
+using OfflineARM.Repositories.Repositories.Dictionaries;
 
 namespace OfflineARM.Repositories
 {
@@ -26,7 +26,7 @@ namespace OfflineARM.Repositories
         /// <summary>
         /// Репозиторий Города
         /// </summary>
-        private ICityRepository _cityRepository;
+        private readonly IDictionaryRepositories _dictionaryRepositories;
 
         #endregion
 
@@ -38,6 +38,7 @@ namespace OfflineARM.Repositories
         public UnitOfWork()
         {
             _context = new ApplicationDbContext();
+            _dictionaryRepositories = new DictionaryRepositories(_context);
         }
 
         #endregion
@@ -47,17 +48,7 @@ namespace OfflineARM.Repositories
         /// <summary>  
         /// Репозиторий Города  
         /// </summary>  
-        public ICityRepository CityRepository
-        {
-            get
-            {
-                if (this._cityRepository == null)
-                {
-                    this._cityRepository = new CityRepository(_context);
-                }
-                return _cityRepository;
-            }
-        }
+        public IDictionaryRepositories DictionaryRepositories => _dictionaryRepositories;
 
         #endregion
 

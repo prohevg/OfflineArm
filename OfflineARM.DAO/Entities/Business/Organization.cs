@@ -1,15 +1,9 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace OfflineARM.DAO.Entities
+﻿namespace OfflineARM.DAO.Entities.Business
 {
     /// <summary>
-    /// Города
+    /// Организация
     /// </summary>
-    public class City : BaseDaoEntity
+    public class Organization : BaseDaoEntity
     {
         /// <summary>
         /// Наименование

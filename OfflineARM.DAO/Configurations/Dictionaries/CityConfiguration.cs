@@ -1,11 +1,11 @@
-﻿using OfflineARM.DAO.Entities;
+﻿using OfflineARM.DAO.Entities.Dictionaries;
 
-namespace OfflineARM.DAO.Configurations
+namespace OfflineARM.DAO.Configurations.Dictionaries
 {
     /// <summary>
     /// Конфигурация города
     /// </summary>
-    public class CityConfiguration : BaseDaoEntityConfiguration<City>
+    public class CityConfiguration : BaseDictionaryDaoEntityConfiguration<City>
     {
         #region Конструктор
 
@@ -15,10 +15,7 @@ namespace OfflineARM.DAO.Configurations
         public CityConfiguration()
             : base("Citys")
         {
-            this.Property(p => p.Name)
-                .IsRequired()
-                .HasColumnType("varchar")
-                .HasMaxLength(255);
+           
         }
 
         #endregion

@@ -9,8 +9,9 @@
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>OfflineARM.DAO</RootNamespace>
     <AssemblyName>OfflineARM.DAO</AssemblyName>
-    <TargetFrameworkVersion>v4.5.1</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
+    <TargetFrameworkProfile />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -50,10 +51,14 @@
   <ItemGroup>
     <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>S:\basic\ef_6.1.3\EntityFramework.dll</HintPath>
+      <HintPath>S:\ef_6.1.3\EntityFramework.dll</HintPath>
     </Reference>
-    <Reference Include="EntityFramework.SqlServer">
-      <HintPath>S:\basic\ef_6.1.3\EntityFramework.SqlServer.dll</HintPath>
+    <Reference Include="EntityFramework.Firebird">
+      <HintPath>S:\firebird 3.0\EntityFramework.Firebird.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>S:\ef_6.1.3\EntityFramework.SqlServer.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
@@ -66,10 +71,44 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="ApplicationDbContext.cs" />
+    <Compile Include="Configurations\Business\ExpositionConfiguration.cs" />
+    <Compile Include="Configurations\Business\CharacteristicConfiguration.cs" />
+    <Compile Include="Configurations\Business\BagCollectionConfiguration.cs" />
+    <Compile Include="Configurations\Business\OrderConfiguration.cs" />
+    <Compile Include="Configurations\Business\OrderSpecificationConfiguration.cs" />
+    <Compile Include="Configurations\Business\OrganizationConfiguration.cs" />
+    <Compile Include="Configurations\Business\PartnerConfiguration.cs" />
+    <Compile Include="Configurations\Business\ReclamationConfiguration.cs" />
+    <Compile Include="Configurations\Business\ShopConfiguration.cs" />
+    <Compile Include="Configurations\Business\NomenclatureConfiguration.cs" />
+    <Compile Include="Configurations\Business\UserConfiguration.cs" />
+    <Compile Include="Configurations\Dictionaries\BaseDictionaryDaoEntityConfiguration.cs" />
     <Compile Include="Configurations\BaseDaoEntityConfiguration.cs" />
-    <Compile Include="Configurations\CityConfiguration.cs" />
+    <Compile Include="Configurations\Dictionaries\BasisActionConfiguration.cs" />
+    <Compile Include="Configurations\Dictionaries\OrderStatusConfiguration.cs" />
+    <Compile Include="Configurations\Dictionaries\CustomerRequirementConfiguration.cs" />
+    <Compile Include="Configurations\Dictionaries\LocationConfiguration.cs" />
+    <Compile Include="Configurations\Dictionaries\CityConfiguration.cs" />
+    <Compile Include="FirebirdDbConfiguration.cs" />
+    <Compile Include="FirebirdSqlGenerator.cs" />
+    <Compile Include="Entities\Business\Characteristic.cs" />
+    <Compile Include="Entities\Business\User.cs" />
+    <Compile Include="Entities\Business\Nomenclature.cs" />
+    <Compile Include="Entities\Business\Exposition.cs" />
+    <Compile Include="Entities\Business\OrderSpecification.cs" />
+    <Compile Include="Entities\Business\Reclamation.cs" />
+    <Compile Include="Entities\Business\Organization.cs" />
+    <Compile Include="Entities\Business\Order.cs" />
+    <Compile Include="Entities\Business\Partner.cs" />
+    <Compile Include="Entities\Business\BagCollection.cs" />
+    <Compile Include="Entities\Business\Shop.cs" />
+    <Compile Include="Entities\Dictionaries\BaseDictionaryDaoEntity.cs" />
     <Compile Include="Entities\BaseDaoEntity.cs" />
-    <Compile Include="Entities\City.cs" />
+    <Compile Include="Entities\Dictionaries\BasisAction.cs" />
+    <Compile Include="Entities\Dictionaries\OrderStatus.cs" />
+    <Compile Include="Entities\Dictionaries\CustomerRequirement.cs" />
+    <Compile Include="Entities\Dictionaries\Location.cs" />
+    <Compile Include="Entities\Dictionaries\City.cs" />
     <Compile Include="Entities\IBaseDaoEntity.cs" />
     <Compile Include="Helpers\ThrowExceptionHelper.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -99,6 +138,7 @@
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

@@ -30,8 +30,12 @@ namespace OfflineARM.DAO.Configurations
                 .HasDatabaseGeneratedOption(DatabaseGeneratedOption.Identity);
 
             Property(p => p.Guid)
-               .IsRequired()
-               .HasColumnOrder(1);
+                .IsRequired()
+                .HasColumnOrder(1);
+            //.HasColumnAnnotation(IndexAnnotation.AnnotationName, new IndexAnnotation(new IndexAttribute()
+            //{
+            //    IsUnique = true
+            //}));
         }
 
         #endregion

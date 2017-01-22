@@ -17,7 +17,7 @@ namespace OfflineARM.DAO.Entities
         }
 
         /// <summary>
-        /// Guid из 1С  
+        /// Guid из 1С   
         /// </summary>
         public Guid Guid
         {

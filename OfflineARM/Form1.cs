@@ -1,6 +1,7 @@
 ﻿using System;
+using System.Linq;
 using System.Windows.Forms;
-using OfflineARM.DAO.Entities;
+using OfflineARM.DAO.Entities.Dictionaries;
 using OfflineARM.Repositories;
 
 namespace OfflineARM
@@ -17,17 +18,22 @@ namespace OfflineARM
             try
             {
                 var rep = new UnitOfWork();
-                rep.CityRepository.Insert(new City()
+
+                var rrr = rep.DictionaryRepositories.CityRepository.GetAll().ToList();
+
+
+
+
+                rep.DictionaryRepositories.CityRepository.Insert(new City()
                 {
                     //Id = 1,
-                    Guid = Guid.NewGuid(),
+                    //Guid = Guid.Parse("FFFD820E-1A39-4C99-B610-D6BCF286C3DB"),//Guid.NewGuid(),
                     Name = "name"
                 });
                 rep.Save();
             }
-            catch (Exception)
+            catch (Exception e1)
             {
-                
                 throw;
             }
 

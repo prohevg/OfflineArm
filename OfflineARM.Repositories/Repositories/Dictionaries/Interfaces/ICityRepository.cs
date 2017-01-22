@@ -1,6 +1,7 @@
 ﻿using OfflineARM.DAO.Entities;
+using OfflineARM.DAO.Entities.Dictionaries;
 
-namespace OfflineARM.Repositories.Repositories.Interfaces
+namespace OfflineARM.Repositories.Repositories.Dictionaries.Interfaces
 {
     /// <summary>
     /// Города
