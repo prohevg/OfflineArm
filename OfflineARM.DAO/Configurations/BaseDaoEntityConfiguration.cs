@@ -1,4 +1,5 @@
 ﻿using System.ComponentModel.DataAnnotations.Schema;
+using System.Data.Entity.Infrastructure.Annotations;
 using System.Data.Entity.ModelConfiguration;
 using OfflineARM.DAO.Entities;
 using OfflineARM.DAO.Helpers;
@@ -31,11 +32,11 @@ namespace OfflineARM.DAO.Configurations
 
             Property(p => p.Guid)
                 .IsRequired()
-                .HasColumnOrder(1);
-            //.HasColumnAnnotation(IndexAnnotation.AnnotationName, new IndexAnnotation(new IndexAttribute()
-            //{
-            //    IsUnique = true
-            //}));
+                .HasColumnOrder(1)
+                .HasColumnAnnotation(IndexAnnotation.AnnotationName, new IndexAnnotation(new IndexAttribute()
+                 {
+                     IsUnique = true
+                 }));
         }
 
         #endregion

@@ -15,6 +15,10 @@ namespace OfflineARM.DAO.Configurations.Business
         public ExpositionConfiguration()
             : base("Expositions")
         {
+            HasRequired(m => m.Nomenclature)
+                .WithMany(t => t.Expositions)
+                .HasForeignKey(m => m.NomenclatureId)
+                .WillCascadeOnDelete(false);
         }
 
         #endregion

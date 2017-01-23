@@ -15,6 +15,10 @@ namespace OfflineARM.DAO.Configurations.Business
         public OrderSpecificationConfiguration()
             : base("OrderSpecifications")
         {
+            HasRequired(m => m.Nomenclature)
+                .WithMany(t => t.OrderSpecifications)
+                .HasForeignKey(m => m.NomenclatureId)
+                .WillCascadeOnDelete(false);
         }
 
         #endregion

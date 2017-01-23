@@ -19,7 +19,7 @@ namespace OfflineARM
             {
                 var rep = new UnitOfWork();
 
-                var rrr = rep.DictionaryRepositories.CityRepository.GetAll().ToList();
+                //var rrr = rep.DictionaryRepositories.CityRepository.GetAll().ToList();
 
 
 

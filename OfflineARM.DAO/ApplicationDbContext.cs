@@ -8,7 +8,6 @@ namespace OfflineARM.DAO
     /// <summary>
     /// Контекст БД
     /// </summary>
-    [DbConfigurationType(typeof(FirebirdDbConfiguration))]
     public class ApplicationDbContext : DbContext
     {
         #region Конструктор
@@ -19,7 +18,7 @@ namespace OfflineARM.DAO
         public ApplicationDbContext()
             : base("DefaultConnection")
         {
-           // Database.SetInitializer<ApplicationDbContext>(null);
+            //Database.SetInitializer<ApplicationDbContext>(null);
         }
 
         #endregion

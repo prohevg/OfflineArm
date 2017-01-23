@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 
 namespace OfflineARM.DAO.Entities.Business
 {
@@ -38,6 +39,24 @@ namespace OfflineARM.DAO.Entities.Business
         /// Наименование
         /// </summary>
         public string Name
+        {
+            get;
+            set;
+        }
+
+        /// <summary>
+        /// Экспозиция
+        /// </summary>
+        public virtual ICollection<Exposition> Expositions
+        {
+            get;
+            set;
+        }
+
+        /// <summary>
+        /// Спецификация заказа
+        /// </summary>
+        public virtual ICollection<OrderSpecification> OrderSpecifications
         {
             get;
             set;

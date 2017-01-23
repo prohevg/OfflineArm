@@ -1,5 +1,4 @@
-﻿using System.ComponentModel.DataAnnotations.Schema;
-using OfflineARM.DAO.Entities.Business;
+﻿using OfflineARM.DAO.Entities.Business;
 
 namespace OfflineARM.DAO.Configurations.Business
 {

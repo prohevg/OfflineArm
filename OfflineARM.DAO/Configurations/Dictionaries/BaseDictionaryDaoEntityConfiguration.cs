@@ -19,7 +19,7 @@ namespace OfflineARM.DAO.Configurations.Dictionaries
         {
             this.Property(p => p.Name)
                .IsRequired()
-               .HasColumnType("varchar")
+               .HasColumnType("nvarchar")
                .HasMaxLength(255);
         }
 
