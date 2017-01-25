@@ -1,8 +1,6 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
 using System.Windows.Forms;
+using OfflineARM.Gui;
 
 namespace OfflineARM
 {
@@ -16,7 +14,14 @@ namespace OfflineARM
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Form1());
+
+            var loginForm = new LoginForm {ShowInTaskbar = false};
+            if (loginForm.ShowDialog() != DialogResult.OK)
+            {
+                return;
+            }
+
+            Application.Run(new MainForm());
         }
     }
 }

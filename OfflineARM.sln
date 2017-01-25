@@ -13,6 +13,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OfflineARM.Services", "Offl
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OfflineARM.Repositories", "OfflineARM.Repositories\OfflineARM.Repositories.csproj", "{EEBC4D82-49DB-4129-9B56-0203985A6C38}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OfflineARM.Gui", "OfflineARM.Gui\OfflineARM.Gui.csproj", "{52C3E2C6-B045-45C5-BF94-3EEC665548D5}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -61,6 +63,14 @@ Global
 		{EEBC4D82-49DB-4129-9B56-0203985A6C38}.Release|Any CPU.Build.0 = Release|Any CPU
 		{EEBC4D82-49DB-4129-9B56-0203985A6C38}.Release|x86.ActiveCfg = Release|x86
 		{EEBC4D82-49DB-4129-9B56-0203985A6C38}.Release|x86.Build.0 = Release|x86
+		{52C3E2C6-B045-45C5-BF94-3EEC665548D5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{52C3E2C6-B045-45C5-BF94-3EEC665548D5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{52C3E2C6-B045-45C5-BF94-3EEC665548D5}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{52C3E2C6-B045-45C5-BF94-3EEC665548D5}.Debug|x86.Build.0 = Debug|Any CPU
+		{52C3E2C6-B045-45C5-BF94-3EEC665548D5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{52C3E2C6-B045-45C5-BF94-3EEC665548D5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{52C3E2C6-B045-45C5-BF94-3EEC665548D5}.Release|x86.ActiveCfg = Release|Any CPU
+		{52C3E2C6-B045-45C5-BF94-3EEC665548D5}.Release|x86.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

@@ -80,12 +80,6 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Form1.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Form1.Designer.cs">
-      <DependentUpon>Form1.cs</DependentUpon>
-    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="Properties\Resources.resx">
@@ -114,17 +108,9 @@
     </None>
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\OfflineARM.Business\OfflineARM.Business.csproj">
-      <Project>{ead7c1b5-ed07-4d09-8950-e16db02760d5}</Project>
-      <Name>OfflineARM.Business</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\OfflineARM.DAO\OfflineARM.DAO.csproj">
-      <Project>{26C4EA32-8D5E-49CC-BBC6-474F295C88EB}</Project>
-      <Name>OfflineARM.DAO</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\OfflineARM.Repositories\OfflineARM.Repositories.csproj">
-      <Project>{EEBC4D82-49DB-4129-9B56-0203985A6C38}</Project>
-      <Name>OfflineARM.Repositories</Name>
+    <ProjectReference Include="..\OfflineARM.Gui\OfflineARM.Gui.csproj">
+      <Project>{52c3e2c6-b045-45c5-bf94-3eec665548d5}</Project>
+      <Name>OfflineARM.Gui</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
