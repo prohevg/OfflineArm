@@ -48,7 +48,13 @@ namespace OfflineARM.Repositories
         /// <summary>  
         /// Репозиторий Города  
         /// </summary>  
-        public IDictionaryRepositories DictionaryRepositories => _dictionaryRepositories;
+        public IDictionaryRepositories DictionaryRepositories
+        {
+            get
+            {
+                return _dictionaryRepositories;
+            }
+        }
 
         #endregion
 

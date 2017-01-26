@@ -54,6 +54,18 @@
     <Prefer32Bit>true</Prefer32Bit>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="DevExpress.Utils.v13.2, Version=13.2.9.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>S:\dev_13.2\DevExpress.Utils.v13.2.dll</HintPath>
+    </Reference>
+    <Reference Include="DevExpress.XtraBars.v13.2, Version=13.2.9.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>S:\dev_13.2\DevExpress.XtraBars.v13.2.dll</HintPath>
+    </Reference>
+    <Reference Include="DevExpress.XtraEditors.v13.2, Version=13.2.9.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>S:\dev_13.2\DevExpress.XtraEditors.v13.2.dll</HintPath>
+    </Reference>
     <Reference Include="EntityFramework">
       <HintPath>S:\ef_6.1.3\EntityFramework.dll</HintPath>
     </Reference>
@@ -108,6 +120,10 @@
     </None>
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\OfflineARM.Business\OfflineARM.Business.csproj">
+      <Project>{EAD7C1B5-ED07-4D09-8950-E16DB02760D5}</Project>
+      <Name>OfflineARM.Business</Name>
+    </ProjectReference>
     <ProjectReference Include="..\OfflineARM.Gui\OfflineARM.Gui.csproj">
       <Project>{52c3e2c6-b045-45c5-bf94-3eec665548d5}</Project>
       <Name>OfflineARM.Gui</Name>

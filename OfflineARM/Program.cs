@@ -1,6 +1,8 @@
 ﻿using System;
 using System.Windows.Forms;
 using OfflineARM.Gui;
+using OfflineARM.Business;
+using OfflineARM.Business.Loggers;
 
 namespace OfflineARM
 {
@@ -12,16 +14,27 @@ namespace OfflineARM
         [STAThread]
         static void Main()
         {
-            Application.EnableVisualStyles();
-            Application.SetCompatibleTextRenderingDefault(false);
-
-            var loginForm = new LoginForm {ShowInTaskbar = false};
-            if (loginForm.ShowDialog() != DialogResult.OK)
+            try
             {
-                return;
-            }
+                Application.EnableVisualStyles();
+                Application.SetCompatibleTextRenderingDefault(false);
 
-            Application.Run(new MainForm());
+                var starter = new Starter();
+                starter.Start(null);
+
+                var loginForm = new LoginForm();
+                if (loginForm.ShowDialog() != DialogResult.OK)
+                {
+                    return;
+                }
+
+                Application.Run(new MainForm());
+            }
+            catch(Exception e)
+            {
+                Logger.Error(e.Message);
+                Logger.Error(e.StackTrace);
+            }
         }
     }
 }
