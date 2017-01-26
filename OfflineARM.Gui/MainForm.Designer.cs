@@ -80,6 +80,7 @@
             this.biOrderAdd.Id = 3;
             this.biOrderAdd.Name = "biOrderAdd";
             this.biOrderAdd.RibbonStyle = DevExpress.XtraBars.Ribbon.RibbonItemStyles.Large;
+            this.biOrderAdd.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.biOrderAdd_ItemClick);
             // 
             // rpOrders
             // 
