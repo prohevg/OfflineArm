@@ -47,7 +47,7 @@ namespace OfflineARM.Business
 
         #endregion
 
-        #region public
+        #region private
 
         /// <summary>
         /// Логика

@@ -1,26 +1,32 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Drawing;
-using System.Linq;
 using System.Reflection;
-using System.Threading.Tasks;
-using System.Windows.Forms;
+using OfflineARM.Gui.Base;
+using OfflineARM.Gui.Base.Forms;
+using OfflineARM.Gui.Interfaces.Windows;
 
 namespace OfflineARM.Gui
 {
-    partial class AboutBoxProgram : Form
+    /// <summary>
+    /// О программе
+    /// </summary>
+    partial class AboutBoxProgram : BaseFormDisableResize, IAboutBoxProgram
     {
+        #region Конструктор
+
+        /// <summary>
+        /// Конструктор
+        /// </summary>
         public AboutBoxProgram()
         {
             InitializeComponent();
-            this.Text = GuiResource.MainForm_Caption;
             this.labelProductName.Text = AssemblyProduct;
             this.labelVersion.Text = String.Format("Version {0}", AssemblyVersion);
             this.labelCopyright.Text = AssemblyCopyright;
             this.labelCompanyName.Text = AssemblyCompany;
             this.textBoxDescription.Text = AssemblyDescription;
         }
+
+        #endregion
 
         #region Assembly Attribute Accessors
 
@@ -102,9 +108,28 @@ namespace OfflineARM.Gui
         }
         #endregion
 
+        #region ILoginForm
+
+        /// <summary>
+        /// Текст заголовка формы
+        /// </summary>
+        public override string CaptionForm
+        {
+            get
+            {
+                return GuiResource.AboutBoxProgram_Caption;
+            }
+        }
+
+        #endregion
+
+        #region события
+
         private void okButton_Click(object sender, EventArgs e)
         {
             this.Close();
         }
+
+        #endregion
     }
 }

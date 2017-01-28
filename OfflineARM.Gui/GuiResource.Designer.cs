@@ -61,12 +61,39 @@ namespace OfflineARM.Gui {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to О программе.
+        /// </summary>
+        internal static string AboutBoxProgram_Caption {
+            get {
+                return ResourceManager.GetString("AboutBoxProgram_Caption", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Значение для элемента с ключом &quot;{0}&quot; в холдере {1} не может быть заменено.
+        /// </summary>
+        internal static string HolderCannotReplaceValueFormat {
+            get {
+                return ResourceManager.GetString("HolderCannotReplaceValueFormat", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap add_32x32 {
+        internal static System.Drawing.Bitmap knowledgebasearticle_32x32 {
             get {
-                object obj = ResourceManager.GetObject("add_32x32", resourceCulture);
+                object obj = ResourceManager.GetObject("knowledgebasearticle_32x32", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Авторизация.
+        /// </summary>
+        internal static string LoginForm_Caption {
+            get {
+                return ResourceManager.GetString("LoginForm_Caption", resourceCulture);
             }
         }
         
@@ -76,6 +103,25 @@ namespace OfflineARM.Gui {
         internal static string MainForm_Caption {
             get {
                 return ResourceManager.GetString("MainForm_Caption", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Создание заказа.
+        /// </summary>
+        internal static string OrderForm_CaptionCreateOrder {
+            get {
+                return ResourceManager.GetString("OrderForm_CaptionCreateOrder", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap print_32x32 {
+            get {
+                object obj = ResourceManager.GetObject("print_32x32", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
             }
         }
     }

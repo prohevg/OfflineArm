@@ -1,38 +1,88 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
+using OfflineARM.Business.Autorizations;
+using OfflineARM.Gui.Base;
+using OfflineARM.Gui.Base.Forms;
+using OfflineARM.Gui.Interfaces.Windows;
 
 namespace OfflineARM.Gui
 {
-    public partial class LoginForm : Form
+    /// <summary>
+    /// Форма авторизации
+    /// </summary>
+    public partial class LoginForm : BaseFormDisableResize, ILoginForm
     {
-        public LoginForm()
+        #region поля и свойства
+
+        /// <summary>
+        /// Реализация авторизации
+        /// </summary>
+        private readonly IAutorizationImp _autorizationImp;
+
+        #endregion
+
+        #region Конструктор
+
+        /// <summary>
+        /// Конструктор
+        /// </summary>
+        /// <param name="autorizationImp">Реализация авторизации</param>
+        public LoginForm(IAutorizationImp autorizationImp)
         {
             InitializeComponent();
 
+            _autorizationImp = autorizationImp;
+
+#if DEBUG
             txtLogin.Text = "admin";
             txtPassword.Text = "admin";
+#endif
         }
 
+        #endregion
+
+        #region ILoginForm
+
+        /// <summary>
+        /// Текст заголовка формы
+        /// </summary>
+        public override string CaptionForm
+        {
+            get
+            {
+                return GuiResource.LoginForm_Caption;
+            }
+        }
+
+        #endregion
+
+        #region события
+
+        /// <summary>
+        /// Выход
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void btExit_Click(object sender, EventArgs e)
         {
-            Application.Exit();
+            DialogResult = DialogResult.Cancel;
         }
 
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void btOk_Click(object sender, EventArgs e)
         {
-            if (txtLogin.Text != "admin" || txtPassword.Text != "admin")
+            if (!_autorizationImp.IsSuccessAutorization(txtLogin.Text, txtPassword.Text))
             {
                 return;
             }
 
             DialogResult = DialogResult.OK;
         }
+
+        #endregion
     }
 }

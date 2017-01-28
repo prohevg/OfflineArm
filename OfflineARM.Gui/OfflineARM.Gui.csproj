@@ -9,8 +9,9 @@
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>OfflineARM.Gui</RootNamespace>
     <AssemblyName>OfflineARM.Gui</AssemblyName>
-    <TargetFrameworkVersion>v4.5.1</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
+    <TargetFrameworkProfile />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -50,6 +51,9 @@
       <SpecificVersion>False</SpecificVersion>
       <HintPath>S:\dev_13.2\DevExpress.XtraGrid.v13.2.dll</HintPath>
     </Reference>
+    <Reference Include="Ninject">
+      <HintPath>..\OfflineARM.Business\bin\x86\Debug\Ninject.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Configuration" />
     <Reference Include="System.Core" />
@@ -72,14 +76,65 @@
     <Compile Include="AboutBoxProgram.Designer.cs">
       <DependentUpon>AboutBoxProgram.cs</DependentUpon>
     </Compile>
-    <Compile Include="Base\BaseForm.cs">
+    <Compile Include="Base\Controls\BaseCommandControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Base\Controls\BaseControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Base\Controls\IBaseCommandControl.cs" />
+    <Compile Include="Base\Controls\IBaseControl.cs" />
+    <Compile Include="Base\Forms\BaseForm.cs">
       <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Base\Forms\BaseFormDisableResize.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Base\Forms\IBaseForm.cs" />
+    <Compile Include="CommandResources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>CommandResources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Commands\Command.cs" />
+    <Compile Include="Commands\CommandDispatcher.cs" />
+    <Compile Include="Commands\CommandExecutor.cs" />
+    <Compile Include="Commands\CommandHandler.cs" />
+    <Compile Include="Commands\CommandImpl.cs" />
+    <Compile Include="Commands\CommandList.cs" />
+    <Compile Include="Commands\CommandMetadata.cs" />
+    <Compile Include="Commands\CommandSeparator.cs" />
+    <Compile Include="Commands\CommandState.cs" />
+    <Compile Include="Commands\DispatchedCommand.cs" />
+    <Compile Include="Commands\DispatchedCommandHandlerBase.cs" />
+    <Compile Include="Commands\DispatchedCommandImpl.cs" />
+    <Compile Include="Commands\EmptyData.cs" />
+    <Compile Include="Commands\ICommand.cs" />
+    <Compile Include="Commands\ICommandHandler.cs" />
+    <Compile Include="Commands\ICommandMetadata.cs" />
+    <Compile Include="Commands\ICommandMetadataBase.cs" />
+    <Compile Include="Commands\ItemData.cs" />
+    <Compile Include="Forms\Orders\Interfaces\IOrderForm.cs" />
+    <Compile Include="Forms\Orders\Interfaces\IOrderListControl.cs" />
+    <Compile Include="Forms\Orders\OrderAddCommandHandler.cs" />
+    <Compile Include="Forms\Orders\OrderCommands.cs" />
+    <Compile Include="Forms\Orders\OrderListControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Forms\Orders\OrderListControl.Designer.cs">
+      <DependentUpon>OrderListControl.cs</DependentUpon>
     </Compile>
     <Compile Include="GuiResource.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>GuiResource.resx</DependentUpon>
     </Compile>
+    <Compile Include="Holders\CommandMetadataHolder.cs" />
+    <Compile Include="Holders\CommandMetadataHolderBase.cs" />
+    <Compile Include="Holders\DispatchedCommandHolder.cs" />
+    <Compile Include="Holders\GenericSimpleHolder.cs" />
+    <Compile Include="Holders\ReaderWriterLockService.cs" />
+    <Compile Include="IoCForm.cs" />
     <Compile Include="LoginForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -92,17 +147,30 @@
     <Compile Include="MainForm.Designer.cs">
       <DependentUpon>MainForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="Orders\OrderForm.cs">
+    <Compile Include="Forms\Orders\OrderForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Orders\OrderForm.Designer.cs">
+    <Compile Include="Forms\Orders\OrderForm.Designer.cs">
       <DependentUpon>OrderForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Interfaces\Windows\IAboutBoxProgram.cs" />
+    <Compile Include="Interfaces\Windows\ILoginForm.cs" />
+    <Compile Include="Interfaces\Windows\IMainForm.cs" />
+    <Compile Include="RibbonPageBarCreator.cs" />
+    <Compile Include="Starter.cs" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="AboutBoxProgram.resx">
       <DependentUpon>AboutBoxProgram.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CommandResources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>CommandResources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Orders\OrderListControl.resx">
+      <DependentUpon>OrderListControl.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="GuiResource.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -115,18 +183,27 @@
     <EmbeddedResource Include="MainForm.resx">
       <DependentUpon>MainForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Orders\OrderForm.resx">
-      <DependentUpon>OrderForm.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="Properties\licenses.licx" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <ProjectReference Include="..\OfflineARM.Business\OfflineARM.Business.csproj">
+      <Project>{ead7c1b5-ed07-4d09-8950-e16db02760d5}</Project>
+      <Name>OfflineARM.Business</Name>
+    </ProjectReference>
+  </ItemGroup>
   <ItemGroup>
     <None Include="Resources\add_32x32.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\add_32x321.png" />
+    <None Include="Resources\info_32x32.png" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\knowledgebasearticle_32x32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\print_32x32.png" />
+  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

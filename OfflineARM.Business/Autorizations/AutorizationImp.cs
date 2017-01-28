@@ -9,7 +9,17 @@ namespace OfflineARM.Business.Autorizations
     /// <summary>
     /// Логика авторизации
     /// </summary>
-    public class AutorizationImp :IAutorizationImp
+    public class AutorizationImp : IAutorizationImp
     {
+        /// <summary>
+        /// true - Если успешно выполнена авторизация
+        /// </summary>
+        /// <param name="login">Логин</param>
+        /// <param name="password">Пароль</param>
+        /// <returns></returns>
+        public bool IsSuccessAutorization(string login, string password)
+        {
+            return login == "admin" && password == "admin";
+        }
     }
 }

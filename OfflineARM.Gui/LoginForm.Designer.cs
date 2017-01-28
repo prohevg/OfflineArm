@@ -102,8 +102,6 @@
             this.Controls.Add(this.lbLOgin);
             this.Controls.Add(this.btExit);
             this.Controls.Add(this.btOk);
-            this.MaximizeBox = false;
-            this.MinimizeBox = false;
             this.Name = "LoginForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Авторизация";

@@ -67,9 +67,9 @@
   <ItemGroup>
     <Compile Include="Autorizations\AutorizationImp.cs" />
     <Compile Include="Autorizations\IAutorizationImp.cs" />
+    <Compile Include="Helpers\TypeExtensions.cs" />
     <Compile Include="IoCBusiness.cs" />
     <Compile Include="Loggers\Logger.cs" />
-    <Compile Include="Starter.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

@@ -3,6 +3,7 @@ using System.Windows.Forms;
 using OfflineARM.Gui;
 using OfflineARM.Business;
 using OfflineARM.Business.Loggers;
+using OfflineARM.Gui.Interfaces.Windows;
 
 namespace OfflineARM
 {
@@ -20,20 +21,23 @@ namespace OfflineARM
                 Application.SetCompatibleTextRenderingDefault(false);
 
                 var starter = new Starter();
-                starter.Start(null);
+                starter.Start();
 
-                var loginForm = new LoginForm();
+                var loginForm = IoCForm.Instance.Resolve<ILoginForm>();
                 if (loginForm.ShowDialog() != DialogResult.OK)
                 {
                     return;
                 }
 
-                Application.Run(new MainForm());
+                var mainForm = IoCForm.Instance.ResolveForm<IMainForm>();
+                Application.Run(mainForm);
             }
             catch(Exception e)
             {
                 Logger.Error(e.Message);
                 Logger.Error(e.StackTrace);
+
+                throw;
             }
         }
     }
