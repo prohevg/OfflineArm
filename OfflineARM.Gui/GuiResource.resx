@@ -139,4 +139,19 @@
   <data name="HolderCannotReplaceValueFormat" xml:space="preserve">
     <value>Значение для элемента с ключом "{0}" в холдере {1} не может быть заменено</value>
   </data>
+  <data name="OrderSpecificControl_ExpositionCharacteristics" xml:space="preserve">
+    <value>Экспозиция</value>
+  </data>
+  <data name="OrderSpecificControl_spNext" xml:space="preserve">
+    <value>Доставка</value>
+  </data>
+  <data name="OrderSpecificControl_tpOrderCharacteristics" xml:space="preserve">
+    <value>Характеристики</value>
+  </data>
+  <data name="OrderSpecificControl_treeNomenclature_CaptionId" xml:space="preserve">
+    <value>Id</value>
+  </data>
+  <data name="OrderSpecificControl_treeNomenclature_CaptionName" xml:space="preserve">
+    <value>Наименование</value>
+  </data>
 </root>

@@ -67,10 +67,37 @@
   <ItemGroup>
     <Compile Include="Autorizations\AutorizationImp.cs" />
     <Compile Include="Autorizations\IAutorizationImp.cs" />
+    <Compile Include="Dictionaries\Interfaces\ICharacteristicImp.cs" />
+    <Compile Include="Dictionaries\Interfaces\INomenclatureImp.cs" />
+    <Compile Include="Dictionaries\CharacteristicImp.cs" />
+    <Compile Include="Dictionaries\NomenclatureImp.cs" />
     <Compile Include="Helpers\TypeExtensions.cs" />
+    <Compile Include="BaseImp.cs" />
+    <Compile Include="IBaseImp.cs" />
+    <Compile Include="InitDatabase.cs" />
     <Compile Include="IoCBusiness.cs" />
     <Compile Include="Loggers\Logger.cs" />
+    <Compile Include="ModelEntityModifyResult.cs" />
+    <Compile Include="Models\BaseBusninessModel.cs" />
+    <Compile Include="Models\Dictionaries\CharacteristicModel.cs" />
+    <Compile Include="Models\Dictionaries\Interfaces\ICharacteristicModel.cs" />
+    <Compile Include="Models\Dictionaries\Interfaces\INomenclatureModel.cs" />
+    <Compile Include="Models\Dictionaries\NomenclatureModel.cs" />
+    <Compile Include="Models\IBaseBusninessModel.cs" />
+    <Compile Include="PagedResult.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Validators\Dictionaries\Interfaces\ICharacteristicValidator.cs" />
+    <Compile Include="Validators\Dictionaries\Interfaces\INomenclatureValidator.cs" />
+    <Compile Include="Validators\Dictionaries\CharacteristicValidator.cs" />
+    <Compile Include="Validators\Dictionaries\NomenclatureValidator.cs" />
+    <Compile Include="Validators\ErrorData.cs" />
+    <Compile Include="Validators\IValidator.cs" />
+    <Compile Include="Validators\ValidationResult.cs" />
+    <Compile Include="Validators\ValidatorResources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ValidatorResources.resx</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\OfflineARM.DAO\OfflineARM.DAO.csproj">
@@ -86,7 +113,12 @@
       <Name>OfflineARM.Services</Name>
     </ProjectReference>
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <EmbeddedResource Include="Validators\ValidatorResources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>ValidatorResources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

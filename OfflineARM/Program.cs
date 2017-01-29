@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Windows.Forms;
-using OfflineARM.Gui;
 using OfflineARM.Business;
+using OfflineARM.Gui;
 using OfflineARM.Business.Loggers;
 using OfflineARM.Gui.Interfaces.Windows;
 
@@ -28,6 +28,8 @@ namespace OfflineARM
                 {
                     return;
                 }
+
+                new InitDatabase().Init();
 
                 var mainForm = IoCForm.Instance.ResolveForm<IMainForm>();
                 Application.Run(mainForm);

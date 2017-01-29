@@ -47,6 +47,12 @@ namespace OfflineARM.Repositories.Repositories
         /// </summary>  
         IEnumerable<TDaoEntity> GetAll();
 
+        /// <summary>  
+        /// Получить количество записей
+        /// </summary>  
+        /// <returns></returns>  
+        int Count();
+
         #endregion
     }
 }

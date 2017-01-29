@@ -1,9 +1,9 @@
 ﻿using System;
 using System.Windows.Forms;
 using OfflineARM.Business.Autorizations;
-using OfflineARM.Gui.Base;
 using OfflineARM.Gui.Base.Forms;
 using OfflineARM.Gui.Interfaces.Windows;
+using System.Drawing;
 
 namespace OfflineARM.Gui
 {
@@ -52,6 +52,14 @@ namespace OfflineARM.Gui
             {
                 return GuiResource.LoginForm_Caption;
             }
+        }
+
+        /// <summary>
+        /// Установить минимальный размер формы
+        /// </summary>
+        public override void SetMinimumSize(Size? size = null)
+        {
+            
         }
 
         #endregion

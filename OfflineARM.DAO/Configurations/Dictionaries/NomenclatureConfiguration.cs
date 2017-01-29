@@ -1,6 +1,6 @@
-﻿using OfflineARM.DAO.Entities.Business;
+﻿using OfflineARM.DAO.Entities.Dictionaries;
 
-namespace OfflineARM.DAO.Configurations.Business
+namespace OfflineARM.DAO.Configurations.Dictionaries
 {
     /// <summary>
     /// Конфигурация Номенклатура
@@ -18,6 +18,12 @@ namespace OfflineARM.DAO.Configurations.Business
             Property(p => p.Name)
                 .IsRequired()
                 .HasMaxLength(255);
+
+            Property(p => p.ParentId)
+                .IsOptional();
+
+            HasOptional(p => p.Childs)
+                .WithMany();
         }
 
         #endregion

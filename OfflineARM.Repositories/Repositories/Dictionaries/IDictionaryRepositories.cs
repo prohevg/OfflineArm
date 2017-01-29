@@ -26,5 +26,15 @@ namespace OfflineARM.Repositories.Repositories.Dictionaries
         /// Репозиторий Требование клиента
         /// </summary>  
         ICustomerRequirementRepository CustomerRequirementRepository { get; }
+
+        /// <summary>  
+        /// Репозиторий Номенклатура
+        /// </summary>  
+        INomenclatureRepository NomenclatureRepository { get; }
+
+        /// <summary>  
+        /// Репозиторий Характеристика номенклатуры
+        /// </summary>  
+        ICharacteristicRepository CharacteristicRepository { get; }
     }
 }

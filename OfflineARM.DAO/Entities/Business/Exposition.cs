@@ -1,4 +1,5 @@
 ﻿using System.Collections.Generic;
+using OfflineARM.DAO.Entities.Dictionaries;
 
 namespace OfflineARM.DAO.Entities.Business
 {

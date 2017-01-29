@@ -73,6 +73,16 @@ namespace OfflineARM.Gui {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap forward_16x16 {
+            get {
+                object obj = ResourceManager.GetObject("forward_16x16", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap info_32x32 {
             get {
                 object obj = ResourceManager.GetObject("info_32x32", resourceCulture);
@@ -105,6 +115,24 @@ namespace OfflineARM.Gui {
         internal static string OrderAddCommandHint {
             get {
                 return ResourceManager.GetString("OrderAddCommandHint", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Печать.
+        /// </summary>
+        internal static string OrderPrintCommandCaption {
+            get {
+                return ResourceManager.GetString("OrderPrintCommandCaption", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Печать.
+        /// </summary>
+        internal static string OrderPrintCommandHint {
+            get {
+                return ResourceManager.GetString("OrderPrintCommandHint", resourceCulture);
             }
         }
         

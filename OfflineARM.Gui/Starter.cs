@@ -1,6 +1,7 @@
 ﻿using Ninject;
 using OfflineARM.Business;
 using OfflineARM.Gui.Forms.Orders;
+using OfflineARM.Gui.Forms.Orders.Commands;
 using OfflineARM.Gui.Holders;
 
 namespace OfflineARM.Gui
@@ -43,6 +44,12 @@ namespace OfflineARM.Gui
                 CommandResources.OrderAddCommandCaption,
                 CommandResources.OrderAddCommandHint);
 
+            CommandMetadataHolder.Instance.SetMetadata(
+                OrderCommands.OrderPrint,
+                CommandResources.print_32x32,
+                CommandResources.OrderPrintCommandCaption,
+                CommandResources.OrderPrintCommandHint);
+
             #endregion
         }
 
@@ -52,6 +59,7 @@ namespace OfflineARM.Gui
         protected void FillDispatchedCommandHolder()
         {
             //DispatchedCommandHolder.Instance.SetType(OrderCommands.OrderAdd, typeof(OrderAddCommandHandler));
+            DispatchedCommandHolder.Instance.SetType(OrderCommands.OrderPrint, typeof(OrderPrintCommandHandler));
         }
     }
 }

@@ -1,6 +1,6 @@
-﻿using OfflineARM.DAO.Entities.Business;
+﻿using OfflineARM.DAO.Entities.Dictionaries;
 
-namespace OfflineARM.DAO.Configurations.Business
+namespace OfflineARM.DAO.Configurations.Dictionaries
 {
     /// <summary>
     /// Конфигурация Характеристика номенклатуры

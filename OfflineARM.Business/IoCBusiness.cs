@@ -1,5 +1,9 @@
 ﻿using Ninject;
 using OfflineARM.Business.Autorizations;
+using OfflineARM.Business.Dictionaries;
+using OfflineARM.Business.Dictionaries.Interfaces;
+using OfflineARM.Business.Validators.Dictionaries;
+using OfflineARM.Business.Validators.Dictionaries.Interfaces;
 
 namespace OfflineARM.Business
 {
@@ -56,6 +60,12 @@ namespace OfflineARM.Business
         private static void RegisterImp(IKernel container)
         {
             container.Bind<IAutorizationImp>().To<AutorizationImp>();
+
+            container.Bind<INomenclatureImp>().To<NomenclatureImp>();
+            container.Bind<INomenclatureValidator>().To<NomenclatureValidator>();
+
+            container.Bind<ICharacteristicImp>().To<CharacteristicImp>();
+            container.Bind<ICharacteristicValidator>().To<CharacteristicValidator>();
         }
 
         #endregion

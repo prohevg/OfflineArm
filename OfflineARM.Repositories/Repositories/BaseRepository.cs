@@ -1,5 +1,6 @@
 ﻿using System.Collections.Generic;
 using System.Data.Entity;
+using System.Linq;
 using OfflineARM.DAO;
 using OfflineARM.DAO.Entities;
 
@@ -100,6 +101,15 @@ namespace OfflineARM.Repositories.Repositories
         public virtual IEnumerable<TDaoEntity> GetAll()
         {
             return DbSet;
+        }
+
+        /// <summary>  
+        /// Получить количество записей
+        /// </summary>  
+        /// <returns></returns>  
+        public virtual int Count()
+        {
+            return DbSet.Count();
         }
 
         #endregion

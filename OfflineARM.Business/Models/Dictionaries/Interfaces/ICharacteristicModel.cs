@@ -1,25 +1,20 @@
-﻿using System.ComponentModel.DataAnnotations.Schema;
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
 
-namespace OfflineARM.DAO.Entities.Business
+namespace OfflineARM.Business.Models.Dictionaries.Interfaces
 {
     /// <summary>
     /// Характеристика номенклатуры
     /// </summary>
-    public class Characteristic : BaseDaoEntity
+    public interface ICharacteristicModel : IBaseBusninessModel
     {
         /// <summary>
         /// Номенклатура
         /// </summary>
-        public int NomenclatureId
-        {
-            get;
-            set;
-        }
-
-        /// <summary>
-        /// Номенклатура
-        /// </summary>
-        public Nomenclature Nomenclature
+        INomenclatureModel Nomenclature
         {
             get;
             set;
@@ -28,7 +23,7 @@ namespace OfflineARM.DAO.Entities.Business
         /// <summary>
         /// Цена
         /// </summary>
-        public decimal Price
+        decimal Price
         {
             get;
             set;
@@ -37,7 +32,7 @@ namespace OfflineARM.DAO.Entities.Business
         /// <summary>
         /// Наименование
         /// </summary>
-        public string Name
+        string Name
         {
             get;
             set;

@@ -77,7 +77,7 @@
   <ItemGroup>
     <Compile Include="ApplicationDbContext.cs" />
     <Compile Include="Configurations\Business\ExpositionConfiguration.cs" />
-    <Compile Include="Configurations\Business\CharacteristicConfiguration.cs" />
+    <Compile Include="Configurations\Dictionaries\CharacteristicConfiguration.cs" />
     <Compile Include="Configurations\Business\BagCollectionConfiguration.cs" />
     <Compile Include="Configurations\Business\OrderConfiguration.cs" />
     <Compile Include="Configurations\Business\OrderSpecificationConfiguration.cs" />
@@ -85,7 +85,7 @@
     <Compile Include="Configurations\Business\PartnerConfiguration.cs" />
     <Compile Include="Configurations\Business\ReclamationConfiguration.cs" />
     <Compile Include="Configurations\Business\ShopConfiguration.cs" />
-    <Compile Include="Configurations\Business\NomenclatureConfiguration.cs" />
+    <Compile Include="Configurations\Dictionaries\NomenclatureConfiguration.cs" />
     <Compile Include="Configurations\Business\UserConfiguration.cs" />
     <Compile Include="Configurations\Dictionaries\BaseDictionaryDaoEntityConfiguration.cs" />
     <Compile Include="Configurations\BaseDaoEntityConfiguration.cs" />
@@ -94,9 +94,9 @@
     <Compile Include="Configurations\Dictionaries\CustomerRequirementConfiguration.cs" />
     <Compile Include="Configurations\Dictionaries\LocationConfiguration.cs" />
     <Compile Include="Configurations\Dictionaries\CityConfiguration.cs" />
-    <Compile Include="Entities\Business\Characteristic.cs" />
+    <Compile Include="Entities\Dictionaries\Characteristic.cs" />
     <Compile Include="Entities\Business\User.cs" />
-    <Compile Include="Entities\Business\Nomenclature.cs" />
+    <Compile Include="Entities\Dictionaries\Nomenclature.cs" />
     <Compile Include="Entities\Business\Exposition.cs" />
     <Compile Include="Entities\Business\OrderSpecification.cs" />
     <Compile Include="Entities\Business\Reclamation.cs" />

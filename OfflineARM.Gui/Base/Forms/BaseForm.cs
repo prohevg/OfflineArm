@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Drawing;
 using System.Windows.Forms;
 
 namespace OfflineARM.Gui.Base.Forms
@@ -15,7 +16,7 @@ namespace OfflineARM.Gui.Base.Forms
         /// </summary>
         public BaseForm()
         {
-           
+            
         }
 
         #endregion
@@ -28,7 +29,10 @@ namespace OfflineARM.Gui.Base.Forms
         /// <param name="e"></param>
         protected override void OnLoad(EventArgs e)
         {
-            SetCaptionForm();
+            SetMinimumSize();
+
+            this.Text = CaptionForm;
+
             base.OnLoad(e);
         }
 
@@ -37,11 +41,18 @@ namespace OfflineARM.Gui.Base.Forms
         #region IBaseForm
 
         /// <summary>
-        /// Установить заголовок формы
+        /// Установить минимальный размер формы
         /// </summary>
-        public void SetCaptionForm()
+        public virtual void SetMinimumSize(Size? size = null)
         {
-            this.Text = CaptionForm;
+            if (!size.HasValue)
+            {
+                this.MinimumSize = new Size(800, 600);
+            }
+            else
+            {
+                this.MinimumSize = size.Value;
+            }
         }
 
         /// <summary>
@@ -56,9 +67,12 @@ namespace OfflineARM.Gui.Base.Forms
         /// <summary>
         /// Открыть как диалоговое окно
         /// </summary>
-        /// <returns></returns>
-        DialogResult IBaseForm.ShowDialog()
+        DialogResult IBaseForm.ShowDialog(IBaseForm parent = null)
         {
+            if (parent != null)
+            {
+                return this.ShowDialog(parent as BaseForm);
+            }
             return this.ShowDialog();
         }
 
@@ -69,7 +83,10 @@ namespace OfflineARM.Gui.Base.Forms
         /// <summary>
         /// Текст заголовка формы
         /// </summary>
-        public virtual string CaptionForm { get; }
+        public virtual string CaptionForm
+        {
+            get;
+        }
 
         #endregion
     }

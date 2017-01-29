@@ -1,7 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
+using OfflineARM.DAO.Entities.Business;
 
-namespace OfflineARM.DAO.Entities.Business
+namespace OfflineARM.DAO.Entities.Dictionaries
 {
     /// <summary>
     /// Номенклатура
@@ -11,7 +12,7 @@ namespace OfflineARM.DAO.Entities.Business
         /// <summary>
         /// Родитель
         /// </summary>
-        public int ParentId
+        public int? ParentId
         {
             get;
             set;
@@ -57,6 +58,15 @@ namespace OfflineARM.DAO.Entities.Business
         /// Спецификация заказа
         /// </summary>
         public virtual ICollection<OrderSpecification> OrderSpecifications
+        {
+            get;
+            set;
+        }
+
+        /// <summary>
+        /// Дочерние записи
+        /// </summary>
+        public ICollection<Nomenclature> Childs
         {
             get;
             set;

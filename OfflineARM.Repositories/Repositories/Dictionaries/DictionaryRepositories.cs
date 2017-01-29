@@ -40,6 +40,16 @@ namespace OfflineARM.Repositories.Repositories.Dictionaries
         /// </summary>
         private IOrderStatusRepository _orderStatusRepository;
 
+        /// <summary>
+        /// Репозиторий Номенклатура
+        /// </summary>
+        private INomenclatureRepository _nomenclatureRepository;
+
+        /// <summary>
+        /// Репозиторий Характеристика номенклатуры
+        /// </summary>
+        private ICharacteristicRepository _characteristicRepository;
+
         #endregion
 
         #region Конструктор
@@ -130,6 +140,37 @@ namespace OfflineARM.Repositories.Repositories.Dictionaries
                 return _orderStatusRepository;
             }
         }
+
+        /// <summary>  
+        /// Репозиторий Номенклатура
+        /// </summary>  
+        public INomenclatureRepository NomenclatureRepository
+        {
+            get
+            {
+                if (this._nomenclatureRepository == null)
+                {
+                    this._nomenclatureRepository = new NomenclatureRepository(_context);
+                }
+                return _nomenclatureRepository;
+            }
+        }
+
+        /// <summary>  
+        /// Репозиторий Характеристика номенклатуры
+        /// </summary>  
+        public ICharacteristicRepository CharacteristicRepository
+        {
+            get
+            {
+                if (this._characteristicRepository == null)
+                {
+                    this._characteristicRepository = new CharacteristicRepository(_context);
+                }
+                return _characteristicRepository;
+            }
+        }
+
 
         #endregion
     }

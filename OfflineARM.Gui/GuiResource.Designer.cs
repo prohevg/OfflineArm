@@ -116,6 +116,51 @@ namespace OfflineARM.Gui {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Экспозиция.
+        /// </summary>
+        internal static string OrderSpecificControl_ExpositionCharacteristics {
+            get {
+                return ResourceManager.GetString("OrderSpecificControl_ExpositionCharacteristics", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Доставка.
+        /// </summary>
+        internal static string OrderSpecificControl_spNext {
+            get {
+                return ResourceManager.GetString("OrderSpecificControl_spNext", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Характеристики.
+        /// </summary>
+        internal static string OrderSpecificControl_tpOrderCharacteristics {
+            get {
+                return ResourceManager.GetString("OrderSpecificControl_tpOrderCharacteristics", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Id.
+        /// </summary>
+        internal static string OrderSpecificControl_treeNomenclature_CaptionId {
+            get {
+                return ResourceManager.GetString("OrderSpecificControl_treeNomenclature_CaptionId", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Наименование.
+        /// </summary>
+        internal static string OrderSpecificControl_treeNomenclature_CaptionName {
+            get {
+                return ResourceManager.GetString("OrderSpecificControl_treeNomenclature_CaptionName", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
         internal static System.Drawing.Bitmap print_32x32 {

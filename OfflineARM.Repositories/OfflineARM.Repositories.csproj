@@ -63,7 +63,11 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Repositories\BaseRepository.cs" />
     <Compile Include="Repositories\Dictionaries\BasisActionRepository.cs" />
+    <Compile Include="Repositories\Dictionaries\Interfaces\ICharacteristicRepository.cs" />
     <Compile Include="Repositories\Dictionaries\Interfaces\IOrderStatusRepository.cs" />
+    <Compile Include="Repositories\Dictionaries\Interfaces\INomenclatureRepository.cs" />
+    <Compile Include="Repositories\Dictionaries\CharacteristicRepository.cs" />
+    <Compile Include="Repositories\Dictionaries\NomenclatureRepository.cs" />
     <Compile Include="Repositories\Dictionaries\OrderStatusRepository.cs" />
     <Compile Include="Repositories\Dictionaries\CustomerRequirementRepository.cs" />
     <Compile Include="Repositories\Dictionaries\DictionaryRepositories.cs" />

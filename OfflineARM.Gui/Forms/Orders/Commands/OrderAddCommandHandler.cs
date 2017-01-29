@@ -1,6 +1,6 @@
 ﻿using OfflineARM.Gui.Commands;
 
-namespace OfflineARM.Gui.Forms.Orders
+namespace OfflineARM.Gui.Forms.Orders.Commands
 {
     /// <summary>
 	/// Обработчик команды добавления заказа

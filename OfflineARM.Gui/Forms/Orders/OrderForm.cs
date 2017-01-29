@@ -1,4 +1,5 @@
-﻿using OfflineARM.Gui.Base.Forms;
+﻿using System.Windows.Forms;
+using OfflineARM.Gui.Base.Forms;
 using OfflineARM.Gui.Forms.Orders.Interfaces;
 
 namespace OfflineARM.Gui.Forms.Orders
@@ -11,6 +12,7 @@ namespace OfflineARM.Gui.Forms.Orders
         public OrderForm()
         {
             InitializeComponent();
+            this.StartPosition = FormStartPosition.CenterScreen;
         }
 
         #region override

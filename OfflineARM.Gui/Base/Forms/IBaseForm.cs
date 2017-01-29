@@ -1,4 +1,5 @@
-﻿using System.Windows.Forms;
+﻿using System.Drawing;
+using System.Windows.Forms;
 
 namespace OfflineARM.Gui.Base.Forms
 {
@@ -8,9 +9,9 @@ namespace OfflineARM.Gui.Base.Forms
     public interface IBaseForm
     {
         /// <summary>
-        /// Установить заголовок формы
+        /// Установить минимальный размер формы
         /// </summary>
-        void SetCaptionForm();
+        void SetMinimumSize(Size? size = null);
 
         /// <summary>
         /// Открыть окно
@@ -22,6 +23,6 @@ namespace OfflineARM.Gui.Base.Forms
         /// Открыть как диалоговое окно
         /// </summary>
         /// <returns></returns>
-        DialogResult ShowDialog();
+        DialogResult ShowDialog(IBaseForm parent = null);
     }
 }

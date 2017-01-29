@@ -1,4 +1,5 @@
-﻿using System;
+﻿using OfflineARM.Gui.Base.Forms;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -9,7 +10,7 @@ namespace OfflineARM.Gui.Forms.Orders.Interfaces
     /// <summary>
     /// Форма редактирования заказа
     /// </summary>
-    public interface IOrderForm
+    public interface IOrderForm : IBaseForm
     {
     }
 }

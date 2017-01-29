@@ -79,7 +79,7 @@ namespace OfflineARM.Gui
             container.Bind<IAboutBoxProgram>().To<AboutBoxProgram>();
 
             container.Bind<IOrderListControl>().To<OrderListControl>();
-            
+            container.Bind<IOrderForm>().To<OrderForm>();
         }
 
         #endregion

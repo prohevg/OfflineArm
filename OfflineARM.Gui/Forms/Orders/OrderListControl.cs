@@ -1,6 +1,7 @@
 ﻿using System.Collections.Generic;
 using OfflineARM.Gui.Base.Controls;
 using OfflineARM.Gui.Commands;
+using OfflineARM.Gui.Forms.Orders.Commands;
 using OfflineARM.Gui.Forms.Orders.Interfaces;
 
 namespace OfflineARM.Gui.Forms.Orders
@@ -10,10 +11,27 @@ namespace OfflineARM.Gui.Forms.Orders
     /// </summary>
     public partial class OrderListControl : BaseCommandControl, IOrderListControl
     {
-        public OrderListControl()
+        #region Конструктор
+
+        /// <summary>
+        /// Форма заказа
+        /// </summary>
+        private readonly IOrderForm _orderForm;
+
+        #endregion
+
+        #region Конструктор
+
+        /// <summary>
+        /// Конструктор
+        /// </summary>
+        public OrderListControl(IOrderForm orderForm)
         {
+            _orderForm = orderForm;
             InitializeComponent();
         }
+
+        #endregion
 
         #region override
 
@@ -23,10 +41,15 @@ namespace OfflineARM.Gui.Forms.Orders
         /// <returns></returns>
         public override List<ICommand> GetCommands()
         {
-            return new CommandList(this)
+            var result = new CommandList(this)
             {
-                OrderCommands.OrderAdd
+                OrderCommands.OrderAdd,
+                
             };
+
+            result.AddDispatched(OrderCommands.OrderPrint, new PrintData());
+
+            return result;
         }
 
         /// <summary>
@@ -35,8 +58,7 @@ namespace OfflineARM.Gui.Forms.Orders
         /// <param name="command"></param>
         public override void Execute(ICommand command)
         {
-            var orderForm = new OrderForm();
-            orderForm.ShowDialog();
+            _orderForm.ShowDialog();
         }
 
         #endregion
