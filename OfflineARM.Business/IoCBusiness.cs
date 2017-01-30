@@ -66,6 +66,9 @@ namespace OfflineARM.Business
 
             container.Bind<ICharacteristicImp>().To<CharacteristicImp>();
             container.Bind<ICharacteristicValidator>().To<CharacteristicValidator>();
+
+            container.Bind<IExpositionImp>().To<ExpositionImp>();
+            container.Bind<IExpositionValidator>().To<ExpositionValidator>();
         }
 
         #endregion

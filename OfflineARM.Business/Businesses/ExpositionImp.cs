@@ -3,16 +3,16 @@ using OfflineARM.Business.Dictionaries.Interfaces;
 using OfflineARM.Business.Models.Dictionaries;
 using OfflineARM.Business.Models.Dictionaries.Interfaces;
 using OfflineARM.Business.Validators.Dictionaries.Interfaces;
-using OfflineARM.DAO.Entities.Dictionaries;
 using OfflineARM.Repositories;
 using OfflineARM.Repositories.Repositories.Dictionaries.Interfaces;
+using OfflineARM.DAO.Entities.Business;
 
 namespace OfflineARM.Business.Dictionaries
 {
     /// <summary>
-    /// Характеристика номенклатуры
+    /// Экспозиция
     /// </summary>
-    public class CharacteristicImp : BaseImp<ICharacteristicModel, ICharacteristicValidator, Characteristic, ICharacteristicRepository>, ICharacteristicImp
+    public class ExpositionImp : BaseImp<IExpositionModel, IExpositionValidator, Exposition, IExpositionRepository>, IExpositionImp
     {
         #region Конструктор
 
@@ -21,24 +21,24 @@ namespace OfflineARM.Business.Dictionaries
         /// </summary>
         /// <param name="unitOfWork">UnitOfWork</param>
         /// <param name="validator">Валидатор</param>
-        public CharacteristicImp(UnitOfWork unitOfWork, ICharacteristicValidator validator)
-            : base(unitOfWork, unitOfWork.DictionaryRepositories.CharacteristicRepository, validator)
+        public ExpositionImp(UnitOfWork unitOfWork, IExpositionValidator validator)
+            : base(unitOfWork, unitOfWork.BusinessesRepositories.ExpositionRepository, validator)
         {
 
         }
 
         #endregion
 
-        #region ICharacteristicImp
+        #region IExpositionImp
 
         /// <summary>
         /// Найти по id номенклатуры
         /// </summary>
         /// <param name="nomenclatureId">id номенклатуры</param>
         /// <returns></returns>
-        public List<ICharacteristicModel> GetByNomenclatureId(int nomenclatureId)
+        public List<IExpositionModel> GetByNomenclatureId(int nomenclatureId)
         {
-            var result = new List<ICharacteristicModel>();
+            var result = new List<IExpositionModel>();
             var list = _repository.GetByNomenclatureId(nomenclatureId);
 
             foreach (var daoEntity in list)
@@ -58,14 +58,15 @@ namespace OfflineARM.Business.Dictionaries
         /// </summary>
         /// <param name="daoEntity"></param>
         /// <returns></returns>
-        protected override ICharacteristicModel ConvertTo(Characteristic daoEntity)
+        protected override IExpositionModel ConvertTo(Exposition daoEntity)
         {
-            var model = new CharacteristicModel
+            var model = new ExpositionModel
             {
                 Id = daoEntity.Id,
                 Guid = daoEntity.Guid,
-                Name = daoEntity.Name,
-                Price = daoEntity.Price
+                Price = daoEntity.Price,
+                Count = daoEntity.Count,
+                IsEnabled = daoEntity.IsEnabled
             };
 
             if (daoEntity.NomenclatureId > 0)
@@ -78,6 +79,16 @@ namespace OfflineARM.Business.Dictionaries
                 model.Nomenclature.Name = daoNomencl.Name;
             }
 
+            if (daoEntity.CharacteristicId > 0)
+            {
+                model.Characteristic = new CharacteristicModel();
+
+                var daoNomencl = _unitOfWork.DictionaryRepositories.CharacteristicRepository.GetById(daoEntity.CharacteristicId);
+
+                model.Characteristic.Id = daoNomencl.Id;
+                model.Characteristic.Name = daoNomencl.Name;
+            }
+
             return model;
         }
 
@@ -86,24 +97,30 @@ namespace OfflineARM.Business.Dictionaries
         /// </summary>
         /// <param name="model">Сущность</param>
         /// <returns></returns>
-        public override Characteristic CreateInternal(ICharacteristicModel model)
+        public override Exposition CreateInternal(IExpositionModel model)
         {
             if (model == null)
             {
                 return null;
             }
 
-            var result = new Characteristic
+            var result = new Exposition
             {
                 Id = model.Id,
                 Guid = model.Guid,
-                Name = model.Name,
-                Price = model.Price
+                Price = model.Price,
+                Count = model.Count,
+                IsEnabled = model.IsEnabled
             };
 
             if (model.Nomenclature != null)
             {
                 result.NomenclatureId = model.Nomenclature.Id;
+            }
+
+            if (model.Characteristic != null)
+            {
+                result.CharacteristicId = model.Characteristic.Id;
             }
 
             return result;
@@ -115,16 +132,22 @@ namespace OfflineARM.Business.Dictionaries
         /// <param name="model">Сущность</param>
         /// <param name="daoEntity">dao Сущность</param>
         /// <returns></returns>
-        public override Characteristic UpdateDaoInternal(Characteristic daoEntity, ICharacteristicModel model)
+        public override Exposition UpdateDaoInternal(Exposition daoEntity, IExpositionModel model)
         {
             daoEntity.Id = model.Id;
             daoEntity.Guid = model.Guid;
-            daoEntity.Name = model.Name;
             daoEntity.Price = model.Price;
+            daoEntity.Count = model.Count;
+            daoEntity.IsEnabled = model.IsEnabled;
 
             if (model.Nomenclature != null)
             {
                 daoEntity.NomenclatureId = model.Nomenclature.Id;
+            }
+
+            if (model.Characteristic != null)
+            {
+                daoEntity.CharacteristicId = model.Characteristic.Id;
             }
 
             return daoEntity;

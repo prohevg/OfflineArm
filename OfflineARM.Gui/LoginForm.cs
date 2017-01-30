@@ -59,7 +59,10 @@ namespace OfflineARM.Gui
         /// </summary>
         public override void SetMinimumSize(Size? size = null)
         {
-            
+            size = new Size(400, 200);
+            this.ClientSize = size.Value;
+            this.MaximumSize = size.Value;
+            this.MinimumSize = size.Value;
         }
 
         #endregion

@@ -1,25 +1,20 @@
-﻿using OfflineARM.DAO.Entities.Dictionaries;
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
 
-namespace OfflineARM.DAO.Entities.Business
+namespace OfflineARM.Business.Models.Dictionaries.Interfaces
 {
     /// <summary>
     /// Экспозиция
     /// </summary>
-    public class Exposition : BaseDaoEntity
+    public interface IExpositionModel : IBaseBusninessModel
     {
         /// <summary>
         /// Номенклатура
         /// </summary>
-        public int NomenclatureId
-        {
-            get;
-            set;
-        }
-
-        /// <summary>
-        /// Номенклатура
-        /// </summary>
-        public Nomenclature Nomenclature
+        INomenclatureModel Nomenclature
         {
             get;
             set;
@@ -28,16 +23,7 @@ namespace OfflineARM.DAO.Entities.Business
         /// <summary>
         /// Характеристика
         /// </summary>
-        public int CharacteristicId
-        {
-            get;
-            set;
-        }
-
-        /// <summary>
-        /// Характеристика
-        /// </summary>
-        public Characteristic Characteristic
+        ICharacteristicModel Characteristic
         {
             get;
             set;
@@ -46,7 +32,7 @@ namespace OfflineARM.DAO.Entities.Business
         /// <summary>
         /// Цена
         /// </summary>
-        public decimal Price
+        decimal Price
         {
             get;
             set;
@@ -55,7 +41,7 @@ namespace OfflineARM.DAO.Entities.Business
         /// <summary>
         /// Количество
         /// </summary>
-        public int Count
+        int Count
         {
             get;
             set;
@@ -64,7 +50,7 @@ namespace OfflineARM.DAO.Entities.Business
         /// <summary>
         /// Доступно к продаже
         /// </summary>
-        public bool IsEnabled
+        bool IsEnabled
         {
             get;
             set;

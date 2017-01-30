@@ -1,7 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Threading.Tasks;
-using OfflineARM.Business.Dictionaries;
 using OfflineARM.Business.Dictionaries.Interfaces;
 using OfflineARM.Business.Models.Dictionaries;
 using OfflineARM.Business.Models.Dictionaries.Interfaces;
@@ -28,30 +26,34 @@ namespace OfflineARM.Business
             }
 
             var imp = IoCBusiness.Instance.Get<INomenclatureImp>();
-            
-            for (int i = 0; i < 50; i++)
+
+            for (int i = 0; i < 10; i++)
             {
+                var mainGuid = Guid.NewGuid();
                 var newNomencl = new NomenclatureModel
                 {
-                    Guid = Guid.NewGuid()
+                    Guid = mainGuid,
+                    Name = "Диван_" + mainGuid.ToString().Substring(0, 4)
                 };
-                newNomencl.Name = "Диван_" + newNomencl.Guid.ToString().Substring(0, 4);
+                var resMainModify = imp.Insert(newNomencl);
+                newNomencl.Id = resMainModify.NewId;
 
-                newNomencl.Childs = new List<INomenclatureModel>();
+
                 for (int j = 0; j < 2; j++)
                 {
+                    var childGuid = Guid.NewGuid();
                     var childNomencl = new NomenclatureModel
                     {
-                        Guid = Guid.NewGuid()
+                        Guid = childGuid,
+                        Parent = newNomencl
                     };
-                    childNomencl.Name = newNomencl.Name + "_Inner_" + childNomencl.Guid.ToString().Substring(0, 4);
-                    newNomencl.Childs.Add(childNomencl);
-                }
+                    childNomencl.Name = newNomencl.Name + "_Inner_" + childGuid.ToString().Substring(0, 4);
 
-                var resModify = imp.Insert(newNomencl);
-                newNomencl.Id = resModify.NewId;
-                
-                AddCharact(newNomencl);
+                    var resChildModify = imp.Insert(childNomencl);
+                    childNomencl.Id = resChildModify.NewId;
+
+                    AddCharact(childNomencl);
+                }               
             }
         }
 
@@ -67,10 +69,34 @@ namespace OfflineARM.Business
                     Guid = guid,
                     Nomenclature = nomecModel,
                     Name = "Характер_" + guid.ToString().Substring(0, 4),
+                    Price = 100,
+                };
+
+                var resChildModify = imp.Insert(newCharact);
+                newCharact.Id = resChildModify.NewId;
+
+                AddExposit(newCharact);
+            }
+        }
+
+        private void AddExposit(ICharacteristicModel charModel)
+        {
+            var imp = IoCBusiness.Instance.Get<IExpositionImp>();
+
+            for (int i = 0; i < 2; i++)
+            {
+                var guid = Guid.NewGuid();
+                var newExpo = new ExpositionModel()
+                {
+                    Guid = guid,
+                    Nomenclature = charModel.Nomenclature,
+                    Characteristic = charModel,
+                    IsEnabled = i == 1,
+                    Count = i,
                     Price = 100
                 };
 
-                imp.Insert(newCharact);
+                imp.Insert(newExpo);
             }
         }
     }

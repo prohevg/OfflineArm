@@ -41,7 +41,7 @@
             this.btOk.Location = new System.Drawing.Point(99, 111);
             this.btOk.Name = "btOk";
             this.btOk.Size = new System.Drawing.Size(75, 23);
-            this.btOk.TabIndex = 3;
+            this.btOk.TabIndex = 0;
             this.btOk.Text = "Вход";
             this.btOk.UseVisualStyleBackColor = true;
             this.btOk.Click += new System.EventHandler(this.btOk_Click);
@@ -95,13 +95,14 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(382, 152);
+            this.ClientSize = new System.Drawing.Size(784, 562);
             this.Controls.Add(this.txtPassword);
             this.Controls.Add(this.lbPassword);
             this.Controls.Add(this.txtLogin);
             this.Controls.Add(this.lbLOgin);
             this.Controls.Add(this.btExit);
             this.Controls.Add(this.btOk);
+            this.MinimumSize = new System.Drawing.Size(800, 600);
             this.Name = "LoginForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Авторизация";

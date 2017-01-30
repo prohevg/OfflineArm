@@ -148,10 +148,34 @@
   <data name="OrderSpecificControl_tpOrderCharacteristics" xml:space="preserve">
     <value>Характеристики</value>
   </data>
-  <data name="OrderSpecificControl_treeNomenclature_CaptionId" xml:space="preserve">
-    <value>Id</value>
-  </data>
-  <data name="OrderSpecificControl_treeNomenclature_CaptionName" xml:space="preserve">
+  <data name="OrderSpecificControl_TreeNomenclatureCaption_Name" xml:space="preserve">
     <value>Наименование</value>
+  </data>
+  <data name="OrderSpecificControl_GridNomenclatureCharacteristicCaption_AddInOrder" xml:space="preserve">
+    <value>Добавить в заказ</value>
+  </data>
+  <data name="OrderSpecificControl_GridNomenclatureCharacteristicCaption_Name" xml:space="preserve">
+    <value>Наименование</value>
+  </data>
+  <data name="OrderSpecificControl_GridNomenclatureCharacteristicCaption_Price" xml:space="preserve">
+    <value>Цена</value>
+  </data>
+  <data name="OrderSpecificControl_GridExpositionCaption_Count" xml:space="preserve">
+    <value>Количество</value>
+  </data>
+  <data name="OrderSpecificControl_GridExpositionCaption_Count_AddInOrder" xml:space="preserve">
+    <value>Добавить в заказ</value>
+  </data>
+  <data name="OrderSpecificControl_GridExpositionCaption_IsEnabled" xml:space="preserve">
+    <value>Доступно</value>
+  </data>
+  <data name="OrderSpecificControl_GridExpositionCaption_Name" xml:space="preserve">
+    <value>Наименование</value>
+  </data>
+  <data name="OrderSpecificControl_GridExpositionCaption_Nomeclature" xml:space="preserve">
+    <value>Номенклатура</value>
+  </data>
+  <data name="OrderSpecificControl_GridExpositionCaption_Price" xml:space="preserve">
+    <value>Цена</value>
   </data>
 </root>

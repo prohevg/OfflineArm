@@ -4,11 +4,14 @@ using System.Windows.Forms;
 using DevExpress.XtraEditors.Controls;
 using DevExpress.XtraGrid.Views.Base;
 using DevExpress.XtraTreeList;
-using DevExpress.XtraTreeList.Columns;
-using DevExpress.XtraTreeList.Nodes;
 using OfflineARM.Business;
 using OfflineARM.Business.Dictionaries.Interfaces;
 using OfflineARM.Business.Models.Dictionaries.Interfaces;
+using System.Linq;
+using DevExpress.Data;
+using DevExpress.XtraEditors.Repository;
+using DevExpress.XtraEditors;
+using OfflineARM.Gui.Controls.EventArg;
 
 namespace OfflineARM.Gui.Forms.Orders
 {
@@ -17,8 +20,33 @@ namespace OfflineARM.Gui.Forms.Orders
     /// </summary>
     public partial class OrderSpecificControl : UserControl
     {
+        #region поля и свойства
+
+        /// <summary>
+        /// Реализация номеклатуры
+        /// </summary>
+        private readonly INomenclatureImp _nomenclatureImp = IoCBusiness.Instance.Get<INomenclatureImp>();
+
+        /// <summary>
+        /// Характеристика номенклатуры
+        /// </summary>
+        private readonly ICharacteristicImp _characteristicImp = IoCBusiness.Instance.Get<ICharacteristicImp>();
+
+        /// <summary>
+        /// Экспозиция
+        /// </summary>
+        private readonly IExpositionImp _expositionImp = IoCBusiness.Instance.Get<IExpositionImp>();
+
+
         List<OrderTemp> _orders = new List<OrderTemp>();
 
+        #endregion
+
+        #region Конструктор
+
+        /// <summary>
+        /// Конструктор
+        /// </summary>
         public OrderSpecificControl()
         {
             InitializeComponent();
@@ -27,6 +55,8 @@ namespace OfflineARM.Gui.Forms.Orders
             tpOrderCharacteristics.Text = GuiResource.OrderSpecificControl_tpOrderCharacteristics;
             spNext.Text = GuiResource.OrderSpecificControl_spNext;
         }
+        
+        #endregion
 
         #region События
 
@@ -39,6 +69,11 @@ namespace OfflineARM.Gui.Forms.Orders
             base.OnLoad(e);
 
             FillNomenclatureTree();
+
+            NomenclatureCharacteristicColumns();
+
+            ExpositionColumns();
+            FillExpositions();
         }
 
         #endregion
@@ -50,130 +85,185 @@ namespace OfflineARM.Gui.Forms.Orders
         /// </summary>
         private void FillNomenclatureTree()
         {
-            treeNomenclature.OptionsSelection.EnableAppearanceFocusedCell = true;
-            CreateColumns(treeNomenclature);
-            LoadNodes(0);
-        }
+            treeList.BeginUpdate();
+            treeList.AddColumn(GuiResource.OrderSpecificControl_TreeNomenclatureCaption_Name, "Name");
+            treeList.EndUpdate();
 
-        /// <summary>
-        /// Создание узлов в дереве
-        /// </summary>
-        /// <param name="tl"></param>
-        private void CreateColumns(TreeList tl)
-        {
-            tl.BeginUpdate();
-            tl.KeyFieldName = "Id";
-            tl.ParentFieldName = "ParentId";
-
-            TreeListColumn col1 = tl.Columns.Add();
-            col1.Caption = GuiResource.OrderSpecificControl_treeNomenclature_CaptionId;
-            col1.FieldName = "Id";
-            col1.VisibleIndex = -1;
-
-            TreeListColumn col2 = tl.Columns.Add();
-            col2.Caption = "ParentId";
-            col2.FieldName = "ParentId";
-            col2.VisibleIndex = -1;
-
-            TreeListColumn col3 = tl.Columns.Add();
-            col3.Caption = GuiResource.OrderSpecificControl_treeNomenclature_CaptionName;
-            col3.FieldName = "Name";
-            col3.VisibleIndex = 0;
-
-            tl.EndUpdate();
+            treeList.SetExpandActions(GetNomenclatures, GetNomenclatureData, GetNomenclatureHasChild);
+            treeList.FocusedNodeChanged += TreeList_FocusedNodeChanged;
+            treeList.LoadNodes();
         }
 
         /// <summary>
         /// Загрузка узлов
         /// </summary>
-        /// <param name="parentId">Id родительского узла</param>
-        /// <param name="parentNode">Родитеский узел</param>
-        private void LoadNodes(int parentId, TreeListNode parentNode = null)
+        /// <param name="nodeData"></param>
+        /// <returns></returns>
+        private List<object> GetNomenclatures(object nodeData)
         {
-            treeNomenclature.BeginUnboundLoad();
-
-            INomenclatureImp nomenclatureImp = IoCBusiness.Instance.Get<INomenclatureImp>();
-            var roots = nomenclatureImp.GetAllByParentId(parentId);
-            foreach (var nomenclature in roots)
+            var model = nodeData as INomenclatureModel;
+            if (model == null)
             {
-                var node = treeNomenclature.AppendNode(new object[] { nomenclature.Id, nomenclature.ParentId, nomenclature.Name }, parentNode);
-                node.HasChildren = nomenclatureImp.HasChildren(nomenclature.Id);
-                node.Tag = nomenclature;
+                var roots = _nomenclatureImp.GetAllByParentId(0);
+                return roots.OfType<object>().ToList();
             }
 
-            treeNomenclature.EndUnboundLoad();
+            var childs = _nomenclatureImp.GetAllByParentId(model.Id);
+            return childs.OfType<object>().ToList();
         }
 
         /// <summary>
-        /// Событие раскрутия узла
+        /// Проверка наличия дочерних узлов
         /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
-        private void treeNomenclature_BeforeExpand(object sender, BeforeExpandEventArgs e)
+        /// <param name="nodeData"></param>
+        /// <returns></returns>
+        private bool GetNomenclatureHasChild(object nodeData)
         {
-            var nomenclature = e.Node.Tag as INomenclatureModel;
-            LoadNodes(nomenclature.Id, e.Node);
+            var model = nodeData as INomenclatureModel;
+            if (model == null)
+            {
+                return false;
+            }
+
+            return _nomenclatureImp.HasChildren(model.Id);
         }
 
         /// <summary>
-        /// смега
+        /// Данные, отображаемые в дереве
+        /// </summary>
+        /// <param name="nodeData"></param>
+        /// <returns></returns>
+        private object[] GetNomenclatureData(object nodeData)
+        {
+            var model = nodeData as INomenclatureModel;
+            if (model == null)
+            {
+                return null;
+            }
+
+            return new object[] { model.Name };
+        }
+
+        /// <summary>
+        /// Смена выделения узла в дереве
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        private void treeNomenclature_FocusedNodeChanged(object sender, FocusedNodeChangedEventArgs e)
+        private void TreeList_FocusedNodeChanged(object sender, FocusedNodeChangedEventArgs e)
         {
-            FillGridStoreCharacteristic(e.Node.Tag as INomenclatureModel);
+            FillNomenclatureCharacteristic(e.Node.Tag as INomenclatureModel);
         }
 
         #endregion
 
-        #region Fill Characteristic
+        #region Fill Nomenclature Characteristic
 
-        #region Fill Characteristic from store
+        /// <summary>
+        /// Создание столюцов таблицы характиристики номенклатуры
+        /// </summary>
+        private void NomenclatureCharacteristicColumns()
+        {
+            gcNomenclatureCharactristics.BeginUpdate();
+            gcNomenclatureCharactristics.AddColumn(GuiResource.OrderSpecificControl_GridNomenclatureCharacteristicCaption_Name, "Name");
+            gcNomenclatureCharactristics.AddColumn(GuiResource.OrderSpecificControl_GridNomenclatureCharacteristicCaption_Price, "Price", 1, UnboundColumnType.Decimal);
+            gcNomenclatureCharactristics.AddColumnCommand(GuiResource.OrderSpecificControl_GridNomenclatureCharacteristicCaption_AddInOrder);
+            gcNomenclatureCharactristics.EndUpdate();
 
-        private void FillGridStoreCharacteristic(INomenclatureModel nomenclature)
+            gcNomenclatureCharactristics.OnGridCommand += NomenclatureCharactristics_OnGridCommand;
+        }
+
+        /// <summary>
+        /// Заполнение таблицы с характеристиками, если нет
+        /// </summary>
+        /// <param name="nomenclature"></param>
+        private void FillNomenclatureCharacteristic(INomenclatureModel nomenclature)
         {
             if (nomenclature != null)
             {
-                var list = IoCBusiness.Instance.Get<ICharacteristicImp>().GetByNomenclatureId(nomenclature.Id);
-                gcOrderCharacteristics.DataSource = list;
+                gcNomenclatureCharactristics.DataSource = _characteristicImp.GetByNomenclatureId(nomenclature.Id);
             }
             else
             {
-                gcOrderCharacteristics.DataSource = null;
+                gcNomenclatureCharactristics.DataSource = null;
             }
         }
 
-        private void biAddCommand_ButtonPressed(object sender, ButtonPressedEventArgs e)
+        /// <summary>
+        /// Добавление характеристики в заказ
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void NomenclatureCharactristics_OnGridCommand(object sender, GridCommandEventArgs e)
         {
-            if (gcOrderCharacteristicsView.FocusedRowHandle < 0)
+            var model = e.Value as ICharacteristicModel;
+            if (model == null)
             {
                 return;
             }
 
-            var row = gcOrderCharacteristicsView.GetFocusedRow();
-            var charact = row as ICharacteristicModel;
-
             _orders.Add(new OrderTemp()
             {
-                Nomenclature = charact.Nomenclature.Name,
-                Characteristic = charact.Name
+                Nomenclature = model.Nomenclature.Name,
+                Characteristic = model.Name
             });
 
             gcNomenclatureSelected.DataSource = _orders;
             gcNomenclatureSelected.RefreshDataSource();
         }
 
-        private void gcOrderCharacteristics_CustomUnboundColumnData(object sender, CustomColumnDataEventArgs e)
+        #endregion
+
+        #region Fill Exposition
+
+        /// <summary>
+        /// Создание столюцов таблицы экспозиции
+        /// </summary>
+        private void ExpositionColumns()
         {
-            //if (e.Column.FieldName == "gcAddInOrderCommand")
-            //{
-            //    e.Value = e.Row;
-            //    e.Column.ColumnEdit.Tag = e.Row;
-            //}
+            gcExposition.BeginUpdate();
+            gcExposition.AddColumn(GuiResource.OrderSpecificControl_GridExpositionCaption_Nomeclature, "Nomenclature.Name");
+            gcExposition.AddColumn(GuiResource.OrderSpecificControl_GridExpositionCaption_Name, "Characteristic.Name");
+            gcExposition.AddColumn(GuiResource.OrderSpecificControl_GridExpositionCaption_Price, "Price");
+            gcExposition.AddColumn(GuiResource.OrderSpecificControl_GridExpositionCaption_Count, "Count");
+            gcExposition.AddColumn(GuiResource.OrderSpecificControl_GridExpositionCaption_IsEnabled, "IsEnabled");
+            gcExposition.AddColumnCommand(GuiResource.OrderSpecificControl_GridExpositionCaption_Count_AddInOrder);
+            gcExposition.EndUpdate();
+
+            gcExposition.OnGridCommand += Exposition_OnGridCommand;
         }
 
-        #endregion
+        /// <summary>
+        /// Заполнение таблицы экспозиции
+        /// </summary>
+        private void FillExpositions()
+        {
+            gcExposition.DataSource = _expositionImp.GetAll().Data;
+        }
+
+
+        /// <summary>
+        /// Добавление номенклатуры в заказ
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void Exposition_OnGridCommand(object sender, GridCommandEventArgs e)
+        {
+            var model = e.Value as IExpositionModel;
+            if (model == null)
+            {
+                return;
+            }
+
+            _orders.Add(new OrderTemp()
+            {
+                Nomenclature = model.Nomenclature.Name,
+                Characteristic = model.Characteristic.Name
+            });
+
+            gcNomenclatureSelected.DataSource = _orders;
+            gcNomenclatureSelected.RefreshDataSource();
+        }
+
 
         #endregion
     }

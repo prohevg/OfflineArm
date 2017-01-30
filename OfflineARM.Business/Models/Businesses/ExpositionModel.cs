@@ -1,25 +1,16 @@
-﻿using OfflineARM.DAO.Entities.Dictionaries;
+﻿using OfflineARM.Business.Models.Dictionaries.Interfaces;
 
-namespace OfflineARM.DAO.Entities.Business
+namespace OfflineARM.Business.Models.Dictionaries
 {
     /// <summary>
     /// Экспозиция
     /// </summary>
-    public class Exposition : BaseDaoEntity
+    public class ExpositionModel : BaseBusninessModel, IExpositionModel
     {
         /// <summary>
         /// Номенклатура
         /// </summary>
-        public int NomenclatureId
-        {
-            get;
-            set;
-        }
-
-        /// <summary>
-        /// Номенклатура
-        /// </summary>
-        public Nomenclature Nomenclature
+        public INomenclatureModel Nomenclature
         {
             get;
             set;
@@ -28,16 +19,7 @@ namespace OfflineARM.DAO.Entities.Business
         /// <summary>
         /// Характеристика
         /// </summary>
-        public int CharacteristicId
-        {
-            get;
-            set;
-        }
-
-        /// <summary>
-        /// Характеристика
-        /// </summary>
-        public Characteristic Characteristic
+        public ICharacteristicModel Characteristic
         {
             get;
             set;

@@ -134,6 +134,13 @@
     <Compile Include="Commands\ICommandMetadata.cs" />
     <Compile Include="Commands\ICommandMetadataBase.cs" />
     <Compile Include="Commands\ItemData.cs" />
+    <Compile Include="Controls\EventArg\GridCommandEventArgs.cs" />
+    <Compile Include="Controls\GridControlWrapper.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Controls\TreeListWrapper.cs">
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="Forms\Orders\Commands\OrderPrintCommand.cs" />
     <Compile Include="Forms\Orders\Commands\PrintData.cs" />
     <Compile Include="Forms\Orders\Interfaces\IOrderForm.cs" />
@@ -241,6 +248,7 @@
   <ItemGroup>
     <None Include="Resources\forward_16x16.png" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

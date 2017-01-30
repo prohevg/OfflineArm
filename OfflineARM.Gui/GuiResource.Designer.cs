@@ -125,6 +125,87 @@ namespace OfflineARM.Gui {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Количество.
+        /// </summary>
+        internal static string OrderSpecificControl_GridExpositionCaption_Count {
+            get {
+                return ResourceManager.GetString("OrderSpecificControl_GridExpositionCaption_Count", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Добавить в заказ.
+        /// </summary>
+        internal static string OrderSpecificControl_GridExpositionCaption_Count_AddInOrder {
+            get {
+                return ResourceManager.GetString("OrderSpecificControl_GridExpositionCaption_Count_AddInOrder", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Доступно.
+        /// </summary>
+        internal static string OrderSpecificControl_GridExpositionCaption_IsEnabled {
+            get {
+                return ResourceManager.GetString("OrderSpecificControl_GridExpositionCaption_IsEnabled", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Наименование.
+        /// </summary>
+        internal static string OrderSpecificControl_GridExpositionCaption_Name {
+            get {
+                return ResourceManager.GetString("OrderSpecificControl_GridExpositionCaption_Name", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Номенклатура.
+        /// </summary>
+        internal static string OrderSpecificControl_GridExpositionCaption_Nomeclature {
+            get {
+                return ResourceManager.GetString("OrderSpecificControl_GridExpositionCaption_Nomeclature", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Цена.
+        /// </summary>
+        internal static string OrderSpecificControl_GridExpositionCaption_Price {
+            get {
+                return ResourceManager.GetString("OrderSpecificControl_GridExpositionCaption_Price", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Добавить в заказ.
+        /// </summary>
+        internal static string OrderSpecificControl_GridNomenclatureCharacteristicCaption_AddInOrder {
+            get {
+                return ResourceManager.GetString("OrderSpecificControl_GridNomenclatureCharacteristicCaption_AddInOrder", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Наименование.
+        /// </summary>
+        internal static string OrderSpecificControl_GridNomenclatureCharacteristicCaption_Name {
+            get {
+                return ResourceManager.GetString("OrderSpecificControl_GridNomenclatureCharacteristicCaption_Name", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Цена.
+        /// </summary>
+        internal static string OrderSpecificControl_GridNomenclatureCharacteristicCaption_Price {
+            get {
+                return ResourceManager.GetString("OrderSpecificControl_GridNomenclatureCharacteristicCaption_Price", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Доставка.
         /// </summary>
         internal static string OrderSpecificControl_spNext {
@@ -143,20 +224,11 @@ namespace OfflineARM.Gui {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Id.
-        /// </summary>
-        internal static string OrderSpecificControl_treeNomenclature_CaptionId {
-            get {
-                return ResourceManager.GetString("OrderSpecificControl_treeNomenclature_CaptionId", resourceCulture);
-            }
-        }
-        
-        /// <summary>
         ///   Looks up a localized string similar to Наименование.
         /// </summary>
-        internal static string OrderSpecificControl_treeNomenclature_CaptionName {
+        internal static string OrderSpecificControl_TreeNomenclatureCaption_Name {
             get {
-                return ResourceManager.GetString("OrderSpecificControl_treeNomenclature_CaptionName", resourceCulture);
+                return ResourceManager.GetString("OrderSpecificControl_TreeNomenclatureCaption_Name", resourceCulture);
             }
         }
         

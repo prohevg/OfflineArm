@@ -1,7 +1,6 @@
 ﻿using System;
 using System.Data.Entity.Validation;
 using OfflineARM.DAO;
-using OfflineARM.Repositories.Repositories;
 using OfflineARM.Repositories.Repositories.Dictionaries;
 
 namespace OfflineARM.Repositories
@@ -24,9 +23,14 @@ namespace OfflineARM.Repositories
         private readonly ApplicationDbContext _context;
 
         /// <summary>
-        /// Репозиторий Города
+        /// Репозитории справочников
         /// </summary>
         private readonly IDictionaryRepositories _dictionaryRepositories;
+
+        /// <summary>
+        /// Репозитории бизнеса
+        /// </summary>
+        private readonly IBusinessesRepositories _businessesRepositories;
 
         #endregion
 
@@ -39,6 +43,7 @@ namespace OfflineARM.Repositories
         {
             _context = new ApplicationDbContext();
             _dictionaryRepositories = new DictionaryRepositories(_context);
+            _businessesRepositories = new BusinessesRepositories(_context);
         }
 
         #endregion
@@ -46,13 +51,24 @@ namespace OfflineARM.Repositories
         #region свойства репозиториев
 
         /// <summary>  
-        /// Репозиторий Города  
+        /// Репозитории справочников
         /// </summary>  
         public IDictionaryRepositories DictionaryRepositories
         {
             get
             {
                 return _dictionaryRepositories;
+            }
+        }
+
+        /// <summary>  
+        /// Репозитории бизнеса
+        /// </summary>  
+        public IBusinessesRepositories BusinessesRepositories
+        {
+            get
+            {
+                return _businessesRepositories;
             }
         }
 

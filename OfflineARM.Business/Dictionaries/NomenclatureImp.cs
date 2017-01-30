@@ -1,10 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
+﻿using System.Collections.Generic;
 using OfflineARM.Business.Dictionaries.Interfaces;
 using OfflineARM.Business.Models.Dictionaries;
 using OfflineARM.Business.Models.Dictionaries.Interfaces;
-using OfflineARM.Business.Validators;
 using OfflineARM.Business.Validators.Dictionaries.Interfaces;
 using OfflineARM.DAO.Entities.Dictionaries;
 using OfflineARM.Repositories;
@@ -68,59 +65,6 @@ namespace OfflineARM.Business.Dictionaries
         #endregion
 
         #region override
-
-        /// <summary>
-        /// Добавить в БД
-        /// </summary>
-        /// <param name="model">Модель</param>
-        /// <returns></returns>
-        public override ModelEntityModifyResult Insert(INomenclatureModel model)
-        {
-            try
-            {
-                if (model == null)
-                {
-                    return new ModelEntityModifyResult(ValidatorResources.CommonErrors_ModelIsNull);
-                }
-
-                var validateResult = _validator.Validate(model);
-                if (!validateResult.IsSucceeded)
-                {
-                    return new ModelEntityModifyResult(validateResult.Errors);
-                }
-
-                var customValidateResult = ValidationInternal(model);
-                if (!customValidateResult.IsSucceeded)
-                {
-                    return new ModelEntityModifyResult(customValidateResult.Errors);
-                }
-
-                var daoEntity = CreateInternal(model);
-
-                _repository.Insert(daoEntity);
-
-                _unitOfWork.Save();
-
-                if (model.Childs != null)
-                {
-                    foreach (var modelChild in model.Childs)
-                    {
-                        var childEnity = CreateInternal(modelChild);
-                        childEnity.ParentId = daoEntity.Id;
-                        _repository.Insert(childEnity);
-                    }
-                }
-
-                _unitOfWork.Save();
-
-                return new ModelEntityModifyResult(daoEntity.Id);
-            }
-            catch (Exception e)
-            {
-                var errorData = new ErrorData(e.Message);
-                return new ModelEntityModifyResult(errorData);
-            }
-        }
 
         /// <summary>
         /// Метод конвертации Dao объектa в бизнес-модель 
