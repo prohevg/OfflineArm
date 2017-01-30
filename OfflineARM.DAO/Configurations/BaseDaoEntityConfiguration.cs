@@ -1,8 +1,8 @@
-﻿using System.ComponentModel.DataAnnotations.Schema;
-using System.Data.Entity.Infrastructure.Annotations;
+﻿using System.Data.Entity.Infrastructure.Annotations;
 using System.Data.Entity.ModelConfiguration;
 using OfflineARM.DAO.Entities;
 using OfflineARM.DAO.Helpers;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace OfflineARM.DAO.Configurations
 {
@@ -24,6 +24,8 @@ namespace OfflineARM.DAO.Configurations
 
             ToTable(tableName);
             HasKey(p => p.Id);
+
+            
 
             Property(p => p.Id)
                 .IsRequired()
