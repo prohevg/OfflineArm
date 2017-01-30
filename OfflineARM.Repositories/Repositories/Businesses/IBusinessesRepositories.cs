@@ -1,6 +1,6 @@
-﻿using OfflineARM.Repositories.Repositories.Dictionaries.Interfaces;
+﻿using OfflineARM.Repositories.Repositories.Businesses.Interfaces;
 
-namespace OfflineARM.Repositories.Repositories.Dictionaries
+namespace OfflineARM.Repositories.Repositories.Businesses
 {
     /// <summary>
     /// Репозитарии бизнеса
@@ -11,5 +11,15 @@ namespace OfflineARM.Repositories.Repositories.Dictionaries
         /// Репозиторий Экспозиция  
         /// </summary>  
         IExpositionRepository ExpositionRepository { get; }
+
+        /// <summary>
+        /// Заказ
+        /// </summary>
+        IOrderRepository OrderRepository { get; }
+
+        /// <summary>
+        /// Спецификация заказа
+        /// </summary>
+        IOrderSpecificationRepository OrderSpecificationRepository { get; }
     }
 }

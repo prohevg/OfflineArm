@@ -1,11 +1,9 @@
 ﻿using System.Collections.Generic;
-using OfflineARM.Business.Dictionaries.Interfaces;
+using OfflineARM.Business.Businesses.Interfaces;
 using OfflineARM.Business.Models.Businesses;
 using OfflineARM.Business.Models.Businesses.Interfaces;
 using OfflineARM.Business.Models.Dictionaries;
-using OfflineARM.Business.Models.Dictionaries.Interfaces;
 using OfflineARM.Business.Validators.Businesses.Interfaces;
-using OfflineARM.Business.Validators.Dictionaries.Interfaces;
 using OfflineARM.DAO.Entities.Business;
 using OfflineARM.Repositories;
 using OfflineARM.Repositories.Repositories.Businesses.Interfaces;
@@ -13,9 +11,9 @@ using OfflineARM.Repositories.Repositories.Businesses.Interfaces;
 namespace OfflineARM.Business.Businesses
 {
     /// <summary>
-    /// Экспозиция
+    /// Спецификация заказа
     /// </summary>
-    public class ExpositionImp : BaseImp<IExpositionModel, IExpositionValidator, Exposition, IExpositionRepository>, IExpositionImp
+    public class OrderSpecificationImp : BaseImp<IOrderSpecificationModel, IOrderSpecificationValidator, OrderSpecification, IOrderSpecificationRepository>, IOrderSpecificationImp
     {
         #region Конструктор
 
@@ -24,33 +22,16 @@ namespace OfflineARM.Business.Businesses
         /// </summary>
         /// <param name="unitOfWork">UnitOfWork</param>
         /// <param name="validator">Валидатор</param>
-        public ExpositionImp(UnitOfWork unitOfWork, IExpositionValidator validator)
-            : base(unitOfWork, unitOfWork.BusinessesRepositories.ExpositionRepository, validator)
+        public OrderSpecificationImp(UnitOfWork unitOfWork, IOrderSpecificationValidator validator)
+            : base(unitOfWork, unitOfWork.BusinessesRepositories.OrderSpecificationRepository, validator)
         {
 
         }
 
         #endregion
 
-        #region IExpositionImp
+        #region IOrderSpecificationImp
 
-        /// <summary>
-        /// Найти по id номенклатуры
-        /// </summary>
-        /// <param name="nomenclatureId">id номенклатуры</param>
-        /// <returns></returns>
-        public List<IExpositionModel> GetByNomenclatureId(int nomenclatureId)
-        {
-            var result = new List<IExpositionModel>();
-            var list = _repository.GetByNomenclatureId(nomenclatureId);
-
-            foreach (var daoEntity in list)
-            {
-                result.Add(ConvertTo(daoEntity));
-            }
-
-            return result;
-        }
 
         #endregion
 
@@ -61,16 +42,29 @@ namespace OfflineARM.Business.Businesses
         /// </summary>
         /// <param name="daoEntity"></param>
         /// <returns></returns>
-        protected override IExpositionModel ConvertTo(Exposition daoEntity)
+        protected override IOrderSpecificationModel ConvertTo(OrderSpecification daoEntity)
         {
-            var model = new ExpositionModel
+            var model = new OrderSpecificationModel
             {
                 Id = daoEntity.Id,
                 Guid = daoEntity.Guid,
                 Price = daoEntity.Price,
                 Count = daoEntity.Count,
-                IsEnabled = daoEntity.IsEnabled
+                Stock = daoEntity.Stock,
+                DiscountProcent = daoEntity.DiscountProcent,
+                DiscountSum = daoEntity.DiscountSum,
+                //TotalSum = daoEntity.TotalSum,
             };
+
+            if (daoEntity.OrderId > 0)
+            {
+                model.Order = new OrderModel();
+
+                var daoNomencl = _unitOfWork.BusinessesRepositories.OrderRepository.GetById(daoEntity.OrderId);
+
+                model.Order.Id = daoNomencl.Id;
+                //model.Nomenclature.Name = daoNomencl.Name;
+            }
 
             if (daoEntity.NomenclatureId > 0)
             {
@@ -100,21 +94,29 @@ namespace OfflineARM.Business.Businesses
         /// </summary>
         /// <param name="model">Сущность</param>
         /// <returns></returns>
-        public override Exposition CreateInternal(IExpositionModel model)
+        public override OrderSpecification CreateInternal(IOrderSpecificationModel model)
         {
             if (model == null)
             {
                 return null;
             }
 
-            var result = new Exposition
+            var result = new OrderSpecification
             {
                 Id = model.Id,
                 Guid = model.Guid,
                 Price = model.Price,
                 Count = model.Count,
-                IsEnabled = model.IsEnabled
+                Stock = model.Stock,
+                TotalSum = model.TotalSum,
+                DiscountProcent = model.DiscountProcent,
+                DiscountSum = model.DiscountSum
             };
+
+            if (model.Order != null)
+            {
+                result.OrderId = model.Order.Id;
+            }
 
             if (model.Nomenclature != null)
             {
@@ -135,13 +137,21 @@ namespace OfflineARM.Business.Businesses
         /// <param name="model">Сущность</param>
         /// <param name="daoEntity">dao Сущность</param>
         /// <returns></returns>
-        public override Exposition UpdateDaoInternal(Exposition daoEntity, IExpositionModel model)
+        public override OrderSpecification UpdateDaoInternal(OrderSpecification daoEntity, IOrderSpecificationModel model)
         {
             daoEntity.Id = model.Id;
             daoEntity.Guid = model.Guid;
             daoEntity.Price = model.Price;
             daoEntity.Count = model.Count;
-            daoEntity.IsEnabled = model.IsEnabled;
+            daoEntity.Stock = model.Stock;
+            daoEntity.TotalSum = model.TotalSum;
+            daoEntity.DiscountProcent = model.DiscountProcent;
+            daoEntity.DiscountSum = model.DiscountSum;
+
+            if (model.Order != null)
+            {
+                daoEntity.OrderId = model.Order.Id;
+            }
 
             if (model.Nomenclature != null)
             {

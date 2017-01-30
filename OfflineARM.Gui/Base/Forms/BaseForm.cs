@@ -16,7 +16,8 @@ namespace OfflineARM.Gui.Base.Forms
         /// </summary>
         public BaseForm()
         {
-            
+            this.StartPosition = FormStartPosition.CenterScreen;
+            this.WindowState = FormWindowState.Maximized;
         }
 
         #endregion

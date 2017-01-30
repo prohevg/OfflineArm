@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Data.Entity.Validation;
 using OfflineARM.DAO;
+using OfflineARM.Repositories.Repositories.Businesses;
 using OfflineARM.Repositories.Repositories.Dictionaries;
 
 namespace OfflineARM.Repositories

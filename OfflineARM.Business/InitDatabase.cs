@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Threading.Tasks;
 using OfflineARM.Business.Dictionaries.Interfaces;
+using OfflineARM.Business.Models.Businesses;
 using OfflineARM.Business.Models.Dictionaries;
 using OfflineARM.Business.Models.Dictionaries.Interfaces;
 using OfflineARM.Repositories;

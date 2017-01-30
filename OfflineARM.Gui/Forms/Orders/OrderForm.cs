@@ -12,7 +12,6 @@ namespace OfflineARM.Gui.Forms.Orders
         public OrderForm()
         {
             InitializeComponent();
-            this.StartPosition = FormStartPosition.CenterScreen;
         }
 
         #region override

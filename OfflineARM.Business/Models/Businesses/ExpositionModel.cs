@@ -1,6 +1,7 @@
-﻿using OfflineARM.Business.Models.Dictionaries.Interfaces;
+﻿using OfflineARM.Business.Models.Businesses.Interfaces;
+using OfflineARM.Business.Models.Dictionaries.Interfaces;
 
-namespace OfflineARM.Business.Models.Dictionaries
+namespace OfflineARM.Business.Models.Businesses
 {
     /// <summary>
     /// Экспозиция

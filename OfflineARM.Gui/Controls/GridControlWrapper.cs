@@ -8,7 +8,9 @@ using DevExpress.XtraGrid.Views.Base;
 using DevExpress.XtraGrid.Views.Grid;
 using OfflineARM.Gui.Controls.EventArg;
 using System;
+using System.Drawing;
 using System.Windows.Forms;
+using DevExpress.XtraGrid.Views.Grid.ViewInfo;
 
 namespace OfflineARM.Gui.Controls
 {
@@ -69,7 +71,9 @@ namespace OfflineARM.Gui.Controls
             GridView.OptionsBehavior.ReadOnly = true;
             GridView.OptionsView.ShowGroupedColumns = false;
             GridView.OptionsView.ShowGroupPanel = false;
+
             GridView.CustomUnboundColumnData += GridView_CustomUnboundColumnData;
+            GridView.DoubleClick += GridView_DoubleClick;
 
             base.OnLoaded();
         }
@@ -126,21 +130,60 @@ namespace OfflineARM.Gui.Controls
         }
 
         /// <summary>
+        /// https://www.devexpress.com/Support/Center/Question/Details/A2934
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void GridView_DoubleClick(object sender, EventArgs e)
+        {
+            GridView view = (GridView)sender;
+            Point pt = view.GridControl.PointToClient(Control.MousePosition);
+            DoRowDoubleClick(view, pt);
+        }
+
+        /// <summary>
+        /// Обработчик двойного клика по строке
+        /// </summary>
+        /// <param name="view"></param>
+        /// <param name="pt"></param>
+        private void DoRowDoubleClick(GridView view, Point pt)
+        {
+            GridHitInfo info = view.CalcHitInfo(pt);
+            if (info.InRow)
+            {
+                var row = this.GridView.GetFocusedRow();
+                if (row != null)
+                {
+                    RaiseGridCommand(row);
+                }
+            }
+        }
+
+        /// <summary>
         /// Событие добавления
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
         private void AddButton_ButtonClick(object sender, ButtonPressedEventArgs e)
         {
-            if (OnGridCommand != null)
-            {
-                OnGridCommand(this, new GridCommandEventArgs(e.Button.Tag));
-            }
+            RaiseGridCommand(e.Button.Tag);
         }
 
         #endregion
 
         #region private
+
+        /// <summary>
+        /// Вбросить событие
+        /// </summary>
+        /// <param name="value"></param>
+        private void RaiseGridCommand(object value)
+        {
+            if (OnGridCommand != null)
+            {
+                OnGridCommand(this, new GridCommandEventArgs(value));
+            }
+        }
 
         /// <summary>
         /// Добавить столбец с кнопкой

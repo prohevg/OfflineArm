@@ -1,12 +1,13 @@
 ﻿using System;
-using System.Collections.Generic;
+using OfflineARM.Business.Models.Businesses.Interfaces;
+using OfflineARM.Business.Models.Dictionaries.Interfaces;
 
-namespace OfflineARM.DAO.Entities.Business
+namespace OfflineARM.Business.Models.Businesses
 {
     /// <summary>
     /// Заказ
     /// </summary>
-    public class Order : BaseDaoEntity
+    public class OrderModel : BaseBusninessModel, IOrderModel
     {
         /// <summary>
         ///  Номер заказа
@@ -66,15 +67,6 @@ namespace OfflineARM.DAO.Entities.Business
         /// Дата отгрузки
         /// </summary>
         public decimal Summa
-        {
-            get;
-            set;
-        }
-
-        /// <summary>
-        /// Спецификация заказа
-        /// </summary>
-        public virtual ICollection<OrderSpecification> OrderSpecifications
         {
             get;
             set;

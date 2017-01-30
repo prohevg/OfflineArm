@@ -19,6 +19,12 @@ namespace OfflineARM.DAO.Configurations.Business
                 .WithMany(t => t.OrderSpecifications)
                 .HasForeignKey(m => m.NomenclatureId)
                 .WillCascadeOnDelete(false);
+
+
+            HasRequired(m => m.Order)
+                .WithMany(t => t.OrderSpecifications)
+                .HasForeignKey(m => m.OrderId)
+                .WillCascadeOnDelete(false);
         }
 
         #endregion

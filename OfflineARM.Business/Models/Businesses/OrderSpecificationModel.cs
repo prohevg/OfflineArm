@@ -1,26 +1,18 @@
 ﻿using System;
-using OfflineARM.DAO.Entities.Dictionaries;
+using OfflineARM.Business.Models.Businesses.Interfaces;
+using OfflineARM.Business.Models.Dictionaries.Interfaces;
 
-namespace OfflineARM.DAO.Entities.Business
+namespace OfflineARM.Business.Models.Businesses
 {
     /// <summary>
     /// Спецификация заказа
     /// </summary>
-    public class OrderSpecification : BaseDaoEntity
+    public class OrderSpecificationModel : BaseBusninessModel, IOrderSpecificationModel
     {
         /// <summary>
         /// Заказ
         /// </summary>
-        public int OrderId
-        {
-            get;
-            set;
-        }
-
-        /// <summary>
-        /// Заказ
-        /// </summary>
-        public Order Order
+        public IOrderModel Order
         {
             get;
             set;
@@ -29,34 +21,16 @@ namespace OfflineARM.DAO.Entities.Business
         /// <summary>
         /// Номенклатура
         /// </summary>
-        public int NomenclatureId
+        public INomenclatureModel Nomenclature
         {
             get;
             set;
         }
 
-        /// <summary>
-        /// Номенклатура
-        /// </summary>
-        public Nomenclature Nomenclature
-        {
-            get;
-            set;
-        }
-
-        /// <summary>
+         /// <summary>
         /// Характеристика
         /// </summary>
-        public int CharacteristicId
-        {
-            get;
-            set;
-        }
-
-        /// <summary>
-        /// Характеристика
-        /// </summary>
-        public Characteristic Characteristic
+        public ICharacteristicModel Characteristic
         {
             get;
             set;
@@ -112,8 +86,10 @@ namespace OfflineARM.DAO.Entities.Business
         /// </summary>
         public decimal TotalSum
         {
-            get;
-            set;
+            get
+            {
+                return Count * Price;
+            }
         }
     }
 }

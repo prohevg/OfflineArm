@@ -3,9 +3,9 @@
 namespace OfflineARM.Business.Validators.Businesses.Interfaces
 {
     /// <summary>
-    /// Валидатор Экспозиция
+    /// Валидатор Заказ
     /// </summary>
-    public interface IExpositionValidator : IValidator<IExpositionModel>
+    public interface IOrderValidator : IValidator<IOrderModel>
     {
 
     }

@@ -1,10 +1,10 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
 using OfflineARM.DAO;
-using OfflineARM.Repositories.Repositories.Dictionaries.Interfaces;
 using OfflineARM.DAO.Entities.Business;
+using OfflineARM.Repositories.Repositories.Businesses.Interfaces;
 
-namespace OfflineARM.Repositories.Repositories.Dictionaries
+namespace OfflineARM.Repositories.Repositories.Businesses
 {
     /// <summary>
     /// Экспозиция

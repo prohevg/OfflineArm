@@ -178,4 +178,28 @@
   <data name="OrderSpecificControl_GridExpositionCaption_Price" xml:space="preserve">
     <value>Цена</value>
   </data>
+  <data name="OrderSpecificControl_OrderSpecifications_Characteristic" xml:space="preserve">
+    <value>Характеристика</value>
+  </data>
+  <data name="OrderSpecificControl_OrderSpecifications_Count" xml:space="preserve">
+    <value>Количество</value>
+  </data>
+  <data name="OrderSpecificControl_OrderSpecifications_DiscountProcent" xml:space="preserve">
+    <value>Скидка</value>
+  </data>
+  <data name="OrderSpecificControl_OrderSpecifications_DiscountSum" xml:space="preserve">
+    <value>Сумма скидки</value>
+  </data>
+  <data name="OrderSpecificControl_OrderSpecifications_Nomenclature" xml:space="preserve">
+    <value>Номенклатура</value>
+  </data>
+  <data name="OrderSpecificControl_OrderSpecifications_Price" xml:space="preserve">
+    <value>Цена</value>
+  </data>
+  <data name="OrderSpecificControl_OrderSpecifications_TotalSum" xml:space="preserve">
+    <value>Сумма</value>
+  </data>
+  <data name="OrderSpecificControl_OrderSpecifications_DeleteFromOrder" xml:space="preserve">
+    <value>Удалить из заказа</value>
+  </data>
 </root>

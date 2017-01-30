@@ -102,8 +102,12 @@
     <Compile Include="Base\Controls\BaseControl.cs">
       <SubType>UserControl</SubType>
     </Compile>
+    <Compile Include="Base\Controls\BasePartControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
     <Compile Include="Base\Controls\IBaseCommandControl.cs" />
     <Compile Include="Base\Controls\IBaseControl.cs" />
+    <Compile Include="Base\Controls\IBasePartControl.cs" />
     <Compile Include="Base\Forms\BaseForm.cs">
       <SubType>Form</SubType>
     </Compile>

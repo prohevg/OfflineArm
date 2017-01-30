@@ -1,7 +1,7 @@
 ﻿using System.Collections.Generic;
 using OfflineARM.DAO.Entities.Business;
 
-namespace OfflineARM.Repositories.Repositories.Dictionaries.Interfaces
+namespace OfflineARM.Repositories.Repositories.Businesses.Interfaces
 {
     /// <summary>
     /// Экспозиция

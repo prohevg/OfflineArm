@@ -4,9 +4,9 @@ using OfflineARM.Business.Validators.Businesses.Interfaces;
 namespace OfflineARM.Business.Validators.Businesses
 {
     /// <summary>
-    /// Валидатор Экспозиция
+    /// Валидатор Заказ
     /// </summary>
-    public class ExpositionValidator : IExpositionValidator
+    public class OrderValidator : IOrderValidator
     {
         #region IValidator
 
@@ -15,7 +15,7 @@ namespace OfflineARM.Business.Validators.Businesses
         /// </summary>
         /// <param name="element"></param>
         /// <returns></returns>
-        public ValidationResult Validate(IExpositionModel element)
+        public ValidationResult Validate(IOrderModel element)
         {
             //if (string.IsNullOrEmpty(element.Name))
             //{

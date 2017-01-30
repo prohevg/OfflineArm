@@ -1,17 +1,17 @@
 ﻿using System;
-using System.Collections.Generic;
+using OfflineARM.Business.Models.Dictionaries.Interfaces;
 
-namespace OfflineARM.DAO.Entities.Business
+namespace OfflineARM.Business.Models.Businesses.Interfaces
 {
     /// <summary>
     /// Заказ
     /// </summary>
-    public class Order : BaseDaoEntity
+    public interface IOrderModel : IBaseBusninessModel
     {
         /// <summary>
         ///  Номер заказа
         /// </summary>
-        public string Number
+        string Number
         {
             get;
             set;
@@ -20,7 +20,7 @@ namespace OfflineARM.DAO.Entities.Business
         /// <summary>
         /// Статус заказа
         /// </summary>
-        public string OrderStatus
+        string OrderStatus
         {
             get;
             set;
@@ -29,7 +29,7 @@ namespace OfflineARM.DAO.Entities.Business
         /// <summary>
         /// Дата создания заказа
         /// </summary>
-        public DateTime DateCreate
+        DateTime DateCreate
         {
             get;
             set;
@@ -38,7 +38,7 @@ namespace OfflineARM.DAO.Entities.Business
         /// <summary>
         /// Ответственный
         /// </summary>
-        public Guid Responsible
+        Guid Responsible
         {
             get;
             set;
@@ -47,7 +47,7 @@ namespace OfflineARM.DAO.Entities.Business
         /// <summary>
         /// Самовывоз
         /// </summary>
-        public bool IsSelf
+        bool IsSelf
         {
             get;
             set;
@@ -56,7 +56,7 @@ namespace OfflineARM.DAO.Entities.Business
         /// <summary>
         /// Дата отгрузки
         /// </summary>
-        public DateTime DateShipping
+        DateTime DateShipping
         {
             get;
             set;
@@ -65,16 +65,7 @@ namespace OfflineARM.DAO.Entities.Business
         /// <summary>
         /// Дата отгрузки
         /// </summary>
-        public decimal Summa
-        {
-            get;
-            set;
-        }
-
-        /// <summary>
-        /// Спецификация заказа
-        /// </summary>
-        public virtual ICollection<OrderSpecification> OrderSpecifications
+        decimal Summa
         {
             get;
             set;

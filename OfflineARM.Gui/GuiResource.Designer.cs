@@ -206,6 +206,78 @@ namespace OfflineARM.Gui {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Характеристика.
+        /// </summary>
+        internal static string OrderSpecificControl_OrderSpecifications_Characteristic {
+            get {
+                return ResourceManager.GetString("OrderSpecificControl_OrderSpecifications_Characteristic", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Количество.
+        /// </summary>
+        internal static string OrderSpecificControl_OrderSpecifications_Count {
+            get {
+                return ResourceManager.GetString("OrderSpecificControl_OrderSpecifications_Count", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Удалить из заказа.
+        /// </summary>
+        internal static string OrderSpecificControl_OrderSpecifications_DeleteFromOrder {
+            get {
+                return ResourceManager.GetString("OrderSpecificControl_OrderSpecifications_DeleteFromOrder", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Скидка.
+        /// </summary>
+        internal static string OrderSpecificControl_OrderSpecifications_DiscountProcent {
+            get {
+                return ResourceManager.GetString("OrderSpecificControl_OrderSpecifications_DiscountProcent", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Сумма скидки.
+        /// </summary>
+        internal static string OrderSpecificControl_OrderSpecifications_DiscountSum {
+            get {
+                return ResourceManager.GetString("OrderSpecificControl_OrderSpecifications_DiscountSum", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Номенклатура.
+        /// </summary>
+        internal static string OrderSpecificControl_OrderSpecifications_Nomenclature {
+            get {
+                return ResourceManager.GetString("OrderSpecificControl_OrderSpecifications_Nomenclature", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Цена.
+        /// </summary>
+        internal static string OrderSpecificControl_OrderSpecifications_Price {
+            get {
+                return ResourceManager.GetString("OrderSpecificControl_OrderSpecifications_Price", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Сумма.
+        /// </summary>
+        internal static string OrderSpecificControl_OrderSpecifications_TotalSum {
+            get {
+                return ResourceManager.GetString("OrderSpecificControl_OrderSpecifications_TotalSum", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Доставка.
         /// </summary>
         internal static string OrderSpecificControl_spNext {

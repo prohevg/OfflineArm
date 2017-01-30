@@ -67,7 +67,11 @@
   <ItemGroup>
     <Compile Include="Autorizations\AutorizationImp.cs" />
     <Compile Include="Autorizations\IAutorizationImp.cs" />
+    <Compile Include="Businesses\OrderSpecificationImp.cs" />
+    <Compile Include="Businesses\OrderImp.cs" />
     <Compile Include="Businesses\ExpositionImp.cs" />
+    <Compile Include="Businesses\Interfaces\IOrderSpecificationImp.cs" />
+    <Compile Include="Businesses\Interfaces\IOrderImp.cs" />
     <Compile Include="Businesses\Interfaces\IExpositionImp.cs" />
     <Compile Include="Dictionaries\Interfaces\ICharacteristicImp.cs" />
     <Compile Include="Dictionaries\Interfaces\INomenclatureImp.cs" />
@@ -81,7 +85,11 @@
     <Compile Include="Loggers\Logger.cs" />
     <Compile Include="ModelEntityModifyResult.cs" />
     <Compile Include="Models\BaseBusninessModel.cs" />
+    <Compile Include="Models\Businesses\Interfaces\IOrderSpecificationModel.cs" />
+    <Compile Include="Models\Businesses\OrderSpecificationModel.cs" />
+    <Compile Include="Models\Businesses\OrderModel.cs" />
     <Compile Include="Models\Businesses\ExpositionModel.cs" />
+    <Compile Include="Models\Businesses\Interfaces\IOrderModel.cs" />
     <Compile Include="Models\Businesses\Interfaces\IExpositionModel.cs" />
     <Compile Include="Models\Dictionaries\CharacteristicModel.cs" />
     <Compile Include="Models\Dictionaries\Interfaces\ICharacteristicModel.cs" />
@@ -90,7 +98,11 @@
     <Compile Include="Models\IBaseBusninessModel.cs" />
     <Compile Include="PagedResult.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Validators\Businesses\Interfaces\IOrderSpecificationValidator.cs" />
+    <Compile Include="Validators\Businesses\OrderSpecificationValidator.cs" />
+    <Compile Include="Validators\Businesses\OrderValidator.cs" />
     <Compile Include="Validators\Businesses\ExpositionValidator.cs" />
+    <Compile Include="Validators\Businesses\Interfaces\IOrderValidator.cs" />
     <Compile Include="Validators\Businesses\Interfaces\IExpositionValidator.cs" />
     <Compile Include="Validators\Dictionaries\Interfaces\ICharacteristicValidator.cs" />
     <Compile Include="Validators\Dictionaries\Interfaces\INomenclatureValidator.cs" />

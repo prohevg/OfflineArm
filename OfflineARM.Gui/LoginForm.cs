@@ -31,6 +31,8 @@ namespace OfflineARM.Gui
         {
             InitializeComponent();
 
+            this.WindowState = FormWindowState.Normal;
+
             _autorizationImp = autorizationImp;
 
 #if DEBUG

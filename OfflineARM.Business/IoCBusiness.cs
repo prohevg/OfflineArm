@@ -1,7 +1,11 @@
 ﻿using Ninject;
 using OfflineARM.Business.Autorizations;
+using OfflineARM.Business.Businesses;
+using OfflineARM.Business.Businesses.Interfaces;
 using OfflineARM.Business.Dictionaries;
 using OfflineARM.Business.Dictionaries.Interfaces;
+using OfflineARM.Business.Validators.Businesses;
+using OfflineARM.Business.Validators.Businesses.Interfaces;
 using OfflineARM.Business.Validators.Dictionaries;
 using OfflineARM.Business.Validators.Dictionaries.Interfaces;
 
@@ -69,6 +73,12 @@ namespace OfflineARM.Business
 
             container.Bind<IExpositionImp>().To<ExpositionImp>();
             container.Bind<IExpositionValidator>().To<ExpositionValidator>();
+
+            container.Bind<IOrderImp>().To<OrderImp>();
+            container.Bind<IOrderValidator>().To<OrderValidator>();
+
+            container.Bind<IOrderSpecificationImp>().To<OrderSpecificationImp>();
+            container.Bind<IOrderSpecificationValidator>().To<OrderSpecificationValidator>();
         }
 
         #endregion

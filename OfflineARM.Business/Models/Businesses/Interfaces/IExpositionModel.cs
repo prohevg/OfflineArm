@@ -1,10 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using OfflineARM.Business.Models.Dictionaries.Interfaces;
 
-namespace OfflineARM.Business.Models.Dictionaries.Interfaces
+namespace OfflineARM.Business.Models.Businesses.Interfaces
 {
     /// <summary>
     /// Экспозиция

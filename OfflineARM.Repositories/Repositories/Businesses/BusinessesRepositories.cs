@@ -1,7 +1,7 @@
 ﻿using OfflineARM.DAO;
-using OfflineARM.Repositories.Repositories.Dictionaries.Interfaces;
+using OfflineARM.Repositories.Repositories.Businesses.Interfaces;
 
-namespace OfflineARM.Repositories.Repositories.Dictionaries
+namespace OfflineARM.Repositories.Repositories.Businesses
 {
     /// <summary>
     /// Репозитарии бизнеса
@@ -19,6 +19,16 @@ namespace OfflineARM.Repositories.Repositories.Dictionaries
         /// Репозиторий Экспозиция
         /// </summary>
         private IExpositionRepository _expositionRepository;
+
+        /// <summary>
+        /// Заказ
+        /// </summary>
+        private IOrderRepository _orderRepository;
+
+        /// <summary>
+        /// Спецификация заказа
+        /// </summary>
+        private IOrderSpecificationRepository _orderSpecificationRepository;
 
         #endregion
 
@@ -49,7 +59,38 @@ namespace OfflineARM.Repositories.Repositories.Dictionaries
                 }
                 return _expositionRepository;
             }
-        }       
+        }
+
+        /// <summary>  
+        /// Репозиторий Заказ  
+        /// </summary>  
+        public IOrderRepository OrderRepository
+        {
+            get
+            {
+                if (this._orderRepository == null)
+                {
+                    this._orderRepository = new OrderRepository(_context);
+                }
+                return _orderRepository;
+            }
+        }
+
+        /// <summary>  
+        /// Репозиторий Спецификация заказа  
+        /// </summary>  
+        public IOrderSpecificationRepository OrderSpecificationRepository
+        {
+            get
+            {
+                if (this._orderSpecificationRepository == null)
+                {
+                    this._orderSpecificationRepository = new OrderSpecificationRepository(_context);
+                }
+                return _orderSpecificationRepository;
+            }
+        }
+
 
         #endregion
     }

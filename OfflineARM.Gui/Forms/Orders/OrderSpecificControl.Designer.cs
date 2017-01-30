@@ -31,40 +31,34 @@
             this.tlpSpecific = new System.Windows.Forms.TableLayoutPanel();
             this.tpSpecificDevideTree = new System.Windows.Forms.TableLayoutPanel();
             this.tlpTableDevided = new System.Windows.Forms.TableLayoutPanel();
-            this.gcNomenclatureSelected = new DevExpress.XtraGrid.GridControl();
-            this.gridView2 = new DevExpress.XtraGrid.Views.Grid.GridView();
-            this.gcNomenclature = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.gcCharacteristic = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.gcSelectedPrice = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.gcDiscount = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.gcDiscountSum = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.gcPriceDiscount = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.gcCount = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.gcSum = new DevExpress.XtraGrid.Columns.GridColumn();
             this.tbChoiseCharacteristics = new DevExpress.XtraTab.XtraTabControl();
             this.tpOrderCharacteristics = new DevExpress.XtraTab.XtraTabPage();
             this.gcNomenclatureCharactristics = new OfflineARM.Gui.Controls.GridControlWrapper();
             this.gridView1 = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.tpExpositionCharacteristics = new DevExpress.XtraTab.XtraTabPage();
-            this.lcOrderHeader = new DevExpress.XtraEditors.LabelControl();
-            this.treeList = new OfflineARM.Gui.Controls.TreeListWrapper();
-            this.spNext = new DevExpress.XtraEditors.SimpleButton();
             this.gcExposition = new OfflineARM.Gui.Controls.GridControlWrapper();
             this.gridView3 = new DevExpress.XtraGrid.Views.Grid.GridView();
+            this.lcOrderHeader = new DevExpress.XtraEditors.LabelControl();
+            this.gcOrderSpecifications = new OfflineARM.Gui.Controls.GridControlWrapper();
+            this.gridView2 = new DevExpress.XtraGrid.Views.Grid.GridView();
+            this.treeList = new OfflineARM.Gui.Controls.TreeListWrapper();
+            this.spNext = new DevExpress.XtraEditors.SimpleButton();
+            this.gridView4 = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.tlpSpecific.SuspendLayout();
             this.tpSpecificDevideTree.SuspendLayout();
             this.tlpTableDevided.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.gcNomenclatureSelected)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gridView2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.tbChoiseCharacteristics)).BeginInit();
             this.tbChoiseCharacteristics.SuspendLayout();
             this.tpOrderCharacteristics.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gcNomenclatureCharactristics)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).BeginInit();
             this.tpExpositionCharacteristics.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.treeList)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gcExposition)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView3)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gcOrderSpecifications)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridView2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.treeList)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridView4)).BeginInit();
             this.SuspendLayout();
             // 
             // tlpSpecific
@@ -106,9 +100,9 @@
             // 
             this.tlpTableDevided.ColumnCount = 1;
             this.tlpTableDevided.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tlpTableDevided.Controls.Add(this.gcNomenclatureSelected, 0, 2);
             this.tlpTableDevided.Controls.Add(this.tbChoiseCharacteristics, 0, 0);
             this.tlpTableDevided.Controls.Add(this.lcOrderHeader, 0, 1);
+            this.tlpTableDevided.Controls.Add(this.gcOrderSpecifications, 0, 2);
             this.tlpTableDevided.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tlpTableDevided.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.tlpTableDevided.Location = new System.Drawing.Point(180, 3);
@@ -119,96 +113,6 @@
             this.tlpTableDevided.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tlpTableDevided.Size = new System.Drawing.Size(492, 403);
             this.tlpTableDevided.TabIndex = 1;
-            // 
-            // gcNomenclatureSelected
-            // 
-            this.gcNomenclatureSelected.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.gcNomenclatureSelected.Location = new System.Drawing.Point(3, 229);
-            this.gcNomenclatureSelected.MainView = this.gridView2;
-            this.gcNomenclatureSelected.Name = "gcNomenclatureSelected";
-            this.gcNomenclatureSelected.Size = new System.Drawing.Size(486, 171);
-            this.gcNomenclatureSelected.TabIndex = 1;
-            this.gcNomenclatureSelected.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
-            this.gridView2});
-            // 
-            // gridView2
-            // 
-            this.gridView2.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
-            this.gcNomenclature,
-            this.gcCharacteristic,
-            this.gcSelectedPrice,
-            this.gcDiscount,
-            this.gcDiscountSum,
-            this.gcPriceDiscount,
-            this.gcCount,
-            this.gcSum});
-            this.gridView2.GridControl = this.gcNomenclatureSelected;
-            this.gridView2.Name = "gridView2";
-            this.gridView2.OptionsView.ShowGroupPanel = false;
-            // 
-            // gcNomenclature
-            // 
-            this.gcNomenclature.Caption = "Номенклатура";
-            this.gcNomenclature.FieldName = "Nomenclature";
-            this.gcNomenclature.Name = "gcNomenclature";
-            this.gcNomenclature.Visible = true;
-            this.gcNomenclature.VisibleIndex = 0;
-            // 
-            // gcCharacteristic
-            // 
-            this.gcCharacteristic.Caption = "Характеристика";
-            this.gcCharacteristic.FieldName = "Characteristic";
-            this.gcCharacteristic.Name = "gcCharacteristic";
-            this.gcCharacteristic.Visible = true;
-            this.gcCharacteristic.VisibleIndex = 1;
-            // 
-            // gcSelectedPrice
-            // 
-            this.gcSelectedPrice.Caption = "Цена";
-            this.gcSelectedPrice.FieldName = "Price";
-            this.gcSelectedPrice.Name = "gcSelectedPrice";
-            this.gcSelectedPrice.Visible = true;
-            this.gcSelectedPrice.VisibleIndex = 2;
-            // 
-            // gcDiscount
-            // 
-            this.gcDiscount.Caption = "Скидка";
-            this.gcDiscount.FieldName = "Discount";
-            this.gcDiscount.Name = "gcDiscount";
-            this.gcDiscount.Visible = true;
-            this.gcDiscount.VisibleIndex = 3;
-            // 
-            // gcDiscountSum
-            // 
-            this.gcDiscountSum.Caption = "Сумма скидки";
-            this.gcDiscountSum.FieldName = "DiscountSum";
-            this.gcDiscountSum.Name = "gcDiscountSum";
-            this.gcDiscountSum.Visible = true;
-            this.gcDiscountSum.VisibleIndex = 4;
-            // 
-            // gcPriceDiscount
-            // 
-            this.gcPriceDiscount.Caption = "Цена со скидкой";
-            this.gcPriceDiscount.FieldName = "PriceDiscount";
-            this.gcPriceDiscount.Name = "gcPriceDiscount";
-            this.gcPriceDiscount.Visible = true;
-            this.gcPriceDiscount.VisibleIndex = 5;
-            // 
-            // gcCount
-            // 
-            this.gcCount.Caption = "Количество";
-            this.gcCount.FieldName = "Count";
-            this.gcCount.Name = "gcCount";
-            this.gcCount.Visible = true;
-            this.gcCount.VisibleIndex = 6;
-            // 
-            // gcSum
-            // 
-            this.gcSum.Caption = "Сумма";
-            this.gcSum.FieldName = "Sum";
-            this.gcSum.Name = "gcSum";
-            this.gcSum.Visible = true;
-            this.gcSum.VisibleIndex = 7;
             // 
             // tbChoiseCharacteristics
             // 
@@ -254,6 +158,24 @@
             this.tpExpositionCharacteristics.Size = new System.Drawing.Size(480, 142);
             this.tpExpositionCharacteristics.Text = "Экспозиция";
             // 
+            // gcExposition
+            // 
+            this.gcExposition.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.gcExposition.Location = new System.Drawing.Point(0, 0);
+            this.gcExposition.MainView = this.gridView3;
+            this.gcExposition.Name = "gcExposition";
+            this.gcExposition.Size = new System.Drawing.Size(480, 142);
+            this.gcExposition.TabIndex = 0;
+            this.gcExposition.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
+            this.gridView3});
+            // 
+            // gridView3
+            // 
+            this.gridView3.GridControl = this.gcExposition;
+            this.gridView3.Name = "gridView3";
+            this.gridView3.OptionsBehavior.ReadOnly = true;
+            this.gridView3.OptionsView.ShowGroupPanel = false;
+            // 
             // lcOrderHeader
             // 
             this.lcOrderHeader.Appearance.Font = new System.Drawing.Font("Tahoma", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
@@ -263,6 +185,24 @@
             this.lcOrderHeader.Size = new System.Drawing.Size(217, 23);
             this.lcOrderHeader.TabIndex = 3;
             this.lcOrderHeader.Text = "Спецификация заказа";
+            // 
+            // gcOrderSpecifications
+            // 
+            this.gcOrderSpecifications.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.gcOrderSpecifications.Location = new System.Drawing.Point(3, 229);
+            this.gcOrderSpecifications.MainView = this.gridView2;
+            this.gcOrderSpecifications.Name = "gcOrderSpecifications";
+            this.gcOrderSpecifications.Size = new System.Drawing.Size(486, 171);
+            this.gcOrderSpecifications.TabIndex = 4;
+            this.gcOrderSpecifications.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
+            this.gridView2});
+            // 
+            // gridView2
+            // 
+            this.gridView2.GridControl = this.gcOrderSpecifications;
+            this.gridView2.Name = "gridView2";
+            this.gridView2.OptionsBehavior.ReadOnly = true;
+            this.gridView2.OptionsView.ShowGroupPanel = false;
             // 
             // treeList
             // 
@@ -284,23 +224,9 @@
             this.spNext.TabIndex = 1;
             this.spNext.Text = "spNext";
             // 
-            // gcExposition
+            // gridView4
             // 
-            this.gcExposition.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.gcExposition.Location = new System.Drawing.Point(0, 0);
-            this.gcExposition.MainView = this.gridView3;
-            this.gcExposition.Name = "gcExposition";
-            this.gcExposition.Size = new System.Drawing.Size(480, 142);
-            this.gcExposition.TabIndex = 0;
-            this.gcExposition.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
-            this.gridView3});
-            // 
-            // gridView3
-            // 
-            this.gridView3.GridControl = this.gcExposition;
-            this.gridView3.Name = "gridView3";
-            this.gridView3.OptionsBehavior.ReadOnly = true;
-            this.gridView3.OptionsView.ShowGroupPanel = false;
+            this.gridView4.Name = "gridView4";
             // 
             // OrderSpecificControl
             // 
@@ -313,17 +239,18 @@
             this.tpSpecificDevideTree.ResumeLayout(false);
             this.tlpTableDevided.ResumeLayout(false);
             this.tlpTableDevided.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.gcNomenclatureSelected)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gridView2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.tbChoiseCharacteristics)).EndInit();
             this.tbChoiseCharacteristics.ResumeLayout(false);
             this.tpOrderCharacteristics.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.gcNomenclatureCharactristics)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).EndInit();
             this.tpExpositionCharacteristics.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.treeList)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gcExposition)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gcOrderSpecifications)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridView2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.treeList)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridView4)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -332,26 +259,19 @@
 
         private System.Windows.Forms.TableLayoutPanel tlpSpecific;
         private System.Windows.Forms.TableLayoutPanel tpSpecificDevideTree;
-        private System.Windows.Forms.TableLayoutPanel tlpTableDevided;
-        private DevExpress.XtraGrid.GridControl gcNomenclatureSelected;
-        private DevExpress.XtraGrid.Views.Grid.GridView gridView2;
-        private DevExpress.XtraTab.XtraTabControl tbChoiseCharacteristics;
-        private DevExpress.XtraTab.XtraTabPage tpExpositionCharacteristics;
-        private DevExpress.XtraTab.XtraTabPage tpOrderCharacteristics;
-        private DevExpress.XtraEditors.LabelControl lcOrderHeader;
         private DevExpress.XtraEditors.SimpleButton spNext;
-        private DevExpress.XtraGrid.Columns.GridColumn gcNomenclature;
-        private DevExpress.XtraGrid.Columns.GridColumn gcCharacteristic;
-        private DevExpress.XtraGrid.Columns.GridColumn gcSelectedPrice;
-        private DevExpress.XtraGrid.Columns.GridColumn gcDiscount;
-        private DevExpress.XtraGrid.Columns.GridColumn gcDiscountSum;
-        private DevExpress.XtraGrid.Columns.GridColumn gcPriceDiscount;
-        private DevExpress.XtraGrid.Columns.GridColumn gcCount;
-        private DevExpress.XtraGrid.Columns.GridColumn gcSum;
         private Controls.TreeListWrapper treeList;
+        private System.Windows.Forms.TableLayoutPanel tlpTableDevided;
+        private DevExpress.XtraTab.XtraTabControl tbChoiseCharacteristics;
+        private DevExpress.XtraTab.XtraTabPage tpOrderCharacteristics;
         private Controls.GridControlWrapper gcNomenclatureCharactristics;
         private DevExpress.XtraGrid.Views.Grid.GridView gridView1;
+        private DevExpress.XtraTab.XtraTabPage tpExpositionCharacteristics;
         private Controls.GridControlWrapper gcExposition;
         private DevExpress.XtraGrid.Views.Grid.GridView gridView3;
+        private DevExpress.XtraEditors.LabelControl lcOrderHeader;
+        private Controls.GridControlWrapper gcOrderSpecifications;
+        private DevExpress.XtraGrid.Views.Grid.GridView gridView2;
+        private DevExpress.XtraGrid.Views.Grid.GridView gridView4;
     }
 }

@@ -11,7 +11,7 @@ namespace OfflineARM.Gui.Forms.Orders
     /// </summary>
     public partial class OrderListControl : BaseCommandControl, IOrderListControl
     {
-        #region Конструктор
+        #region поля и свойства
 
         /// <summary>
         /// Форма заказа

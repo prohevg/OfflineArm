@@ -1,16 +1,15 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Windows.Forms;
-using DevExpress.XtraEditors.Controls;
-using DevExpress.XtraGrid.Views.Base;
 using DevExpress.XtraTreeList;
 using OfflineARM.Business;
 using OfflineARM.Business.Dictionaries.Interfaces;
 using OfflineARM.Business.Models.Dictionaries.Interfaces;
 using System.Linq;
 using DevExpress.Data;
-using DevExpress.XtraEditors.Repository;
-using DevExpress.XtraEditors;
+using DevExpress.XtraEditors.Controls;
+using OfflineARM.Business.Models.Businesses;
+using OfflineARM.Business.Models.Businesses.Interfaces;
+using OfflineARM.Gui.Base.Controls;
 using OfflineARM.Gui.Controls.EventArg;
 
 namespace OfflineARM.Gui.Forms.Orders
@@ -18,7 +17,7 @@ namespace OfflineARM.Gui.Forms.Orders
     /// <summary>
     /// Спецификация товара
     /// </summary>
-    public partial class OrderSpecificControl : UserControl
+    public partial class OrderSpecificControl : BasePartControl
     {
         #region поля и свойства
 
@@ -37,8 +36,10 @@ namespace OfflineARM.Gui.Forms.Orders
         /// </summary>
         private readonly IExpositionImp _expositionImp = IoCBusiness.Instance.Get<IExpositionImp>();
 
-
-        List<OrderTemp> _orders = new List<OrderTemp>();
+        /// <summary>
+        /// Список 
+        /// </summary>
+        private readonly List<IOrderSpecificationModel> _orderSpecifications = new List<IOrderSpecificationModel>();
 
         #endregion
 
@@ -54,6 +55,8 @@ namespace OfflineARM.Gui.Forms.Orders
             tpExpositionCharacteristics.Text = GuiResource.OrderSpecificControl_ExpositionCharacteristics;
             tpOrderCharacteristics.Text = GuiResource.OrderSpecificControl_tpOrderCharacteristics;
             spNext.Text = GuiResource.OrderSpecificControl_spNext;
+
+            Initialization();
         }
         
         #endregion
@@ -68,12 +71,29 @@ namespace OfflineARM.Gui.Forms.Orders
         {
             base.OnLoad(e);
 
-            FillNomenclatureTree();
+            LoadNomenclatureTree();
+            LoadExpositions();
+        }
 
-            NomenclatureCharacteristicColumns();
+        #endregion
 
-            ExpositionColumns();
-            FillExpositions();
+        #region override
+
+        /// <summary>
+        /// Инициализация контрола
+        /// </summary>
+        public override void Initialization()
+        {
+            if (_isInitialization)
+            {
+                return;
+            }
+            _isInitialization = true;
+
+            InitializationNomenclatureTree();
+            InitializationNomenclatureCharacteristic();
+            InitializationExposition();
+            InitializationOrderSpecifications();
         }
 
         #endregion
@@ -81,9 +101,9 @@ namespace OfflineARM.Gui.Forms.Orders
         #region Fill Nomenclature Tree
 
         /// <summary>
-        /// Заполнение дерева номенклатуры
+        /// Инициализация дерева номенклатуры
         /// </summary>
-        private void FillNomenclatureTree()
+        private void InitializationNomenclatureTree()
         {
             treeList.BeginUpdate();
             treeList.AddColumn(GuiResource.OrderSpecificControl_TreeNomenclatureCaption_Name, "Name");
@@ -91,6 +111,13 @@ namespace OfflineARM.Gui.Forms.Orders
 
             treeList.SetExpandActions(GetNomenclatures, GetNomenclatureData, GetNomenclatureHasChild);
             treeList.FocusedNodeChanged += TreeList_FocusedNodeChanged;
+        }
+
+        /// <summary>
+        /// Заполнение дерева номенклатуры
+        /// </summary>
+        private void LoadNomenclatureTree()
+        {
             treeList.LoadNodes();
         }
 
@@ -151,7 +178,7 @@ namespace OfflineARM.Gui.Forms.Orders
         /// <param name="e"></param>
         private void TreeList_FocusedNodeChanged(object sender, FocusedNodeChangedEventArgs e)
         {
-            FillNomenclatureCharacteristic(e.Node.Tag as INomenclatureModel);
+            LoadNomenclatureCharacteristic(e.Node.Tag as INomenclatureModel);
         }
 
         #endregion
@@ -161,7 +188,7 @@ namespace OfflineARM.Gui.Forms.Orders
         /// <summary>
         /// Создание столюцов таблицы характиристики номенклатуры
         /// </summary>
-        private void NomenclatureCharacteristicColumns()
+        private void InitializationNomenclatureCharacteristic()
         {
             gcNomenclatureCharactristics.BeginUpdate();
             gcNomenclatureCharactristics.AddColumn(GuiResource.OrderSpecificControl_GridNomenclatureCharacteristicCaption_Name, "Name");
@@ -176,7 +203,7 @@ namespace OfflineARM.Gui.Forms.Orders
         /// Заполнение таблицы с характеристиками, если нет
         /// </summary>
         /// <param name="nomenclature"></param>
-        private void FillNomenclatureCharacteristic(INomenclatureModel nomenclature)
+        private void LoadNomenclatureCharacteristic(INomenclatureModel nomenclature)
         {
             if (nomenclature != null)
             {
@@ -201,14 +228,15 @@ namespace OfflineARM.Gui.Forms.Orders
                 return;
             }
 
-            _orders.Add(new OrderTemp()
+            var newOrderSpesific = new OrderSpecificationModel()
             {
-                Nomenclature = model.Nomenclature.Name,
-                Characteristic = model.Name
-            });
+                Nomenclature = model.Nomenclature,
+                Characteristic = model,
+                Count = 1,
+                Price = model.Price,
+            };
 
-            gcNomenclatureSelected.DataSource = _orders;
-            gcNomenclatureSelected.RefreshDataSource();
+            AddInOrderSpecifics(newOrderSpesific);
         }
 
         #endregion
@@ -218,7 +246,7 @@ namespace OfflineARM.Gui.Forms.Orders
         /// <summary>
         /// Создание столюцов таблицы экспозиции
         /// </summary>
-        private void ExpositionColumns()
+        private void InitializationExposition()
         {
             gcExposition.BeginUpdate();
             gcExposition.AddColumn(GuiResource.OrderSpecificControl_GridExpositionCaption_Nomeclature, "Nomenclature.Name");
@@ -235,11 +263,10 @@ namespace OfflineARM.Gui.Forms.Orders
         /// <summary>
         /// Заполнение таблицы экспозиции
         /// </summary>
-        private void FillExpositions()
+        private void LoadExpositions()
         {
             gcExposition.DataSource = _expositionImp.GetAll().Data;
         }
-
 
         /// <summary>
         /// Добавление номенклатуры в заказ
@@ -254,25 +281,97 @@ namespace OfflineARM.Gui.Forms.Orders
                 return;
             }
 
-            _orders.Add(new OrderTemp()
+            var newOrderSpesific = new OrderSpecificationModel()
             {
-                Nomenclature = model.Nomenclature.Name,
-                Characteristic = model.Characteristic.Name
-            });
+                Nomenclature = model.Nomenclature,
+                Characteristic = model.Characteristic,
+                Count = 1,
+                Price = model.Price,
+            };
 
-            gcNomenclatureSelected.DataSource = _orders;
-            gcNomenclatureSelected.RefreshDataSource();
+            AddInOrderSpecifics(newOrderSpesific);
         }
 
+        #endregion
+
+        #region Fill Order Specifications
+
+        /// <summary>
+        /// Инициализация таблицы спецификации товара
+        /// </summary>
+        private void InitializationOrderSpecifications()
+        {
+            gcOrderSpecifications.BeginUpdate();
+            gcOrderSpecifications.AddColumn(GuiResource.OrderSpecificControl_OrderSpecifications_Nomenclature, "Nomenclature.Name");
+            gcOrderSpecifications.AddColumn(GuiResource.OrderSpecificControl_OrderSpecifications_Characteristic, "Characteristic.Name", 1);
+            gcOrderSpecifications.AddColumn(GuiResource.OrderSpecificControl_OrderSpecifications_Price, "Price", 2);
+            gcOrderSpecifications.AddColumn(GuiResource.OrderSpecificControl_OrderSpecifications_DiscountProcent, "DiscountProcent", 3);
+            gcOrderSpecifications.AddColumn(GuiResource.OrderSpecificControl_OrderSpecifications_DiscountSum, "DiscountSum", 4);
+            gcOrderSpecifications.AddColumn(GuiResource.OrderSpecificControl_OrderSpecifications_Count, "Count", 5);
+            gcOrderSpecifications.AddColumn(GuiResource.OrderSpecificControl_OrderSpecifications_TotalSum, "TotalSum", 6);
+            gcOrderSpecifications.AddColumnCommand(GuiResource.OrderSpecificControl_OrderSpecifications_DeleteFromOrder, ButtonPredefines.Delete);
+            gcOrderSpecifications.EndUpdate();
+
+            gcOrderSpecifications.OnGridCommand += OrderSpecifications_OnGridCommand;
+
+        }
+
+        /// <summary>
+        /// Обработчик удаления из заказа
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void OrderSpecifications_OnGridCommand(object sender, GridCommandEventArgs e)
+        {
+            var model = e.Value as IOrderSpecificationModel;
+            if (model == null)
+            {
+                return;
+            }
+
+            RemoveFromOrderSpecifics(model);
+        }
 
         #endregion
-    }
 
-    public class  OrderTemp
-    {
-        public string Nomenclature { get; set; }
+        #region private
 
-        public string Characteristic { get; set; }
+        private void AddInOrderSpecifics(IOrderSpecificationModel model)
+        {
+            var exist = _orderSpecifications.FirstOrDefault(
+                os => os.Nomenclature == model.Nomenclature && os.Characteristic == model.Characteristic);
 
+            if (exist == null)
+            {
+                _orderSpecifications.Add(new OrderSpecificationModel()
+                {
+                    Nomenclature = model.Nomenclature,
+                    Characteristic = model.Characteristic,
+                    Count = 1,
+                    Price = model.Price,
+                });
+            }
+            else
+            {
+                exist.Count++;
+            }
+
+            gcOrderSpecifications.DataSource = _orderSpecifications;
+            gcOrderSpecifications.RefreshDataSource();
+        }
+
+        private void RemoveFromOrderSpecifics(IOrderSpecificationModel model)
+        {
+            var exist = _orderSpecifications.FirstOrDefault(os => os == model);
+
+            if (exist != null)
+            {
+                _orderSpecifications.Remove(exist);
+                gcOrderSpecifications.DataSource = _orderSpecifications;
+                gcOrderSpecifications.RefreshDataSource();
+            }
+        }
+
+        #endregion
     }
 }

@@ -1,26 +1,19 @@
 ﻿using System;
+using OfflineARM.Business.Models.Dictionaries.Interfaces;
+using OfflineARM.DAO.Entities.Business;
 using OfflineARM.DAO.Entities.Dictionaries;
 
-namespace OfflineARM.DAO.Entities.Business
+namespace OfflineARM.Business.Models.Businesses.Interfaces
 {
     /// <summary>
     /// Спецификация заказа
     /// </summary>
-    public class OrderSpecification : BaseDaoEntity
+    public interface IOrderSpecificationModel : IBaseBusninessModel
     {
         /// <summary>
         /// Заказ
         /// </summary>
-        public int OrderId
-        {
-            get;
-            set;
-        }
-
-        /// <summary>
-        /// Заказ
-        /// </summary>
-        public Order Order
+        IOrderModel Order
         {
             get;
             set;
@@ -29,16 +22,7 @@ namespace OfflineARM.DAO.Entities.Business
         /// <summary>
         /// Номенклатура
         /// </summary>
-        public int NomenclatureId
-        {
-            get;
-            set;
-        }
-
-        /// <summary>
-        /// Номенклатура
-        /// </summary>
-        public Nomenclature Nomenclature
+        INomenclatureModel Nomenclature
         {
             get;
             set;
@@ -47,16 +31,7 @@ namespace OfflineARM.DAO.Entities.Business
         /// <summary>
         /// Характеристика
         /// </summary>
-        public int CharacteristicId
-        {
-            get;
-            set;
-        }
-
-        /// <summary>
-        /// Характеристика
-        /// </summary>
-        public Characteristic Characteristic
+        ICharacteristicModel Characteristic
         {
             get;
             set;
@@ -65,7 +40,7 @@ namespace OfflineARM.DAO.Entities.Business
         /// <summary>
         /// Склад
         /// </summary>
-        public Guid Stock
+        Guid Stock
         {
             get;
             set;
@@ -74,7 +49,7 @@ namespace OfflineARM.DAO.Entities.Business
         /// <summary>
         /// Количество
         /// </summary>
-        public int Count
+        int Count
         {
             get;
             set;
@@ -83,7 +58,7 @@ namespace OfflineARM.DAO.Entities.Business
         /// <summary>
         /// Цена
         /// </summary>
-        public decimal Price
+        decimal Price
         {
             get;
             set;
@@ -92,7 +67,7 @@ namespace OfflineARM.DAO.Entities.Business
         /// <summary>
         /// % скидки
         /// </summary>
-        public decimal DiscountProcent
+        decimal DiscountProcent
         {
             get;
             set;
@@ -101,7 +76,7 @@ namespace OfflineARM.DAO.Entities.Business
         /// <summary>
         /// Сумма скидки
         /// </summary>
-        public decimal DiscountSum
+        decimal DiscountSum
         {
             get;
             set;
@@ -110,10 +85,9 @@ namespace OfflineARM.DAO.Entities.Business
         /// <summary>
         /// Итоговая сумма
         /// </summary>
-        public decimal TotalSum
+        decimal TotalSum
         {
             get;
-            set;
         }
     }
 }
