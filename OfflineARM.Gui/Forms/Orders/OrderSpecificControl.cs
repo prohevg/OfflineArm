@@ -11,6 +11,7 @@ using OfflineARM.Business.Models.Businesses;
 using OfflineARM.Business.Models.Businesses.Interfaces;
 using OfflineARM.Gui.Base.Controls;
 using OfflineARM.Gui.Controls.EventArg;
+using OfflineARM.Gui.Helpers;
 
 namespace OfflineARM.Gui.Forms.Orders
 {
@@ -24,22 +25,22 @@ namespace OfflineARM.Gui.Forms.Orders
         /// <summary>
         /// Реализация номеклатуры
         /// </summary>
-        private readonly INomenclatureImp _nomenclatureImp = IoCBusiness.Instance.Get<INomenclatureImp>();
+        private readonly INomenclatureImp _nomenclatureImp;
 
         /// <summary>
         /// Характеристика номенклатуры
         /// </summary>
-        private readonly ICharacteristicImp _characteristicImp = IoCBusiness.Instance.Get<ICharacteristicImp>();
+        private readonly ICharacteristicImp _characteristicImp;
 
         /// <summary>
         /// Экспозиция
         /// </summary>
-        private readonly IExpositionImp _expositionImp = IoCBusiness.Instance.Get<IExpositionImp>();
+        private readonly IExpositionImp _expositionImp;
 
         /// <summary>
         /// Список 
         /// </summary>
-        private readonly List<IOrderSpecificationModel> _orderSpecifications = new List<IOrderSpecificationModel>();
+        private readonly List<IOrderSpecificationModel> _orderSpecifications;
 
         #endregion
 
@@ -55,6 +56,14 @@ namespace OfflineARM.Gui.Forms.Orders
             tpExpositionCharacteristics.Text = GuiResource.OrderSpecificControl_ExpositionCharacteristics;
             tpOrderCharacteristics.Text = GuiResource.OrderSpecificControl_tpOrderCharacteristics;
             spNext.Text = GuiResource.OrderSpecificControl_spNext;
+
+            if (!DesignTimeHelper.IsInDesignMode)
+            {
+                 _nomenclatureImp = IoCBusiness.Instance.Get<INomenclatureImp>();
+                _characteristicImp = IoCBusiness.Instance.Get<ICharacteristicImp>();
+                _expositionImp = IoCBusiness.Instance.Get<IExpositionImp>();
+                _orderSpecifications = new List<IOrderSpecificationModel>();
+            }
 
             Initialization();
         }

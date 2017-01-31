@@ -108,6 +108,9 @@
     <Compile Include="Base\Controls\IBaseCommandControl.cs" />
     <Compile Include="Base\Controls\IBaseControl.cs" />
     <Compile Include="Base\Controls\IBasePartControl.cs" />
+    <Compile Include="Base\Forms\BaseCommandForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Base\Forms\BaseForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -169,6 +172,7 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>GuiResource.resx</DependentUpon>
     </Compile>
+    <Compile Include="Helpers\DesignTimeHelper.cs" />
     <Compile Include="Holders\CommandMetadataHolder.cs" />
     <Compile Include="Holders\CommandMetadataHolderBase.cs" />
     <Compile Include="Holders\DispatchedCommandHolder.cs" />
@@ -197,7 +201,7 @@
     <Compile Include="Interfaces\Windows\IAboutBoxProgram.cs" />
     <Compile Include="Interfaces\Windows\ILoginForm.cs" />
     <Compile Include="Interfaces\Windows\IMainForm.cs" />
-    <Compile Include="RibbonPageBarCreator.cs" />
+    <Compile Include="BarCreator.cs" />
     <Compile Include="Starter.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -252,7 +256,9 @@
   <ItemGroup>
     <None Include="Resources\forward_16x16.png" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <None Include="Resources\save_32x32.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

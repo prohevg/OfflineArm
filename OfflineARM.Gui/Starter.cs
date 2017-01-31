@@ -37,6 +37,12 @@ namespace OfflineARM.Gui
         private void FillCommandMetadataHolder()
         {
             #region Команды заказов
+            
+            CommandMetadataHolder.Instance.SetMetadata(
+                OrderCommands.Save,
+                CommandResources.save_32x32,
+                CommandResources.SaveCommandCaption,
+                CommandResources.SaveCommandHint);
 
             CommandMetadataHolder.Instance.SetMetadata(
                 OrderCommands.OrderAdd,

@@ -42,7 +42,7 @@ namespace OfflineARM.Gui
             orderControl.Dock = DockStyle.Fill;
             tabControl.TabPages[0].Controls.Add(orderControl);
 
-            RibbonPageBarCreator.CreateBars(rpOrders, orderListControl.GetCommands(), item_ItemClick);
+            BarCreator.CreateBars(rpOrders, orderListControl.GetCommands(), item_ItemClick);
         }
 
         #endregion

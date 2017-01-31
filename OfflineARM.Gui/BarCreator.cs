@@ -11,7 +11,7 @@ namespace OfflineARM.Gui
     /// <summary>
     /// Создание команд на панели
     /// </summary>
-    public class RibbonPageBarCreator
+    public class BarCreator
     {
         /// <summary>
         /// Создание панели задач на форме
@@ -38,6 +38,28 @@ namespace OfflineARM.Gui
             {
                 var barButtonItem = CreateBarButton(command, handler);
                 ribbonPageGroup.ItemLinks.Add(barButtonItem);
+            }
+        }
+
+        /// <summary>
+        /// Создание панели задач на форме
+        /// </summary>
+        /// <param name="barManager">Страница</param>
+        /// <param name="commands">Команды</param>
+        /// <param name="handler">Обработчик команд</param>
+        public static void CreateBars(BarManager barManager, List<ICommand> commands, ItemClickEventHandler handler)
+        {
+            if (commands == null || commands.Count == 0)
+            {
+                return;
+            }
+
+            barManager.Items.Clear();
+            foreach (var command in commands)
+            {
+                var barButtonItem = CreateBarButton(command, handler);
+                barManager.Items.Add(barButtonItem);
+                barManager.Bars[0].AddItem(barButtonItem);
             }
         }
 

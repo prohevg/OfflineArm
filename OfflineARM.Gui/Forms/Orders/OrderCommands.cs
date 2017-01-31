@@ -17,5 +17,11 @@ namespace OfflineARM.Gui.Forms.Orders
         /// Идентификатор команды печати
         /// </summary>
         public static readonly Guid OrderPrint = OrderPrintCommand.ID;
+
+        /// <summary>
+        /// Идентификатор команды сохранить 
+        /// </summary>
+        public static readonly Guid Save = new Guid("{2FC3EDA3-329A-4411-99CE-B2FEDBD6D69A}");
+
     }
 }

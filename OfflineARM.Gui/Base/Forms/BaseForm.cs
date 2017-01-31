@@ -86,7 +86,10 @@ namespace OfflineARM.Gui.Base.Forms
         /// </summary>
         public virtual string CaptionForm
         {
-            get;
+            get
+            {
+                return string.Empty;
+            }
         }
 
         #endregion
