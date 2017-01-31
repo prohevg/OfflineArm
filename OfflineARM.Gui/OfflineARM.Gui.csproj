@@ -154,6 +154,24 @@
     <Compile Include="Forms\Orders\Interfaces\IOrderListControl.cs" />
     <Compile Include="Forms\Orders\Commands\OrderPrintCommandHandler.cs" />
     <Compile Include="Forms\Orders\Commands\OrderAddCommandHandler.cs" />
+    <Compile Include="Forms\Orders\OrderAddressControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Forms\Orders\OrderAddressControl.Designer.cs">
+      <DependentUpon>OrderAddressControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Orders\OrderDestinationControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Forms\Orders\OrderDestinationControl.Designer.cs">
+      <DependentUpon>OrderDestinationControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Orders\OrderClientControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Forms\Orders\OrderClientControl.Designer.cs">
+      <DependentUpon>OrderClientControl.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\Orders\OrderCommands.cs" />
     <Compile Include="Forms\Orders\OrderListControl.cs">
       <SubType>UserControl</SubType>
@@ -212,6 +230,15 @@
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>CommandResources.Designer.cs</LastGenOutput>
       <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Orders\OrderAddressControl.resx">
+      <DependentUpon>OrderAddressControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Orders\OrderClientControl.resx">
+      <DependentUpon>OrderClientControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Orders\OrderDestinationControl.resx">
+      <DependentUpon>OrderDestinationControl.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\Orders\OrderForm.resx">
       <DependentUpon>OrderForm.cs</DependentUpon>

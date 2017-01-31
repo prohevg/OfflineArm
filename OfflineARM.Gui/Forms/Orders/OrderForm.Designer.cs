@@ -34,12 +34,14 @@
             this.tpSpecific = new DevExpress.XtraTab.XtraTabPage();
             this.orderSpecificControl = new OfflineARM.Gui.Forms.Orders.OrderSpecificControl();
             this.tpDelivary = new DevExpress.XtraTab.XtraTabPage();
+            this.orderDestination = new OfflineARM.Gui.Forms.Orders.OrderDestinationControl();
             this.tpBuy = new DevExpress.XtraTab.XtraTabPage();
             this.tlpMain.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.lueResponsiable.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.tcMain)).BeginInit();
             this.tcMain.SuspendLayout();
             this.tpSpecific.SuspendLayout();
+            this.tpDelivary.SuspendLayout();
             this.SuspendLayout();
             // 
             // tlpMain
@@ -51,13 +53,13 @@
             this.tlpMain.Controls.Add(this.lueResponsiable, 1, 1);
             this.tlpMain.Controls.Add(this.tcMain, 1, 2);
             this.tlpMain.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tlpMain.Location = new System.Drawing.Point(0, 0);
+            this.tlpMain.Location = new System.Drawing.Point(0, 29);
             this.tlpMain.Name = "tlpMain";
             this.tlpMain.RowCount = 3;
             this.tlpMain.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
             this.tlpMain.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 30F));
             this.tlpMain.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tlpMain.Size = new System.Drawing.Size(784, 561);
+            this.tlpMain.Size = new System.Drawing.Size(784, 532);
             this.tlpMain.TabIndex = 0;
             // 
             // lueResponsiable
@@ -78,7 +80,7 @@
             this.tcMain.Location = new System.Drawing.Point(23, 53);
             this.tcMain.Name = "tcMain";
             this.tcMain.SelectedTabPage = this.tpSpecific;
-            this.tcMain.Size = new System.Drawing.Size(738, 505);
+            this.tcMain.Size = new System.Drawing.Size(738, 476);
             this.tcMain.TabIndex = 1;
             this.tcMain.TabPages.AddRange(new DevExpress.XtraTab.XtraTabPage[] {
             this.tpSpecific,
@@ -89,7 +91,7 @@
             // 
             this.tpSpecific.Controls.Add(this.orderSpecificControl);
             this.tpSpecific.Name = "tpSpecific";
-            this.tpSpecific.Size = new System.Drawing.Size(732, 477);
+            this.tpSpecific.Size = new System.Drawing.Size(732, 448);
             this.tpSpecific.Text = "Спецификация";
             // 
             // orderSpecificControl
@@ -97,19 +99,28 @@
             this.orderSpecificControl.Dock = System.Windows.Forms.DockStyle.Fill;
             this.orderSpecificControl.Location = new System.Drawing.Point(0, 0);
             this.orderSpecificControl.Name = "orderSpecificControl";
-            this.orderSpecificControl.Size = new System.Drawing.Size(732, 477);
+            this.orderSpecificControl.Size = new System.Drawing.Size(732, 448);
             this.orderSpecificControl.TabIndex = 0;
             // 
             // tpDelivary
             // 
+            this.tpDelivary.Controls.Add(this.orderDestination);
             this.tpDelivary.Name = "tpDelivary";
-            this.tpDelivary.Size = new System.Drawing.Size(732, 425);
+            this.tpDelivary.Size = new System.Drawing.Size(732, 448);
             this.tpDelivary.Text = "Доставка";
+            // 
+            // orderDestination
+            // 
+            this.orderDestination.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.orderDestination.Location = new System.Drawing.Point(0, 0);
+            this.orderDestination.Name = "orderDestination";
+            this.orderDestination.Size = new System.Drawing.Size(732, 448);
+            this.orderDestination.TabIndex = 0;
             // 
             // tpBuy
             // 
             this.tpBuy.Name = "tpBuy";
-            this.tpBuy.Size = new System.Drawing.Size(732, 425);
+            this.tpBuy.Size = new System.Drawing.Size(732, 448);
             this.tpBuy.Text = "Оплата";
             // 
             // OrderForm
@@ -126,6 +137,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.tcMain)).EndInit();
             this.tcMain.ResumeLayout(false);
             this.tpSpecific.ResumeLayout(false);
+            this.tpDelivary.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -139,5 +151,6 @@
         private DevExpress.XtraTab.XtraTabPage tpDelivary;
         private DevExpress.XtraTab.XtraTabPage tpBuy;
         private OrderSpecificControl orderSpecificControl;
+        private OrderDestinationControl orderDestination;
     }
 }
