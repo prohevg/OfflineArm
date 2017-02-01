@@ -31,6 +31,7 @@ namespace OfflineARM.Gui.Base.Forms
         protected override void OnLoad(EventArgs e)
         {
             SetMinimumSize();
+            SetMaximumSize();
 
             this.Text = CaptionForm;
 
@@ -53,6 +54,17 @@ namespace OfflineARM.Gui.Base.Forms
             else
             {
                 this.MinimumSize = size.Value;
+            }
+        }
+
+        /// <summary>
+        /// Установить минимальный размер формы
+        /// </summary>
+        public virtual void SetMaximumSize(Size? size = null)
+        {
+            if (size.HasValue)
+            { 
+                this.MaximumSize = size.Value;
             }
         }
 

@@ -80,6 +80,9 @@ namespace OfflineARM.Gui
 
             container.Bind<IOrderListControl>().To<OrderListControl>();
             container.Bind<IOrderForm>().To<OrderForm>();
+
+            container.Bind<IClientPrivateForm>().To<ClientPrivateForm>();
+            container.Bind<IClientOrganizationForm>().To<ClientOrganizationForm>();
         }
 
         #endregion

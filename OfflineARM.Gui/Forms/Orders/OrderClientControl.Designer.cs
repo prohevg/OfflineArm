@@ -128,6 +128,7 @@
             new DevExpress.XtraEditors.Controls.LookUpColumnInfo("Address", "Адрес")});
             this.lkClient.Size = new System.Drawing.Size(747, 20);
             this.lkClient.TabIndex = 1;
+            this.lkClient.ButtonClick += new DevExpress.XtraEditors.Controls.ButtonPressedEventHandler(this.lkClient_ButtonClick);
             // 
             // tableLayoutPanel1
             // 

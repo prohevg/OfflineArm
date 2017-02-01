@@ -148,8 +148,22 @@
     <Compile Include="Controls\TreeListWrapper.cs">
       <SubType>Component</SubType>
     </Compile>
+    <Compile Include="Forms\Orders\ClientOrganizationForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Orders\ClientOrganizationForm.Designer.cs">
+      <DependentUpon>ClientOrganizationForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Orders\ClientPrivateForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Orders\ClientPrivateForm.Designer.cs">
+      <DependentUpon>ClientPrivateForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\Orders\Commands\OrderPrintCommand.cs" />
     <Compile Include="Forms\Orders\Commands\PrintData.cs" />
+    <Compile Include="Forms\Orders\Interfaces\IClientOrganizationForm.cs" />
+    <Compile Include="Forms\Orders\Interfaces\IClientPrivateForm.cs" />
     <Compile Include="Forms\Orders\Interfaces\IOrderForm.cs" />
     <Compile Include="Forms\Orders\Interfaces\IOrderListControl.cs" />
     <Compile Include="Forms\Orders\Commands\OrderPrintCommandHandler.cs" />
@@ -230,6 +244,12 @@
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>CommandResources.Designer.cs</LastGenOutput>
       <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Orders\ClientOrganizationForm.resx">
+      <DependentUpon>ClientOrganizationForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Orders\ClientPrivateForm.resx">
+      <DependentUpon>ClientPrivateForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\Orders\OrderAddressControl.resx">
       <DependentUpon>OrderAddressControl.cs</DependentUpon>
