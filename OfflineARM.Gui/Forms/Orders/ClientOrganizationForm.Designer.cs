@@ -166,7 +166,7 @@
             this.teFio.Name = "teFio";
             this.teFio.Properties.NullText = "Наименование";
             this.teFio.Size = new System.Drawing.Size(578, 20);
-            this.teFio.TabIndex = 3;
+            this.teFio.TabIndex = 1;
             // 
             // tlpButtons
             // 
@@ -189,7 +189,7 @@
             this.sbSave.Location = new System.Drawing.Point(3, 3);
             this.sbSave.Name = "sbSave";
             this.sbSave.Size = new System.Drawing.Size(75, 23);
-            this.sbSave.TabIndex = 8;
+            this.sbSave.TabIndex = 11;
             this.sbSave.Text = "Сохранить";
             // 
             // sbCancel
@@ -198,7 +198,7 @@
             this.sbCancel.Location = new System.Drawing.Point(103, 3);
             this.sbCancel.Name = "sbCancel";
             this.sbCancel.Size = new System.Drawing.Size(75, 23);
-            this.sbCancel.TabIndex = 7;
+            this.sbCancel.TabIndex = 12;
             this.sbCancel.Text = "Отмена";
             // 
             // tlpAddress
@@ -227,7 +227,7 @@
             this.teAddress.Name = "teAddress";
             this.teAddress.Properties.NullText = "Юридический адрес";
             this.teAddress.Size = new System.Drawing.Size(378, 20);
-            this.teAddress.TabIndex = 5;
+            this.teAddress.TabIndex = 2;
             // 
             // labelControl1
             // 
@@ -248,7 +248,7 @@
             this.tePhone.Properties.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.RegEx;
             this.tePhone.Properties.NullText = "Телефон";
             this.tePhone.Size = new System.Drawing.Size(94, 20);
-            this.tePhone.TabIndex = 5;
+            this.tePhone.TabIndex = 3;
             // 
             // tlpFace
             // 
@@ -275,7 +275,7 @@
             this.tePosition.Name = "tePosition";
             this.tePosition.Properties.NullText = "Юридический адрес";
             this.tePosition.Size = new System.Drawing.Size(227, 20);
-            this.tePosition.TabIndex = 7;
+            this.tePosition.TabIndex = 5;
             // 
             // teFace
             // 
@@ -286,7 +286,7 @@
             this.teFace.Name = "teFace";
             this.teFace.Properties.NullText = "Юридический адрес";
             this.teFace.Size = new System.Drawing.Size(343, 20);
-            this.teFace.TabIndex = 6;
+            this.teFace.TabIndex = 4;
             // 
             // tlpOnAction
             // 
@@ -329,7 +329,7 @@
             this.teNumber.Name = "teNumber";
             this.teNumber.Properties.NullText = "Юридический адрес";
             this.teNumber.Size = new System.Drawing.Size(144, 20);
-            this.teNumber.TabIndex = 14;
+            this.teNumber.TabIndex = 7;
             // 
             // lcNumber
             // 
@@ -349,7 +349,7 @@
             this.letOnAction.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
             this.letOnAction.Size = new System.Drawing.Size(226, 20);
-            this.letOnAction.TabIndex = 0;
+            this.letOnAction.TabIndex = 6;
             // 
             // deFrom
             // 
@@ -361,7 +361,7 @@
             this.deFrom.Properties.CalendarTimeProperties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
             this.deFrom.Size = new System.Drawing.Size(94, 20);
-            this.deFrom.TabIndex = 16;
+            this.deFrom.TabIndex = 8;
             // 
             // tlpInn
             // 
@@ -392,7 +392,7 @@
             this.teInn.Properties.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.Numeric;
             this.teInn.Properties.NullText = "Юридический адрес";
             this.teInn.Size = new System.Drawing.Size(247, 20);
-            this.teInn.TabIndex = 7;
+            this.teInn.TabIndex = 9;
             // 
             // lcKpp
             // 
@@ -411,7 +411,7 @@
             this.teKpp.Location = new System.Drawing.Point(331, 3);
             this.teKpp.Name = "teKpp";
             this.teKpp.Size = new System.Drawing.Size(248, 20);
-            this.teKpp.TabIndex = 9;
+            this.teKpp.TabIndex = 10;
             // 
             // ClientOrganizationForm
             // 

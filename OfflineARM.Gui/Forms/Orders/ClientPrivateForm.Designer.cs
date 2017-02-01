@@ -77,7 +77,7 @@
             this.tePhone.Properties.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.RegEx;
             this.tePhone.Properties.NullText = "Телефон";
             this.tePhone.Size = new System.Drawing.Size(154, 20);
-            this.tePhone.TabIndex = 5;
+            this.tePhone.TabIndex = 3;
             // 
             // teAddress
             // 
@@ -87,13 +87,14 @@
             this.teAddress.Name = "teAddress";
             this.teAddress.Properties.NullText = "Адрес";
             this.teAddress.Size = new System.Drawing.Size(478, 20);
-            this.teAddress.TabIndex = 4;
+            this.teAddress.TabIndex = 2;
             // 
             // lcFIO
             // 
+            this.lcFIO.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.lcFIO.Appearance.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.lcFIO.Location = new System.Drawing.Point(20, 5);
-            this.lcFIO.Margin = new System.Windows.Forms.Padding(20, 5, 3, 3);
+            this.lcFIO.Location = new System.Drawing.Point(55, 5);
+            this.lcFIO.Margin = new System.Windows.Forms.Padding(3, 5, 10, 3);
             this.lcFIO.Name = "lcFIO";
             this.lcFIO.Size = new System.Drawing.Size(35, 19);
             this.lcFIO.TabIndex = 0;
@@ -101,9 +102,10 @@
             // 
             // lcAddress
             // 
+            this.lcAddress.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.lcAddress.Appearance.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.lcAddress.Location = new System.Drawing.Point(20, 35);
-            this.lcAddress.Margin = new System.Windows.Forms.Padding(20, 5, 3, 3);
+            this.lcAddress.Location = new System.Drawing.Point(46, 35);
+            this.lcAddress.Margin = new System.Windows.Forms.Padding(3, 5, 10, 3);
             this.lcAddress.Name = "lcAddress";
             this.lcAddress.Size = new System.Drawing.Size(44, 19);
             this.lcAddress.TabIndex = 1;
@@ -111,9 +113,10 @@
             // 
             // lcPhone
             // 
+            this.lcPhone.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.lcPhone.Appearance.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.lcPhone.Location = new System.Drawing.Point(20, 65);
-            this.lcPhone.Margin = new System.Windows.Forms.Padding(20, 5, 3, 3);
+            this.lcPhone.Location = new System.Drawing.Point(25, 65);
+            this.lcPhone.Margin = new System.Windows.Forms.Padding(3, 5, 10, 3);
             this.lcPhone.Name = "lcPhone";
             this.lcPhone.Size = new System.Drawing.Size(65, 19);
             this.lcPhone.TabIndex = 2;
@@ -127,7 +130,7 @@
             this.teFio.Name = "teFio";
             this.teFio.Properties.NullText = "Наименование";
             this.teFio.Size = new System.Drawing.Size(478, 20);
-            this.teFio.TabIndex = 3;
+            this.teFio.TabIndex = 1;
             // 
             // tlpButtons
             // 
@@ -150,7 +153,7 @@
             this.sbSave.Location = new System.Drawing.Point(3, 3);
             this.sbSave.Name = "sbSave";
             this.sbSave.Size = new System.Drawing.Size(75, 23);
-            this.sbSave.TabIndex = 8;
+            this.sbSave.TabIndex = 4;
             this.sbSave.Text = "Сохранить";
             // 
             // sbCancel
@@ -159,7 +162,7 @@
             this.sbCancel.Location = new System.Drawing.Point(103, 3);
             this.sbCancel.Name = "sbCancel";
             this.sbCancel.Size = new System.Drawing.Size(75, 23);
-            this.sbCancel.TabIndex = 7;
+            this.sbCancel.TabIndex = 5;
             this.sbCancel.Text = "Отмена";
             // 
             // ClientPrivateForm

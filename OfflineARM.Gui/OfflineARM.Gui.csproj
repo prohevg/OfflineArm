@@ -193,6 +193,12 @@
     <Compile Include="Forms\Orders\OrderListControl.Designer.cs">
       <DependentUpon>OrderListControl.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\Orders\OrderPayControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Forms\Orders\OrderPayControl.Designer.cs">
+      <DependentUpon>OrderPayControl.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\Orders\OrderSpecificControl.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -265,6 +271,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\Orders\OrderListControl.resx">
       <DependentUpon>OrderListControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Orders\OrderPayControl.resx">
+      <DependentUpon>OrderPayControl.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\Orders\OrderSpecificControl.resx">
       <DependentUpon>OrderSpecificControl.cs</DependentUpon>
