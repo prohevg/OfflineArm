@@ -1,6 +1,7 @@
 ﻿using System;
 using OfflineARM.Business.Models.Businesses.Interfaces;
 using OfflineARM.Business.Models.Dictionaries.Interfaces;
+using OfflineARM.DAO.Entities.Business;
 
 namespace OfflineARM.Business.Models.Businesses
 {
@@ -10,9 +11,9 @@ namespace OfflineARM.Business.Models.Businesses
     public class OrderModel : BaseBusninessModel, IOrderModel
     {
         /// <summary>
-        ///  Номер заказа
+        /// Ответственный
         /// </summary>
-        public string Number
+        public IUserModel User
         {
             get;
             set;
@@ -21,7 +22,43 @@ namespace OfflineARM.Business.Models.Businesses
         /// <summary>
         /// Статус заказа
         /// </summary>
-        public string OrderStatus
+        public IOrderStatusModel OrderStatus
+        {
+            get;
+            set;
+        }
+
+        /// <summary>
+        /// Оплата наличными
+        /// </summary>
+        public IPayNalModel PayNal
+        {
+            get;
+            set;
+        }
+
+        /// <summary>
+        /// Оплата картой
+        /// </summary>
+        public IPayCardModel PayCard
+        {
+            get;
+            set;
+        }
+
+        /// <summary>
+        /// Оплата кредит
+        /// </summary>
+        public IPayCreditModel PayCredit
+        {
+            get;
+            set;
+        }
+
+        /// <summary>
+        ///  Номер заказа
+        /// </summary>
+        public string Number
         {
             get;
             set;
@@ -35,41 +72,31 @@ namespace OfflineARM.Business.Models.Businesses
             get;
             set;
         }
+        
+        #region implicit
 
-        /// <summary>
-        /// Ответственный
-        /// </summary>
-        public Guid Responsible
+        public static implicit operator OrderModel(Order value)
         {
-            get;
-            set;
+            var result = new OrderModel
+            {
+                Id = value.Id,
+                Guid = value.Guid
+            };
+
+            return result;
         }
 
-        /// <summary>
-        /// Самовывоз
-        /// </summary>
-        public bool IsSelf
+        public static implicit operator Order(OrderModel value)
         {
-            get;
-            set;
+            var result = new Order
+            {
+                Id = value.Id,
+                Guid = value.Guid
+            };
+
+            return result;
         }
 
-        /// <summary>
-        /// Дата отгрузки
-        /// </summary>
-        public DateTime DateShipping
-        {
-            get;
-            set;
-        }
-
-        /// <summary>
-        /// Дата отгрузки
-        /// </summary>
-        public decimal Summa
-        {
-            get;
-            set;
-        }
+        #endregion
     }
 }

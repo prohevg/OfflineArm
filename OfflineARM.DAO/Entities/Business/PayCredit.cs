@@ -1,71 +1,74 @@
 ﻿using System;
-using OfflineARM.Business.Models.Dictionaries.Interfaces;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
 
-namespace OfflineARM.Business.Models.Businesses.Interfaces
+namespace OfflineARM.DAO.Entities.Business
 {
     /// <summary>
-    /// Заказ
+    /// Оплата кредит
     /// </summary>
-    public interface IOrderModel : IBaseBusninessModel
+    public class PayCredit : BaseDaoEntity
     {
         /// <summary>
-        /// Ответственный
+        /// Банк по БС
         /// </summary>
-        IUserModel User
+        public string CreditBank
         {
             get;
             set;
         }
 
         /// <summary>
-        /// Статус заказа
+        /// Программа по БС
         /// </summary>
-        IOrderStatusModel OrderStatus
+        public string CreditProgramm
         {
             get;
             set;
         }
 
         /// <summary>
-        /// Оплата наличными
+        /// № договора
         /// </summary>
-        IPayNalModel PayNal
+        public string Number
         {
             get;
             set;
         }
 
         /// <summary>
-        /// Оплата картой
+        /// ФИО клиента
         /// </summary>
-        IPayCardModel PayCard
+        public string ClientFIO
         {
             get;
             set;
         }
 
         /// <summary>
-        /// Оплата кредит
+        /// Сумма ПВ по БС
         /// </summary>
-        IPayCreditModel PayCredit
+        public decimal SummPV
         {
             get;
             set;
         }
 
         /// <summary>
-        ///  Номер заказа
+        /// Сумма кредита по БС
         /// </summary>
-        string Number
+        public decimal SummBS
         {
             get;
             set;
         }
 
         /// <summary>
-        /// Дата создания заказа
+        /// Сумма кредита по БС
         /// </summary>
-        DateTime DateCreate
+        public string Scanner
         {
             get;
             set;

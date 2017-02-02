@@ -1,7 +1,6 @@
 ﻿using OfflineARM.Business.Businesses.Interfaces;
 using OfflineARM.Business.Models.Businesses;
 using OfflineARM.Business.Models.Businesses.Interfaces;
-using OfflineARM.Business.Models.Dictionaries;
 using OfflineARM.Business.Validators.Businesses.Interfaces;
 using OfflineARM.DAO.Entities.Business;
 using OfflineARM.Repositories;
@@ -43,20 +42,7 @@ namespace OfflineARM.Business.Businesses
         /// <returns></returns>
         protected override IOrderModel ConvertTo(Order daoEntity)
         {
-            var model = new OrderModel
-            {
-                Id = daoEntity.Id,
-                Guid = daoEntity.Guid,
-                Number = daoEntity.Number,
-                DateCreate = daoEntity.DateCreate,
-                Responsible = daoEntity.Responsible,
-                DateShipping = daoEntity.DateShipping,
-                IsSelf = daoEntity.IsSelf,
-                OrderStatus = daoEntity.OrderStatus,
-                Summa = daoEntity.Summa,
-            };
-
-            return model;
+            return (OrderModel)daoEntity;
         }
 
         /// <summary>
@@ -71,20 +57,7 @@ namespace OfflineARM.Business.Businesses
                 return null;
             }
 
-            var result = new Order
-            {
-                Id = model.Id,
-                Guid = model.Guid,
-                Number = model.Number,
-                DateCreate = model.DateCreate,
-                Responsible = model.Responsible,
-                DateShipping = model.DateShipping,
-                IsSelf = model.IsSelf,
-                OrderStatus = model.OrderStatus,
-                Summa = model.Summa,
-            };
-
-            return result;
+            return (Order)model;
         }
 
         /// <summary>
@@ -99,11 +72,11 @@ namespace OfflineARM.Business.Businesses
             daoEntity.Guid = model.Guid;
             daoEntity.Number = model.Number;
             daoEntity.DateCreate = model.DateCreate;
-            daoEntity.Responsible = model.Responsible;
-            daoEntity.DateShipping = model.DateShipping;
-            daoEntity.IsSelf = model.IsSelf;
-            daoEntity.OrderStatus = model.OrderStatus;
-            daoEntity.Summa = model.Summa;
+          //  daoEntity.Responsible = model.Responsible;
+          //  daoEntity.DateShipping = model.DateShipping;
+          //  daoEntity.IsSelf = model.IsSelf;
+         //   daoEntity.OrderStatus = model.OrderStatus;
+         //   daoEntity.Summa = model.Summa;
             return daoEntity;
         }
 

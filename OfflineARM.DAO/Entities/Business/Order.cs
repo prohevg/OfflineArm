@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using OfflineARM.DAO.Entities.Dictionaries;
 
 namespace OfflineARM.DAO.Entities.Business
 {
@@ -9,9 +10,18 @@ namespace OfflineARM.DAO.Entities.Business
     public class Order : BaseDaoEntity
     {
         /// <summary>
-        ///  Номер заказа
+        /// Ответственный
         /// </summary>
-        public string Number
+        public int UserId
+        {
+            get;
+            set;
+        }
+
+        /// <summary>
+        /// Ответственный
+        /// </summary>
+        public User User
         {
             get;
             set;
@@ -20,7 +30,79 @@ namespace OfflineARM.DAO.Entities.Business
         /// <summary>
         /// Статус заказа
         /// </summary>
-        public string OrderStatus
+        public int OrderStatusId
+        {
+            get;
+            set;
+        }
+
+        /// <summary>
+        /// Статус заказа
+        /// </summary>
+        public OrderStatus OrderStatus
+        {
+            get;
+            set;
+        }
+
+        /// <summary>
+        /// Оплата наличными
+        /// </summary>
+        public int? PayNalId
+        {
+            get;
+            set;
+        }
+
+        /// <summary>
+        /// Оплата наличными
+        /// </summary>
+        public PayNal PayNal
+        {
+            get;
+            set;
+        }
+
+        /// <summary>
+        /// Оплата картой
+        /// </summary>
+        public int? PayCardId
+        {
+            get;
+            set;
+        }
+
+        /// <summary>
+        /// Оплата картой
+        /// </summary>
+        public PayCard PayCard
+        {
+            get;
+            set;
+        }
+
+        /// <summary>
+        /// Оплата кредит
+        /// </summary>
+        public int? PayCreditId
+        {
+            get;
+            set;
+        }
+
+        /// <summary>
+        /// Оплата кредит
+        /// </summary>
+        public PayCredit PayCredit
+        {
+            get;
+            set;
+        }
+
+        /// <summary>
+        ///  Номер заказа
+        /// </summary>
+        public string Number
         {
             get;
             set;
@@ -35,14 +117,16 @@ namespace OfflineARM.DAO.Entities.Business
             set;
         }
 
-        /// <summary>
-        /// Ответственный
-        /// </summary>
-        public Guid Responsible
-        {
-            get;
-            set;
-        }
+
+
+
+
+
+
+
+
+
+
 
         /// <summary>
         /// Самовывоз
@@ -63,7 +147,7 @@ namespace OfflineARM.DAO.Entities.Business
         }
 
         /// <summary>
-        /// Дата отгрузки
+        /// Сумма 
         /// </summary>
         public decimal Summa
         {

@@ -3,20 +3,20 @@
 namespace OfflineARM.DAO.Configurations.Business
 {
     /// <summary>
-    /// Конфигурация Заказ
+    /// Конфигурация Оплата наличными
     /// </summary>
-    public class OrderConfiguration : BaseDaoEntityConfiguration<Order>
+    public class PayNalConfiguration : BaseDaoEntityConfiguration<PayNal>
     {
         #region Конструктор
 
         /// <summary>  
         /// Конструктор  
         /// </summary>  
-        public OrderConfiguration()
-            : base("Orders")
+        public PayNalConfiguration()
+            : base("PayNals")
         {
             Property(p => p.Number)
-                .HasMaxLength(50);
+               .HasMaxLength(50);
         }
 
         #endregion

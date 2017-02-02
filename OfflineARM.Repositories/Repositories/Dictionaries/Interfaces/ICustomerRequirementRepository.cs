@@ -6,7 +6,7 @@ namespace OfflineARM.Repositories.Repositories.Dictionaries.Interfaces
     /// <summary>
     /// Требование клиента
     /// </summary>
-    public interface ICustomerRequirementRepository : IBaseRepository<CustomerRequirement>
+    public interface ICustomerRequirementRepository : IBaseRepository<ClientRequirement>
     {
     }
 }

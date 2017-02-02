@@ -36,14 +36,21 @@ namespace OfflineARM.DAO
             modelBuilder.Configurations.Add(new CityConfiguration());
             modelBuilder.Configurations.Add(new LocationConfiguration());
             modelBuilder.Configurations.Add(new BasisActionConfiguration());
-            modelBuilder.Configurations.Add(new CustomerRequirementConfiguration());
+            modelBuilder.Configurations.Add(new ClientRequirementConfiguration());
             modelBuilder.Configurations.Add(new OrderStatusConfiguration());
 
             modelBuilder.Configurations.Add(new BagCollectionConfiguration());
             modelBuilder.Configurations.Add(new CharacteristicConfiguration());
             modelBuilder.Configurations.Add(new ExpositionConfiguration());
             modelBuilder.Configurations.Add(new NomenclatureConfiguration());
+
             modelBuilder.Configurations.Add(new OrderConfiguration());
+            modelBuilder.Configurations.Add(new ClientPrivateConfiguration());
+            modelBuilder.Configurations.Add(new ClientOranizationConfiguration());
+            modelBuilder.Configurations.Add(new PayNalConfiguration());
+            modelBuilder.Configurations.Add(new PayCardConfiguration());
+            modelBuilder.Configurations.Add(new PayCreditConfiguration());
+
             modelBuilder.Configurations.Add(new OrderSpecificationConfiguration());
             modelBuilder.Configurations.Add(new OrganizationConfiguration());
             modelBuilder.Configurations.Add(new PartnerConfiguration());

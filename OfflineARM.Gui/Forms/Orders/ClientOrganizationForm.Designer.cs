@@ -100,7 +100,7 @@
             this.tlpMain.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 30F));
             this.tlpMain.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 30F));
             this.tlpMain.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 30F));
-            this.tlpMain.Size = new System.Drawing.Size(734, 211);
+            this.tlpMain.Size = new System.Drawing.Size(734, 212);
             this.tlpMain.TabIndex = 1;
             // 
             // lcOnAction
@@ -176,7 +176,7 @@
             this.tlpButtons.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tlpButtons.Controls.Add(this.sbSave, 0, 0);
             this.tlpButtons.Controls.Add(this.sbCancel, 1, 0);
-            this.tlpButtons.Location = new System.Drawing.Point(531, 163);
+            this.tlpButtons.Location = new System.Drawing.Point(531, 164);
             this.tlpButtons.Name = "tlpButtons";
             this.tlpButtons.RowCount = 1;
             this.tlpButtons.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
@@ -417,7 +417,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(734, 211);
+            this.ClientSize = new System.Drawing.Size(734, 212);
             this.Controls.Add(this.tlpMain);
             this.MinimumSize = new System.Drawing.Size(750, 250);
             this.Name = "ClientOrganizationForm";

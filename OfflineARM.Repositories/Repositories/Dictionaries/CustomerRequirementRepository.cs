@@ -7,7 +7,7 @@ namespace OfflineARM.Repositories.Repositories.Dictionaries
     /// <summary>
     /// Требование клиента
     /// </summary>
-    public class CustomerRequirementRepository : BaseRepository<CustomerRequirement>, ICustomerRequirementRepository
+    public class CustomerRequirementRepository : BaseRepository<ClientRequirement>, ICustomerRequirementRepository
     {
         #region Конструктор
 

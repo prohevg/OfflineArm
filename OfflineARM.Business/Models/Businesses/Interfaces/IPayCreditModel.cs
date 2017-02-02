@@ -1,60 +1,32 @@
-﻿using System;
-using OfflineARM.Business.Models.Dictionaries.Interfaces;
+﻿using OfflineARM.DAO.Entities;
 
 namespace OfflineARM.Business.Models.Businesses.Interfaces
 {
     /// <summary>
-    /// Заказ
+    /// Оплата кредит
     /// </summary>
-    public interface IOrderModel : IBaseBusninessModel
+    public interface IPayCreditModel : IBaseDaoEntity
     {
         /// <summary>
-        /// Ответственный
+        /// Банк по БС
         /// </summary>
-        IUserModel User
+        string CreditBank
         {
             get;
             set;
         }
 
         /// <summary>
-        /// Статус заказа
+        /// Программа по БС
         /// </summary>
-        IOrderStatusModel OrderStatus
+        string CreditProgramm
         {
             get;
             set;
         }
 
         /// <summary>
-        /// Оплата наличными
-        /// </summary>
-        IPayNalModel PayNal
-        {
-            get;
-            set;
-        }
-
-        /// <summary>
-        /// Оплата картой
-        /// </summary>
-        IPayCardModel PayCard
-        {
-            get;
-            set;
-        }
-
-        /// <summary>
-        /// Оплата кредит
-        /// </summary>
-        IPayCreditModel PayCredit
-        {
-            get;
-            set;
-        }
-
-        /// <summary>
-        ///  Номер заказа
+        /// № договора
         /// </summary>
         string Number
         {
@@ -63,9 +35,36 @@ namespace OfflineARM.Business.Models.Businesses.Interfaces
         }
 
         /// <summary>
-        /// Дата создания заказа
+        /// ФИО клиента
         /// </summary>
-        DateTime DateCreate
+        string ClientFIO
+        {
+            get;
+            set;
+        }
+
+        /// <summary>
+        /// Сумма ПВ по БС
+        /// </summary>
+        decimal SummPV
+        {
+            get;
+            set;
+        }
+
+        /// <summary>
+        /// Сумма кредита по БС
+        /// </summary>
+        decimal SummBS
+        {
+            get;
+            set;
+        }
+
+        /// <summary>
+        /// Сумма кредита по БС
+        /// </summary>
+        string Scanner
         {
             get;
             set;

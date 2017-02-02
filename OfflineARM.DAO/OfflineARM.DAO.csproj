@@ -76,7 +76,12 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="ApplicationDbContext.cs" />
+    <Compile Include="Configurations\Business\ClientPrivateConfiguration.cs" />
     <Compile Include="Configurations\Business\ExpositionConfiguration.cs" />
+    <Compile Include="Configurations\Business\ClientOranizationConfiguration.cs" />
+    <Compile Include="Configurations\Business\PayCreditConfiguration.cs" />
+    <Compile Include="Configurations\Business\PayCardConfiguration.cs" />
+    <Compile Include="Configurations\Business\PayNalConfiguration.cs" />
     <Compile Include="Configurations\Dictionaries\CharacteristicConfiguration.cs" />
     <Compile Include="Configurations\Business\BagCollectionConfiguration.cs" />
     <Compile Include="Configurations\Business\OrderConfiguration.cs" />
@@ -91,9 +96,14 @@
     <Compile Include="Configurations\BaseDaoEntityConfiguration.cs" />
     <Compile Include="Configurations\Dictionaries\BasisActionConfiguration.cs" />
     <Compile Include="Configurations\Dictionaries\OrderStatusConfiguration.cs" />
-    <Compile Include="Configurations\Dictionaries\CustomerRequirementConfiguration.cs" />
+    <Compile Include="Configurations\Dictionaries\ClientRequirementConfiguration.cs" />
     <Compile Include="Configurations\Dictionaries\LocationConfiguration.cs" />
     <Compile Include="Configurations\Dictionaries\CityConfiguration.cs" />
+    <Compile Include="Entities\Business\ClientOranization.cs" />
+    <Compile Include="Entities\Business\PayCard.cs" />
+    <Compile Include="Entities\Business\PayCredit.cs" />
+    <Compile Include="Entities\Business\PayNal.cs" />
+    <Compile Include="Entities\Business\ClientPrivate.cs" />
     <Compile Include="Entities\Dictionaries\Characteristic.cs" />
     <Compile Include="Entities\Business\User.cs" />
     <Compile Include="Entities\Dictionaries\Nomenclature.cs" />
@@ -109,7 +119,7 @@
     <Compile Include="Entities\BaseDaoEntity.cs" />
     <Compile Include="Entities\Dictionaries\BasisAction.cs" />
     <Compile Include="Entities\Dictionaries\OrderStatus.cs" />
-    <Compile Include="Entities\Dictionaries\CustomerRequirement.cs" />
+    <Compile Include="Entities\Dictionaries\ClientRequirement.cs" />
     <Compile Include="Entities\Dictionaries\Location.cs" />
     <Compile Include="Entities\Dictionaries\City.cs" />
     <Compile Include="Entities\IBaseDaoEntity.cs" />

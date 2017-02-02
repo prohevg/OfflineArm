@@ -3,7 +3,7 @@
     /// <summary>
     /// Требование клиента
     /// </summary>
-    public class CustomerRequirement : BaseDictionaryDaoEntity
+    public class ClientRequirement : BaseDictionaryDaoEntity
     {
         
     }

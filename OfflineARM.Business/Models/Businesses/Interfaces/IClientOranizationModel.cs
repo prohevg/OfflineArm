@@ -1,108 +1,99 @@
 ﻿using System;
-using OfflineARM.DAO.Entities.Dictionaries;
+using OfflineARM.Business.Models.Dictionaries.Interfaces;
+using OfflineARM.DAO.Entities;
 
-namespace OfflineARM.DAO.Entities.Business
+namespace OfflineARM.Business.Models.Businesses.Interfaces
 {
     /// <summary>
-    /// Магазин\салон
+    /// Клиент физ лицо
     /// </summary>
-    public class Shop : BaseDaoEntity
+    public interface IClientOranizationModel : IBaseDaoEntity
     {
+        /// <summary>
+        /// Действующего на основании
+        /// </summary>
+        IBasisActionModel BasisAction
+        {
+            get;
+            set;
+        }
+
         /// <summary>
         /// Наименование
         /// </summary>
-        public string Name
+        string Name
         {
             get;
             set;
         }
 
         /// <summary>
-        /// Город
+        /// Адрес
         /// </summary>
-        public int CityId
+        string Address
         {
             get;
             set;
         }
 
         /// <summary>
-        /// Город
+        /// Телефон
         /// </summary>
-        public City City
+        string Phone
         {
             get;
             set;
         }
 
         /// <summary>
-        /// Организация
+        /// В лице
         /// </summary>
-        public int OrganizationId
-        {
-            get;
-            set;
-        }
-
-
-        /// <summary>
-        /// Организация
-        /// </summary>
-        public Organization Organization
+        string Face
         {
             get;
             set;
         }
 
         /// <summary>
-        /// Касса
+        /// Должность
         /// </summary>
-        public Guid Cashbox
+        string Position
         {
             get;
             set;
         }
 
         /// <summary>
-        /// Основной склад
+        /// Номер документа
         /// </summary>
-        public Guid WarehouseMain
+        string Number
         {
             get;
             set;
         }
 
         /// <summary>
-        /// Склад ЭКСПО(салон) 
+        /// От
         /// </summary>
-        public Guid WarehouseEkspo
+        DateTime From
         {
             get;
             set;
         }
 
         /// <summary>
-        /// Склад ЭКСПО(салон) 
+        /// ИНН
         /// </summary>
-        public Guid WarehouseStock
+        string Inn
         {
             get;
             set;
         }
 
         /// <summary>
-        /// Адрес 
+        /// КПП
         /// </summary>
-        public string Address
-        {
-            get;
-            set;
-        }
-
-        /// <summary>
-        /// Телефон 
-        /// </summary>
-        public string Phone
+        string Kpp
         {
             get;
             set;
