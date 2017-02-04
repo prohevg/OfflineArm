@@ -417,6 +417,12 @@
             </upperValueInternal>
             <elementDefinition Id="283a664c-0950-4b2d-8fd3-b9bad609630a" />
           </property>
+          <property Id="b59e9e85-411a-4f3b-86b6-075683272acb" name="OrderNumber" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+            <elementDefinition Id="14d8ba9e-7481-419f-867b-0a503d77a920" />
+            <type_NamedElement>
+              <referencedTypeMoniker Id="2568f92a-5c2e-41c5-a696-ceac669af1f4" LastKnownName="String" />
+            </type_NamedElement>
+          </property>
         </ownedAttributesInternal>
       </class>
     </logicalClassDesignerModelHasTypes>
@@ -1150,6 +1156,11 @@
     <packageHasNamedElement>
       <referencedType Id="b9f549b7-5147-409a-b488-e5d8fad423b2" name="BankProduct" isAbstract="false" isLeaf="false" cachedFullName="OrderModels::BankProduct">
         <elementDefinition Id="84d42a54-7d05-45ee-80a7-14b2ca603238" />
+      </referencedType>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <referencedType Id="2568f92a-5c2e-41c5-a696-ceac669af1f4" name="String" isAbstract="false" isLeaf="false" cachedFullName="String">
+        <elementDefinition Id="59259974-6d55-42c6-b7bd-763d77ac8ef9" />
       </referencedType>
     </packageHasNamedElement>
   </packagedElements>
