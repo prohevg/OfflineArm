@@ -5,9 +5,9 @@ using OfflineARM.Repositories.Repositories.Dictionaries.Interfaces;
 namespace OfflineARM.Repositories.Repositories.Dictionaries
 {
     /// <summary>
-    /// Требование клиента
+    /// Банковский продукт
     /// </summary>
-    public class CustomerRequirementRepository : BaseRepository<CustomerRequirement>, ICustomerRequirementRepository
+    public class BankProductRepository : BaseRepository<BankProduct>, IBankProductRepository
     {
         #region Конструктор
 
@@ -15,7 +15,7 @@ namespace OfflineARM.Repositories.Repositories.Dictionaries
         /// Конструктор  
         /// </summary>  
         /// <param name="context">Контекст выполнения БД</param>  
-        public CustomerRequirementRepository(ApplicationDbContext context)
+        public BankProductRepository(ApplicationDbContext context)
             : base(context)
         {
 

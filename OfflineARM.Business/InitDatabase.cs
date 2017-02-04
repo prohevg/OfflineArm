@@ -5,6 +5,7 @@ using OfflineARM.Business.Dictionaries.Interfaces;
 using OfflineARM.Business.Models.Businesses;
 using OfflineARM.Business.Models.Dictionaries;
 using OfflineARM.Business.Models.Dictionaries.Interfaces;
+using OfflineARM.DAO.Entities.Dictionaries;
 using OfflineARM.Repositories;
 
 namespace OfflineARM.Business
@@ -26,6 +27,8 @@ namespace OfflineARM.Business
                     return;
                 }
             }
+
+            AddBankAndPoduct();
 
             var imp = IoCBusiness.Instance.Get<INomenclatureImp>();
 
@@ -56,6 +59,31 @@ namespace OfflineARM.Business
 
                     AddCharact(childNomencl);
                 }               
+            }
+        }
+
+        private static void AddBankAndPoduct()
+        {
+            using (var uf = new UnitOfWork())
+            {
+                var bank = new Bank()
+                {
+                    Guid = Guid.NewGuid(),
+                    Name = "Банк_сбер"
+                };
+
+                uf.DictionaryRepositories.BankRepository.Insert(bank);
+                uf.Save();
+
+                var bnkProduct = new BankProduct()
+                {
+                    Guid = Guid.NewGuid(),
+                    Name = "Продукт 1",
+                    BankId = bank.Id
+                };
+
+                uf.DictionaryRepositories.BankProductRepository.Insert(bnkProduct);
+                uf.Save();
             }
         }
 

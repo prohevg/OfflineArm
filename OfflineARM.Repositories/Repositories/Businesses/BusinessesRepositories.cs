@@ -28,7 +28,32 @@ namespace OfflineARM.Repositories.Repositories.Businesses
         /// <summary>
         /// Спецификация заказа
         /// </summary>
-        private IOrderSpecificationRepository _orderSpecificationRepository;
+        private IOrderSpecificationItemRepository _orderSpecificationRepository;
+
+        /// <summary>
+        /// Оплата картой
+        /// </summary>
+        private CardPaymentRepository _cardPaymentRepository;
+
+        /// <summary>
+        /// Оплата наличными
+        /// </summary>
+        private CashPaymentRepository _cashPaymentRepository;
+
+        /// <summary>
+        /// Оплата кредит
+        /// </summary>
+        private CreditPaymentRepository _creditPaymentRepository;
+
+        /// <summary>
+        ///  Клиент юр лицо
+        /// </summary>
+        private CustomerLegalRepository _customerLegalRepository;
+
+        /// <summary>
+        ///  Клиент физ лицо
+        /// </summary>
+        private CustomerPrivateRepository _customerPrivateRepository;
 
         #endregion
 
@@ -79,18 +104,92 @@ namespace OfflineARM.Repositories.Repositories.Businesses
         /// <summary>  
         /// Репозиторий Спецификация заказа  
         /// </summary>  
-        public IOrderSpecificationRepository OrderSpecificationRepository
+        public IOrderSpecificationItemRepository OrderSpecificationRepository
         {
             get
             {
                 if (this._orderSpecificationRepository == null)
                 {
-                    this._orderSpecificationRepository = new OrderSpecificationRepository(_context);
+                    this._orderSpecificationRepository = new OrderSpecificationItemRepository(_context);
                 }
                 return _orderSpecificationRepository;
             }
         }
 
+        /// <summary>
+        /// Оплата картой
+        /// </summary>
+        public ICardPaymentRepository CardPaymentRepository
+        {
+            get
+            {
+                if (this._cardPaymentRepository == null)
+                {
+                    this._cardPaymentRepository = new CardPaymentRepository(_context);
+                }
+                return _cardPaymentRepository;
+            }
+        }
+
+        /// <summary>
+        /// Оплата наличными
+        /// </summary>
+        public ICashPaymentRepository CashPaymentRepository
+        {
+            get
+            {
+                if (this._cashPaymentRepository == null)
+                {
+                    this._cashPaymentRepository = new CashPaymentRepository(_context);
+                }
+                return _cashPaymentRepository;
+            }
+        }
+
+        /// <summary>
+        /// Оплата кредит
+        /// </summary>
+        public ICreditPaymentRepository CreditPaymentRepository
+        {
+            get
+            {
+                if (this._creditPaymentRepository == null)
+                {
+                    this._creditPaymentRepository = new CreditPaymentRepository(_context);
+                }
+                return _creditPaymentRepository;
+            }
+        }
+
+        /// <summary>
+        ///  Клиент юр лицо
+        /// </summary>
+        public ICustomerLegalRepository CustomerLegalRepository
+        {
+            get
+            {
+                if (this._customerLegalRepository == null)
+                {
+                    this._customerLegalRepository = new CustomerLegalRepository(_context);
+                }
+                return _customerLegalRepository;
+            }
+        }
+
+        /// <summary>
+        ///  Клиент физ лицо
+        /// </summary>
+        public ICustomerPrivateRepository CustomerPrivateRepository
+        {
+            get
+            {
+                if (this._customerPrivateRepository == null)
+                {
+                    this._customerPrivateRepository = new CustomerPrivateRepository(_context);
+                }
+                return _customerPrivateRepository;
+            }
+        }
 
         #endregion
     }

@@ -11,7 +11,7 @@ namespace OfflineARM.Business.Businesses
     /// <summary>
     /// Спецификация заказа
     /// </summary>
-    public class OrderSpecificationImp : BaseImp<IOrderSpecificationItemModel, IOrderSpecificationValidator, OrderSpecificationItem, IOrderSpecificationRepository>, IOrderSpecificationImp
+    public class OrderSpecificationImp : BaseImp<IOrderSpecificationItemModel, IOrderSpecificationValidator, OrderSpecificationItem, IOrderSpecificationItemRepository>, IOrderSpecificationImp
     {
         #region Конструктор
 

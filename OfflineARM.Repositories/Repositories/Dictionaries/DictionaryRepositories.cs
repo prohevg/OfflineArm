@@ -48,7 +48,22 @@ namespace OfflineARM.Repositories.Repositories.Dictionaries
         /// <summary>
         /// Репозиторий Характеристика номенклатуры
         /// </summary>
-        private IFeatureRepository _characteristicRepository;
+        private IFeatureRepository _featureRepository;
+
+        /// <summary>
+        /// Репозиторий Банк
+        /// </summary>
+        private IBankRepository _bankRepository;
+
+        /// <summary>
+        /// Репозиторий Банковский продукт
+        /// </summary>
+        private IBankProductRepository _bankProductRepository;
+
+        /// <summary>  
+        /// Группа номенклатур
+        /// </summary>  
+        private INomenclatureGroupRepository _nomenclatureGroupRepository;
 
         #endregion
 
@@ -163,14 +178,58 @@ namespace OfflineARM.Repositories.Repositories.Dictionaries
         {
             get
             {
-                if (this._characteristicRepository == null)
+                if (this._featureRepository == null)
                 {
-                    this._characteristicRepository = new FeatureRepository(_context);
+                    this._featureRepository = new FeatureRepository(_context);
                 }
-                return _characteristicRepository;
+                return _featureRepository;
             }
         }
 
+        /// <summary>  
+        /// Репозиторий Банк
+        /// </summary>  
+        public IBankRepository BankRepository
+        {
+            get
+            {
+                if (this._bankRepository == null)
+                {
+                    this._bankRepository = new BankRepository(_context);
+                }
+                return _bankRepository;
+            }
+        }
+
+        /// <summary>  
+        /// Репозиторий Банковский продукт
+        /// </summary>  
+        public IBankProductRepository BankProductRepository
+        {
+            get
+            {
+                if (this._bankProductRepository == null)
+                {
+                    this._bankProductRepository = new BankProductRepository(_context);
+                }
+                return _bankProductRepository;
+            }
+        }
+
+        /// <summary>  
+        /// Группа номенклатур
+        /// </summary>  
+        public INomenclatureGroupRepository NomenclatureGroupRepository
+        {
+            get
+            {
+                if (this._nomenclatureGroupRepository == null)
+                {
+                    this._nomenclatureGroupRepository = new NomenclatureGroupRepository(_context);
+                }
+                return _nomenclatureGroupRepository;
+            }
+        }
 
         #endregion
     }

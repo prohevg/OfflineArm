@@ -5,9 +5,9 @@ using OfflineARM.Repositories.Repositories.Businesses.Interfaces;
 namespace OfflineARM.Repositories.Repositories.Businesses
 {
     /// <summary>
-    /// Заказ
+    /// Клиент юр лицо
     /// </summary>
-    public class OrderSpecificationRepository : BaseRepository<OrderSpecificationItem>, IOrderSpecificationRepository
+    public class CustomerLegalRepository : BaseRepository<CustomerLegal>, ICustomerLegalRepository
     {
         #region Конструктор
 
@@ -15,7 +15,7 @@ namespace OfflineARM.Repositories.Repositories.Businesses
         /// Конструктор  
         /// </summary>  
         /// <param name="context">Контекст выполнения БД</param>  
-        public OrderSpecificationRepository(ApplicationDbContext context)
+        public CustomerLegalRepository(ApplicationDbContext context)
             : base(context)
         {
 

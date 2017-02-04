@@ -20,6 +20,31 @@ namespace OfflineARM.Repositories.Repositories.Businesses
         /// <summary>
         /// Спецификация заказа
         /// </summary>
-        IOrderSpecificationRepository OrderSpecificationRepository { get; }
+        IOrderSpecificationItemRepository OrderSpecificationRepository { get; }
+
+        /// <summary>
+        /// Оплата картой
+        /// </summary>
+        ICardPaymentRepository CardPaymentRepository { get; }
+
+        /// <summary>
+        /// Оплата наличными
+        /// </summary>
+        ICashPaymentRepository CashPaymentRepository { get; }
+
+        /// <summary>
+        /// Оплата кредит
+        /// </summary>
+        ICreditPaymentRepository CreditPaymentRepository { get; }
+
+        /// <summary>
+        ///  Клиент юр лицо
+        /// </summary>
+        ICustomerLegalRepository CustomerLegalRepository { get; }
+
+        /// <summary>
+        ///  Клиент физ лицо
+        /// </summary>
+        ICustomerPrivateRepository CustomerPrivateRepository { get; }
     }
 }

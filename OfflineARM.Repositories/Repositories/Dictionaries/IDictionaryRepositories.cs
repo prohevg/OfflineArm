@@ -1,4 +1,5 @@
-﻿using OfflineARM.Repositories.Repositories.Dictionaries.Interfaces;
+﻿using OfflineARM.Repositories.Repositories.Dictionaries;
+using OfflineARM.Repositories.Repositories.Dictionaries.Interfaces;
 
 namespace OfflineARM.Repositories.Repositories.Dictionaries
 {
@@ -36,5 +37,20 @@ namespace OfflineARM.Repositories.Repositories.Dictionaries
         /// Репозиторий Характеристика номенклатуры
         /// </summary>  
         IFeatureRepository FeatureRepository { get; }
+
+        /// <summary>  
+        /// Репозиторий Банк
+        /// </summary>  
+        IBankRepository BankRepository { get; }
+
+        /// <summary>  
+        /// Банковский продукт
+        /// </summary>  
+        IBankProductRepository BankProductRepository { get; }
+
+        /// <summary>  
+        /// Группа номенклатур
+        /// </summary>  
+        INomenclatureGroupRepository NomenclatureGroupRepository { get; }
     }
 }

@@ -127,7 +127,7 @@
     <Compile Include="Entities\Dictionaries\BasisAction.cs" />
     <Compile Include="Entities\Dictionaries\NomenclatureGroup.cs" />
     <Compile Include="Entities\Dictionaries\OrderStatus.cs" />
-    <Compile Include="Entities\Dictionaries\ClientRequirement.cs" />
+    <Compile Include="Entities\Dictionaries\CustomerRequirement.cs" />
     <Compile Include="Entities\Dictionaries\Location.cs" />
     <Compile Include="Entities\Dictionaries\City.cs" />
     <Compile Include="Entities\IBaseDaoEntity.cs" />

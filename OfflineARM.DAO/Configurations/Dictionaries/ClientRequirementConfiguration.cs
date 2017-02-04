@@ -5,7 +5,7 @@ namespace OfflineARM.DAO.Configurations.Dictionaries
     /// <summary>
     /// Конфигурация Требование клиента
     /// </summary>
-    public class ClientRequirementConfiguration : BaseDictionaryDaoEntityConfiguration<ClientRequirement>
+    public class ClientRequirementConfiguration : BaseDictionaryDaoEntityConfiguration<CustomerRequirement>
     {
         #region Конструктор
 

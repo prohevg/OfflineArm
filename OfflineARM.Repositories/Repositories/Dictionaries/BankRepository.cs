@@ -1,13 +1,14 @@
 ﻿using OfflineARM.DAO;
+using OfflineARM.DAO.Entities;
 using OfflineARM.DAO.Entities.Dictionaries;
 using OfflineARM.Repositories.Repositories.Dictionaries.Interfaces;
 
 namespace OfflineARM.Repositories.Repositories.Dictionaries
 {
     /// <summary>
-    /// Требование клиента
+    /// Банк
     /// </summary>
-    public class CustomerRequirementRepository : BaseRepository<CustomerRequirement>, ICustomerRequirementRepository
+    public class BankRepository : BaseRepository<Bank>, IBankRepository
     {
         #region Конструктор
 
@@ -15,7 +16,7 @@ namespace OfflineARM.Repositories.Repositories.Dictionaries
         /// Конструктор  
         /// </summary>  
         /// <param name="context">Контекст выполнения БД</param>  
-        public CustomerRequirementRepository(ApplicationDbContext context)
+        public BankRepository(ApplicationDbContext context)
             : base(context)
         {
 
