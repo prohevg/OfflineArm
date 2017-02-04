@@ -71,10 +71,10 @@
     <Compile Include="Repositories\Businesses\Interfaces\IOrderRepository.cs" />
     <Compile Include="Repositories\Businesses\Interfaces\IExpositionRepository.cs" />
     <Compile Include="Repositories\Dictionaries\BasisActionRepository.cs" />
-    <Compile Include="Repositories\Dictionaries\Interfaces\ICharacteristicRepository.cs" />
+    <Compile Include="Repositories\Dictionaries\Interfaces\IFeatureRepository.cs" />
     <Compile Include="Repositories\Dictionaries\Interfaces\IOrderStatusRepository.cs" />
     <Compile Include="Repositories\Dictionaries\Interfaces\INomenclatureRepository.cs" />
-    <Compile Include="Repositories\Dictionaries\CharacteristicRepository.cs" />
+    <Compile Include="Repositories\Dictionaries\FeatureRepository.cs" />
     <Compile Include="Repositories\Dictionaries\NomenclatureRepository.cs" />
     <Compile Include="Repositories\Dictionaries\OrderStatusRepository.cs" />
     <Compile Include="Repositories\Dictionaries\CustomerRequirementRepository.cs" />

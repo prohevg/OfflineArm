@@ -35,6 +35,6 @@ namespace OfflineARM.Repositories.Repositories.Dictionaries
         /// <summary>  
         /// Репозиторий Характеристика номенклатуры
         /// </summary>  
-        ICharacteristicRepository CharacteristicRepository { get; }
+        IFeatureRepository FeatureRepository { get; }
     }
 }

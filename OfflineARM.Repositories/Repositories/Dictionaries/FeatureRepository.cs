@@ -9,7 +9,7 @@ namespace OfflineARM.Repositories.Repositories.Dictionaries
     /// <summary>
     /// Характеристика номенклатуры
     /// </summary>
-    public class CharacteristicRepository : BaseRepository<Feature>, ICharacteristicRepository
+    public class FeatureRepository : BaseRepository<Feature>, IFeatureRepository
     {
         #region Конструктор
 
@@ -17,7 +17,7 @@ namespace OfflineARM.Repositories.Repositories.Dictionaries
         /// Конструктор  
         /// </summary>  
         /// <param name="context">Контекст выполнения БД</param>  
-        public CharacteristicRepository(ApplicationDbContext context)
+        public FeatureRepository(ApplicationDbContext context)
             : base(context)
         {
 

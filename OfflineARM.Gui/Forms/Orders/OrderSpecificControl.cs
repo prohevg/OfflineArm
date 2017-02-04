@@ -241,8 +241,8 @@ namespace OfflineARM.Gui.Forms.Orders
             var newOrderSpesific = new OrderSpecificationItemModel()
             {
                 Nomenclature = model.Nomenclature,
-                Characteristic = model,
-                Count = 1,
+                Feature = model,
+              //  Count = 1,
                 Price = model.Price,
             };
 
@@ -294,8 +294,8 @@ namespace OfflineARM.Gui.Forms.Orders
             var newOrderSpesific = new OrderSpecificationItemModel()
             {
                 Nomenclature = model.Nomenclature,
-                Characteristic = model.Characteristic,
-                Count = 1,
+                Feature = model.Feature,
+               // Count = 1,
                 Price = model.Price,
             };
 
@@ -349,21 +349,21 @@ namespace OfflineARM.Gui.Forms.Orders
         private void AddInOrderSpecifics(IOrderSpecificationItemModel model)
         {
             var exist = _orderSpecifications.FirstOrDefault(
-                os => os.Nomenclature == model.Nomenclature && os.Characteristic == model.Characteristic);
+                os => os.Nomenclature == model.Nomenclature && os.Feature == model.Feature);
 
             if (exist == null)
             {
                 _orderSpecifications.Add(new OrderSpecificationItemModel()
                 {
                     Nomenclature = model.Nomenclature,
-                    Characteristic = model.Characteristic,
-                    Count = 1,
+                    Feature = model.Feature,
+                   // Count = 1,
                     Price = model.Price,
                 });
             }
             else
             {
-                exist.Count++;
+              //  exist.Count++;
             }
 
             gcOrderSpecifications.DataSource = _orderSpecifications;

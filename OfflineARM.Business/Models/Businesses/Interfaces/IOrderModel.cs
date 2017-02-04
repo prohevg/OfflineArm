@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using OfflineARM.Business.Models.Dictionaries.Interfaces;
 
 namespace OfflineARM.Business.Models.Businesses.Interfaces
@@ -27,27 +28,18 @@ namespace OfflineARM.Business.Models.Businesses.Interfaces
         }
 
         /// <summary>
-        /// Оплата наличными
+        /// Клиент физ лицо
         /// </summary>
-        ICashPaymentModel PayNal
+        ICustomerPrivateModel CustomerPrivate
         {
             get;
             set;
         }
 
         /// <summary>
-        /// Оплата картой
+        /// Клиент юр лицо
         /// </summary>
-        ICardPaymentModel PayCard
-        {
-            get;
-            set;
-        }
-
-        /// <summary>
-        /// Оплата кредит
-        /// </summary>
-        ICreditPaymentModel PayCredit
+        ICustomerLegalModel CustomerLegal
         {
             get;
             set;
@@ -66,6 +58,42 @@ namespace OfflineARM.Business.Models.Businesses.Interfaces
         /// Дата создания заказа
         /// </summary>
         DateTime DateCreate
+        {
+            get;
+            set;
+        }
+
+        /// <summary>
+        /// Список оплат наличными
+        /// </summary>
+        List<ICashPaymentModel> PayNals
+        {
+            get;
+            set;
+        }
+
+        /// <summary>
+        /// Список оплат кредитом
+        /// </summary>
+        List<ICreditPaymentModel> PayCredits
+        {
+            get;
+            set;
+        }
+
+        /// <summary>
+        /// Список оплат картой
+        /// </summary>
+        List<ICardPaymentModel> PayCards
+        {
+            get;
+            set;
+        }
+
+        /// <summary>
+        /// Спецификация заказа
+        /// </summary>
+        List<IOrderSpecificationItemModel> OrderSpecifications
         {
             get;
             set;

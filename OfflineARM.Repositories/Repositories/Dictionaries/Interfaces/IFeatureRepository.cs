@@ -6,7 +6,7 @@ namespace OfflineARM.Repositories.Repositories.Dictionaries.Interfaces
     /// <summary>
     /// Характеристика номенклатуры
     /// </summary>
-    public interface ICharacteristicRepository : IBaseRepository<Feature>
+    public interface IFeatureRepository : IBaseRepository<Feature>
     {
         /// <summary>
         /// Найти по id номенклатуры

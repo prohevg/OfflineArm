@@ -28,7 +28,7 @@ namespace OfflineARM.DAO.Entities.Business
         /// <summary>
         /// Характеристика
         /// </summary>
-        public int CharacteristicId
+        public int FeatureId
         {
             get;
             set;
@@ -37,7 +37,7 @@ namespace OfflineARM.DAO.Entities.Business
         /// <summary>
         /// Характеристика
         /// </summary>
-        public Feature Characteristic
+        public Feature Feature
         {
             get;
             set;

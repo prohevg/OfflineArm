@@ -69,32 +69,23 @@ namespace OfflineARM.Business.Dictionaries
         /// <summary>
         /// Метод конвертации Dao объектa в бизнес-модель 
         /// </summary>
-        /// <param name="daoEntity"></param>
+        /// <param name="daoEntity">dao Сущность</param>
+        /// <param name="model">Сущность</param>
         /// <returns></returns>
-        protected override INomenclatureModel ConvertTo(Nomenclature daoEntity)
+        protected override INomenclatureModel ConvertTo(Nomenclature daoEntity, INomenclatureModel model = null)
         {
-            var model = new NomenclatureModel
+            if (model == null)
             {
-                Id = daoEntity.Id,
-                Guid = daoEntity.Guid,
-                Name = daoEntity.Name
-            };
-
-            if (daoEntity.ParentId.HasValue)
-            {
-                model.ParentId = daoEntity.ParentId.Value;
-                model.Parent = GetById(daoEntity.ParentId.Value);
+                model = new NomenclatureModel();
             }
 
-            if (daoEntity.Childs != null)
-            {
-                model.Childs = new List<INomenclatureModel>();
-                foreach (var daoEntityChild in daoEntity.Childs)
-                {
-                    var childModel = ConvertTo(daoEntityChild);
-                    model.Childs.Add(childModel);
-                }
-            }
+            model.Id = daoEntity.Id;
+            model.Guid = daoEntity.Guid;
+            //model.Price = daoEntity.Price;
+            //model.IsEnabled = daoEntity.IsEnabled;
+
+            //model.Feature = daoEntity.Feature;
+            //model.Nomenclature = daoEntity.Nomenclature;
 
             return model;
         }
@@ -103,71 +94,22 @@ namespace OfflineARM.Business.Dictionaries
         /// Создание DAO сущности
         /// </summary>
         /// <param name="model">Сущность</param>
+        /// <param name="daoEntity">Существующая dao сущность</param>
         /// <returns></returns>
-        public override Nomenclature CreateInternal(INomenclatureModel model)
+        protected override Nomenclature ConvertTo(INomenclatureModel model, Nomenclature daoEntity = null)
         {
-            if (model == null)
+            if (daoEntity == null)
             {
-                return null;
+                daoEntity = new Nomenclature();
             }
 
-            var result = new Nomenclature
-            {
-                Id = model.Id,
-                Guid = model.Guid,
-                Name = model.Name
-            };
-
-            if (model.Parent != null)
-            {
-                result.ParentId = model.Parent.Id;
-            }
-
-            //if (model.Childs != null && model.Childs.Count > 0)
-            //{
-            //    result.Childs = new List<Nomenclature>();
-            //    foreach (var modelChild in model.Childs)
-            //    {
-            //        var daoChildEntity = new Nomenclature()
-            //        {
-            //            Id = modelChild.Id
-            //        };
-            //        result.Childs.Add(daoChildEntity);
-            //    }
-            //}
-
-            return result;
-        }
-
-        /// <summary>
-        /// Обновление сущности
-        /// </summary>
-        /// <param name="model">Сущность</param>
-        /// <param name="daoEntity">dao Сущность</param>
-        /// <returns></returns>
-        public override Nomenclature UpdateDaoInternal(Nomenclature daoEntity, INomenclatureModel model)
-        {
             daoEntity.Id = model.Id;
             daoEntity.Guid = model.Guid;
-            daoEntity.Name = model.Name;
+            //daoEntity. = model.Price;
+            //daoEntity.IsEnabled = model.IsEnabled;
 
-            if (model.Parent != null)
-            {
-                daoEntity.ParentId = model.Parent.Id;
-            }
-
-            //if (model.Childs != null && model.Childs.Count > 0)
-            //{
-            //    daoEntity.Childs = new List<Nomenclature>();
-            //    foreach (var modelChild in model.Childs)
-            //    {
-            //        var daoChildEntity = new Nomenclature()
-            //        {
-            //            Id = modelChild.Id
-            //        };
-            //        daoEntity.Childs.Add(daoChildEntity);
-            //    }
-            //}
+            //daoEntity.Nomenclature = model.Nomenclature;
+            //daoEntity.Feature = model.Feature;
 
             return daoEntity;
         }

@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using OfflineARM.Business.Models.Businesses.Interfaces;
 using OfflineARM.Business.Models.Dictionaries.Interfaces;
 using OfflineARM.DAO.Entities.Business;
@@ -29,27 +30,18 @@ namespace OfflineARM.Business.Models.Businesses
         }
 
         /// <summary>
-        /// Оплата наличными
+        /// Клиент физ лицо
         /// </summary>
-        public ICashPaymentModel PayNal
+        public ICustomerPrivateModel CustomerPrivate
         {
             get;
             set;
         }
 
         /// <summary>
-        /// Оплата картой
+        /// Клиент юр лицо
         /// </summary>
-        public ICardPaymentModel PayCard
-        {
-            get;
-            set;
-        }
-
-        /// <summary>
-        /// Оплата кредит
-        /// </summary>
-        public ICreditPaymentModel PayCredit
+        public ICustomerLegalModel CustomerLegal
         {
             get;
             set;
@@ -72,31 +64,41 @@ namespace OfflineARM.Business.Models.Businesses
             get;
             set;
         }
-        
-        #region implicit
 
-        public static implicit operator OrderModel(Order value)
+        /// <summary>
+        /// Список оплат наличными
+        /// </summary>
+        public List<ICashPaymentModel> PayNals
         {
-            var result = new OrderModel
-            {
-                Id = value.Id,
-                Guid = value.Guid
-            };
-
-            return result;
+            get;
+            set;
         }
 
-        public static implicit operator Order(OrderModel value)
+        /// <summary>
+        /// Список оплат кредитом
+        /// </summary>
+        public List<ICreditPaymentModel> PayCredits
         {
-            var result = new Order
-            {
-                Id = value.Id,
-                Guid = value.Guid
-            };
-
-            return result;
+            get;
+            set;
         }
 
-        #endregion
+        /// <summary>
+        /// Список оплат картой
+        /// </summary>
+        public List<ICardPaymentModel> PayCards
+        {
+            get;
+            set;
+        }
+
+        /// <summary>
+        /// Спецификация заказа
+        /// </summary>
+        public List<IOrderSpecificationItemModel> OrderSpecifications
+        {
+            get;
+            set;
+        }
     }
 }

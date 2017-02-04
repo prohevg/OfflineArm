@@ -20,7 +20,7 @@ namespace OfflineARM.Business.Models.Businesses
         /// <summary>
         /// Характеристика
         /// </summary>
-        public IFeatureModel Characteristic
+        public IFeatureModel Feature
         {
             get;
             set;

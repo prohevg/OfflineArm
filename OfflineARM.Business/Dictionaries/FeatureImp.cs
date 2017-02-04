@@ -12,7 +12,7 @@ namespace OfflineARM.Business.Dictionaries
     /// <summary>
     /// Характеристика номенклатуры
     /// </summary>
-    public class FeatureImp : BaseImp<IFeatureModel, IFeatureValidator, Feature, ICharacteristicRepository>, IFeatureImp
+    public class FeatureImp : BaseImp<IFeatureModel, IFeatureValidator, Feature, IFeatureRepository>, IFeatureImp
     {
         #region Конструктор
 
@@ -22,14 +22,14 @@ namespace OfflineARM.Business.Dictionaries
         /// <param name="unitOfWork">UnitOfWork</param>
         /// <param name="validator">Валидатор</param>
         public FeatureImp(UnitOfWork unitOfWork, IFeatureValidator validator)
-            : base(unitOfWork, unitOfWork.DictionaryRepositories.CharacteristicRepository, validator)
+            : base(unitOfWork, unitOfWork.DictionaryRepositories.FeatureRepository, validator)
         {
 
         }
 
         #endregion
 
-        #region ICharacteristicImp
+        #region IFeatureImp
 
         /// <summary>
         /// Найти по id номенклатуры
@@ -56,28 +56,21 @@ namespace OfflineARM.Business.Dictionaries
         /// <summary>
         /// Метод конвертации Dao объектa в бизнес-модель 
         /// </summary>
-        /// <param name="daoEntity"></param>
+        /// <param name="daoEntity">dao Сущность</param>
+        /// <param name="model">Сущность</param>
         /// <returns></returns>
-        protected override IFeatureModel ConvertTo(Feature daoEntity)
+        protected override IFeatureModel ConvertTo(Feature daoEntity, IFeatureModel model = null)
         {
-            var model = new FeatureModel
+            if (model == null)
             {
-                Id = daoEntity.Id,
-                Guid = daoEntity.Guid,
-                Name = daoEntity.Name,
-                Price = daoEntity.Price
-            };
-
-            if (daoEntity.NomenclatureId > 0)
-            {
-                model.Nomenclature = new NomenclatureModel();
-
-                var daoNomencl =_unitOfWork.DictionaryRepositories.NomenclatureRepository.GetById(daoEntity.NomenclatureId);
-
-                model.Nomenclature.Id = daoNomencl.Id;
-                model.Nomenclature.Name = daoNomencl.Name;
+                model = new FeatureModel();
             }
 
+            model.Id = daoEntity.Id;
+            model.Guid = daoEntity.Guid;
+            model.Name = daoEntity.Name;
+            model.Price = daoEntity.Price;
+            
             return model;
         }
 
@@ -85,47 +78,20 @@ namespace OfflineARM.Business.Dictionaries
         /// Создание DAO сущности
         /// </summary>
         /// <param name="model">Сущность</param>
+        /// <param name="daoEntity">Существующая dao сущность</param>
         /// <returns></returns>
-        public override Feature CreateInternal(IFeatureModel model)
+        protected override Feature ConvertTo(IFeatureModel model, Feature daoEntity = null)
         {
-            if (model == null)
+            if (daoEntity == null)
             {
-                return null;
+                daoEntity = new Feature();
             }
 
-            var result = new Feature
-            {
-                Id = model.Id,
-                Guid = model.Guid,
-                Name = model.Name,
-                Price = model.Price
-            };
-
-            if (model.Nomenclature != null)
-            {
-                result.NomenclatureId = model.Nomenclature.Id;
-            }
-
-            return result;
-        }
-
-        /// <summary>
-        /// Обновление сущности
-        /// </summary>
-        /// <param name="model">Сущность</param>
-        /// <param name="daoEntity">dao Сущность</param>
-        /// <returns></returns>
-        public override Feature UpdateDaoInternal(Feature daoEntity, IFeatureModel model)
-        {
             daoEntity.Id = model.Id;
             daoEntity.Guid = model.Guid;
             daoEntity.Name = model.Name;
             daoEntity.Price = model.Price;
 
-            if (model.Nomenclature != null)
-            {
-                daoEntity.NomenclatureId = model.Nomenclature.Id;
-            }
 
             return daoEntity;
         }

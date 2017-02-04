@@ -57,38 +57,23 @@ namespace OfflineARM.Business.Businesses
         /// <summary>
         /// Метод конвертации Dao объектa в бизнес-модель 
         /// </summary>
-        /// <param name="daoEntity"></param>
+        /// <param name="daoEntity">dao Сущность</param>
+        /// <param name="model">Сущность</param>
         /// <returns></returns>
-        protected override IExpositionModel ConvertTo(Exposition daoEntity)
+        protected override IExpositionModel ConvertTo(Exposition daoEntity, IExpositionModel model = null)
         {
-            var model = new ExpositionModel
+            if (model == null)
             {
-                Id = daoEntity.Id,
-                Guid = daoEntity.Guid,
-                Price = daoEntity.Price,
-                Count = daoEntity.Count,
-                IsEnabled = daoEntity.IsEnabled
-            };
-
-            if (daoEntity.NomenclatureId > 0)
-            {
-                model.Nomenclature = new NomenclatureModel();
-
-                var daoNomencl =_unitOfWork.DictionaryRepositories.NomenclatureRepository.GetById(daoEntity.NomenclatureId);
-
-                model.Nomenclature.Id = daoNomencl.Id;
-                model.Nomenclature.Name = daoNomencl.Name;
+                model = new ExpositionModel();
             }
 
-            if (daoEntity.CharacteristicId > 0)
-            {
-                model.Characteristic = new FeatureModel();
+            model.Id = daoEntity.Id;
+            model.Guid = daoEntity.Guid;
+            model.Price = daoEntity.Price;
+            model.IsEnabled = daoEntity.IsEnabled;
 
-                var daoNomencl = _unitOfWork.DictionaryRepositories.CharacteristicRepository.GetById(daoEntity.CharacteristicId);
-
-                model.Characteristic.Id = daoNomencl.Id;
-                model.Characteristic.Name = daoNomencl.Name;
-            }
+            //model.Feature = daoEntity.Feature;
+            //model.Nomenclature = daoEntity.Nomenclature;
 
             return model;
         }
@@ -97,59 +82,22 @@ namespace OfflineARM.Business.Businesses
         /// Создание DAO сущности
         /// </summary>
         /// <param name="model">Сущность</param>
+        /// <param name="daoEntity">Существующая dao сущность</param>
         /// <returns></returns>
-        public override Exposition CreateInternal(IExpositionModel model)
+        protected override Exposition ConvertTo(IExpositionModel model, Exposition daoEntity = null)
         {
-            if (model == null)
+            if (daoEntity == null)
             {
-                return null;
+                daoEntity = new Exposition();
             }
 
-            var result = new Exposition
-            {
-                Id = model.Id,
-                Guid = model.Guid,
-                Price = model.Price,
-                Count = model.Count,
-                IsEnabled = model.IsEnabled
-            };
-
-            if (model.Nomenclature != null)
-            {
-                result.NomenclatureId = model.Nomenclature.Id;
-            }
-
-            if (model.Characteristic != null)
-            {
-                result.CharacteristicId = model.Characteristic.Id;
-            }
-
-            return result;
-        }
-
-        /// <summary>
-        /// Обновление сущности
-        /// </summary>
-        /// <param name="model">Сущность</param>
-        /// <param name="daoEntity">dao Сущность</param>
-        /// <returns></returns>
-        public override Exposition UpdateDaoInternal(Exposition daoEntity, IExpositionModel model)
-        {
             daoEntity.Id = model.Id;
             daoEntity.Guid = model.Guid;
             daoEntity.Price = model.Price;
-            daoEntity.Count = model.Count;
             daoEntity.IsEnabled = model.IsEnabled;
 
-            if (model.Nomenclature != null)
-            {
-                daoEntity.NomenclatureId = model.Nomenclature.Id;
-            }
-
-            if (model.Characteristic != null)
-            {
-                daoEntity.CharacteristicId = model.Characteristic.Id;
-            }
+            //daoEntity.Nomenclature = model.Nomenclature;
+            //daoEntity.Feature = model.Feature;
 
             return daoEntity;
         }

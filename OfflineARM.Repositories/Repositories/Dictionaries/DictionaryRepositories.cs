@@ -48,7 +48,7 @@ namespace OfflineARM.Repositories.Repositories.Dictionaries
         /// <summary>
         /// Репозиторий Характеристика номенклатуры
         /// </summary>
-        private ICharacteristicRepository _characteristicRepository;
+        private IFeatureRepository _characteristicRepository;
 
         #endregion
 
@@ -159,13 +159,13 @@ namespace OfflineARM.Repositories.Repositories.Dictionaries
         /// <summary>  
         /// Репозиторий Характеристика номенклатуры
         /// </summary>  
-        public ICharacteristicRepository CharacteristicRepository
+        public IFeatureRepository FeatureRepository
         {
             get
             {
                 if (this._characteristicRepository == null)
                 {
-                    this._characteristicRepository = new CharacteristicRepository(_context);
+                    this._characteristicRepository = new FeatureRepository(_context);
                 }
                 return _characteristicRepository;
             }

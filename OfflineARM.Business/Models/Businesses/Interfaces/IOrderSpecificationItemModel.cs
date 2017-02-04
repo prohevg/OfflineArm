@@ -1,5 +1,4 @@
-﻿using System;
-using OfflineARM.Business.Models.Dictionaries.Interfaces;
+﻿using OfflineARM.Business.Models.Dictionaries.Interfaces;
 
 namespace OfflineARM.Business.Models.Businesses.Interfaces
 {
@@ -29,25 +28,7 @@ namespace OfflineARM.Business.Models.Businesses.Interfaces
         /// <summary>
         /// Характеристика
         /// </summary>
-        IFeatureModel Characteristic
-        {
-            get;
-            set;
-        }
-
-        /// <summary>
-        /// Склад
-        /// </summary>
-        Guid Stock
-        {
-            get;
-            set;
-        }
-
-        /// <summary>
-        /// Количество
-        /// </summary>
-        int Count
+        IFeatureModel Feature
         {
             get;
             set;
@@ -65,7 +46,7 @@ namespace OfflineARM.Business.Models.Businesses.Interfaces
         /// <summary>
         /// % скидки
         /// </summary>
-        decimal DiscountProcent
+        decimal DiscountPercent
         {
             get;
             set;
@@ -74,7 +55,7 @@ namespace OfflineARM.Business.Models.Businesses.Interfaces
         /// <summary>
         /// Сумма скидки
         /// </summary>
-        decimal DiscountSum
+        decimal DiscountAmount
         {
             get;
             set;
@@ -83,9 +64,10 @@ namespace OfflineARM.Business.Models.Businesses.Interfaces
         /// <summary>
         /// Итоговая сумма
         /// </summary>
-        decimal TotalSum
+        decimal PriceWithDiscount
         {
             get;
+            set;
         }
     }
 }

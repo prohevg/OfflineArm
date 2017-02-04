@@ -38,45 +38,48 @@ namespace OfflineARM.Business.Businesses
         /// <summary>
         /// Метод конвертации Dao объектa в бизнес-модель 
         /// </summary>
-        /// <param name="daoEntity"></param>
+        /// <param name="daoEntity">dao Сущность</param>
+        /// <param name="model">Сущность</param>
         /// <returns></returns>
-        protected override IOrderModel ConvertTo(Order daoEntity)
+        protected override IOrderModel ConvertTo(Order daoEntity, IOrderModel model = null)
         {
-            return (OrderModel)daoEntity;
+            if (model == null)
+            {
+                model = new OrderModel();
+            }
+
+            model.Id = daoEntity.Id;
+            model.Guid = daoEntity.Guid;
+            model.DateCreate = daoEntity.DateCreate;
+            model.Number = daoEntity.Number;
+           
+
+
+            //model.OrderStatus = daoEntity.OrderStatus;
+
+            return model;
         }
 
         /// <summary>
         /// Создание DAO сущности
         /// </summary>
         /// <param name="model">Сущность</param>
+        /// <param name="daoEntity">Существующая dao сущность</param>
         /// <returns></returns>
-        public override Order CreateInternal(IOrderModel model)
+        protected override Order ConvertTo(IOrderModel model, Order daoEntity = null)
         {
-            if (model == null)
+            if (daoEntity == null)
             {
-                return null;
+                daoEntity = new Order();
             }
 
-            return (Order)model;
-        }
-
-        /// <summary>
-        /// Обновление сущности
-        /// </summary>
-        /// <param name="model">Сущность</param>
-        /// <param name="daoEntity">dao Сущность</param>
-        /// <returns></returns>
-        public override Order UpdateDaoInternal(Order daoEntity, IOrderModel model)
-        {
             daoEntity.Id = model.Id;
             daoEntity.Guid = model.Guid;
-            daoEntity.Number = model.Number;
             daoEntity.DateCreate = model.DateCreate;
-          //  daoEntity.Responsible = model.Responsible;
-          //  daoEntity.DateShipping = model.DateShipping;
-          //  daoEntity.IsSelf = model.IsSelf;
-         //   daoEntity.OrderStatus = model.OrderStatus;
-         //   daoEntity.Summa = model.Summa;
+            daoEntity.Number = model.Number;
+
+           
+
             return daoEntity;
         }
 

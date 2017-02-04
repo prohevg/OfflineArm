@@ -30,25 +30,7 @@ namespace OfflineARM.Business.Models.Businesses
          /// <summary>
         /// Характеристика
         /// </summary>
-        public IFeatureModel Characteristic
-        {
-            get;
-            set;
-        }
-
-        /// <summary>
-        /// Склад
-        /// </summary>
-        public Guid Stock
-        {
-            get;
-            set;
-        }
-
-        /// <summary>
-        /// Количество
-        /// </summary>
-        public int Count
+        public IFeatureModel Feature
         {
             get;
             set;
@@ -66,7 +48,7 @@ namespace OfflineARM.Business.Models.Businesses
         /// <summary>
         /// % скидки
         /// </summary>
-        public decimal DiscountProcent
+        public decimal DiscountPercent
         {
             get;
             set;
@@ -75,7 +57,7 @@ namespace OfflineARM.Business.Models.Businesses
         /// <summary>
         /// Сумма скидки
         /// </summary>
-        public decimal DiscountSum
+        public decimal DiscountAmount
         {
             get;
             set;
@@ -84,12 +66,10 @@ namespace OfflineARM.Business.Models.Businesses
         /// <summary>
         /// Итоговая сумма
         /// </summary>
-        public decimal TotalSum
+        public decimal PriceWithDiscount
         {
-            get
-            {
-                return Count * Price;
-            }
+            get;
+            set;
         }
     }
 }

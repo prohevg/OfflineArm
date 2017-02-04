@@ -92,7 +92,7 @@ namespace OfflineARM.Business
                 {
                     Guid = guid,
                     Nomenclature = charModel.Nomenclature,
-                    Characteristic = charModel,
+                    Feature = charModel,
                     IsEnabled = i == 1,
                     Count = i,
                     Price = 100

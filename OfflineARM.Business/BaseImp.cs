@@ -115,7 +115,7 @@ namespace OfflineARM.Business
                     return new ModelEntityModifyResult(customValidateResult.Errors);
                 }
 
-                var daoEntity = CreateInternal(model);
+                var daoEntity = ConvertTo(model);
 
                 _repository.Insert(daoEntity);
                 _unitOfWork.Save();
@@ -162,7 +162,7 @@ namespace OfflineARM.Business
                     return new ModelEntityModifyResult(errorData);
                 }
 
-                UpdateDaoInternal(daoEntity, model);
+                daoEntity = ConvertTo(model, daoEntity);
 
                 _repository.Update(daoEntity);
                 _unitOfWork.Save();
@@ -256,13 +256,6 @@ namespace OfflineARM.Business
         #region protected abstract
 
         /// <summary>
-        /// Метод конвертации Dao объектa в бизнес-модель 
-        /// </summary>
-        /// <param name="daoEntity"></param>
-        /// <returns></returns>
-        protected abstract TModelEntity ConvertTo(TDaoEntity daoEntity);
-
-        /// <summary>
         /// Валидация сущности
         /// </summary>
         /// <param name="model">Сущность</param>
@@ -283,19 +276,20 @@ namespace OfflineARM.Business
         }
 
         /// <summary>
+        /// Метод конвертации Dao объектa в бизнес-модель 
+        /// </summary>
+        /// <param name="daoEntity">dao Сущность</param>
+        /// <param name="model">Сущность</param>
+        /// <returns></returns>
+        protected abstract TModelEntity ConvertTo(TDaoEntity daoEntity, TModelEntity model = null);
+
+        /// <summary>
         /// Создание DAO сущности
         /// </summary>
         /// <param name="model">Сущность</param>
+        /// <param name="daoEntity">Существующая dao сущность</param>
         /// <returns></returns>
-        public abstract TDaoEntity CreateInternal(TModelEntity model);
-
-        /// <summary>
-        /// Обновление сущности
-        /// </summary>
-        /// <param name="model">Сущность</param>
-        /// <param name="daoEntity">dao Сущность</param>
-        /// <returns></returns>
-        public abstract TDaoEntity UpdateDaoInternal(TDaoEntity daoEntity, TModelEntity model);
+        protected abstract TDaoEntity ConvertTo(TModelEntity model, TDaoEntity daoEntity = null);
 
         #endregion
     }
