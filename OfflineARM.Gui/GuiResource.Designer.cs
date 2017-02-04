@@ -116,6 +116,42 @@ namespace OfflineARM.Gui {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Дата.
+        /// </summary>
+        internal static string OrderPayControl_GridPayCaption_Date {
+            get {
+                return ResourceManager.GetString("OrderPayControl_GridPayCaption_Date", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Вручную.
+        /// </summary>
+        internal static string OrderPayControl_GridPayCaption_IsManual {
+            get {
+                return ResourceManager.GetString("OrderPayControl_GridPayCaption_IsManual", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Тип оплаты.
+        /// </summary>
+        internal static string OrderPayControl_GridPayCaption_PayType {
+            get {
+                return ResourceManager.GetString("OrderPayControl_GridPayCaption_PayType", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Сумма.
+        /// </summary>
+        internal static string OrderPayControl_GridPayCaption_Summ {
+            get {
+                return ResourceManager.GetString("OrderPayControl_GridPayCaption_Summ", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Экспозиция.
         /// </summary>
         internal static string OrderSpecificControl_ExpositionCharacteristics {

@@ -202,4 +202,16 @@
   <data name="OrderSpecificControl_OrderSpecifications_DeleteFromOrder" xml:space="preserve">
     <value>Удалить из заказа</value>
   </data>
+  <data name="OrderPayControl_GridPayCaption_Date" xml:space="preserve">
+    <value>Дата</value>
+  </data>
+  <data name="OrderPayControl_GridPayCaption_IsManual" xml:space="preserve">
+    <value>Вручную</value>
+  </data>
+  <data name="OrderPayControl_GridPayCaption_PayType" xml:space="preserve">
+    <value>Тип оплаты</value>
+  </data>
+  <data name="OrderPayControl_GridPayCaption_Summ" xml:space="preserve">
+    <value>Сумма</value>
+  </data>
 </root>

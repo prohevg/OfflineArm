@@ -38,7 +38,7 @@ namespace OfflineARM.DAO.Entities.Business
         /// <summary>
         /// Позиция из заказа
         /// </summary>
-        public OrderSpecification OrderSpecification
+        public OrderSpecificationItem OrderSpecification
         {
             get;
             set;

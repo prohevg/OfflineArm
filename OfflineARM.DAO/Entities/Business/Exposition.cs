@@ -37,7 +37,7 @@ namespace OfflineARM.DAO.Entities.Business
         /// <summary>
         /// Характеристика
         /// </summary>
-        public Characteristic Characteristic
+        public Feature Characteristic
         {
             get;
             set;

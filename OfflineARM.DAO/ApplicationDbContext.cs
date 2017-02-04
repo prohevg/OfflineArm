@@ -33,6 +33,8 @@ namespace OfflineARM.DAO
         {
             base.OnModelCreating(modelBuilder);
 
+            modelBuilder.Configurations.Add(new BankConfiguration());
+            modelBuilder.Configurations.Add(new BankProductConfiguration());
             modelBuilder.Configurations.Add(new CityConfiguration());
             modelBuilder.Configurations.Add(new LocationConfiguration());
             modelBuilder.Configurations.Add(new BasisActionConfiguration());
@@ -40,18 +42,19 @@ namespace OfflineARM.DAO
             modelBuilder.Configurations.Add(new OrderStatusConfiguration());
 
             modelBuilder.Configurations.Add(new BagCollectionConfiguration());
-            modelBuilder.Configurations.Add(new CharacteristicConfiguration());
+            modelBuilder.Configurations.Add(new FeatureConfiguration());
             modelBuilder.Configurations.Add(new ExpositionConfiguration());
             modelBuilder.Configurations.Add(new NomenclatureConfiguration());
+            modelBuilder.Configurations.Add(new NomenclatureGroupConfiguration());
 
             modelBuilder.Configurations.Add(new OrderConfiguration());
-            modelBuilder.Configurations.Add(new ClientPrivateConfiguration());
-            modelBuilder.Configurations.Add(new ClientOranizationConfiguration());
-            modelBuilder.Configurations.Add(new PayNalConfiguration());
-            modelBuilder.Configurations.Add(new PayCardConfiguration());
-            modelBuilder.Configurations.Add(new PayCreditConfiguration());
+            modelBuilder.Configurations.Add(new CustomerPrivateConfiguration());
+            modelBuilder.Configurations.Add(new CustomerLegalConfiguration());
+            modelBuilder.Configurations.Add(new CashPaymentConfiguration());
+            modelBuilder.Configurations.Add(new CardPaymentConfiguration());
+            modelBuilder.Configurations.Add(new CreditPaymentConfiguration());
 
-            modelBuilder.Configurations.Add(new OrderSpecificationConfiguration());
+            modelBuilder.Configurations.Add(new OrderSpecificationItemConfiguration());
             modelBuilder.Configurations.Add(new OrganizationConfiguration());
             modelBuilder.Configurations.Add(new PartnerConfiguration());
             modelBuilder.Configurations.Add(new ReclamationConfiguration());

@@ -68,8 +68,8 @@ namespace OfflineARM.Business
             container.Bind<INomenclatureImp>().To<NomenclatureImp>();
             container.Bind<INomenclatureValidator>().To<NomenclatureValidator>();
 
-            container.Bind<ICharacteristicImp>().To<CharacteristicImp>();
-            container.Bind<ICharacteristicValidator>().To<CharacteristicValidator>();
+            container.Bind<IFeatureImp>().To<FeatureImp>();
+            container.Bind<IFeatureValidator>().To<FeatureValidator>();
 
             container.Bind<IExpositionImp>().To<ExpositionImp>();
             container.Bind<IExpositionValidator>().To<ExpositionValidator>();

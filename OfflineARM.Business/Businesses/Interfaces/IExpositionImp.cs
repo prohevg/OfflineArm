@@ -1,8 +1,7 @@
-﻿using OfflineARM.Business.Models.Dictionaries.Interfaces;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using OfflineARM.Business.Models.Businesses.Interfaces;
 
-namespace OfflineARM.Business.Dictionaries.Interfaces
+namespace OfflineARM.Business.Businesses.Interfaces
 {
     /// <summary>
     /// Экспозиция

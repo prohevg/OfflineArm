@@ -71,6 +71,8 @@
             this.labelControl10 = new DevExpress.XtraEditors.LabelControl();
             this.labelControl8 = new DevExpress.XtraEditors.LabelControl();
             this.labelControl9 = new DevExpress.XtraEditors.LabelControl();
+            this.gcPays = new OfflineARM.Gui.Controls.GridControlWrapper();
+            this.gridView1 = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.tlpMain.SuspendLayout();
             this.tlpPays.SuspendLayout();
             this.tlpPays2.SuspendLayout();
@@ -100,6 +102,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.teCreditSummBS.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.meCreditScanner.Properties)).BeginInit();
             this.tlpItog.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.gcPays)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridView1)).BeginInit();
             this.SuspendLayout();
             // 
             // tlpMain
@@ -108,12 +112,14 @@
             this.tlpMain.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 700F));
             this.tlpMain.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.tlpMain.Controls.Add(this.tlpPays, 0, 0);
-            this.tlpMain.Controls.Add(this.tlpItog, 0, 1);
+            this.tlpMain.Controls.Add(this.tlpItog, 0, 2);
+            this.tlpMain.Controls.Add(this.gcPays, 0, 1);
             this.tlpMain.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tlpMain.Location = new System.Drawing.Point(0, 0);
             this.tlpMain.Name = "tlpMain";
-            this.tlpMain.RowCount = 3;
+            this.tlpMain.RowCount = 4;
             this.tlpMain.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 400F));
+            this.tlpMain.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 100F));
             this.tlpMain.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 100F));
             this.tlpMain.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.tlpMain.Size = new System.Drawing.Size(867, 661);
@@ -553,7 +559,7 @@
             this.tlpItog.Controls.Add(this.labelControl8, 0, 0);
             this.tlpItog.Controls.Add(this.labelControl9, 0, 1);
             this.tlpItog.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tlpItog.Location = new System.Drawing.Point(3, 403);
+            this.tlpItog.Location = new System.Drawing.Point(3, 503);
             this.tlpItog.Name = "tlpItog";
             this.tlpItog.RowCount = 3;
             this.tlpItog.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
@@ -591,6 +597,24 @@
             this.labelControl9.Size = new System.Drawing.Size(46, 19);
             this.labelControl9.TabIndex = 3;
             this.labelControl9.Text = "Сумма";
+            // 
+            // gcPays
+            // 
+            this.gcPays.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.gcPays.Location = new System.Drawing.Point(3, 403);
+            this.gcPays.MainView = this.gridView1;
+            this.gcPays.Name = "gcPays";
+            this.gcPays.Size = new System.Drawing.Size(694, 94);
+            this.gcPays.TabIndex = 2;
+            this.gcPays.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
+            this.gridView1});
+            // 
+            // gridView1
+            // 
+            this.gridView1.GridControl = this.gcPays;
+            this.gridView1.Name = "gridView1";
+            this.gridView1.OptionsBehavior.ReadOnly = true;
+            this.gridView1.OptionsView.ShowGroupPanel = false;
             // 
             // OrderPayControl
             // 
@@ -632,6 +656,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.meCreditScanner.Properties)).EndInit();
             this.tlpItog.ResumeLayout(false);
             this.tlpItog.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.gcPays)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridView1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -681,5 +707,7 @@
         private DevExpress.XtraEditors.LabelControl labelControl9;
         private DevExpress.XtraEditors.GroupControl gcCard;
         private DevExpress.XtraEditors.GroupControl gcCredit;
+        private Controls.GridControlWrapper gcPays;
+        private DevExpress.XtraGrid.Views.Grid.GridView gridView1;
     }
 }

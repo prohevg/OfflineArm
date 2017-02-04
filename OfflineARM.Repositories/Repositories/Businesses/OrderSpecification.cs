@@ -7,7 +7,7 @@ namespace OfflineARM.Repositories.Repositories.Businesses
     /// <summary>
     /// Заказ
     /// </summary>
-    public class OrderSpecificationRepository : BaseRepository<OrderSpecification>, IOrderSpecificationRepository
+    public class OrderSpecificationRepository : BaseRepository<OrderSpecificationItem>, IOrderSpecificationRepository
     {
         #region Конструктор
 

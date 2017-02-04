@@ -7,7 +7,7 @@ namespace OfflineARM.DAO.Entities.Dictionaries
     /// <summary>
     /// Номенклатура
     /// </summary>
-    public class Nomenclature : BaseDaoEntity
+    public class Nomenclature : BaseDictionaryDaoEntity
     {
         /// <summary>
         /// Родитель
@@ -37,15 +37,6 @@ namespace OfflineARM.DAO.Entities.Dictionaries
         }
 
         /// <summary>
-        /// Наименование
-        /// </summary>
-        public string Name
-        {
-            get;
-            set;
-        }
-
-        /// <summary>
         /// Экспозиция
         /// </summary>
         public virtual ICollection<Exposition> Expositions
@@ -57,7 +48,7 @@ namespace OfflineARM.DAO.Entities.Dictionaries
         /// <summary>
         /// Спецификация заказа
         /// </summary>
-        public virtual ICollection<OrderSpecification> OrderSpecifications
+        public virtual ICollection<OrderSpecificationItem> OrderSpecifications
         {
             get;
             set;

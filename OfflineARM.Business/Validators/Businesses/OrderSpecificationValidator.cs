@@ -15,7 +15,7 @@ namespace OfflineARM.Business.Validators.Businesses
         /// </summary>
         /// <param name="element"></param>
         /// <returns></returns>
-        public ValidationResult Validate(IOrderSpecificationModel element)
+        public ValidationResult Validate(IOrderSpecificationItemModel element)
         {
             //if (string.IsNullOrEmpty(element.Name))
             //{

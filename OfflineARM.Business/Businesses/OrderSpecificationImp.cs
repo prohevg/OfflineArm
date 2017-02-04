@@ -13,7 +13,7 @@ namespace OfflineARM.Business.Businesses
     /// <summary>
     /// Спецификация заказа
     /// </summary>
-    public class OrderSpecificationImp : BaseImp<IOrderSpecificationModel, IOrderSpecificationValidator, OrderSpecification, IOrderSpecificationRepository>, IOrderSpecificationImp
+    public class OrderSpecificationImp : BaseImp<IOrderSpecificationItemModel, IOrderSpecificationValidator, OrderSpecificationItem, IOrderSpecificationRepository>, IOrderSpecificationImp
     {
         #region Конструктор
 
@@ -42,17 +42,17 @@ namespace OfflineARM.Business.Businesses
         /// </summary>
         /// <param name="daoEntity"></param>
         /// <returns></returns>
-        protected override IOrderSpecificationModel ConvertTo(OrderSpecification daoEntity)
+        protected override IOrderSpecificationItemModel ConvertTo(OrderSpecificationItem daoEntity)
         {
-            var model = new OrderSpecificationModel
+            var model = new OrderSpecificationItemModel
             {
                 Id = daoEntity.Id,
                 Guid = daoEntity.Guid,
                 Price = daoEntity.Price,
-                Count = daoEntity.Count,
-                Stock = daoEntity.Stock,
-                DiscountProcent = daoEntity.DiscountProcent,
-                DiscountSum = daoEntity.DiscountSum,
+                //Count = daoEntity.Count,
+                //Stock = daoEntity.Stock,
+                //DiscountProcent = daoEntity.DiscountProcent,
+                //DiscountSum = daoEntity.DiscountSum,
                 //TotalSum = daoEntity.TotalSum,
             };
 
@@ -76,11 +76,11 @@ namespace OfflineARM.Business.Businesses
                 model.Nomenclature.Name = daoNomencl.Name;
             }
 
-            if (daoEntity.CharacteristicId > 0)
+            if (daoEntity.FeatureId > 0)
             {
-                model.Characteristic = new CharacteristicModel();
+                model.Characteristic = new FeatureModel();
 
-                var daoNomencl = _unitOfWork.DictionaryRepositories.CharacteristicRepository.GetById(daoEntity.CharacteristicId);
+                var daoNomencl = _unitOfWork.DictionaryRepositories.CharacteristicRepository.GetById(daoEntity.FeatureId);
 
                 model.Characteristic.Id = daoNomencl.Id;
                 model.Characteristic.Name = daoNomencl.Name;
@@ -94,23 +94,23 @@ namespace OfflineARM.Business.Businesses
         /// </summary>
         /// <param name="model">Сущность</param>
         /// <returns></returns>
-        public override OrderSpecification CreateInternal(IOrderSpecificationModel model)
+        public override OrderSpecificationItem CreateInternal(IOrderSpecificationItemModel model)
         {
             if (model == null)
             {
                 return null;
             }
 
-            var result = new OrderSpecification
+            var result = new OrderSpecificationItem
             {
                 Id = model.Id,
                 Guid = model.Guid,
                 Price = model.Price,
-                Count = model.Count,
-                Stock = model.Stock,
-                TotalSum = model.TotalSum,
-                DiscountProcent = model.DiscountProcent,
-                DiscountSum = model.DiscountSum
+                //Count = model.Count,
+                //Stock = model.Stock,
+                //TotalSum = model.TotalSum,
+                //DiscountProcent = model.DiscountProcent,
+                //DiscountSum = model.DiscountSum
             };
 
             if (model.Order != null)
@@ -125,7 +125,7 @@ namespace OfflineARM.Business.Businesses
 
             if (model.Characteristic != null)
             {
-                result.CharacteristicId = model.Characteristic.Id;
+                //result.CharacteristicId = model.Characteristic.Id;
             }
 
             return result;
@@ -137,31 +137,31 @@ namespace OfflineARM.Business.Businesses
         /// <param name="model">Сущность</param>
         /// <param name="daoEntity">dao Сущность</param>
         /// <returns></returns>
-        public override OrderSpecification UpdateDaoInternal(OrderSpecification daoEntity, IOrderSpecificationModel model)
+        public override OrderSpecificationItem UpdateDaoInternal(OrderSpecificationItem daoEntity, IOrderSpecificationItemModel model)
         {
-            daoEntity.Id = model.Id;
-            daoEntity.Guid = model.Guid;
-            daoEntity.Price = model.Price;
-            daoEntity.Count = model.Count;
-            daoEntity.Stock = model.Stock;
-            daoEntity.TotalSum = model.TotalSum;
-            daoEntity.DiscountProcent = model.DiscountProcent;
-            daoEntity.DiscountSum = model.DiscountSum;
+            //daoEntity.Id = model.Id;
+            //daoEntity.Guid = model.Guid;
+            //daoEntity.Price = model.Price;
+            //daoEntity.Count = model.Count;
+            //daoEntity.Stock = model.Stock;
+            //daoEntity.TotalSum = model.TotalSum;
+            //daoEntity.DiscountProcent = model.DiscountProcent;
+            //daoEntity.DiscountSum = model.DiscountSum;
 
-            if (model.Order != null)
-            {
-                daoEntity.OrderId = model.Order.Id;
-            }
+            //if (model.Order != null)
+            //{
+            //    daoEntity.OrderId = model.Order.Id;
+            //}
 
-            if (model.Nomenclature != null)
-            {
-                daoEntity.NomenclatureId = model.Nomenclature.Id;
-            }
+            //if (model.Nomenclature != null)
+            //{
+            //    daoEntity.NomenclatureId = model.Nomenclature.Id;
+            //}
 
-            if (model.Characteristic != null)
-            {
-                daoEntity.CharacteristicId = model.Characteristic.Id;
-            }
+            //if (model.Characteristic != null)
+            //{
+            //    daoEntity.CharacteristicId = model.Characteristic.Id;
+            //}
 
             return daoEntity;
         }

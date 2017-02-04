@@ -25,8 +25,6 @@ namespace OfflineARM.DAO.Configurations
             ToTable(tableName);
             HasKey(p => p.Id);
 
-            
-
             Property(p => p.Id)
                 .IsRequired()
                 .HasColumnOrder(0)

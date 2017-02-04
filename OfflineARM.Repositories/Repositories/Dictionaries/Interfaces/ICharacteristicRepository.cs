@@ -6,13 +6,13 @@ namespace OfflineARM.Repositories.Repositories.Dictionaries.Interfaces
     /// <summary>
     /// Характеристика номенклатуры
     /// </summary>
-    public interface ICharacteristicRepository : IBaseRepository<Characteristic>
+    public interface ICharacteristicRepository : IBaseRepository<Feature>
     {
         /// <summary>
         /// Найти по id номенклатуры
         /// </summary>
         /// <param name="nomenclatureId">id номенклатуры</param>
         /// <returns></returns>
-        List<Characteristic> GetByNomenclatureId(int nomenclatureId);
+        List<Feature> GetByNomenclatureId(int nomenclatureId);
     }
 }

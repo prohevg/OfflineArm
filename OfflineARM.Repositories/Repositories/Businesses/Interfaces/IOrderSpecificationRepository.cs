@@ -6,7 +6,7 @@ namespace OfflineARM.Repositories.Repositories.Businesses.Interfaces
     /// <summary>
     /// Спецификация заказа
     /// </summary>
-    public interface IOrderSpecificationRepository : IBaseRepository<OrderSpecification>
+    public interface IOrderSpecificationRepository : IBaseRepository<OrderSpecificationItem>
     {
        
     }

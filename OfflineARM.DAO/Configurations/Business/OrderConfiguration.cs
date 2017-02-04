@@ -17,6 +17,7 @@ namespace OfflineARM.DAO.Configurations.Business
         {
             Property(p => p.Number)
                 .HasMaxLength(50);
+
         }
 
         #endregion

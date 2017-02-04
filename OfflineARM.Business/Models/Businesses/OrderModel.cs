@@ -31,7 +31,7 @@ namespace OfflineARM.Business.Models.Businesses
         /// <summary>
         /// Оплата наличными
         /// </summary>
-        public IPayNalModel PayNal
+        public ICashPaymentModel PayNal
         {
             get;
             set;
@@ -40,7 +40,7 @@ namespace OfflineARM.Business.Models.Businesses
         /// <summary>
         /// Оплата картой
         /// </summary>
-        public IPayCardModel PayCard
+        public ICardPaymentModel PayCard
         {
             get;
             set;
@@ -49,7 +49,7 @@ namespace OfflineARM.Business.Models.Businesses
         /// <summary>
         /// Оплата кредит
         /// </summary>
-        public IPayCreditModel PayCredit
+        public ICreditPaymentModel PayCredit
         {
             get;
             set;

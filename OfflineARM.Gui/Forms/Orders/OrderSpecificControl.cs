@@ -7,6 +7,7 @@ using OfflineARM.Business.Models.Dictionaries.Interfaces;
 using System.Linq;
 using DevExpress.Data;
 using DevExpress.XtraEditors.Controls;
+using OfflineARM.Business.Businesses.Interfaces;
 using OfflineARM.Business.Models.Businesses;
 using OfflineARM.Business.Models.Businesses.Interfaces;
 using OfflineARM.Gui.Base.Controls;
@@ -30,7 +31,7 @@ namespace OfflineARM.Gui.Forms.Orders
         /// <summary>
         /// Характеристика номенклатуры
         /// </summary>
-        private readonly ICharacteristicImp _characteristicImp;
+        private readonly IFeatureImp _characteristicImp;
 
         /// <summary>
         /// Экспозиция
@@ -40,7 +41,7 @@ namespace OfflineARM.Gui.Forms.Orders
         /// <summary>
         /// Список 
         /// </summary>
-        private readonly List<IOrderSpecificationModel> _orderSpecifications;
+        private readonly List<IOrderSpecificationItemModel> _orderSpecifications;
 
         #endregion
 
@@ -60,9 +61,9 @@ namespace OfflineARM.Gui.Forms.Orders
             if (!DesignTimeHelper.IsInDesignMode)
             {
                  _nomenclatureImp = IoCBusiness.Instance.Get<INomenclatureImp>();
-                _characteristicImp = IoCBusiness.Instance.Get<ICharacteristicImp>();
+                _characteristicImp = IoCBusiness.Instance.Get<IFeatureImp>();
                 _expositionImp = IoCBusiness.Instance.Get<IExpositionImp>();
-                _orderSpecifications = new List<IOrderSpecificationModel>();
+                _orderSpecifications = new List<IOrderSpecificationItemModel>();
             }
 
             Initialization();
@@ -231,13 +232,13 @@ namespace OfflineARM.Gui.Forms.Orders
         /// <param name="e"></param>
         private void NomenclatureCharactristics_OnGridCommand(object sender, GridCommandEventArgs e)
         {
-            var model = e.Value as ICharacteristicModel;
+            var model = e.Value as IFeatureModel;
             if (model == null)
             {
                 return;
             }
 
-            var newOrderSpesific = new OrderSpecificationModel()
+            var newOrderSpesific = new OrderSpecificationItemModel()
             {
                 Nomenclature = model.Nomenclature,
                 Characteristic = model,
@@ -290,7 +291,7 @@ namespace OfflineARM.Gui.Forms.Orders
                 return;
             }
 
-            var newOrderSpesific = new OrderSpecificationModel()
+            var newOrderSpesific = new OrderSpecificationItemModel()
             {
                 Nomenclature = model.Nomenclature,
                 Characteristic = model.Characteristic,
@@ -332,7 +333,7 @@ namespace OfflineARM.Gui.Forms.Orders
         /// <param name="e"></param>
         private void OrderSpecifications_OnGridCommand(object sender, GridCommandEventArgs e)
         {
-            var model = e.Value as IOrderSpecificationModel;
+            var model = e.Value as IOrderSpecificationItemModel;
             if (model == null)
             {
                 return;
@@ -345,14 +346,14 @@ namespace OfflineARM.Gui.Forms.Orders
 
         #region private
 
-        private void AddInOrderSpecifics(IOrderSpecificationModel model)
+        private void AddInOrderSpecifics(IOrderSpecificationItemModel model)
         {
             var exist = _orderSpecifications.FirstOrDefault(
                 os => os.Nomenclature == model.Nomenclature && os.Characteristic == model.Characteristic);
 
             if (exist == null)
             {
-                _orderSpecifications.Add(new OrderSpecificationModel()
+                _orderSpecifications.Add(new OrderSpecificationItemModel()
                 {
                     Nomenclature = model.Nomenclature,
                     Characteristic = model.Characteristic,
@@ -369,7 +370,7 @@ namespace OfflineARM.Gui.Forms.Orders
             gcOrderSpecifications.RefreshDataSource();
         }
 
-        private void RemoveFromOrderSpecifics(IOrderSpecificationModel model)
+        private void RemoveFromOrderSpecifics(IOrderSpecificationItemModel model)
         {
             var exist = _orderSpecifications.FirstOrDefault(os => os == model);
 

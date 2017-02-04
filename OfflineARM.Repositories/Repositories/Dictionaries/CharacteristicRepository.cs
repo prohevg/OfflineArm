@@ -9,7 +9,7 @@ namespace OfflineARM.Repositories.Repositories.Dictionaries
     /// <summary>
     /// Характеристика номенклатуры
     /// </summary>
-    public class CharacteristicRepository : BaseRepository<Characteristic>, ICharacteristicRepository
+    public class CharacteristicRepository : BaseRepository<Feature>, ICharacteristicRepository
     {
         #region Конструктор
 
@@ -32,7 +32,7 @@ namespace OfflineARM.Repositories.Repositories.Dictionaries
         /// </summary>
         /// <param name="nomenclatureId">id номенклатуры</param>
         /// <returns></returns>
-        public List<Characteristic> GetByNomenclatureId(int nomenclatureId)
+        public List<Feature> GetByNomenclatureId(int nomenclatureId)
         {
             return DbSet.Where(c => c.NomenclatureId == nomenclatureId).ToList();
         }

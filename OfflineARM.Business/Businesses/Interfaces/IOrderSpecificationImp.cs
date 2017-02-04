@@ -5,7 +5,7 @@ namespace OfflineARM.Business.Businesses.Interfaces
     /// <summary>
     /// Спецификация заказа
     /// </summary>
-    public interface IOrderSpecificationImp : IBaseImp<IOrderSpecificationModel>
+    public interface IOrderSpecificationImp : IBaseImp<IOrderSpecificationItemModel>
     {
         
     }

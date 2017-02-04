@@ -46,54 +46,36 @@ namespace OfflineARM.DAO.Entities.Business
         }
 
         /// <summary>
-        /// Оплата наличными
+        /// Клиент физ лицо
         /// </summary>
-        public int? PayNalId
+        public int CustomerPrivateId
         {
             get;
             set;
         }
 
         /// <summary>
-        /// Оплата наличными
+        /// Клиент физ лицо
         /// </summary>
-        public PayNal PayNal
+        public CustomerPrivate CustomerPrivate
         {
             get;
             set;
         }
 
         /// <summary>
-        /// Оплата картой
+        /// Клиент юр лицо
         /// </summary>
-        public int? PayCardId
+        public int CustomerLegalId
         {
             get;
             set;
         }
 
         /// <summary>
-        /// Оплата картой
+        /// Клиент юр лицо
         /// </summary>
-        public PayCard PayCard
-        {
-            get;
-            set;
-        }
-
-        /// <summary>
-        /// Оплата кредит
-        /// </summary>
-        public int? PayCreditId
-        {
-            get;
-            set;
-        }
-
-        /// <summary>
-        /// Оплата кредит
-        /// </summary>
-        public PayCredit PayCredit
+        public CustomerLegal CustomerLegal
         {
             get;
             set;
@@ -117,39 +99,28 @@ namespace OfflineARM.DAO.Entities.Business
             set;
         }
 
-
-
-
-
-
-
-
-
-
-
-
         /// <summary>
-        /// Самовывоз
+        /// Список оплат наличными
         /// </summary>
-        public bool IsSelf
+        public virtual ICollection<CashPayment> PayNals
         {
             get;
             set;
         }
 
         /// <summary>
-        /// Дата отгрузки
+        /// Список оплат кредитом
         /// </summary>
-        public DateTime DateShipping
+        public virtual ICollection<CreditPayment> PayCredits
         {
             get;
             set;
         }
 
         /// <summary>
-        /// Сумма 
+        /// Список оплат картой
         /// </summary>
-        public decimal Summa
+        public virtual ICollection<CardPayment> PayCards
         {
             get;
             set;
@@ -158,7 +129,7 @@ namespace OfflineARM.DAO.Entities.Business
         /// <summary>
         /// Спецификация заказа
         /// </summary>
-        public virtual ICollection<OrderSpecification> OrderSpecifications
+        public virtual ICollection<OrderSpecificationItem> OrderSpecifications
         {
             get;
             set;

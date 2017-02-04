@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Threading.Tasks;
+using OfflineARM.Business.Businesses.Interfaces;
 using OfflineARM.Business.Dictionaries.Interfaces;
 using OfflineARM.Business.Models.Businesses;
 using OfflineARM.Business.Models.Dictionaries;
@@ -60,12 +61,12 @@ namespace OfflineARM.Business
 
         private void AddCharact(INomenclatureModel nomecModel)
         {
-            var imp = IoCBusiness.Instance.Get<ICharacteristicImp>();
+            var imp = IoCBusiness.Instance.Get<IFeatureImp>();
 
             for (int i = 0; i < 3; i++)
             {
                 var guid = Guid.NewGuid();
-                var newCharact = new CharacteristicModel()
+                var newCharact = new FeatureModel()
                 {
                     Guid = guid,
                     Nomenclature = nomecModel,
@@ -80,7 +81,7 @@ namespace OfflineARM.Business
             }
         }
 
-        private void AddExposit(ICharacteristicModel charModel)
+        private void AddExposit(IFeatureModel charModel)
         {
             var imp = IoCBusiness.Instance.Get<IExpositionImp>();
 

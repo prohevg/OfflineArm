@@ -1,11 +1,9 @@
 ﻿using System.Collections.Generic;
-using OfflineARM.Business.Dictionaries.Interfaces;
+using OfflineARM.Business.Businesses.Interfaces;
 using OfflineARM.Business.Models.Businesses;
 using OfflineARM.Business.Models.Businesses.Interfaces;
 using OfflineARM.Business.Models.Dictionaries;
-using OfflineARM.Business.Models.Dictionaries.Interfaces;
 using OfflineARM.Business.Validators.Businesses.Interfaces;
-using OfflineARM.Business.Validators.Dictionaries.Interfaces;
 using OfflineARM.DAO.Entities.Business;
 using OfflineARM.Repositories;
 using OfflineARM.Repositories.Repositories.Businesses.Interfaces;
@@ -84,7 +82,7 @@ namespace OfflineARM.Business.Businesses
 
             if (daoEntity.CharacteristicId > 0)
             {
-                model.Characteristic = new CharacteristicModel();
+                model.Characteristic = new FeatureModel();
 
                 var daoNomencl = _unitOfWork.DictionaryRepositories.CharacteristicRepository.GetById(daoEntity.CharacteristicId);
 

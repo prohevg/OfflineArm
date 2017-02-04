@@ -19,7 +19,7 @@ namespace OfflineARM.Business.Models.Businesses.Interfaces
         /// <summary>
         /// Характеристика
         /// </summary>
-        ICharacteristicModel Characteristic
+        IFeatureModel Characteristic
         {
             get;
             set;
