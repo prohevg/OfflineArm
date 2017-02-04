@@ -809,6 +809,12 @@
               <referencedTypeMoniker Id="66a626b4-baf7-489c-a971-c08b0f01fb15" LastKnownName="Order" />
             </type_NamedElement>
           </property>
+          <property Id="363fb94d-8ba6-4fc3-b4bf-723f1c6bb9f7" name="DeliveryAddress" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+            <elementDefinition Id="c3f41941-329c-40c3-9623-b2415390e51b" />
+            <type_NamedElement>
+              <referencedTypeMoniker Id="17955468-6c88-4439-b7ec-01551b2895ee" LastKnownName="String" />
+            </type_NamedElement>
+          </property>
         </ownedAttributesInternal>
       </class>
     </logicalClassDesignerModelHasTypes>
@@ -1160,6 +1166,11 @@
     </packageHasNamedElement>
     <packageHasNamedElement>
       <referencedType Id="2568f92a-5c2e-41c5-a696-ceac669af1f4" name="String" isAbstract="false" isLeaf="false" cachedFullName="String">
+        <elementDefinition Id="59259974-6d55-42c6-b7bd-763d77ac8ef9" />
+      </referencedType>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <referencedType Id="17955468-6c88-4439-b7ec-01551b2895ee" name="String" isAbstract="false" isLeaf="false" cachedFullName="String">
         <elementDefinition Id="59259974-6d55-42c6-b7bd-763d77ac8ef9" />
       </referencedType>
     </packageHasNamedElement>
