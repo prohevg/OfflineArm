@@ -1,4 +1,5 @@
 ﻿using System.Collections.Generic;
+using AutoMapper;
 using OfflineARM.Business.Dictionaries.Interfaces;
 using OfflineARM.Business.Models.Dictionaries;
 using OfflineARM.Business.Models.Dictionaries.Interfaces;
@@ -47,53 +48,6 @@ namespace OfflineARM.Business.Dictionaries
             }
 
             return result;
-        }
-
-        #endregion
-
-        #region override
-
-        /// <summary>
-        /// Метод конвертации Dao объектa в бизнес-модель 
-        /// </summary>
-        /// <param name="daoEntity">dao Сущность</param>
-        /// <param name="model">Сущность</param>
-        /// <returns></returns>
-        protected override IFeatureModel ConvertTo(Feature daoEntity, IFeatureModel model = null)
-        {
-            if (model == null)
-            {
-                model = new FeatureModel();
-            }
-
-            model.Id = daoEntity.Id;
-            model.Guid = daoEntity.Guid;
-            model.Name = daoEntity.Name;
-            model.Price = daoEntity.Price;
-            
-            return model;
-        }
-
-        /// <summary>
-        /// Создание DAO сущности
-        /// </summary>
-        /// <param name="model">Сущность</param>
-        /// <param name="daoEntity">Существующая dao сущность</param>
-        /// <returns></returns>
-        protected override Feature ConvertTo(IFeatureModel model, Feature daoEntity = null)
-        {
-            if (daoEntity == null)
-            {
-                daoEntity = new Feature();
-            }
-
-            daoEntity.Id = model.Id;
-            daoEntity.Guid = model.Guid;
-            daoEntity.Name = model.Name;
-            daoEntity.Price = model.Price;
-
-
-            return daoEntity;
         }
 
         #endregion

@@ -39,7 +39,7 @@ namespace OfflineARM.Business
         /// </summary>
         /// <param name="id">Id объекта</param>
         /// <returns></returns>
-        bool IsCanDeleteAsync(int id);
+        bool IsCanDelete(int id);
 
         /// <summary>
         /// Удалить из БД

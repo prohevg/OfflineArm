@@ -121,7 +121,7 @@
     <Compile Include="Entities\Business\Order.cs" />
     <Compile Include="Entities\Business\Partner.cs" />
     <Compile Include="Entities\Business\BagCollection.cs" />
-    <Compile Include="Entities\Business\Shop.cs" />
+    <Compile Include="Entities\Dictionaries\Shop.cs" />
     <Compile Include="Entities\Dictionaries\BaseDictionaryDaoEntity.cs" />
     <Compile Include="Entities\BaseDaoEntity.cs" />
     <Compile Include="Entities\Dictionaries\BasisAction.cs" />

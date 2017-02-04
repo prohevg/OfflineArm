@@ -1,4 +1,5 @@
 ﻿using System.Collections.Generic;
+using AutoMapper;
 using OfflineARM.Business.Dictionaries.Interfaces;
 using OfflineARM.Business.Models.Dictionaries;
 using OfflineARM.Business.Models.Dictionaries.Interfaces;
@@ -60,58 +61,6 @@ namespace OfflineARM.Business.Dictionaries
         public bool HasChildren(int id)
         {
             return _repository.HasChildren(id);
-        }
-
-        #endregion
-
-        #region override
-
-        /// <summary>
-        /// Метод конвертации Dao объектa в бизнес-модель 
-        /// </summary>
-        /// <param name="daoEntity">dao Сущность</param>
-        /// <param name="model">Сущность</param>
-        /// <returns></returns>
-        protected override INomenclatureModel ConvertTo(Nomenclature daoEntity, INomenclatureModel model = null)
-        {
-            if (model == null)
-            {
-                model = new NomenclatureModel();
-            }
-
-            model.Id = daoEntity.Id;
-            model.Guid = daoEntity.Guid;
-            //model.Price = daoEntity.Price;
-            //model.IsEnabled = daoEntity.IsEnabled;
-
-            //model.Feature = daoEntity.Feature;
-            //model.Nomenclature = daoEntity.Nomenclature;
-
-            return model;
-        }
-
-        /// <summary>
-        /// Создание DAO сущности
-        /// </summary>
-        /// <param name="model">Сущность</param>
-        /// <param name="daoEntity">Существующая dao сущность</param>
-        /// <returns></returns>
-        protected override Nomenclature ConvertTo(INomenclatureModel model, Nomenclature daoEntity = null)
-        {
-            if (daoEntity == null)
-            {
-                daoEntity = new Nomenclature();
-            }
-
-            daoEntity.Id = model.Id;
-            daoEntity.Guid = model.Guid;
-            //daoEntity. = model.Price;
-            //daoEntity.IsEnabled = model.IsEnabled;
-
-            //daoEntity.Nomenclature = model.Nomenclature;
-            //daoEntity.Feature = model.Feature;
-
-            return daoEntity;
         }
 
         #endregion

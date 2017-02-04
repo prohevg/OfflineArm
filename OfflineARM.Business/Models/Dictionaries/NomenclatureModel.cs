@@ -16,7 +16,7 @@ namespace OfflineARM.Business.Models.Dictionaries
         /// <summary>
         /// Родительский узел
         /// </summary>
-        public int ParentId
+        public int? ParentId
         {
             get;
             set;
@@ -26,6 +26,15 @@ namespace OfflineARM.Business.Models.Dictionaries
         /// Родительский узел
         /// </summary>
         public INomenclatureModel Parent
+        {
+            get;
+            set;
+        }
+
+        /// <summary>
+        /// Наименование
+        /// </summary>
+        public string Name
         {
             get;
             set;
@@ -44,15 +53,6 @@ namespace OfflineARM.Business.Models.Dictionaries
             {
                 _childs = value;
             }
-        }
-
-        /// <summary>
-        /// Наименование
-        /// </summary>
-        public string Name
-        {
-            get;
-            set;
         }
     }
 }

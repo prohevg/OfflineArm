@@ -10,7 +10,7 @@ namespace OfflineARM.Business.Models.Dictionaries.Interfaces
         /// <summary>
         /// Родительский узел
         /// </summary>
-        int ParentId
+        int? ParentId
         {
             get;
             set;

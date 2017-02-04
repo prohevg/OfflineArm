@@ -18,7 +18,7 @@ namespace OfflineARM.Business
 
         private void AddNomencl()
         {
-            using (var unit = new UnitOfWork())
+           using (var unit = new UnitOfWork())
             {
                 var rep = unit.DictionaryRepositories.NomenclatureRepository;
                 if (rep.Count() > 0)

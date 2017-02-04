@@ -19,11 +19,9 @@ namespace OfflineARM.DAO.Configurations.Dictionaries
                 .IsRequired()
                 .HasMaxLength(255);
 
-            Property(p => p.ParentId)
-                .IsOptional();
-
-            HasOptional(p => p.Childs)
-                .WithMany();
+            HasOptional(c => c.Parent)
+                    .WithMany()
+                    .HasForeignKey(c => c.ParentId);
         }
 
         #endregion

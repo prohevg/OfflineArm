@@ -53,14 +53,5 @@ namespace OfflineARM.DAO.Entities.Dictionaries
             get;
             set;
         }
-
-        /// <summary>
-        /// Дочерние записи
-        /// </summary>
-        public ICollection<Nomenclature> Childs
-        {
-            get;
-            set;
-        }
     }
 }

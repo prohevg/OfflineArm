@@ -1,8 +1,11 @@
 ﻿using System;
 using System.Collections.Generic;
+using AutoMapper;
 using OfflineARM.Business.Models;
+using OfflineARM.Business.Models.Dictionaries.Interfaces;
 using OfflineARM.Business.Validators;
 using OfflineARM.DAO.Entities;
+using OfflineARM.DAO.Entities.Dictionaries;
 using OfflineARM.Repositories;
 using OfflineARM.Repositories.Repositories;
 
@@ -181,7 +184,7 @@ namespace OfflineARM.Business
         /// </summary>
         /// <param name="id">Id объекта</param>
         /// <returns></returns>
-        public virtual bool IsCanDeleteAsync(int id)
+        public virtual bool IsCanDelete(int id)
         {
             try
             {
@@ -253,7 +256,7 @@ namespace OfflineARM.Business
 
         #endregion
 
-        #region protected abstract
+        #region protected virtual
 
         /// <summary>
         /// Валидация сущности
@@ -281,7 +284,10 @@ namespace OfflineARM.Business
         /// <param name="daoEntity">dao Сущность</param>
         /// <param name="model">Сущность</param>
         /// <returns></returns>
-        protected abstract TModelEntity ConvertTo(TDaoEntity daoEntity, TModelEntity model = null);
+        protected virtual TModelEntity ConvertTo(TDaoEntity daoEntity, TModelEntity model = null)
+        {
+            return Mapper.Map<TDaoEntity, TModelEntity>(daoEntity);
+        }
 
         /// <summary>
         /// Создание DAO сущности
@@ -289,7 +295,10 @@ namespace OfflineARM.Business
         /// <param name="model">Сущность</param>
         /// <param name="daoEntity">Существующая dao сущность</param>
         /// <returns></returns>
-        protected abstract TDaoEntity ConvertTo(TModelEntity model, TDaoEntity daoEntity = null);
+        protected virtual TDaoEntity ConvertTo(TModelEntity model, TDaoEntity daoEntity = null)
+        {
+            return Mapper.Map<TModelEntity, TDaoEntity>(model);
+        }
 
         #endregion
     }

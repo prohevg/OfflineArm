@@ -1,7 +1,7 @@
 ﻿using System;
-using OfflineARM.DAO.Entities.Dictionaries;
+using OfflineARM.DAO.Entities.Business;
 
-namespace OfflineARM.DAO.Entities.Business
+namespace OfflineARM.DAO.Entities.Dictionaries
 {
     /// <summary>
     /// Магазин\салон

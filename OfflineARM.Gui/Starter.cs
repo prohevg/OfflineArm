@@ -19,6 +19,8 @@ namespace OfflineARM.Gui
             RegisterInject();
             FillCommandMetadataHolder();
             FillDispatchedCommandHolder();
+
+            AutoMapperConfig.Config();
         }
 
         /// <summary>
