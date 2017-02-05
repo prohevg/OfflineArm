@@ -6,6 +6,7 @@ using OfflineARM.Gui.Forms.Orders.Interfaces;
 using System.Collections.Generic;
 using System.Linq;
 using DevExpress.XtraEditors.Controls;
+using DevExpress.XtraTab;
 using OfflineARM.Business;
 using OfflineARM.Business.Businesses.Interfaces;
 using OfflineARM.Business.Dictionaries.Interfaces;
@@ -48,6 +49,69 @@ namespace OfflineARM.Gui.Forms.Orders
                 _userImp = IoCBusiness.Instance.Get<IUserImp>();
                 _orderImp = IoCBusiness.Instance.Get<IOrderImp>();
                 _orderStatusImp = IoCBusiness.Instance.Get<IOrderStatusImp>();
+            }
+
+            this.tcMain.SelectedPageChanged += TcMain_SelectedPageChanged;
+            this.sbPrevios.Click += SbPrevios_Click;
+            this.sbNext.Click += SbNext_Click;
+
+            TcMain_SelectedPageChanged(tcMain, new TabPageChangedEventArgs(tpSpecific, tpSpecific));
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void SbNext_Click(object sender, EventArgs e)
+        {
+            var current = tcMain.SelectedTabPage;
+            var next = current.TabIndex == tcMain.TabPages.Count ? current : tcMain.TabPages[current.TabIndex + 1];
+
+            tcMain.SelectedTabPage = next;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void SbPrevios_Click(object sender, EventArgs e)
+        {
+            var current = tcMain.SelectedTabPage;
+            var previos = current.TabIndex == 0 ? current : tcMain.TabPages[current.TabIndex - 1];
+
+            tcMain.SelectedTabPage = previos;
+        }
+
+        /// <summary>
+        /// Смена вкладок
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void TcMain_SelectedPageChanged(object sender, TabPageChangedEventArgs e)
+        {
+            if (e.Page == tpSpecific)
+            {
+                sbPrevios.Visible = false;
+                sbNext.Text = tpDelivary.Text;
+            }
+            else if (e.Page == tpDelivary)
+            {
+                sbPrevios.Visible = true;
+                sbNext.Visible = true;
+
+                sbPrevios.Width = 110;
+
+                sbPrevios.Text = tpSpecific.Text;
+                sbNext.Text = tpBuy.Text;
+            }
+            else if (e.Page == tpBuy)
+            {
+                sbPrevios.Visible = true;
+                sbNext.Visible = false;
+
+                sbPrevios.Text = tpDelivary.Text;
             }
         }
 

@@ -16,11 +16,6 @@ namespace OfflineARM.Gui.Forms.Orders
         #region поля и свойства
 
         /// <summary>
-        /// Форма заказа
-        /// </summary>
-        private readonly IOrderForm _orderForm;
-
-        /// <summary>
         /// Реализация заказов
         /// </summary>
         private readonly IOrderImp _orderImp;
@@ -32,9 +27,8 @@ namespace OfflineARM.Gui.Forms.Orders
         /// <summary>
         /// Конструктор
         /// </summary>
-        public OrderListControl(IOrderForm orderForm, IOrderImp orderImp)
+        public OrderListControl(IOrderImp orderImp)
         {
-            _orderForm = orderForm;
             _orderImp = orderImp;
 
             InitializeComponent();
@@ -58,6 +52,9 @@ namespace OfflineARM.Gui.Forms.Orders
             gcOrders.EndUpdate();
         }
 
+        /// <summary>
+        /// Загрузка
+        /// </summary>
         private async void LoadOrders()
         {
             var paging = await _orderImp.GetAllAsync();
@@ -97,7 +94,8 @@ namespace OfflineARM.Gui.Forms.Orders
         /// <param name="command"></param>
         public override void Execute(ICommand command)
         {
-            _orderForm.ShowDialog();
+            var orderForm = IoCForm.Instance.ResolveForm<IOrderForm>();
+            orderForm.ShowDialog();
             LoadOrders();
         }
 

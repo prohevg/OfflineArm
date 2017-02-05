@@ -42,7 +42,6 @@
             this.gcOrderSpecifications = new OfflineARM.Gui.Controls.GridControlWrapper();
             this.gridView2 = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.treeList = new OfflineARM.Gui.Controls.TreeListWrapper();
-            this.spNext = new DevExpress.XtraEditors.SimpleButton();
             this.gridView4 = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.tlpSpecific.SuspendLayout();
             this.tpSpecificDevideTree.SuspendLayout();
@@ -68,14 +67,13 @@
             this.tlpSpecific.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.tlpSpecific.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 20F));
             this.tlpSpecific.Controls.Add(this.tpSpecificDevideTree, 1, 1);
-            this.tlpSpecific.Controls.Add(this.spNext, 1, 2);
             this.tlpSpecific.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tlpSpecific.Location = new System.Drawing.Point(0, 0);
             this.tlpSpecific.Name = "tlpSpecific";
-            this.tlpSpecific.RowCount = 4;
+            this.tlpSpecific.RowCount = 3;
             this.tlpSpecific.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
             this.tlpSpecific.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tlpSpecific.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 50F));
+            this.tlpSpecific.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
             this.tlpSpecific.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
             this.tlpSpecific.Size = new System.Drawing.Size(721, 505);
             this.tlpSpecific.TabIndex = 2;
@@ -93,7 +91,7 @@
             this.tpSpecificDevideTree.RowCount = 1;
             this.tpSpecificDevideTree.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.tpSpecificDevideTree.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 409F));
-            this.tpSpecificDevideTree.Size = new System.Drawing.Size(675, 409);
+            this.tpSpecificDevideTree.Size = new System.Drawing.Size(675, 459);
             this.tpSpecificDevideTree.TabIndex = 0;
             // 
             // tlpTableDevided
@@ -111,7 +109,7 @@
             this.tlpTableDevided.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tlpTableDevided.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 50F));
             this.tlpTableDevided.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tlpTableDevided.Size = new System.Drawing.Size(492, 403);
+            this.tlpTableDevided.Size = new System.Drawing.Size(492, 453);
             this.tlpTableDevided.TabIndex = 1;
             // 
             // tbChoiseFeatures
@@ -120,7 +118,7 @@
             this.tbChoiseFeatures.Location = new System.Drawing.Point(3, 3);
             this.tbChoiseFeatures.Name = "tbChoiseFeatures";
             this.tbChoiseFeatures.SelectedTabPage = this.tpOrderFeatures;
-            this.tbChoiseFeatures.Size = new System.Drawing.Size(486, 170);
+            this.tbChoiseFeatures.Size = new System.Drawing.Size(486, 195);
             this.tbChoiseFeatures.TabIndex = 2;
             this.tbChoiseFeatures.TabPages.AddRange(new DevExpress.XtraTab.XtraTabPage[] {
             this.tpOrderFeatures,
@@ -130,7 +128,7 @@
             // 
             this.tpOrderFeatures.Controls.Add(this.gcNomenclatureFeatures);
             this.tpOrderFeatures.Name = "tpOrderFeatures";
-            this.tpOrderFeatures.Size = new System.Drawing.Size(480, 142);
+            this.tpOrderFeatures.Size = new System.Drawing.Size(480, 167);
             this.tpOrderFeatures.Text = "Характеристики";
             // 
             // gcNomenclatureFeatures
@@ -139,7 +137,7 @@
             this.gcNomenclatureFeatures.Location = new System.Drawing.Point(0, 0);
             this.gcNomenclatureFeatures.MainView = this.gridView1;
             this.gcNomenclatureFeatures.Name = "gcNomenclatureFeatures";
-            this.gcNomenclatureFeatures.Size = new System.Drawing.Size(480, 142);
+            this.gcNomenclatureFeatures.Size = new System.Drawing.Size(480, 167);
             this.gcNomenclatureFeatures.TabIndex = 0;
             this.gcNomenclatureFeatures.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView1});
@@ -155,7 +153,7 @@
             // 
             this.tpExpositionFeatures.Controls.Add(this.gcExposition);
             this.tpExpositionFeatures.Name = "tpExpositionFeatures";
-            this.tpExpositionFeatures.Size = new System.Drawing.Size(480, 142);
+            this.tpExpositionFeatures.Size = new System.Drawing.Size(480, 167);
             this.tpExpositionFeatures.Text = "Экспозиция";
             // 
             // gcExposition
@@ -164,7 +162,7 @@
             this.gcExposition.Location = new System.Drawing.Point(0, 0);
             this.gcExposition.MainView = this.gridView3;
             this.gcExposition.Name = "gcExposition";
-            this.gcExposition.Size = new System.Drawing.Size(480, 142);
+            this.gcExposition.Size = new System.Drawing.Size(480, 167);
             this.gcExposition.TabIndex = 0;
             this.gcExposition.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView3});
@@ -180,7 +178,7 @@
             // 
             this.lcOrderHeader.Appearance.Font = new System.Drawing.Font("Tahoma", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.lcOrderHeader.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.lcOrderHeader.Location = new System.Drawing.Point(3, 200);
+            this.lcOrderHeader.Location = new System.Drawing.Point(3, 225);
             this.lcOrderHeader.Name = "lcOrderHeader";
             this.lcOrderHeader.Size = new System.Drawing.Size(217, 23);
             this.lcOrderHeader.TabIndex = 3;
@@ -189,10 +187,10 @@
             // gcOrderSpecifications
             // 
             this.gcOrderSpecifications.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.gcOrderSpecifications.Location = new System.Drawing.Point(3, 229);
+            this.gcOrderSpecifications.Location = new System.Drawing.Point(3, 254);
             this.gcOrderSpecifications.MainView = this.gridView2;
             this.gcOrderSpecifications.Name = "gcOrderSpecifications";
-            this.gcOrderSpecifications.Size = new System.Drawing.Size(486, 171);
+            this.gcOrderSpecifications.Size = new System.Drawing.Size(486, 196);
             this.gcOrderSpecifications.TabIndex = 4;
             this.gcOrderSpecifications.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView2});
@@ -209,20 +207,8 @@
             this.treeList.Dock = System.Windows.Forms.DockStyle.Fill;
             this.treeList.Location = new System.Drawing.Point(3, 3);
             this.treeList.Name = "treeList";
-            this.treeList.Size = new System.Drawing.Size(171, 403);
+            this.treeList.Size = new System.Drawing.Size(171, 453);
             this.treeList.TabIndex = 2;
-            // 
-            // spNext
-            // 
-            this.spNext.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.spNext.Image = global::OfflineARM.Gui.CommandResources.forward_16x16;
-            this.spNext.ImageLocation = DevExpress.XtraEditors.ImageLocation.MiddleRight;
-            this.spNext.Location = new System.Drawing.Point(606, 447);
-            this.spNext.Margin = new System.Windows.Forms.Padding(3, 3, 20, 15);
-            this.spNext.Name = "spNext";
-            this.spNext.Size = new System.Drawing.Size(75, 23);
-            this.spNext.TabIndex = 1;
-            this.spNext.Text = "spNext";
             // 
             // gridView4
             // 
@@ -259,7 +245,6 @@
 
         private System.Windows.Forms.TableLayoutPanel tlpSpecific;
         private System.Windows.Forms.TableLayoutPanel tpSpecificDevideTree;
-        private DevExpress.XtraEditors.SimpleButton spNext;
         private Controls.TreeListWrapper treeList;
         private System.Windows.Forms.TableLayoutPanel tlpTableDevided;
         private DevExpress.XtraTab.XtraTabControl tbChoiseFeatures;
