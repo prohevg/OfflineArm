@@ -2287,6 +2287,24 @@
                 LastKnownLocation="OrderModels.uml" />
             </type_NamedElement>
           </property>
+          <property
+            Id="9a7ba8ea-3bb6-4982-880e-8a76c49a079a"
+            name="Comment"
+            isLeaf="false"
+            isStatic="false"
+            isReadOnly="false"
+            isUnique="false"
+            isDerived="false"
+            isDerivedUnion="false"
+            aggregation="None"
+            isComposite="false">
+            <type_NamedElement>
+              <primitiveTypeMoniker
+                Id="59259974-6d55-42c6-b7bd-763d77ac8ef9"
+                LastKnownName="String"
+                LastKnownLocation="OrderModels.uml" />
+            </type_NamedElement>
+          </property>
         </ownedAttributesInternal>
       </class>
     </packageHasNamedElement>

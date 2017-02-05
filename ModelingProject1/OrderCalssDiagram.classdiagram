@@ -1127,6 +1127,12 @@
               <referencedTypeMoniker Id="d7b464cd-c021-444d-b9db-f2a396a81b19" LastKnownName="Datetime" />
             </type_NamedElement>
           </property>
+          <property Id="c8352de5-0c09-4b89-aba5-7fb61f71cff6" name="Comment" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+            <elementDefinition Id="9a7ba8ea-3bb6-4982-880e-8a76c49a079a" />
+            <type_NamedElement>
+              <referencedTypeMoniker Id="4588d64d-727b-48b5-8122-e4f10c6dbbb0" LastKnownName="String" />
+            </type_NamedElement>
+          </property>
         </ownedAttributesInternal>
       </class>
     </logicalClassDesignerModelHasTypes>
@@ -1187,6 +1193,11 @@
     </packageHasNamedElement>
     <packageHasNamedElement>
       <referencedType Id="74351b46-371f-4831-9180-7413ecf24a52" name="String" isAbstract="false" isLeaf="false" cachedFullName="String">
+        <elementDefinition Id="59259974-6d55-42c6-b7bd-763d77ac8ef9" />
+      </referencedType>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <referencedType Id="4588d64d-727b-48b5-8122-e4f10c6dbbb0" name="String" isAbstract="false" isLeaf="false" cachedFullName="String">
         <elementDefinition Id="59259974-6d55-42c6-b7bd-763d77ac8ef9" />
       </referencedType>
     </packageHasNamedElement>
