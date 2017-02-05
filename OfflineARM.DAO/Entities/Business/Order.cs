@@ -48,7 +48,7 @@ namespace OfflineARM.DAO.Entities.Business
         /// <summary>
         /// Клиент физ лицо
         /// </summary>
-        public int CustomerPrivateId
+        public int? CustomerPrivateId
         {
             get;
             set;
@@ -66,7 +66,7 @@ namespace OfflineARM.DAO.Entities.Business
         /// <summary>
         /// Клиент юр лицо
         /// </summary>
-        public int CustomerLegalId
+        public int? CustomerLegalId
         {
             get;
             set;
@@ -102,7 +102,7 @@ namespace OfflineARM.DAO.Entities.Business
         /// <summary>
         /// Список оплат наличными
         /// </summary>
-        public virtual ICollection<CashPayment> PayNals
+        public virtual ICollection<CashPayment> CashPayments
         {
             get;
             set;
@@ -111,7 +111,7 @@ namespace OfflineARM.DAO.Entities.Business
         /// <summary>
         /// Список оплат кредитом
         /// </summary>
-        public virtual ICollection<CreditPayment> PayCredits
+        public virtual ICollection<CreditPayment> CreditPayments
         {
             get;
             set;
@@ -120,7 +120,7 @@ namespace OfflineARM.DAO.Entities.Business
         /// <summary>
         /// Список оплат картой
         /// </summary>
-        public virtual ICollection<CardPayment> PayCards
+        public virtual ICollection<CardPayment> CardPayments
         {
             get;
             set;

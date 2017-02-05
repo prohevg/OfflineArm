@@ -52,5 +52,15 @@ namespace OfflineARM.Repositories.Repositories.Dictionaries
         /// Группа номенклатур
         /// </summary>  
         INomenclatureGroupRepository NomenclatureGroupRepository { get; }
+
+        /// <summary>  
+        /// Пользователь
+        /// </summary>  
+        IUserRepository UserRepository { get; }
+
+        /// <summary>
+        /// Статус заказа
+        /// </summary>
+        IOrderStatusRepository OrderStatusRepository { get; }
     }
 }

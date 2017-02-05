@@ -1,4 +1,6 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
+using OfflineARM.Business.Businesses.Interfaces;
 using OfflineARM.Gui.Base.Controls;
 using OfflineARM.Gui.Commands;
 using OfflineARM.Gui.Forms.Orders.Commands;
@@ -18,6 +20,11 @@ namespace OfflineARM.Gui.Forms.Orders
         /// </summary>
         private readonly IOrderForm _orderForm;
 
+        /// <summary>
+        /// Реализация заказов
+        /// </summary>
+        private readonly IOrderImp _orderImp;
+
         #endregion
 
         #region Конструктор
@@ -25,15 +32,47 @@ namespace OfflineARM.Gui.Forms.Orders
         /// <summary>
         /// Конструктор
         /// </summary>
-        public OrderListControl(IOrderForm orderForm)
+        public OrderListControl(IOrderForm orderForm, IOrderImp orderImp)
         {
             _orderForm = orderForm;
+            _orderImp = orderImp;
+
             InitializeComponent();
+            InitializationGridOrders();
+        }
+
+        #endregion
+
+        #region Fill Grid
+
+        /// <summary>
+        /// Создание столюцов таблицы экспозиции
+        /// </summary>
+        private void InitializationGridOrders()
+        {
+            gcOrders.BeginUpdate();
+            gcOrders.AddColumn(GuiResource.OrderListControl_GridOrderCaption_Number, "Number");
+            gcOrders.AddColumn(GuiResource.OrderListControl_GridOrderCaption_DateCreate, "DateCreate", 1);
+            gcOrders.AddColumn(GuiResource.OrderListControl_GridOrderCaption_Customer, "Customer.Name", 2);
+            gcOrders.AddColumn(GuiResource.OrderListControl_GridOrderCaption_User, "User.Fio", 3);
+            gcOrders.EndUpdate();
+        }
+
+        private async void LoadOrders()
+        {
+            var paging = await _orderImp.GetAllAsync();
+            gcOrders.DataSource = paging.Data;
         }
 
         #endregion
 
         #region override
+
+        protected override void OnLoad(EventArgs e)
+        {
+            base.OnLoad(e);
+            LoadOrders();
+        }
 
         /// <summary>
         /// Команды для контрола
@@ -59,6 +98,7 @@ namespace OfflineARM.Gui.Forms.Orders
         public override void Execute(ICommand command)
         {
             _orderForm.ShowDialog();
+            LoadOrders();
         }
 
         #endregion

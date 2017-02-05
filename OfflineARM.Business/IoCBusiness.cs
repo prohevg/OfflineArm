@@ -77,8 +77,23 @@ namespace OfflineARM.Business
             container.Bind<IOrderImp>().To<OrderImp>();
             container.Bind<IOrderValidator>().To<OrderValidator>();
 
+            container.Bind<IOrderStatusImp>().To<OrderStatusImp>();
+            container.Bind<IOrderStatusValidator>().To<OrderStatusValidator>();
+
             container.Bind<IOrderSpecificationImp>().To<OrderSpecificationImp>();
             container.Bind<IOrderSpecificationValidator>().To<OrderSpecificationValidator>();
+
+            container.Bind<IUserImp>().To<UserImp>();
+            container.Bind<IUserValidator>().To<UserValidator>();
+
+            container.Bind<ICustomerLegalImp>().To<CustomerLegalImp>();
+            container.Bind<ICustomerLegalValidator>().To<CustomerLegalValidator>();
+
+            container.Bind<ICustomerPrivateImp>().To<CustomerPrivateImp>();
+            container.Bind<ICustomerPrivateValidator>().To<CustomerPrivateValidator>();
+
+            container.Bind<IBasisActionImp>().To<BasisActionImp>();
+            container.Bind<IBasisActionValidator>().To<BasisActionValidator>();
         }
 
         #endregion

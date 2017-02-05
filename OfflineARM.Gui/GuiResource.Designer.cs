@@ -116,11 +116,83 @@ namespace OfflineARM.Gui {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Клиент.
+        /// </summary>
+        internal static string OrderListControl_GridOrderCaption_Customer {
+            get {
+                return ResourceManager.GetString("OrderListControl_GridOrderCaption_Customer", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Дата создания.
+        /// </summary>
+        internal static string OrderListControl_GridOrderCaption_DateCreate {
+            get {
+                return ResourceManager.GetString("OrderListControl_GridOrderCaption_DateCreate", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Номер.
+        /// </summary>
+        internal static string OrderListControl_GridOrderCaption_Number {
+            get {
+                return ResourceManager.GetString("OrderListControl_GridOrderCaption_Number", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Ответственный.
+        /// </summary>
+        internal static string OrderListControl_GridOrderCaption_User {
+            get {
+                return ResourceManager.GetString("OrderListControl_GridOrderCaption_User", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Карта.
+        /// </summary>
+        internal static string OrderPayControl_CardPaymentType {
+            get {
+                return ResourceManager.GetString("OrderPayControl_CardPaymentType", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Наличными.
+        /// </summary>
+        internal static string OrderPayControl_CashPaymentType {
+            get {
+                return ResourceManager.GetString("OrderPayControl_CashPaymentType", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Кредит.
+        /// </summary>
+        internal static string OrderPayControl_CreditPaymentType {
+            get {
+                return ResourceManager.GetString("OrderPayControl_CreditPaymentType", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Дата.
         /// </summary>
         internal static string OrderPayControl_GridPayCaption_Date {
             get {
                 return ResourceManager.GetString("OrderPayControl_GridPayCaption_Date", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Удалить из оплат.
+        /// </summary>
+        internal static string OrderPayControl_GridPayCaption_DeleteFromPays {
+            get {
+                return ResourceManager.GetString("OrderPayControl_GridPayCaption_DeleteFromPays", resourceCulture);
             }
         }
         
@@ -217,27 +289,27 @@ namespace OfflineARM.Gui {
         /// <summary>
         ///   Looks up a localized string similar to Добавить в заказ.
         /// </summary>
-        internal static string OrderSpecificControl_GridNomenclatureCharacteristicCaption_AddInOrder {
+        internal static string OrderSpecificControl_GridNomenclatureFeatureCaption_AddInOrder {
             get {
-                return ResourceManager.GetString("OrderSpecificControl_GridNomenclatureCharacteristicCaption_AddInOrder", resourceCulture);
+                return ResourceManager.GetString("OrderSpecificControl_GridNomenclatureFeatureCaption_AddInOrder", resourceCulture);
             }
         }
         
         /// <summary>
         ///   Looks up a localized string similar to Наименование.
         /// </summary>
-        internal static string OrderSpecificControl_GridNomenclatureCharacteristicCaption_Name {
+        internal static string OrderSpecificControl_GridNomenclatureFeatureCaption_Name {
             get {
-                return ResourceManager.GetString("OrderSpecificControl_GridNomenclatureCharacteristicCaption_Name", resourceCulture);
+                return ResourceManager.GetString("OrderSpecificControl_GridNomenclatureFeatureCaption_Name", resourceCulture);
             }
         }
         
         /// <summary>
         ///   Looks up a localized string similar to Цена.
         /// </summary>
-        internal static string OrderSpecificControl_GridNomenclatureCharacteristicCaption_Price {
+        internal static string OrderSpecificControl_GridNomenclatureFeatureCaption_Price {
             get {
-                return ResourceManager.GetString("OrderSpecificControl_GridNomenclatureCharacteristicCaption_Price", resourceCulture);
+                return ResourceManager.GetString("OrderSpecificControl_GridNomenclatureFeatureCaption_Price", resourceCulture);
             }
         }
         

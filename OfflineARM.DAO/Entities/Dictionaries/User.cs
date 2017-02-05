@@ -1,7 +1,6 @@
 ﻿using System;
-using OfflineARM.DAO.Entities.Dictionaries;
 
-namespace OfflineARM.DAO.Entities.Business
+namespace OfflineARM.DAO.Entities.Dictionaries
 {
     /// <summary>
     /// Пользователь

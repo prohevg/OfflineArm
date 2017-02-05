@@ -1,11 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Threading.Tasks;
 using AutoMapper;
 using OfflineARM.Business.Models;
-using OfflineARM.Business.Models.Dictionaries.Interfaces;
 using OfflineARM.Business.Validators;
 using OfflineARM.DAO.Entities;
-using OfflineARM.DAO.Entities.Dictionaries;
 using OfflineARM.Repositories;
 using OfflineARM.Repositories.Repositories;
 
@@ -90,6 +89,14 @@ namespace OfflineARM.Business
             }
 
             return new PagedResult<TModelEntity>(result, 1, 1, count);
+        }
+
+        /// <summary>
+        /// Получить все
+        /// </summary>
+        public virtual Task<PagedResult<TModelEntity>> GetAllAsync()
+        {
+            return Task.Factory.StartNew(GetAll);
         }
 
         /// <summary>

@@ -1,8 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
+using OfflineARM.Business.Models.Businesses.Bases;
 using OfflineARM.Business.Models.Businesses.Interfaces;
 using OfflineARM.Business.Models.Dictionaries.Interfaces;
-using OfflineARM.DAO.Entities.Business;
 
 namespace OfflineARM.Business.Models.Businesses
 {
@@ -48,6 +48,15 @@ namespace OfflineARM.Business.Models.Businesses
         }
 
         /// <summary>
+        /// Клиент 
+        /// </summary>
+        public ICustomerModel Customer
+        {
+            get;
+            set;
+        }
+
+        /// <summary>
         ///  Номер заказа
         /// </summary>
         public string Number
@@ -66,27 +75,9 @@ namespace OfflineARM.Business.Models.Businesses
         }
 
         /// <summary>
-        /// Список оплат наличными
+        /// Список оплат 
         /// </summary>
-        public List<ICashPaymentModel> PayNals
-        {
-            get;
-            set;
-        }
-
-        /// <summary>
-        /// Список оплат кредитом
-        /// </summary>
-        public List<ICreditPaymentModel> PayCredits
-        {
-            get;
-            set;
-        }
-
-        /// <summary>
-        /// Список оплат картой
-        /// </summary>
-        public List<ICardPaymentModel> PayCards
+        public List<IPaymentModel> Payments
         {
             get;
             set;
@@ -95,7 +86,7 @@ namespace OfflineARM.Business.Models.Businesses
         /// <summary>
         /// Спецификация заказа
         /// </summary>
-        public List<IOrderSpecificationItemModel> OrderSpecifications
+        public List<IOrderSpecificationItemModel> Specifications
         {
             get;
             set;

@@ -65,6 +65,11 @@ namespace OfflineARM.Repositories.Repositories.Dictionaries
         /// </summary>  
         private INomenclatureGroupRepository _nomenclatureGroupRepository;
 
+        /// <summary>
+        /// Пользователь
+        /// </summary>
+        private UserRepository _userRepository;
+
         #endregion
 
         #region Конструктор
@@ -228,6 +233,21 @@ namespace OfflineARM.Repositories.Repositories.Dictionaries
                     this._nomenclatureGroupRepository = new NomenclatureGroupRepository(_context);
                 }
                 return _nomenclatureGroupRepository;
+            }
+        }
+
+        /// <summary>  
+        /// Пользователь
+        /// </summary>  
+        public IUserRepository UserRepository
+        {
+            get
+            {
+                if (this._userRepository == null)
+                {
+                    this._userRepository = new UserRepository(_context);
+                }
+                return _userRepository;
             }
         }
 

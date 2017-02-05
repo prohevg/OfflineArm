@@ -5,6 +5,13 @@
     /// </summary>
     public interface IOrderStatusModel : IBaseBusninessModel
     {
-        
+        /// <summary>
+        /// Наименование
+        /// </summary>
+        string Name
+        {
+            get;
+            set;
+        }
     }
 }

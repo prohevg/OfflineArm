@@ -1,4 +1,5 @@
-﻿using OfflineARM.Business.Models.Businesses.Bases;
+﻿using JetBrains.Annotations;
+using OfflineARM.Business.Models.Businesses.Bases;
 
 namespace OfflineARM.Business.Models.Businesses.Interfaces
 {

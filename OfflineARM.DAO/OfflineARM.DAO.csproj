@@ -94,7 +94,7 @@
     <Compile Include="Configurations\Business\ShopConfiguration.cs" />
     <Compile Include="Configurations\Dictionaries\NomenclatureGroupConfiguration.cs" />
     <Compile Include="Configurations\Dictionaries\NomenclatureConfiguration.cs" />
-    <Compile Include="Configurations\Business\UserConfiguration.cs" />
+    <Compile Include="Configurations\Dictionaries\UserConfiguration.cs" />
     <Compile Include="Configurations\Dictionaries\BaseDictionaryDaoEntityConfiguration.cs" />
     <Compile Include="Configurations\BaseDaoEntityConfiguration.cs" />
     <Compile Include="Configurations\Dictionaries\BasisActionConfiguration.cs" />
@@ -112,7 +112,7 @@
     <Compile Include="Entities\Dictionaries\Bank.cs" />
     <Compile Include="Entities\Dictionaries\BankProduct.cs" />
     <Compile Include="Entities\Dictionaries\Feature.cs" />
-    <Compile Include="Entities\Business\User.cs" />
+    <Compile Include="Entities\Dictionaries\User.cs" />
     <Compile Include="Entities\Dictionaries\Nomenclature.cs" />
     <Compile Include="Entities\Business\Exposition.cs" />
     <Compile Include="Entities\Business\OrderSpecificationItem.cs" />

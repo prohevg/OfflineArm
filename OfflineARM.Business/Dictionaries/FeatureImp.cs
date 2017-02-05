@@ -51,5 +51,28 @@ namespace OfflineARM.Business.Dictionaries
         }
 
         #endregion
+
+        #region protected override
+
+        /// <summary>
+        /// Метод конвертации Dao объектa в бизнес-модель 
+        /// </summary>
+        /// <param name="daoEntity">dao Сущность</param>
+        /// <param name="model">Сущность</param>
+        /// <returns></returns>
+        protected override IFeatureModel ConvertTo(Feature daoEntity, IFeatureModel model = null)
+        {
+            var result = Mapper.Map<Feature, IFeatureModel>(daoEntity);
+
+            if (daoEntity.NomenclatureId > 0)
+            {
+                var daoNomeclature = _unitOfWork.DictionaryRepositories.NomenclatureRepository.GetById(daoEntity.NomenclatureId);
+                result.Nomenclature = Mapper.Map<Nomenclature, INomenclatureModel>(daoNomeclature);
+            }
+            
+            return result;
+        }
+
+        #endregion
     }
 }

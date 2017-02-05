@@ -103,6 +103,8 @@ namespace OfflineARM.Gui.Base.Forms
                         {
                             //this.RefreshForm();
                             //this.SetChangedState();
+
+                            this.Close();
                         }
                     }
                 }

@@ -151,13 +151,13 @@
   <data name="OrderSpecificControl_TreeNomenclatureCaption_Name" xml:space="preserve">
     <value>Наименование</value>
   </data>
-  <data name="OrderSpecificControl_GridNomenclatureCharacteristicCaption_AddInOrder" xml:space="preserve">
+  <data name="OrderSpecificControl_GridNomenclatureFeatureCaption_AddInOrder" xml:space="preserve">
     <value>Добавить в заказ</value>
   </data>
-  <data name="OrderSpecificControl_GridNomenclatureCharacteristicCaption_Name" xml:space="preserve">
+  <data name="OrderSpecificControl_GridNomenclatureFeatureCaption_Name" xml:space="preserve">
     <value>Наименование</value>
   </data>
-  <data name="OrderSpecificControl_GridNomenclatureCharacteristicCaption_Price" xml:space="preserve">
+  <data name="OrderSpecificControl_GridNomenclatureFeatureCaption_Price" xml:space="preserve">
     <value>Цена</value>
   </data>
   <data name="OrderSpecificControl_GridExpositionCaption_Count" xml:space="preserve">
@@ -213,5 +213,29 @@
   </data>
   <data name="OrderPayControl_GridPayCaption_Summ" xml:space="preserve">
     <value>Сумма</value>
+  </data>
+  <data name="OrderPayControl_CardPaymentType" xml:space="preserve">
+    <value>Карта</value>
+  </data>
+  <data name="OrderPayControl_CashPaymentType" xml:space="preserve">
+    <value>Наличными</value>
+  </data>
+  <data name="OrderPayControl_CreditPaymentType" xml:space="preserve">
+    <value>Кредит</value>
+  </data>
+  <data name="OrderPayControl_GridPayCaption_DeleteFromPays" xml:space="preserve">
+    <value>Удалить из оплат</value>
+  </data>
+  <data name="OrderListControl_GridOrderCaption_Customer" xml:space="preserve">
+    <value>Клиент</value>
+  </data>
+  <data name="OrderListControl_GridOrderCaption_DateCreate" xml:space="preserve">
+    <value>Дата создания</value>
+  </data>
+  <data name="OrderListControl_GridOrderCaption_Number" xml:space="preserve">
+    <value>Номер</value>
+  </data>
+  <data name="OrderListControl_GridOrderCaption_User" xml:space="preserve">
+    <value>Ответственный</value>
   </data>
 </root>
