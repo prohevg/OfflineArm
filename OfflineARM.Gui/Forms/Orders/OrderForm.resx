@@ -117,4 +117,33 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="orderSpecificControl.Specifications" mimetype="application/x-microsoft.net.object.binary.base64">
+    <value>
+        AAEAAAD/////AQAAAAAAAAAMAgAAAJkBT2ZmbGluZUFSTS5CdXNpbmVzcywgVmVyc2lvbj0xLjAuMC4w
+        LCBDdWx0dXJlPW5ldXRyYWwsIFB1YmxpY0tleVRva2VuPW51bGxdXSwgbXNjb3JsaWIsIFZlcnNpb249
+        NC4wLjAuMCwgQ3VsdHVyZT1uZXV0cmFsLCBQdWJsaWNLZXlUb2tlbj1iNzdhNWM1NjE5MzRlMDg5DAMA
+        AABKT2ZmbGluZUFSTS5CdXNpbmVzcywgVmVyc2lvbj0xLjAuMC4wLCBDdWx0dXJlPW5ldXRyYWwsIFB1
+        YmxpY0tleVRva2VuPW51bGwFAQAAAHBTeXN0ZW0uQ29sbGVjdGlvbnMuR2VuZXJpYy5MaXN0YDFbW09m
+        ZmxpbmVBUk0uQnVzaW5lc3MuTW9kZWxzLkJ1c2luZXNzZXMuSW50ZXJmYWNlcy5JT3JkZXJTcGVjaWZp
+        Y2F0aW9uSXRlbU1vZGVsAwAAAAZfaXRlbXMFX3NpemUIX3ZlcnNpb24EAABPT2ZmbGluZUFSTS5CdXNp
+        bmVzcy5Nb2RlbHMuQnVzaW5lc3Nlcy5JbnRlcmZhY2VzLklPcmRlclNwZWNpZmljYXRpb25JdGVtTW9k
+        ZWxbXQMAAAAICAIAAAAJBAAAAAAAAAAAAAAABwQAAAAAAQAAAAAAAAAETU9mZmxpbmVBUk0uQnVzaW5l
+        c3MuTW9kZWxzLkJ1c2luZXNzZXMuSW50ZXJmYWNlcy5JT3JkZXJTcGVjaWZpY2F0aW9uSXRlbU1vZGVs
+        AwAAAAs=
+</value>
+  </data>
+  <data name="orderPayControl.Payments" mimetype="application/x-microsoft.net.object.binary.base64">
+    <value>
+        AAEAAAD/////AQAAAAAAAAAMAgAAAJkBT2ZmbGluZUFSTS5CdXNpbmVzcywgVmVyc2lvbj0xLjAuMC4w
+        LCBDdWx0dXJlPW5ldXRyYWwsIFB1YmxpY0tleVRva2VuPW51bGxdXSwgbXNjb3JsaWIsIFZlcnNpb249
+        NC4wLjAuMCwgQ3VsdHVyZT1uZXV0cmFsLCBQdWJsaWNLZXlUb2tlbj1iNzdhNWM1NjE5MzRlMDg5DAMA
+        AABKT2ZmbGluZUFSTS5CdXNpbmVzcywgVmVyc2lvbj0xLjAuMC4wLCBDdWx0dXJlPW5ldXRyYWwsIFB1
+        YmxpY0tleVRva2VuPW51bGwFAQAAAFxTeXN0ZW0uQ29sbGVjdGlvbnMuR2VuZXJpYy5MaXN0YDFbW09m
+        ZmxpbmVBUk0uQnVzaW5lc3MuTW9kZWxzLkJ1c2luZXNzZXMuQmFzZXMuSVBheW1lbnRNb2RlbAMAAAAG
+        X2l0ZW1zBV9zaXplCF92ZXJzaW9uBAAAO09mZmxpbmVBUk0uQnVzaW5lc3MuTW9kZWxzLkJ1c2luZXNz
+        ZXMuQmFzZXMuSVBheW1lbnRNb2RlbFtdAwAAAAgIAgAAAAkEAAAAAAAAAAAAAAAHBAAAAAABAAAAAAAA
+        AAQ5T2ZmbGluZUFSTS5CdXNpbmVzcy5Nb2RlbHMuQnVzaW5lc3Nlcy5CYXNlcy5JUGF5bWVudE1vZGVs
+        AwAAAAs=
+</value>
+  </data>
 </root>

@@ -59,8 +59,7 @@ namespace OfflineARM.Gui.Forms.Orders
 
             tpExpositionFeatures.Text = GuiResource.OrderSpecificControl_ExpositionCharacteristics;
             tpOrderFeatures.Text = GuiResource.OrderSpecificControl_tpOrderCharacteristics;
-            spNext.Text = GuiResource.OrderSpecificControl_spNext;
-
+          
             if (!DesignTimeHelper.IsInDesignMode)
             {
                  _nomenclatureImp = IoCBusiness.Instance.Get<INomenclatureImp>();
