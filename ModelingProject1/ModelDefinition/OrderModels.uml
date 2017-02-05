@@ -1209,9 +1209,9 @@
             aggregation="None"
             isComposite="false">
             <type_NamedElement>
-              <classMoniker
-                Id="35af408f-37b6-460c-b19d-23c2285f9917"
-                LastKnownName="Bank"
+              <primitiveTypeMoniker
+                Id="59259974-6d55-42c6-b7bd-763d77ac8ef9"
+                LastKnownName="String"
                 LastKnownLocation="OrderModels.uml" />
             </type_NamedElement>
           </property>
@@ -1245,9 +1245,9 @@
             aggregation="None"
             isComposite="false">
             <type_NamedElement>
-              <classMoniker
-                Id="84d42a54-7d05-45ee-80a7-14b2ca603238"
-                LastKnownName="BankProduct"
+              <primitiveTypeMoniker
+                Id="59259974-6d55-42c6-b7bd-763d77ac8ef9"
+                LastKnownName="String"
                 LastKnownLocation="OrderModels.uml" />
             </type_NamedElement>
           </property>

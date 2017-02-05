@@ -572,65 +572,11 @@
             <elementDefinition Id="892753d6-fb08-4cc8-bf7b-89522e126a3f" />
           </generalization>
         </generalsInternal>
-        <targetEnds>
-          <association Id="2ad8d2a6-b527-444b-a088-ad93f2aaed45" isDerived="false" sourceEndRoleName="CreditPayment" targetEndRoleName="Bank" isLeaf="false" isAbstract="false">
-            <classMoniker Id="7572f648-e94f-48ad-a88e-06fea6ab7259" LastKnownName="Bank" />
-            <relationshipOwnedElementsInternal>
-              <associationHasOwnedEnds>
-                <memberEnd Id="1ebe30c5-98f4-43f2-83a5-51055012b57c" name="CreditPayment" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false" isNavigableOwned="false">
-                  <elementDefinition Id="f9331883-8f61-4234-ba24-6f7f40c968b9" />
-                </memberEnd>
-              </associationHasOwnedEnds>
-              <associationHasOwnedEnds>
-                <memberEnd Id="04a99f67-6b25-4f2b-acfb-c4651ddb2b31" name="Bank" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
-                  <lowerValueInternal>
-                    <literalString Id="bfc7b206-b0be-4cd6-9af6-b90f5eff0112" name="Lower" value="1">
-                      <elementDefinition Id="c7b42c10-74bc-4d7a-b45f-ae327a980fef" />
-                    </literalString>
-                  </lowerValueInternal>
-                  <upperValueInternal>
-                    <literalString Id="57432c98-ecd8-4b7a-b9cb-fb938c35b8dc" name="Upper" value="*">
-                      <elementDefinition Id="f0a66aa8-3c3f-48a5-a386-8ee3b0b8c740" />
-                    </literalString>
-                  </upperValueInternal>
-                  <elementDefinition Id="04efafaf-e822-4a26-8eee-2f6e4aa160aa" />
-                </memberEnd>
-              </associationHasOwnedEnds>
-            </relationshipOwnedElementsInternal>
-            <elementDefinition Id="d90fcd89-90fc-41e9-abc6-3b9beb6b4708" />
-          </association>
-          <association Id="66f25a50-46f0-474b-8ecf-b3316c160c7a" isDerived="false" sourceEndRoleName="CreditPayment" targetEndRoleName="BankProduct" isLeaf="false" isAbstract="false">
-            <classMoniker Id="6d60236f-f5ec-475c-81bf-2a087a9fa724" LastKnownName="BankProduct" />
-            <relationshipOwnedElementsInternal>
-              <associationHasOwnedEnds>
-                <memberEnd Id="040cc765-db25-42d9-868d-3f7886c884e4" name="CreditPayment" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false" isNavigableOwned="false">
-                  <elementDefinition Id="cbf1fa64-de3d-4b9b-bbfd-13641c787bf6" />
-                </memberEnd>
-              </associationHasOwnedEnds>
-              <associationHasOwnedEnds>
-                <memberEnd Id="05fc4da1-dc7e-417f-a44e-33f12cb2ba19" name="BankProduct" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
-                  <lowerValueInternal>
-                    <literalString Id="5e4f46a4-4ba0-4285-9c02-a299e8b277c7" name="Lower" value="1">
-                      <elementDefinition Id="fb27644d-b300-48b2-972f-02366ec4a5b2" />
-                    </literalString>
-                  </lowerValueInternal>
-                  <upperValueInternal>
-                    <literalString Id="395f252f-2b00-437b-8144-3df10e830a3e" name="Upper" value="*">
-                      <elementDefinition Id="6cb2393d-2aec-4cd3-97fe-5c4ac86e9120" />
-                    </literalString>
-                  </upperValueInternal>
-                  <elementDefinition Id="954bcb8b-174b-4670-b3ec-10074ef69709" />
-                </memberEnd>
-              </associationHasOwnedEnds>
-            </relationshipOwnedElementsInternal>
-            <elementDefinition Id="41cd22d6-8430-4cc3-bf6e-9b780b3a882e" />
-          </association>
-        </targetEnds>
         <ownedAttributesInternal>
           <property Id="c04d6c49-a858-4536-9ae0-6f96a9b79dc6" name="Bank" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
             <elementDefinition Id="47ae21e4-2132-4b80-8b22-cbee18827fa4" />
             <type_NamedElement>
-              <referencedTypeMoniker Id="9f265e5e-477e-4bd7-8763-6b4779b0460e" LastKnownName="Bank" />
+              <referencedTypeMoniker Id="6fa22f0f-8665-48c7-9059-08644bb8b45a" LastKnownName="String" />
             </type_NamedElement>
           </property>
           <property Id="556103a3-08de-45b9-95f6-7a9e8f821c16" name="BankOrderNumber" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
@@ -642,7 +588,7 @@
           <property Id="573b4c40-6c3e-4710-9d6d-b52aa716e042" name="BankProduct" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
             <elementDefinition Id="d135eb7c-bb1e-49ee-aff9-8e4672a1efc9" />
             <type_NamedElement>
-              <referencedTypeMoniker Id="b9f549b7-5147-409a-b488-e5d8fad423b2" LastKnownName="BankProduct" />
+              <referencedTypeMoniker Id="55fa6ad7-7e19-46dc-81f4-31de9afea291" LastKnownName="String" />
             </type_NamedElement>
           </property>
           <property Id="b9ff516c-4509-4164-905b-36f8c338d650" name="NameInOrder" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
@@ -1063,113 +1009,6 @@
         <elementDefinition Id="59259974-6d55-42c6-b7bd-763d77ac8ef9" />
       </referencedType>
     </packageHasNamedElement>
-    <logicalClassDesignerModelHasTypes>
-      <class Id="7572f648-e94f-48ad-a88e-06fea6ab7259" name="Bank" isAbstract="false" isLeaf="false" isActiveClass="false">
-        <elementDefinition Id="35af408f-37b6-460c-b19d-23c2285f9917" />
-        <ownedAttributesInternal>
-          <property Id="15861e8a-3071-4571-adf3-7190ce2e23d9" name="GUID" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
-            <elementDefinition Id="c26e4b12-8806-4833-b7bd-1cb20a691c85" />
-            <type_NamedElement>
-              <referencedTypeMoniker Id="92297a22-a882-4785-9ce5-8d50ee607690" LastKnownName="GUID" />
-            </type_NamedElement>
-          </property>
-          <property Id="001f41bc-c794-4bed-80c1-815bb7a0b853" name="Name" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
-            <elementDefinition Id="b87ca581-3fec-4d9c-98f8-cee300dbc7d9" />
-            <type_NamedElement>
-              <referencedTypeMoniker Id="d748cff3-4a2b-4792-9fa4-64cb76a8db20" LastKnownName="String" />
-            </type_NamedElement>
-          </property>
-        </ownedAttributesInternal>
-      </class>
-    </logicalClassDesignerModelHasTypes>
-    <logicalClassDesignerModelHasTypes>
-      <class Id="6d60236f-f5ec-475c-81bf-2a087a9fa724" name="BankProduct" isAbstract="false" isLeaf="false" isActiveClass="false">
-        <elementDefinition Id="84d42a54-7d05-45ee-80a7-14b2ca603238" />
-        <targetEnds>
-          <association Id="fc60c253-e741-49f1-a4c6-cde4f781c763" isDerived="false" sourceEndRoleName="BankProduct" targetEndRoleName="Bank" isLeaf="false" isAbstract="false">
-            <classMoniker Id="7572f648-e94f-48ad-a88e-06fea6ab7259" LastKnownName="Bank" />
-            <relationshipOwnedElementsInternal>
-              <associationHasOwnedEnds>
-                <memberEnd Id="05d2a52f-ea4a-4c7e-9272-cbb0baeca1de" name="BankProduct" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false" isNavigableOwned="false">
-                  <elementDefinition Id="99b7d8d3-ad8e-43d4-956e-da12eda3cef4" />
-                </memberEnd>
-              </associationHasOwnedEnds>
-              <associationHasOwnedEnds>
-                <memberEnd Id="a09a0090-d2a5-43a4-ad4e-b1d66ad15b99" name="Bank" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
-                  <lowerValueInternal>
-                    <literalString Id="aa791346-a142-46d4-adf5-e03242fe01f4" name="Lower" value="1">
-                      <elementDefinition Id="6cec37e3-39d3-4bde-a738-effc6df21dca" />
-                    </literalString>
-                  </lowerValueInternal>
-                  <upperValueInternal>
-                    <literalString Id="22015a66-cbbd-48fd-8d48-8853510a0623" name="Upper" value="*">
-                      <elementDefinition Id="a9d8e9c7-5c43-4de6-b5ce-e1f243a81528" />
-                    </literalString>
-                  </upperValueInternal>
-                  <elementDefinition Id="b3e7b400-5279-40da-b29e-13c56e72cd82" />
-                </memberEnd>
-              </associationHasOwnedEnds>
-            </relationshipOwnedElementsInternal>
-            <elementDefinition Id="71fd3eec-843d-4c0d-99c2-b49444afbc12" />
-          </association>
-        </targetEnds>
-        <ownedAttributesInternal>
-          <property Id="960f3bfd-6738-46a9-bd98-8be1710b0e8f" name="GUID" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
-            <elementDefinition Id="8f999941-6f36-4105-95a7-94df68b446c1" />
-            <type_NamedElement>
-              <referencedTypeMoniker Id="66ea9a82-c04f-4a56-971e-3ff777ec9bcb" LastKnownName="GUID" />
-            </type_NamedElement>
-          </property>
-          <property Id="92c0901f-81dd-4e55-8393-d125629a6f8f" name="Name" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
-            <elementDefinition Id="dd61f5b1-18ac-497e-8e48-62c8a1f8b127" />
-            <type_NamedElement>
-              <referencedTypeMoniker Id="82592de2-2ab2-406f-9646-30dbe0c9341d" LastKnownName="String" />
-            </type_NamedElement>
-          </property>
-          <property Id="606fd979-c293-40c1-a57e-98e077600bb1" name="Bank" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
-            <elementDefinition Id="480d0419-f12d-4288-b229-3f6196bc294a" />
-            <type_NamedElement>
-              <referencedTypeMoniker Id="a756055d-5bf5-4d98-956b-f417cb83a733" LastKnownName="Bank" />
-            </type_NamedElement>
-          </property>
-        </ownedAttributesInternal>
-      </class>
-    </logicalClassDesignerModelHasTypes>
-    <packageHasNamedElement>
-      <referencedType Id="a756055d-5bf5-4d98-956b-f417cb83a733" name="Bank" isAbstract="false" isLeaf="false" cachedFullName="OrderModels::Bank">
-        <elementDefinition Id="35af408f-37b6-460c-b19d-23c2285f9917" />
-      </referencedType>
-    </packageHasNamedElement>
-    <packageHasNamedElement>
-      <referencedType Id="66ea9a82-c04f-4a56-971e-3ff777ec9bcb" name="GUID" isAbstract="false" isLeaf="false" cachedFullName="OrderModels::GUID">
-        <elementDefinition Id="af4b9145-fa08-47cf-8138-e4d41974178d" />
-      </referencedType>
-    </packageHasNamedElement>
-    <packageHasNamedElement>
-      <referencedType Id="82592de2-2ab2-406f-9646-30dbe0c9341d" name="String" isAbstract="false" isLeaf="false" cachedFullName="String">
-        <elementDefinition Id="59259974-6d55-42c6-b7bd-763d77ac8ef9" />
-      </referencedType>
-    </packageHasNamedElement>
-    <packageHasNamedElement>
-      <referencedType Id="92297a22-a882-4785-9ce5-8d50ee607690" name="GUID" isAbstract="false" isLeaf="false" cachedFullName="OrderModels::GUID">
-        <elementDefinition Id="af4b9145-fa08-47cf-8138-e4d41974178d" />
-      </referencedType>
-    </packageHasNamedElement>
-    <packageHasNamedElement>
-      <referencedType Id="d748cff3-4a2b-4792-9fa4-64cb76a8db20" name="String" isAbstract="false" isLeaf="false" cachedFullName="String">
-        <elementDefinition Id="59259974-6d55-42c6-b7bd-763d77ac8ef9" />
-      </referencedType>
-    </packageHasNamedElement>
-    <packageHasNamedElement>
-      <referencedType Id="9f265e5e-477e-4bd7-8763-6b4779b0460e" name="Bank" isAbstract="false" isLeaf="false" cachedFullName="OrderModels::Bank">
-        <elementDefinition Id="35af408f-37b6-460c-b19d-23c2285f9917" />
-      </referencedType>
-    </packageHasNamedElement>
-    <packageHasNamedElement>
-      <referencedType Id="b9f549b7-5147-409a-b488-e5d8fad423b2" name="BankProduct" isAbstract="false" isLeaf="false" cachedFullName="OrderModels::BankProduct">
-        <elementDefinition Id="84d42a54-7d05-45ee-80a7-14b2ca603238" />
-      </referencedType>
-    </packageHasNamedElement>
     <packageHasNamedElement>
       <referencedType Id="2568f92a-5c2e-41c5-a696-ceac669af1f4" name="String" isAbstract="false" isLeaf="false" cachedFullName="String">
         <elementDefinition Id="59259974-6d55-42c6-b7bd-763d77ac8ef9" />
@@ -1182,6 +1021,16 @@
     </packageHasNamedElement>
     <packageHasNamedElement>
       <referencedType Id="9a3a5078-839d-4969-98a4-88f3c19d3c39" name="String" isAbstract="false" isLeaf="false" cachedFullName="String">
+        <elementDefinition Id="59259974-6d55-42c6-b7bd-763d77ac8ef9" />
+      </referencedType>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <referencedType Id="6fa22f0f-8665-48c7-9059-08644bb8b45a" name="String" isAbstract="false" isLeaf="false" cachedFullName="String">
+        <elementDefinition Id="59259974-6d55-42c6-b7bd-763d77ac8ef9" />
+      </referencedType>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <referencedType Id="55fa6ad7-7e19-46dc-81f4-31de9afea291" name="String" isAbstract="false" isLeaf="false" cachedFullName="String">
         <elementDefinition Id="59259974-6d55-42c6-b7bd-763d77ac8ef9" />
       </referencedType>
     </packageHasNamedElement>
