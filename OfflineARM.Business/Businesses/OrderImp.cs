@@ -56,6 +56,12 @@ namespace OfflineARM.Business.Businesses
                 result.OrderStatus = Mapper.Map<OrderStatus, IOrderStatusModel>(daoOrderStatus);
             }
 
+            if (daoEntity.DeliveryId > 0)
+            {
+                var daoDelivery = _unitOfWork.BusinessesRepositories.DeliveryRepository.GetById(daoEntity.DeliveryId);
+                result.Delivery = Mapper.Map<Delivery, IDeliveryModel> (daoDelivery);
+            }
+
             if (daoEntity.CustomerLegalId.HasValue && daoEntity.CustomerLegalId.Value > 0)
             {
                 var daoCustomerLegal = _unitOfWork.BusinessesRepositories.CustomerLegalRepository.GetById(daoEntity.CustomerLegalId.Value);

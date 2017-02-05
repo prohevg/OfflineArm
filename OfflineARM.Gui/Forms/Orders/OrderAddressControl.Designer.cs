@@ -34,22 +34,22 @@
             this.lcDelivaryCaption = new DevExpress.XtraEditors.LabelControl();
             this.chIsSelf = new DevExpress.XtraEditors.CheckEdit();
             this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
+            this.teHouse = new DevExpress.XtraEditors.TextEdit();
             this.teAddress = new DevExpress.XtraEditors.TextEdit();
             this.tePorch = new DevExpress.XtraEditors.TextEdit();
             this.teFloor = new DevExpress.XtraEditors.TextEdit();
-            this.textEdit4 = new DevExpress.XtraEditors.TextEdit();
-            this.teHouse = new DevExpress.XtraEditors.TextEdit();
+            this.teFlat = new DevExpress.XtraEditors.TextEdit();
             this.tableLayoutPanel3 = new System.Windows.Forms.TableLayoutPanel();
             this.ceClimb = new DevExpress.XtraEditors.CheckEdit();
-            this.ceServiceLift = new DevExpress.XtraEditors.CheckEdit();
-            this.teHousePhone = new DevExpress.XtraEditors.TextEdit();
+            this.ceCargoLift = new DevExpress.XtraEditors.CheckEdit();
+            this.teIntercom = new DevExpress.XtraEditors.TextEdit();
             this.tableLayoutPanel4 = new System.Windows.Forms.TableLayoutPanel();
-            this.tpPhone = new DevExpress.XtraEditors.TextEdit();
-            this.tePhone2 = new DevExpress.XtraEditors.TextEdit();
-            this.teСontactPerson = new DevExpress.XtraEditors.TextEdit();
+            this.teContactPersonName = new DevExpress.XtraEditors.TextEdit();
+            this.teContactPhoneSecondary = new DevExpress.XtraEditors.TextEdit();
+            this.teContactPhoneMain = new DevExpress.XtraEditors.TextEdit();
             this.tableLayoutPanel5 = new System.Windows.Forms.TableLayoutPanel();
             this.lbDateDelivery = new DevExpress.XtraEditors.LabelControl();
-            this.deDateDelivery = new DevExpress.XtraEditors.DateEdit();
+            this.deDeliveryDate = new DevExpress.XtraEditors.DateEdit();
             this.meComment = new DevExpress.XtraEditors.MemoEdit();
             this.tlpMain.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl)).BeginInit();
@@ -57,22 +57,22 @@
             this.tableLayoutPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.chIsSelf.Properties)).BeginInit();
             this.tableLayoutPanel2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.teHouse.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.teAddress.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.tePorch.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.teFloor.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.textEdit4.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.teHouse.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.teFlat.Properties)).BeginInit();
             this.tableLayoutPanel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.ceClimb.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.ceServiceLift.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.teHousePhone.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ceCargoLift.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.teIntercom.Properties)).BeginInit();
             this.tableLayoutPanel4.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.tpPhone.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.tePhone2.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.teСontactPerson.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.teContactPersonName.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.teContactPhoneSecondary.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.teContactPhoneMain.Properties)).BeginInit();
             this.tableLayoutPanel5.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.deDateDelivery.Properties.CalendarTimeProperties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.deDateDelivery.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.deDeliveryDate.Properties.CalendarTimeProperties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.deDeliveryDate.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.meComment.Properties)).BeginInit();
             this.SuspendLayout();
             // 
@@ -166,7 +166,7 @@
             this.tableLayoutPanel2.Controls.Add(this.teAddress, 0, 0);
             this.tableLayoutPanel2.Controls.Add(this.tePorch, 2, 0);
             this.tableLayoutPanel2.Controls.Add(this.teFloor, 3, 0);
-            this.tableLayoutPanel2.Controls.Add(this.textEdit4, 4, 0);
+            this.tableLayoutPanel2.Controls.Add(this.teFlat, 4, 0);
             this.tableLayoutPanel2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel2.Location = new System.Drawing.Point(3, 53);
             this.tableLayoutPanel2.Name = "tableLayoutPanel2";
@@ -174,6 +174,15 @@
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.tableLayoutPanel2.Size = new System.Drawing.Size(651, 24);
             this.tableLayoutPanel2.TabIndex = 1;
+            // 
+            // teHouse
+            // 
+            this.teHouse.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.teHouse.Location = new System.Drawing.Point(329, 3);
+            this.teHouse.Name = "teHouse";
+            this.teHouse.Properties.NullText = "Дом";
+            this.teHouse.Size = new System.Drawing.Size(94, 20);
+            this.teHouse.TabIndex = 4;
             // 
             // teAddress
             // 
@@ -202,23 +211,14 @@
             this.teFloor.Size = new System.Drawing.Size(69, 20);
             this.teFloor.TabIndex = 2;
             // 
-            // textEdit4
+            // teFlat
             // 
-            this.textEdit4.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.textEdit4.Location = new System.Drawing.Point(579, 3);
-            this.textEdit4.Name = "textEdit4";
-            this.textEdit4.Properties.NullText = "Квартира";
-            this.textEdit4.Size = new System.Drawing.Size(69, 20);
-            this.textEdit4.TabIndex = 3;
-            // 
-            // teHouse
-            // 
-            this.teHouse.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.teHouse.Location = new System.Drawing.Point(329, 3);
-            this.teHouse.Name = "teHouse";
-            this.teHouse.Properties.NullText = "Дом";
-            this.teHouse.Size = new System.Drawing.Size(94, 20);
-            this.teHouse.TabIndex = 4;
+            this.teFlat.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.teFlat.Location = new System.Drawing.Point(579, 3);
+            this.teFlat.Name = "teFlat";
+            this.teFlat.Properties.NullText = "Квартира";
+            this.teFlat.Size = new System.Drawing.Size(69, 20);
+            this.teFlat.TabIndex = 3;
             // 
             // tableLayoutPanel3
             // 
@@ -227,8 +227,8 @@
             this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 150F));
             this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.tableLayoutPanel3.Controls.Add(this.ceClimb, 0, 0);
-            this.tableLayoutPanel3.Controls.Add(this.ceServiceLift, 1, 0);
-            this.tableLayoutPanel3.Controls.Add(this.teHousePhone, 2, 0);
+            this.tableLayoutPanel3.Controls.Add(this.ceCargoLift, 1, 0);
+            this.tableLayoutPanel3.Controls.Add(this.teIntercom, 2, 0);
             this.tableLayoutPanel3.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel3.Location = new System.Drawing.Point(3, 83);
             this.tableLayoutPanel3.Name = "tableLayoutPanel3";
@@ -245,21 +245,21 @@
             this.ceClimb.Size = new System.Drawing.Size(75, 19);
             this.ceClimb.TabIndex = 0;
             // 
-            // ceServiceLift
+            // ceCargoLift
             // 
-            this.ceServiceLift.Location = new System.Drawing.Point(153, 3);
-            this.ceServiceLift.Name = "ceServiceLift";
-            this.ceServiceLift.Properties.Caption = "Грузовой лифт";
-            this.ceServiceLift.Size = new System.Drawing.Size(108, 19);
-            this.ceServiceLift.TabIndex = 1;
+            this.ceCargoLift.Location = new System.Drawing.Point(153, 3);
+            this.ceCargoLift.Name = "ceCargoLift";
+            this.ceCargoLift.Properties.Caption = "Грузовой лифт";
+            this.ceCargoLift.Size = new System.Drawing.Size(108, 19);
+            this.ceCargoLift.TabIndex = 1;
             // 
-            // teHousePhone
+            // teIntercom
             // 
-            this.teHousePhone.Location = new System.Drawing.Point(303, 3);
-            this.teHousePhone.Name = "teHousePhone";
-            this.teHousePhone.Properties.NullText = "Домофон";
-            this.teHousePhone.Size = new System.Drawing.Size(100, 20);
-            this.teHousePhone.TabIndex = 2;
+            this.teIntercom.Location = new System.Drawing.Point(303, 3);
+            this.teIntercom.Name = "teIntercom";
+            this.teIntercom.Properties.NullText = "Домофон";
+            this.teIntercom.Size = new System.Drawing.Size(100, 20);
+            this.teIntercom.TabIndex = 2;
             // 
             // tableLayoutPanel4
             // 
@@ -267,9 +267,9 @@
             this.tableLayoutPanel4.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 150F));
             this.tableLayoutPanel4.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 150F));
             this.tableLayoutPanel4.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel4.Controls.Add(this.teСontactPerson, 2, 0);
-            this.tableLayoutPanel4.Controls.Add(this.tePhone2, 1, 0);
-            this.tableLayoutPanel4.Controls.Add(this.tpPhone, 0, 0);
+            this.tableLayoutPanel4.Controls.Add(this.teContactPersonName, 2, 0);
+            this.tableLayoutPanel4.Controls.Add(this.teContactPhoneSecondary, 1, 0);
+            this.tableLayoutPanel4.Controls.Add(this.teContactPhoneMain, 0, 0);
             this.tableLayoutPanel4.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel4.Location = new System.Drawing.Point(3, 113);
             this.tableLayoutPanel4.Name = "tableLayoutPanel4";
@@ -278,36 +278,36 @@
             this.tableLayoutPanel4.Size = new System.Drawing.Size(651, 24);
             this.tableLayoutPanel4.TabIndex = 3;
             // 
-            // tpPhone
+            // teContactPersonName
             // 
-            this.tpPhone.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tpPhone.Location = new System.Drawing.Point(3, 3);
-            this.tpPhone.Name = "tpPhone";
-            this.tpPhone.Properties.Mask.EditMask = "(\\(\\d\\d\\d\\))?\\d{1,3}-\\d\\d-\\d\\d";
-            this.tpPhone.Properties.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.RegEx;
-            this.tpPhone.Properties.NullText = "Контактный телефон";
-            this.tpPhone.Size = new System.Drawing.Size(144, 20);
-            this.tpPhone.TabIndex = 0;
+            this.teContactPersonName.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.teContactPersonName.Location = new System.Drawing.Point(303, 3);
+            this.teContactPersonName.Name = "teContactPersonName";
+            this.teContactPersonName.Properties.NullText = "Контактное лицо";
+            this.teContactPersonName.Size = new System.Drawing.Size(345, 20);
+            this.teContactPersonName.TabIndex = 2;
             // 
-            // tePhone2
+            // teContactPhoneSecondary
             // 
-            this.tePhone2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tePhone2.Location = new System.Drawing.Point(153, 3);
-            this.tePhone2.Name = "tePhone2";
-            this.tePhone2.Properties.Mask.EditMask = "(\\(\\d\\d\\d\\))?\\d{1,3}-\\d\\d-\\d\\d";
-            this.tePhone2.Properties.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.RegEx;
-            this.tePhone2.Properties.NullText = "Дополнительный телефон";
-            this.tePhone2.Size = new System.Drawing.Size(144, 20);
-            this.tePhone2.TabIndex = 1;
+            this.teContactPhoneSecondary.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.teContactPhoneSecondary.Location = new System.Drawing.Point(153, 3);
+            this.teContactPhoneSecondary.Name = "teContactPhoneSecondary";
+            this.teContactPhoneSecondary.Properties.Mask.EditMask = "(\\(\\d\\d\\d\\))?\\d{1,3}-\\d\\d-\\d\\d";
+            this.teContactPhoneSecondary.Properties.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.RegEx;
+            this.teContactPhoneSecondary.Properties.NullText = "Дополнительный телефон";
+            this.teContactPhoneSecondary.Size = new System.Drawing.Size(144, 20);
+            this.teContactPhoneSecondary.TabIndex = 1;
             // 
-            // teСontactPerson
+            // teContactPhoneMain
             // 
-            this.teСontactPerson.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.teСontactPerson.Location = new System.Drawing.Point(303, 3);
-            this.teСontactPerson.Name = "teСontactPerson";
-            this.teСontactPerson.Properties.NullText = "Контактное лицо";
-            this.teСontactPerson.Size = new System.Drawing.Size(345, 20);
-            this.teСontactPerson.TabIndex = 2;
+            this.teContactPhoneMain.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.teContactPhoneMain.Location = new System.Drawing.Point(3, 3);
+            this.teContactPhoneMain.Name = "teContactPhoneMain";
+            this.teContactPhoneMain.Properties.Mask.EditMask = "(\\(\\d\\d\\d\\))?\\d{1,3}-\\d\\d-\\d\\d";
+            this.teContactPhoneMain.Properties.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.RegEx;
+            this.teContactPhoneMain.Properties.NullText = "Контактный телефон";
+            this.teContactPhoneMain.Size = new System.Drawing.Size(144, 20);
+            this.teContactPhoneMain.TabIndex = 0;
             // 
             // tableLayoutPanel5
             // 
@@ -315,7 +315,7 @@
             this.tableLayoutPanel5.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 150F));
             this.tableLayoutPanel5.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.tableLayoutPanel5.Controls.Add(this.lbDateDelivery, 0, 0);
-            this.tableLayoutPanel5.Controls.Add(this.deDateDelivery, 1, 0);
+            this.tableLayoutPanel5.Controls.Add(this.deDeliveryDate, 1, 0);
             this.tableLayoutPanel5.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel5.Location = new System.Drawing.Point(3, 143);
             this.tableLayoutPanel5.Name = "tableLayoutPanel5";
@@ -333,18 +333,18 @@
             this.lbDateDelivery.TabIndex = 0;
             this.lbDateDelivery.Text = "Дата доставки";
             // 
-            // deDateDelivery
+            // deDeliveryDate
             // 
-            this.deDateDelivery.EditValue = null;
-            this.deDateDelivery.Location = new System.Drawing.Point(153, 3);
-            this.deDateDelivery.Name = "deDateDelivery";
-            this.deDateDelivery.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            this.deDeliveryDate.EditValue = null;
+            this.deDeliveryDate.Location = new System.Drawing.Point(153, 3);
+            this.deDeliveryDate.Name = "deDeliveryDate";
+            this.deDeliveryDate.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.deDateDelivery.Properties.CalendarTimeProperties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            this.deDeliveryDate.Properties.CalendarTimeProperties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.deDateDelivery.Properties.NullText = "Дата";
-            this.deDateDelivery.Size = new System.Drawing.Size(131, 20);
-            this.deDateDelivery.TabIndex = 1;
+            this.deDeliveryDate.Properties.NullText = "Дата";
+            this.deDeliveryDate.Size = new System.Drawing.Size(131, 20);
+            this.deDeliveryDate.TabIndex = 1;
             // 
             // meComment
             // 
@@ -370,23 +370,23 @@
             this.tableLayoutPanel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.chIsSelf.Properties)).EndInit();
             this.tableLayoutPanel2.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.teHouse.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.teAddress.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.tePorch.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.teFloor.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.textEdit4.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.teHouse.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.teFlat.Properties)).EndInit();
             this.tableLayoutPanel3.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.ceClimb.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.ceServiceLift.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.teHousePhone.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ceCargoLift.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.teIntercom.Properties)).EndInit();
             this.tableLayoutPanel4.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.tpPhone.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.tePhone2.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.teСontactPerson.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.teContactPersonName.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.teContactPhoneSecondary.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.teContactPhoneMain.Properties)).EndInit();
             this.tableLayoutPanel5.ResumeLayout(false);
             this.tableLayoutPanel5.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.deDateDelivery.Properties.CalendarTimeProperties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.deDateDelivery.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.deDeliveryDate.Properties.CalendarTimeProperties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.deDeliveryDate.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.meComment.Properties)).EndInit();
             this.ResumeLayout(false);
 
@@ -404,18 +404,18 @@
         private DevExpress.XtraEditors.TextEdit teAddress;
         private DevExpress.XtraEditors.TextEdit tePorch;
         private DevExpress.XtraEditors.TextEdit teFloor;
-        private DevExpress.XtraEditors.TextEdit textEdit4;
+        private DevExpress.XtraEditors.TextEdit teFlat;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel3;
         private DevExpress.XtraEditors.CheckEdit ceClimb;
-        private DevExpress.XtraEditors.CheckEdit ceServiceLift;
-        private DevExpress.XtraEditors.TextEdit teHousePhone;
+        private DevExpress.XtraEditors.CheckEdit ceCargoLift;
+        private DevExpress.XtraEditors.TextEdit teIntercom;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel4;
-        private DevExpress.XtraEditors.TextEdit teСontactPerson;
-        private DevExpress.XtraEditors.TextEdit tePhone2;
-        private DevExpress.XtraEditors.TextEdit tpPhone;
+        private DevExpress.XtraEditors.TextEdit teContactPersonName;
+        private DevExpress.XtraEditors.TextEdit teContactPhoneSecondary;
+        private DevExpress.XtraEditors.TextEdit teContactPhoneMain;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel5;
         private DevExpress.XtraEditors.LabelControl lbDateDelivery;
-        private DevExpress.XtraEditors.DateEdit deDateDelivery;
+        private DevExpress.XtraEditors.DateEdit deDeliveryDate;
         private DevExpress.XtraEditors.MemoEdit meComment;
     }
 }

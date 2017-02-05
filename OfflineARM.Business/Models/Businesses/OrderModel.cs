@@ -57,6 +57,15 @@ namespace OfflineARM.Business.Models.Businesses
         }
 
         /// <summary>
+        /// Адрес доставки в заказе
+        /// </summary>
+        public IDeliveryModel Delivery
+        {
+            get;
+            set;
+        }
+
+        /// <summary>
         ///  Номер заказа
         /// </summary>
         public string Number

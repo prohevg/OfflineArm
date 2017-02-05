@@ -38,6 +38,17 @@ namespace OfflineARM.Gui.Forms.Orders
             }
         }
 
+        /// <summary>
+        /// Адрес
+        /// </summary>
+        public IDeliveryModel Delivery
+        {
+            get
+            {
+                return this.orderAddress.Delivery;
+            }
+        }
+
         #endregion
     }
 }

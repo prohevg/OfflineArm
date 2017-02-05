@@ -65,6 +65,9 @@ namespace OfflineARM.Business
 
                 cfg.CreateMap<OrderSpecificationItem, IOrderSpecificationItemModel>();
                 cfg.CreateMap<IOrderSpecificationItemModel, OrderSpecificationItem>();
+
+                cfg.CreateMap<Delivery, IDeliveryModel>();
+                cfg.CreateMap<IDeliveryModel, Delivery>();
             });
         }
     }

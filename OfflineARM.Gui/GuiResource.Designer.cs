@@ -134,6 +134,24 @@ namespace OfflineARM.Gui {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Адрес доставки.
+        /// </summary>
+        internal static string OrderListControl_GridOrderCaption_Delivary {
+            get {
+                return ResourceManager.GetString("OrderListControl_GridOrderCaption_Delivary", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Дата доставки.
+        /// </summary>
+        internal static string OrderListControl_GridOrderCaption_DelivaryDate {
+            get {
+                return ResourceManager.GetString("OrderListControl_GridOrderCaption_DelivaryDate", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Номер.
         /// </summary>
         internal static string OrderListControl_GridOrderCaption_Number {

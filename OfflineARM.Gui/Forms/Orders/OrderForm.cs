@@ -166,7 +166,8 @@ namespace OfflineARM.Gui.Forms.Orders
                 OrderStatus = _orderStatusImp.GetAllAsync().Result.Data.FirstOrDefault(),
                 User = this.lueResponsiable.EditValue as IUserModel, 
                 Specifications = this.orderSpecificControl.Specifications,
-                Payments = this.orderPayControl.Payments
+                Payments = this.orderPayControl.Payments, 
+                Delivery = this.orderDestination.Delivery
             };
 
             _orderImp.Insert(orderModel);

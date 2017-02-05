@@ -94,6 +94,9 @@ namespace OfflineARM.Business
 
             container.Bind<IBasisActionImp>().To<BasisActionImp>();
             container.Bind<IBasisActionValidator>().To<BasisActionValidator>();
+
+            container.Bind<IDeliveryImp>().To<DeliveryImp>();
+            container.Bind<IDeliveryValidator>().To<DeliveryValidator>();
         }
 
         #endregion

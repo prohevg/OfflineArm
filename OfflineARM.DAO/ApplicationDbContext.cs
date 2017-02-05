@@ -60,6 +60,7 @@ namespace OfflineARM.DAO
             modelBuilder.Configurations.Add(new ReclamationConfiguration());
             modelBuilder.Configurations.Add(new ShopConfiguration());
             modelBuilder.Configurations.Add(new UserConfiguration());
+            modelBuilder.Configurations.Add(new DeliveryConfiguration());
         }
 
         #endregion

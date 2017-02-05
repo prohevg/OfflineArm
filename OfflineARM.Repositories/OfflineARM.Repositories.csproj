@@ -63,11 +63,13 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Repositories\BaseRepository.cs" />
     <Compile Include="Repositories\Businesses\BusinessesRepositories.cs" />
+    <Compile Include="Repositories\Businesses\DeliveryRepository.cs" />
     <Compile Include="Repositories\Businesses\CustomerPrivateRepository.cs" />
     <Compile Include="Repositories\Businesses\CustomerLegalRepository.cs" />
     <Compile Include="Repositories\Businesses\CreditPaymentRepository.cs" />
     <Compile Include="Repositories\Businesses\CashPaymentRepository.cs" />
     <Compile Include="Repositories\Businesses\Interfaces\ICardPaymentRepository.cs" />
+    <Compile Include="Repositories\Businesses\Interfaces\IDeliveryRepository.cs" />
     <Compile Include="Repositories\Businesses\Interfaces\ICashPaymentRepository.cs" />
     <Compile Include="Repositories\Businesses\Interfaces\ICreditPaymentRepository.cs" />
     <Compile Include="Repositories\Businesses\Interfaces\ICustomerLegalRepository.cs" />

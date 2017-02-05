@@ -44,11 +44,14 @@ namespace OfflineARM.Gui.Forms.Orders
         /// </summary>
         private void InitializationGridOrders()
         {
+            gcOrders.GridView.OptionsView.ShowAutoFilterRow = true;
             gcOrders.BeginUpdate();
             gcOrders.AddColumn(GuiResource.OrderListControl_GridOrderCaption_Number, "Number");
             gcOrders.AddColumn(GuiResource.OrderListControl_GridOrderCaption_DateCreate, "DateCreate", 1);
-            gcOrders.AddColumn(GuiResource.OrderListControl_GridOrderCaption_Customer, "Customer.Name", 2);
-            gcOrders.AddColumn(GuiResource.OrderListControl_GridOrderCaption_User, "User.Fio", 3);
+            gcOrders.AddColumn(GuiResource.OrderListControl_GridOrderCaption_User, "User.Fio", 2);
+            gcOrders.AddColumn(GuiResource.OrderListControl_GridOrderCaption_Customer, "Customer.Name", 3);
+            gcOrders.AddColumn(GuiResource.OrderListControl_GridOrderCaption_DelivaryDate, "Delivery.DeliveryDate", 4);
+           // gcOrders.AddColumn(GuiResource.OrderListControl_GridOrderCaption_Delivary, "Delivery.DelivaryAddress", 5);
             gcOrders.EndUpdate();
         }
 

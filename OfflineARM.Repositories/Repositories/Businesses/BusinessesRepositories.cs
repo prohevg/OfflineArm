@@ -55,6 +55,11 @@ namespace OfflineARM.Repositories.Repositories.Businesses
         /// </summary>
         private CustomerPrivateRepository _customerPrivateRepository;
 
+        /// <summary>
+        ///  Адрес доставки в заказе
+        /// </summary>
+        private DeliveryRepository _deliveryRepository;
+
         #endregion
 
         #region Конструктор
@@ -188,6 +193,21 @@ namespace OfflineARM.Repositories.Repositories.Businesses
                     this._customerPrivateRepository = new CustomerPrivateRepository(_context);
                 }
                 return _customerPrivateRepository;
+            }
+        }
+
+        /// <summary>
+        /// Адрес доставки в заказе
+        /// </summary>
+        public IDeliveryRepository DeliveryRepository
+        {
+            get
+            {
+                if (this._deliveryRepository == null)
+                {
+                    this._deliveryRepository = new DeliveryRepository(_context);
+                }
+                return _deliveryRepository;
             }
         }
 

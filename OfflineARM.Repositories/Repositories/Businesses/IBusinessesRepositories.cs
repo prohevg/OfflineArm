@@ -46,5 +46,10 @@ namespace OfflineARM.Repositories.Repositories.Businesses
         ///  Клиент физ лицо
         /// </summary>
         ICustomerPrivateRepository CustomerPrivateRepository { get; }
+
+        /// <summary>
+        /// Адрес доставки в заказе
+        /// </summary>
+        IDeliveryRepository DeliveryRepository { get; }
     }
 }

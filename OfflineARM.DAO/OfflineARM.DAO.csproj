@@ -82,6 +82,7 @@
     <Compile Include="Configurations\Business\CreditPaymentConfiguration.cs" />
     <Compile Include="Configurations\Business\CardPaymentConfiguration.cs" />
     <Compile Include="Configurations\Business\CashPaymentConfiguration.cs" />
+    <Compile Include="Configurations\Business\DeliveryConfiguration.cs" />
     <Compile Include="Configurations\Dictionaries\BankProductConfiguration.cs" />
     <Compile Include="Configurations\Dictionaries\BankConfiguration.cs" />
     <Compile Include="Configurations\Dictionaries\FeatureConfiguration.cs" />
@@ -109,6 +110,7 @@
     <Compile Include="Entities\Business\CreditPayment.cs" />
     <Compile Include="Entities\Business\CashPayment.cs" />
     <Compile Include="Entities\Business\CustomerPrivate.cs" />
+    <Compile Include="Entities\Business\Delivery.cs" />
     <Compile Include="Entities\Dictionaries\Bank.cs" />
     <Compile Include="Entities\Dictionaries\BankProduct.cs" />
     <Compile Include="Entities\Dictionaries\Feature.cs" />

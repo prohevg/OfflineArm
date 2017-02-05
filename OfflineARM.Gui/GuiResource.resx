@@ -238,4 +238,10 @@
   <data name="OrderListControl_GridOrderCaption_User" xml:space="preserve">
     <value>Ответственный</value>
   </data>
+  <data name="OrderListControl_GridOrderCaption_Delivary" xml:space="preserve">
+    <value>Адрес доставки</value>
+  </data>
+  <data name="OrderListControl_GridOrderCaption_DelivaryDate" xml:space="preserve">
+    <value>Дата доставки</value>
+  </data>
 </root>

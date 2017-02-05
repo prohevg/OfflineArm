@@ -74,8 +74,10 @@
     <Compile Include="Businesses\CustomerPrivateImp.cs" />
     <Compile Include="Businesses\Interfaces\ICustomerPrivateImp.cs" />
     <Compile Include="Businesses\Interfaces\ICustomerLegalImp.cs" />
+    <Compile Include="Businesses\Interfaces\IDeliveryImp.cs" />
     <Compile Include="Businesses\Interfaces\IUserImp.cs" />
     <Compile Include="Businesses\CustomerLegalImp.cs" />
+    <Compile Include="Businesses\DeliveryImp.cs" />
     <Compile Include="Businesses\UserImp.cs" />
     <Compile Include="Businesses\OrderSpecificationImp.cs" />
     <Compile Include="Businesses\OrderImp.cs" />
@@ -103,8 +105,10 @@
     <Compile Include="Models\Businesses\Bases\ICustomerModel.cs" />
     <Compile Include="Models\Businesses\Bases\IPaymentModel.cs" />
     <Compile Include="Models\Businesses\Bases\PaymentModel.cs" />
+    <Compile Include="Models\Businesses\DeliveryModel.cs" />
     <Compile Include="Models\Businesses\CustomerLegalModel.cs" />
     <Compile Include="Models\Businesses\CustomerPrivateModel.cs" />
+    <Compile Include="Models\Businesses\Interfaces\IDeliveryModel.cs" />
     <Compile Include="Models\Businesses\Interfaces\ICustomerLegalModel.cs" />
     <Compile Include="Models\Businesses\Interfaces\ICustomerPrivateModel.cs" />
     <Compile Include="Models\Businesses\Interfaces\IOrderSpecificationItemModel.cs" />
@@ -142,8 +146,10 @@
     <Compile Include="Validators\Businesses\CustomerPrivateValidator.cs" />
     <Compile Include="Validators\Businesses\Interfaces\ICustomerPrivateValidator.cs" />
     <Compile Include="Validators\Businesses\Interfaces\ICustomerLegalValidator.cs" />
+    <Compile Include="Validators\Businesses\Interfaces\IDeliveryValidator.cs" />
     <Compile Include="Validators\Businesses\Interfaces\IUserValidator.cs" />
     <Compile Include="Validators\Businesses\CustomerLegalValidator.cs" />
+    <Compile Include="Validators\Businesses\DeliveryValidator.cs" />
     <Compile Include="Validators\Businesses\UserValidator.cs" />
     <Compile Include="Validators\Businesses\Interfaces\IOrderSpecificationValidator.cs" />
     <Compile Include="Validators\Businesses\OrderSpecificationValidator.cs" />

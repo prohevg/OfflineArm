@@ -28,5 +28,13 @@ namespace OfflineARM.Gui.Forms.Orders.Interfaces
         {
             get;
         }
+
+        /// <summary>
+        /// Адрес
+        /// </summary>
+        IDeliveryModel Delivery
+        {
+            get;
+        }
     }
 }
