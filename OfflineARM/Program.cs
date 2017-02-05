@@ -29,7 +29,7 @@ namespace OfflineARM
                     return;
                 }
 
-                new InitDatabase().Init();
+                InitDatabaseFull.Init();
 
                 var mainForm = IoCForm.Instance.ResolveForm<IMainForm>();
                 Application.Run(mainForm);

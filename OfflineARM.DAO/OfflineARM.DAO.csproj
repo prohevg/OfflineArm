@@ -132,6 +132,7 @@
     <Compile Include="Entities\Dictionaries\City.cs" />
     <Compile Include="Entities\IBaseDaoEntity.cs" />
     <Compile Include="Helpers\ThrowExceptionHelper.cs" />
+    <Compile Include="InitDaoDatabase.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup />
