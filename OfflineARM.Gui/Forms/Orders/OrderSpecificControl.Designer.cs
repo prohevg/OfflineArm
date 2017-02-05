@@ -31,11 +31,11 @@
             this.tlpSpecific = new System.Windows.Forms.TableLayoutPanel();
             this.tpSpecificDevideTree = new System.Windows.Forms.TableLayoutPanel();
             this.tlpTableDevided = new System.Windows.Forms.TableLayoutPanel();
-            this.tbChoiseCharacteristics = new DevExpress.XtraTab.XtraTabControl();
-            this.tpOrderCharacteristics = new DevExpress.XtraTab.XtraTabPage();
-            this.gcNomenclatureCharactristics = new OfflineARM.Gui.Controls.GridControlWrapper();
+            this.tbChoiseFeatures = new DevExpress.XtraTab.XtraTabControl();
+            this.tpOrderFeatures = new DevExpress.XtraTab.XtraTabPage();
+            this.gcNomenclatureFeatures = new OfflineARM.Gui.Controls.GridControlWrapper();
             this.gridView1 = new DevExpress.XtraGrid.Views.Grid.GridView();
-            this.tpExpositionCharacteristics = new DevExpress.XtraTab.XtraTabPage();
+            this.tpExpositionFeatures = new DevExpress.XtraTab.XtraTabPage();
             this.gcExposition = new OfflineARM.Gui.Controls.GridControlWrapper();
             this.gridView3 = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.lcOrderHeader = new DevExpress.XtraEditors.LabelControl();
@@ -47,12 +47,12 @@
             this.tlpSpecific.SuspendLayout();
             this.tpSpecificDevideTree.SuspendLayout();
             this.tlpTableDevided.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.tbChoiseCharacteristics)).BeginInit();
-            this.tbChoiseCharacteristics.SuspendLayout();
-            this.tpOrderCharacteristics.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.gcNomenclatureCharactristics)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tbChoiseFeatures)).BeginInit();
+            this.tbChoiseFeatures.SuspendLayout();
+            this.tpOrderFeatures.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.gcNomenclatureFeatures)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).BeginInit();
-            this.tpExpositionCharacteristics.SuspendLayout();
+            this.tpExpositionFeatures.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gcExposition)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gcOrderSpecifications)).BeginInit();
@@ -100,7 +100,7 @@
             // 
             this.tlpTableDevided.ColumnCount = 1;
             this.tlpTableDevided.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tlpTableDevided.Controls.Add(this.tbChoiseCharacteristics, 0, 0);
+            this.tlpTableDevided.Controls.Add(this.tbChoiseFeatures, 0, 0);
             this.tlpTableDevided.Controls.Add(this.lcOrderHeader, 0, 1);
             this.tlpTableDevided.Controls.Add(this.gcOrderSpecifications, 0, 2);
             this.tlpTableDevided.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -114,49 +114,49 @@
             this.tlpTableDevided.Size = new System.Drawing.Size(492, 403);
             this.tlpTableDevided.TabIndex = 1;
             // 
-            // tbChoiseCharacteristics
+            // tbChoiseFeatures
             // 
-            this.tbChoiseCharacteristics.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tbChoiseCharacteristics.Location = new System.Drawing.Point(3, 3);
-            this.tbChoiseCharacteristics.Name = "tbChoiseCharacteristics";
-            this.tbChoiseCharacteristics.SelectedTabPage = this.tpOrderCharacteristics;
-            this.tbChoiseCharacteristics.Size = new System.Drawing.Size(486, 170);
-            this.tbChoiseCharacteristics.TabIndex = 2;
-            this.tbChoiseCharacteristics.TabPages.AddRange(new DevExpress.XtraTab.XtraTabPage[] {
-            this.tpOrderCharacteristics,
-            this.tpExpositionCharacteristics});
+            this.tbChoiseFeatures.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tbChoiseFeatures.Location = new System.Drawing.Point(3, 3);
+            this.tbChoiseFeatures.Name = "tbChoiseFeatures";
+            this.tbChoiseFeatures.SelectedTabPage = this.tpOrderFeatures;
+            this.tbChoiseFeatures.Size = new System.Drawing.Size(486, 170);
+            this.tbChoiseFeatures.TabIndex = 2;
+            this.tbChoiseFeatures.TabPages.AddRange(new DevExpress.XtraTab.XtraTabPage[] {
+            this.tpOrderFeatures,
+            this.tpExpositionFeatures});
             // 
-            // tpOrderCharacteristics
+            // tpOrderFeatures
             // 
-            this.tpOrderCharacteristics.Controls.Add(this.gcNomenclatureCharactristics);
-            this.tpOrderCharacteristics.Name = "tpOrderCharacteristics";
-            this.tpOrderCharacteristics.Size = new System.Drawing.Size(480, 142);
-            this.tpOrderCharacteristics.Text = "Характеристики";
+            this.tpOrderFeatures.Controls.Add(this.gcNomenclatureFeatures);
+            this.tpOrderFeatures.Name = "tpOrderFeatures";
+            this.tpOrderFeatures.Size = new System.Drawing.Size(480, 142);
+            this.tpOrderFeatures.Text = "Характеристики";
             // 
-            // gcNomenclatureCharactristics
+            // gcNomenclatureFeatures
             // 
-            this.gcNomenclatureCharactristics.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.gcNomenclatureCharactristics.Location = new System.Drawing.Point(0, 0);
-            this.gcNomenclatureCharactristics.MainView = this.gridView1;
-            this.gcNomenclatureCharactristics.Name = "gcNomenclatureCharactristics";
-            this.gcNomenclatureCharactristics.Size = new System.Drawing.Size(480, 142);
-            this.gcNomenclatureCharactristics.TabIndex = 0;
-            this.gcNomenclatureCharactristics.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
+            this.gcNomenclatureFeatures.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.gcNomenclatureFeatures.Location = new System.Drawing.Point(0, 0);
+            this.gcNomenclatureFeatures.MainView = this.gridView1;
+            this.gcNomenclatureFeatures.Name = "gcNomenclatureFeatures";
+            this.gcNomenclatureFeatures.Size = new System.Drawing.Size(480, 142);
+            this.gcNomenclatureFeatures.TabIndex = 0;
+            this.gcNomenclatureFeatures.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView1});
             // 
             // gridView1
             // 
-            this.gridView1.GridControl = this.gcNomenclatureCharactristics;
+            this.gridView1.GridControl = this.gcNomenclatureFeatures;
             this.gridView1.Name = "gridView1";
             this.gridView1.OptionsBehavior.ReadOnly = true;
             this.gridView1.OptionsView.ShowGroupPanel = false;
             // 
-            // tpExpositionCharacteristics
+            // tpExpositionFeatures
             // 
-            this.tpExpositionCharacteristics.Controls.Add(this.gcExposition);
-            this.tpExpositionCharacteristics.Name = "tpExpositionCharacteristics";
-            this.tpExpositionCharacteristics.Size = new System.Drawing.Size(480, 142);
-            this.tpExpositionCharacteristics.Text = "Экспозиция";
+            this.tpExpositionFeatures.Controls.Add(this.gcExposition);
+            this.tpExpositionFeatures.Name = "tpExpositionFeatures";
+            this.tpExpositionFeatures.Size = new System.Drawing.Size(480, 142);
+            this.tpExpositionFeatures.Text = "Экспозиция";
             // 
             // gcExposition
             // 
@@ -239,12 +239,12 @@
             this.tpSpecificDevideTree.ResumeLayout(false);
             this.tlpTableDevided.ResumeLayout(false);
             this.tlpTableDevided.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.tbChoiseCharacteristics)).EndInit();
-            this.tbChoiseCharacteristics.ResumeLayout(false);
-            this.tpOrderCharacteristics.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.gcNomenclatureCharactristics)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tbChoiseFeatures)).EndInit();
+            this.tbChoiseFeatures.ResumeLayout(false);
+            this.tpOrderFeatures.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.gcNomenclatureFeatures)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).EndInit();
-            this.tpExpositionCharacteristics.ResumeLayout(false);
+            this.tpExpositionFeatures.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.gcExposition)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gcOrderSpecifications)).EndInit();
@@ -262,11 +262,11 @@
         private DevExpress.XtraEditors.SimpleButton spNext;
         private Controls.TreeListWrapper treeList;
         private System.Windows.Forms.TableLayoutPanel tlpTableDevided;
-        private DevExpress.XtraTab.XtraTabControl tbChoiseCharacteristics;
-        private DevExpress.XtraTab.XtraTabPage tpOrderCharacteristics;
-        private Controls.GridControlWrapper gcNomenclatureCharactristics;
+        private DevExpress.XtraTab.XtraTabControl tbChoiseFeatures;
+        private DevExpress.XtraTab.XtraTabPage tpOrderFeatures;
+        private Controls.GridControlWrapper gcNomenclatureFeatures;
         private DevExpress.XtraGrid.Views.Grid.GridView gridView1;
-        private DevExpress.XtraTab.XtraTabPage tpExpositionCharacteristics;
+        private DevExpress.XtraTab.XtraTabPage tpExpositionFeatures;
         private Controls.GridControlWrapper gcExposition;
         private DevExpress.XtraGrid.Views.Grid.GridView gridView3;
         private DevExpress.XtraEditors.LabelControl lcOrderHeader;

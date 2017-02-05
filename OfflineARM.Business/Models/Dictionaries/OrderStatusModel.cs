@@ -7,6 +7,13 @@ namespace OfflineARM.Business.Models.Dictionaries
     /// </summary>
     public class OrderStatusModel : BaseBusninessModel, IOrderStatusModel
     {
-        
+        /// <summary>
+        /// Наименование
+        /// </summary>
+        public string Name
+        {
+            get;
+            set;
+        }
     }
 }

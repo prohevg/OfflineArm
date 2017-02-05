@@ -71,5 +71,14 @@ namespace OfflineARM.Business.Models.Businesses
             get;
             set;
         }
+
+        /// <summary>
+        /// Количество
+        /// </summary>
+        public int Count
+        {
+            get;
+            set;
+        }
     }
 }

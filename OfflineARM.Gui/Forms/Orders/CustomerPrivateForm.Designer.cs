@@ -1,6 +1,6 @@
 ﻿namespace OfflineARM.Gui.Forms.Orders
 {
-    partial class ClientPrivateForm
+    partial class CustomerPrivateForm
     {
         /// <summary>
         /// Required designer variable.
@@ -155,6 +155,7 @@
             this.sbSave.Size = new System.Drawing.Size(75, 23);
             this.sbSave.TabIndex = 4;
             this.sbSave.Text = "Сохранить";
+            this.sbSave.Click += new System.EventHandler(this.sbSave_Click);
             // 
             // sbCancel
             // 

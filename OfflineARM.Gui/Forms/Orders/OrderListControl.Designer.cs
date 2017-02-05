@@ -28,36 +28,38 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.gridOrders = new DevExpress.XtraGrid.GridControl();
+            this.gcOrders = new OfflineARM.Gui.Controls.GridControlWrapper();
             this.gridView1 = new DevExpress.XtraGrid.Views.Grid.GridView();
-            ((System.ComponentModel.ISupportInitialize)(this.gridOrders)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gcOrders)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).BeginInit();
             this.SuspendLayout();
             // 
-            // gridOrders
+            // gcOrders
             // 
-            this.gridOrders.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.gridOrders.Location = new System.Drawing.Point(0, 0);
-            this.gridOrders.MainView = this.gridView1;
-            this.gridOrders.Name = "gridOrders";
-            this.gridOrders.Size = new System.Drawing.Size(740, 333);
-            this.gridOrders.TabIndex = 0;
-            this.gridOrders.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
+            this.gcOrders.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.gcOrders.Location = new System.Drawing.Point(0, 0);
+            this.gcOrders.MainView = this.gridView1;
+            this.gcOrders.Name = "gcOrders";
+            this.gcOrders.Size = new System.Drawing.Size(740, 333);
+            this.gcOrders.TabIndex = 0;
+            this.gcOrders.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView1});
             // 
             // gridView1
             // 
-            this.gridView1.GridControl = this.gridOrders;
+            this.gridView1.GridControl = this.gcOrders;
             this.gridView1.Name = "gridView1";
+            this.gridView1.OptionsBehavior.ReadOnly = true;
+            this.gridView1.OptionsView.ShowGroupPanel = false;
             // 
             // OrderListControl
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.Controls.Add(this.gridOrders);
+            this.Controls.Add(this.gcOrders);
             this.Name = "OrderListControl";
             this.Size = new System.Drawing.Size(740, 333);
-            ((System.ComponentModel.ISupportInitialize)(this.gridOrders)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gcOrders)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).EndInit();
             this.ResumeLayout(false);
 
@@ -65,7 +67,7 @@
 
         #endregion
 
-        private DevExpress.XtraGrid.GridControl gridOrders;
+        private Controls.GridControlWrapper gcOrders;
         private DevExpress.XtraGrid.Views.Grid.GridView gridView1;
     }
 }

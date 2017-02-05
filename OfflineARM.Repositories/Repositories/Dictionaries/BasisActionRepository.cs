@@ -1,5 +1,4 @@
 ﻿using OfflineARM.DAO;
-using OfflineARM.DAO.Entities;
 using OfflineARM.DAO.Entities.Dictionaries;
 using OfflineARM.Repositories.Repositories.Dictionaries.Interfaces;
 

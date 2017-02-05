@@ -1,6 +1,6 @@
 ﻿namespace OfflineARM.Gui.Forms.Orders
 {
-    partial class ClientOrganizationForm
+    partial class CustomerLegalForm
     {
         /// <summary>
         /// Required designer variable.
@@ -34,7 +34,7 @@
             this.lcName = new DevExpress.XtraEditors.LabelControl();
             this.lcAddress = new DevExpress.XtraEditors.LabelControl();
             this.lcInn = new DevExpress.XtraEditors.LabelControl();
-            this.teFio = new DevExpress.XtraEditors.TextEdit();
+            this.teName = new DevExpress.XtraEditors.TextEdit();
             this.tlpButtons = new System.Windows.Forms.TableLayoutPanel();
             this.sbSave = new DevExpress.XtraEditors.SimpleButton();
             this.sbCancel = new DevExpress.XtraEditors.SimpleButton();
@@ -47,16 +47,16 @@
             this.teFace = new DevExpress.XtraEditors.TextEdit();
             this.tlpOnAction = new System.Windows.Forms.TableLayoutPanel();
             this.lcFrom = new DevExpress.XtraEditors.LabelControl();
-            this.teNumber = new DevExpress.XtraEditors.TextEdit();
+            this.teDocNumber = new DevExpress.XtraEditors.TextEdit();
             this.lcNumber = new DevExpress.XtraEditors.LabelControl();
-            this.letOnAction = new DevExpress.XtraEditors.LookUpEdit();
-            this.deFrom = new DevExpress.XtraEditors.DateEdit();
+            this.lueOnAction = new DevExpress.XtraEditors.LookUpEdit();
+            this.deDocDate = new DevExpress.XtraEditors.DateEdit();
             this.tlpInn = new System.Windows.Forms.TableLayoutPanel();
             this.teInn = new DevExpress.XtraEditors.TextEdit();
             this.lcKpp = new DevExpress.XtraEditors.LabelControl();
             this.teKpp = new DevExpress.XtraEditors.TextEdit();
             this.tlpMain.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.teFio.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.teName.Properties)).BeginInit();
             this.tlpButtons.SuspendLayout();
             this.tlpAddress.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.teAddress.Properties)).BeginInit();
@@ -65,10 +65,10 @@
             ((System.ComponentModel.ISupportInitialize)(this.tePosition.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.teFace.Properties)).BeginInit();
             this.tlpOnAction.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.teNumber.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.letOnAction.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.deFrom.Properties.CalendarTimeProperties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.deFrom.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.teDocNumber.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.lueOnAction.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.deDocDate.Properties.CalendarTimeProperties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.deDocDate.Properties)).BeginInit();
             this.tlpInn.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.teInn.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.teKpp.Properties)).BeginInit();
@@ -84,7 +84,7 @@
             this.tlpMain.Controls.Add(this.lcName, 0, 0);
             this.tlpMain.Controls.Add(this.lcAddress, 0, 1);
             this.tlpMain.Controls.Add(this.lcInn, 0, 4);
-            this.tlpMain.Controls.Add(this.teFio, 1, 0);
+            this.tlpMain.Controls.Add(this.teName, 1, 0);
             this.tlpMain.Controls.Add(this.tlpButtons, 1, 5);
             this.tlpMain.Controls.Add(this.tlpAddress, 1, 1);
             this.tlpMain.Controls.Add(this.tlpFace, 1, 2);
@@ -158,15 +158,15 @@
             this.lcInn.TabIndex = 2;
             this.lcInn.Text = "ИНН";
             // 
-            // teFio
+            // teName
             // 
-            this.teFio.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.teFio.Location = new System.Drawing.Point(153, 5);
-            this.teFio.Margin = new System.Windows.Forms.Padding(3, 5, 3, 3);
-            this.teFio.Name = "teFio";
-            this.teFio.Properties.NullText = "Наименование";
-            this.teFio.Size = new System.Drawing.Size(578, 20);
-            this.teFio.TabIndex = 1;
+            this.teName.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.teName.Location = new System.Drawing.Point(153, 5);
+            this.teName.Margin = new System.Windows.Forms.Padding(3, 5, 3, 3);
+            this.teName.Name = "teName";
+            this.teName.Properties.NullText = "Наименование";
+            this.teName.Size = new System.Drawing.Size(578, 20);
+            this.teName.TabIndex = 1;
             // 
             // tlpButtons
             // 
@@ -191,6 +191,7 @@
             this.sbSave.Size = new System.Drawing.Size(75, 23);
             this.sbSave.TabIndex = 11;
             this.sbSave.Text = "Сохранить";
+            this.sbSave.Click += new System.EventHandler(this.sbSave_Click);
             // 
             // sbCancel
             // 
@@ -297,10 +298,10 @@
             this.tlpOnAction.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 50F));
             this.tlpOnAction.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 100F));
             this.tlpOnAction.Controls.Add(this.lcFrom, 3, 0);
-            this.tlpOnAction.Controls.Add(this.teNumber, 2, 0);
+            this.tlpOnAction.Controls.Add(this.teDocNumber, 2, 0);
             this.tlpOnAction.Controls.Add(this.lcNumber, 1, 0);
-            this.tlpOnAction.Controls.Add(this.letOnAction, 0, 0);
-            this.tlpOnAction.Controls.Add(this.deFrom, 4, 0);
+            this.tlpOnAction.Controls.Add(this.lueOnAction, 0, 0);
+            this.tlpOnAction.Controls.Add(this.deDocDate, 4, 0);
             this.tlpOnAction.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tlpOnAction.Location = new System.Drawing.Point(151, 91);
             this.tlpOnAction.Margin = new System.Windows.Forms.Padding(1);
@@ -320,16 +321,16 @@
             this.lcFrom.TabIndex = 15;
             this.lcFrom.Text = "от";
             // 
-            // teNumber
+            // teDocNumber
             // 
-            this.teNumber.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.teNumber.EditValue = "Номер документа";
-            this.teNumber.Location = new System.Drawing.Point(285, 5);
-            this.teNumber.Margin = new System.Windows.Forms.Padding(3, 5, 3, 3);
-            this.teNumber.Name = "teNumber";
-            this.teNumber.Properties.NullText = "Юридический адрес";
-            this.teNumber.Size = new System.Drawing.Size(144, 20);
-            this.teNumber.TabIndex = 7;
+            this.teDocNumber.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.teDocNumber.EditValue = "Номер документа";
+            this.teDocNumber.Location = new System.Drawing.Point(285, 5);
+            this.teDocNumber.Margin = new System.Windows.Forms.Padding(3, 5, 3, 3);
+            this.teDocNumber.Name = "teDocNumber";
+            this.teDocNumber.Properties.NullText = "Юридический адрес";
+            this.teDocNumber.Size = new System.Drawing.Size(144, 20);
+            this.teDocNumber.TabIndex = 7;
             // 
             // lcNumber
             // 
@@ -341,27 +342,27 @@
             this.lcNumber.TabIndex = 13;
             this.lcNumber.Text = "№";
             // 
-            // letOnAction
+            // lueOnAction
             // 
-            this.letOnAction.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.letOnAction.Location = new System.Drawing.Point(3, 3);
-            this.letOnAction.Name = "letOnAction";
-            this.letOnAction.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            this.lueOnAction.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.lueOnAction.Location = new System.Drawing.Point(3, 3);
+            this.lueOnAction.Name = "lueOnAction";
+            this.lueOnAction.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.letOnAction.Size = new System.Drawing.Size(226, 20);
-            this.letOnAction.TabIndex = 6;
+            this.lueOnAction.Size = new System.Drawing.Size(226, 20);
+            this.lueOnAction.TabIndex = 6;
             // 
-            // deFrom
+            // deDocDate
             // 
-            this.deFrom.EditValue = null;
-            this.deFrom.Location = new System.Drawing.Point(485, 3);
-            this.deFrom.Name = "deFrom";
-            this.deFrom.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            this.deDocDate.EditValue = null;
+            this.deDocDate.Location = new System.Drawing.Point(485, 3);
+            this.deDocDate.Name = "deDocDate";
+            this.deDocDate.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.deFrom.Properties.CalendarTimeProperties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            this.deDocDate.Properties.CalendarTimeProperties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.deFrom.Size = new System.Drawing.Size(94, 20);
-            this.deFrom.TabIndex = 8;
+            this.deDocDate.Size = new System.Drawing.Size(94, 20);
+            this.deDocDate.TabIndex = 8;
             // 
             // tlpInn
             // 
@@ -413,18 +414,18 @@
             this.teKpp.Size = new System.Drawing.Size(248, 20);
             this.teKpp.TabIndex = 10;
             // 
-            // ClientOrganizationForm
+            // CustomerLegalForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(734, 212);
             this.Controls.Add(this.tlpMain);
             this.MinimumSize = new System.Drawing.Size(750, 250);
-            this.Name = "ClientOrganizationForm";
+            this.Name = "CustomerLegalForm";
             this.Text = "Новый клиент - юридическое лицо";
             this.tlpMain.ResumeLayout(false);
             this.tlpMain.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.teFio.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.teName.Properties)).EndInit();
             this.tlpButtons.ResumeLayout(false);
             this.tlpAddress.ResumeLayout(false);
             this.tlpAddress.PerformLayout();
@@ -435,10 +436,10 @@
             ((System.ComponentModel.ISupportInitialize)(this.teFace.Properties)).EndInit();
             this.tlpOnAction.ResumeLayout(false);
             this.tlpOnAction.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.teNumber.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.letOnAction.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.deFrom.Properties.CalendarTimeProperties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.deFrom.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.teDocNumber.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.lueOnAction.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.deDocDate.Properties.CalendarTimeProperties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.deDocDate.Properties)).EndInit();
             this.tlpInn.ResumeLayout(false);
             this.tlpInn.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.teInn.Properties)).EndInit();
@@ -453,7 +454,7 @@
         private DevExpress.XtraEditors.LabelControl lcName;
         private DevExpress.XtraEditors.LabelControl lcAddress;
         private DevExpress.XtraEditors.LabelControl lcInn;
-        private DevExpress.XtraEditors.TextEdit teFio;
+        private DevExpress.XtraEditors.TextEdit teName;
         private System.Windows.Forms.TableLayoutPanel tlpButtons;
         private DevExpress.XtraEditors.SimpleButton sbSave;
         private DevExpress.XtraEditors.SimpleButton sbCancel;
@@ -468,10 +469,10 @@
         private DevExpress.XtraEditors.TextEdit teFace;
         private System.Windows.Forms.TableLayoutPanel tlpOnAction;
         private DevExpress.XtraEditors.LabelControl lcFrom;
-        private DevExpress.XtraEditors.TextEdit teNumber;
+        private DevExpress.XtraEditors.TextEdit teDocNumber;
         private DevExpress.XtraEditors.LabelControl lcNumber;
-        private DevExpress.XtraEditors.LookUpEdit letOnAction;
-        private DevExpress.XtraEditors.DateEdit deFrom;
+        private DevExpress.XtraEditors.LookUpEdit lueOnAction;
+        private DevExpress.XtraEditors.DateEdit deDocDate;
         private System.Windows.Forms.TableLayoutPanel tlpInn;
         private DevExpress.XtraEditors.TextEdit teInn;
         private DevExpress.XtraEditors.LabelControl lcKpp;

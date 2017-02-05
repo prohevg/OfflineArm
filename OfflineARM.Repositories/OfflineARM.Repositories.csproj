@@ -80,6 +80,8 @@
     <Compile Include="Repositories\Businesses\IBusinessesRepositories.cs" />
     <Compile Include="Repositories\Businesses\Interfaces\IOrderRepository.cs" />
     <Compile Include="Repositories\Businesses\Interfaces\IExpositionRepository.cs" />
+    <Compile Include="Repositories\Dictionaries\Interfaces\IUserRepository.cs" />
+    <Compile Include="Repositories\Dictionaries\UserRepository.cs" />
     <Compile Include="Repositories\Dictionaries\BankProductRepository.cs" />
     <Compile Include="Repositories\Dictionaries\BasisActionRepository.cs" />
     <Compile Include="Repositories\Dictionaries\BankRepository.cs" />

@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             this.tlpMain = new System.Windows.Forms.TableLayoutPanel();
-            this.orderClient = new OfflineARM.Gui.Forms.Orders.OrderClientControl();
+            this.orderClient = new OfflineARM.Gui.Forms.Orders.OrderCustomerControl();
             this.orderAddress = new OfflineARM.Gui.Forms.Orders.OrderAddressControl();
             this.tlpMain.SuspendLayout();
             this.SuspendLayout();
@@ -82,7 +82,7 @@
         #endregion
 
         private System.Windows.Forms.TableLayoutPanel tlpMain;
-        private OrderClientControl orderClient;
+        private OrderCustomerControl orderClient;
         private OrderAddressControl orderAddress;
     }
 }

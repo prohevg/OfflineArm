@@ -1,6 +1,7 @@
 ﻿using System;
 using OfflineARM.Business.Models.Dictionaries.Interfaces;
 using OfflineARM.DAO.Entities.Business;
+using OfflineARM.DAO.Entities.Dictionaries;
 
 namespace OfflineARM.Business.Models.Dictionaries
 {

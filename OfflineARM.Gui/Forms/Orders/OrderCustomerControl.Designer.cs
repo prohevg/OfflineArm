@@ -1,6 +1,6 @@
 ﻿namespace OfflineARM.Gui.Forms.Orders
 {
-    partial class OrderClientControl
+    partial class OrderCustomerControl
     {
         /// <summary> 
         /// Required designer variable.
@@ -32,9 +32,9 @@
             this.tlpMain = new System.Windows.Forms.TableLayoutPanel();
             this.panelControl = new DevExpress.XtraEditors.PanelControl();
             this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
-            this.rgClientType = new DevExpress.XtraEditors.RadioGroup();
+            this.rgCustomerType = new DevExpress.XtraEditors.RadioGroup();
             this.lcCaption = new DevExpress.XtraEditors.LabelControl();
-            this.lkClient = new DevExpress.XtraEditors.LookUpEdit();
+            this.lueCustomer = new DevExpress.XtraEditors.LookUpEdit();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.tePhone = new DevExpress.XtraEditors.TextEdit();
             this.teAddress = new DevExpress.XtraEditors.TextEdit();
@@ -42,8 +42,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.panelControl)).BeginInit();
             this.panelControl.SuspendLayout();
             this.tableLayoutPanel2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.rgClientType.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.lkClient.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.rgCustomerType.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.lueCustomer.Properties)).BeginInit();
             this.tableLayoutPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.tePhone.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.teAddress.Properties)).BeginInit();
@@ -54,7 +54,7 @@
             this.tlpMain.ColumnCount = 1;
             this.tlpMain.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.tlpMain.Controls.Add(this.panelControl, 0, 0);
-            this.tlpMain.Controls.Add(this.lkClient, 0, 1);
+            this.tlpMain.Controls.Add(this.lueCustomer, 0, 1);
             this.tlpMain.Controls.Add(this.tableLayoutPanel1, 0, 2);
             this.tlpMain.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tlpMain.Location = new System.Drawing.Point(0, 0);
@@ -81,7 +81,7 @@
             this.tableLayoutPanel2.ColumnCount = 2;
             this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 120F));
             this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel2.Controls.Add(this.rgClientType, 1, 0);
+            this.tableLayoutPanel2.Controls.Add(this.rgCustomerType, 1, 0);
             this.tableLayoutPanel2.Controls.Add(this.lcCaption, 0, 0);
             this.tableLayoutPanel2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel2.Location = new System.Drawing.Point(2, 2);
@@ -91,17 +91,18 @@
             this.tableLayoutPanel2.Size = new System.Drawing.Size(743, 40);
             this.tableLayoutPanel2.TabIndex = 2;
             // 
-            // rgClientType
+            // rgCustomerType
             // 
-            this.rgClientType.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            this.rgCustomerType.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left)));
-            this.rgClientType.Location = new System.Drawing.Point(123, 3);
-            this.rgClientType.Name = "rgClientType";
-            this.rgClientType.Properties.Items.AddRange(new DevExpress.XtraEditors.Controls.RadioGroupItem[] {
+            this.rgCustomerType.Location = new System.Drawing.Point(123, 3);
+            this.rgCustomerType.Name = "rgCustomerType";
+            this.rgCustomerType.Properties.Items.AddRange(new DevExpress.XtraEditors.Controls.RadioGroupItem[] {
             new DevExpress.XtraEditors.Controls.RadioGroupItem(null, "Физическое лицо"),
             new DevExpress.XtraEditors.Controls.RadioGroupItem(null, "Юридическое лицо")});
-            this.rgClientType.Size = new System.Drawing.Size(327, 34);
-            this.rgClientType.TabIndex = 1;
+            this.rgCustomerType.Size = new System.Drawing.Size(327, 34);
+            this.rgCustomerType.TabIndex = 1;
+            this.rgCustomerType.SelectedIndexChanged += new System.EventHandler(this.rgClientType_SelectedIndexChanged);
             // 
             // lcCaption
             // 
@@ -114,21 +115,18 @@
             this.lcCaption.TabIndex = 0;
             this.lcCaption.Text = "Клиент";
             // 
-            // lkClient
+            // lueCustomer
             // 
-            this.lkClient.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.lkClient.Location = new System.Drawing.Point(3, 53);
-            this.lkClient.Name = "lkClient";
-            this.lkClient.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            this.lueCustomer.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.lueCustomer.Location = new System.Drawing.Point(3, 53);
+            this.lueCustomer.Name = "lueCustomer";
+            this.lueCustomer.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo),
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Plus, "Добавить", -1, true, true, false, DevExpress.XtraEditors.ImageLocation.MiddleCenter, null, new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), serializableAppearanceObject1, "", null, null, true)});
-            this.lkClient.Properties.Columns.AddRange(new DevExpress.XtraEditors.Controls.LookUpColumnInfo[] {
-            new DevExpress.XtraEditors.Controls.LookUpColumnInfo("Id", "Id", 20, DevExpress.Utils.FormatType.None, "", false, DevExpress.Utils.HorzAlignment.Default),
-            new DevExpress.XtraEditors.Controls.LookUpColumnInfo("Name", "Наименование"),
-            new DevExpress.XtraEditors.Controls.LookUpColumnInfo("Address", "Адрес")});
-            this.lkClient.Size = new System.Drawing.Size(747, 20);
-            this.lkClient.TabIndex = 1;
-            this.lkClient.ButtonClick += new DevExpress.XtraEditors.Controls.ButtonPressedEventHandler(this.lkClient_ButtonClick);
+            this.lueCustomer.Size = new System.Drawing.Size(747, 20);
+            this.lueCustomer.TabIndex = 1;
+            this.lueCustomer.ButtonClick += new DevExpress.XtraEditors.Controls.ButtonPressedEventHandler(this.lkClient_ButtonClick);
+            this.lueCustomer.EditValueChanged += new System.EventHandler(this.lkClient_EditValueChanged);
             // 
             // tableLayoutPanel1
             // 
@@ -152,7 +150,7 @@
             this.tePhone.Name = "tePhone";
             this.tePhone.Properties.Mask.EditMask = "(\\(\\d\\d\\d\\))?\\d{1,3}-\\d\\d-\\d\\d";
             this.tePhone.Properties.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.RegEx;
-            this.tePhone.Properties.NullText = "Телефон";
+            this.tePhone.Properties.NullText = "(000)000-00-00";
             this.tePhone.Size = new System.Drawing.Size(144, 20);
             this.tePhone.TabIndex = 2;
             // 
@@ -177,8 +175,8 @@
             this.panelControl.ResumeLayout(false);
             this.tableLayoutPanel2.ResumeLayout(false);
             this.tableLayoutPanel2.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.rgClientType.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.lkClient.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.rgCustomerType.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.lueCustomer.Properties)).EndInit();
             this.tableLayoutPanel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.tePhone.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.teAddress.Properties)).EndInit();
@@ -191,8 +189,8 @@
         private System.Windows.Forms.TableLayoutPanel tlpMain;
         private DevExpress.XtraEditors.PanelControl panelControl;
         private DevExpress.XtraEditors.LabelControl lcCaption;
-        private DevExpress.XtraEditors.RadioGroup rgClientType;
-        private DevExpress.XtraEditors.LookUpEdit lkClient;
+        private DevExpress.XtraEditors.RadioGroup rgCustomerType;
+        private DevExpress.XtraEditors.LookUpEdit lueCustomer;
         private DevExpress.XtraEditors.TextEdit tePhone;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
         private DevExpress.XtraEditors.TextEdit teAddress;

@@ -1,4 +1,5 @@
-﻿using OfflineARM.Business.Models;
+﻿using System.Threading.Tasks;
+using OfflineARM.Business.Models;
 
 namespace OfflineARM.Business
 {
@@ -19,6 +20,11 @@ namespace OfflineARM.Business
         /// Получить все
         /// </summary>
         PagedResult<TModelEntity> GetAll();
+
+        /// <summary>
+        /// Получить все
+        /// </summary>
+        Task<PagedResult<TModelEntity>> GetAllAsync();
 
         /// <summary>
         /// Добавить в БД

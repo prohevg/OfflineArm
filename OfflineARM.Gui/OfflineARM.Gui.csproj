@@ -148,26 +148,30 @@
     <Compile Include="Controls\TreeListWrapper.cs">
       <SubType>Component</SubType>
     </Compile>
-    <Compile Include="Forms\Orders\ClientOrganizationForm.cs">
+    <Compile Include="Forms\Orders\CustomerLegalForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\Orders\ClientOrganizationForm.Designer.cs">
-      <DependentUpon>ClientOrganizationForm.cs</DependentUpon>
+    <Compile Include="Forms\Orders\CustomerLegalForm.Designer.cs">
+      <DependentUpon>CustomerLegalForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\Orders\ClientPrivateForm.cs">
+    <Compile Include="Forms\Orders\CustomerPrivateForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\Orders\ClientPrivateForm.Designer.cs">
-      <DependentUpon>ClientPrivateForm.cs</DependentUpon>
+    <Compile Include="Forms\Orders\CustomerPrivateForm.Designer.cs">
+      <DependentUpon>CustomerPrivateForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Forms\Orders\Commands\OrderPrintCommand.cs" />
     <Compile Include="Forms\Orders\Commands\PrintData.cs" />
-    <Compile Include="Forms\Orders\Interfaces\IClientOrganizationForm.cs" />
-    <Compile Include="Forms\Orders\Interfaces\IClientPrivateForm.cs" />
+    <Compile Include="Forms\Orders\Interfaces\ICustomerLegalForm.cs" />
+    <Compile Include="Forms\Orders\Interfaces\ICustomerPrivateForm.cs" />
+    <Compile Include="Forms\Orders\Interfaces\IOrderDestinationControl.cs" />
     <Compile Include="Forms\Orders\Interfaces\IOrderForm.cs" />
     <Compile Include="Forms\Orders\Interfaces\IOrderListControl.cs" />
     <Compile Include="Forms\Orders\Commands\OrderPrintCommandHandler.cs" />
     <Compile Include="Forms\Orders\Commands\OrderAddCommandHandler.cs" />
+    <Compile Include="Forms\Orders\Interfaces\IOrderCustomerControl.cs" />
+    <Compile Include="Forms\Orders\Interfaces\IOrderPayControl.cs" />
+    <Compile Include="Forms\Orders\Interfaces\IOrderSpecificControl.cs" />
     <Compile Include="Forms\Orders\OrderAddressControl.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -180,11 +184,11 @@
     <Compile Include="Forms\Orders\OrderDestinationControl.Designer.cs">
       <DependentUpon>OrderDestinationControl.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\Orders\OrderClientControl.cs">
+    <Compile Include="Forms\Orders\OrderCustomerControl.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="Forms\Orders\OrderClientControl.Designer.cs">
-      <DependentUpon>OrderClientControl.cs</DependentUpon>
+    <Compile Include="Forms\Orders\OrderCustomerControl.Designer.cs">
+      <DependentUpon>OrderCustomerControl.cs</DependentUpon>
     </Compile>
     <Compile Include="Forms\Orders\OrderCommands.cs" />
     <Compile Include="Forms\Orders\OrderListControl.cs">
@@ -251,17 +255,17 @@
       <LastGenOutput>CommandResources.Designer.cs</LastGenOutput>
       <SubType>Designer</SubType>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\Orders\ClientOrganizationForm.resx">
-      <DependentUpon>ClientOrganizationForm.cs</DependentUpon>
+    <EmbeddedResource Include="Forms\Orders\CustomerLegalForm.resx">
+      <DependentUpon>CustomerLegalForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\Orders\ClientPrivateForm.resx">
-      <DependentUpon>ClientPrivateForm.cs</DependentUpon>
+    <EmbeddedResource Include="Forms\Orders\CustomerPrivateForm.resx">
+      <DependentUpon>CustomerPrivateForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\Orders\OrderAddressControl.resx">
       <DependentUpon>OrderAddressControl.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\Orders\OrderClientControl.resx">
-      <DependentUpon>OrderClientControl.cs</DependentUpon>
+    <EmbeddedResource Include="Forms\Orders\OrderCustomerControl.resx">
+      <DependentUpon>OrderCustomerControl.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\Orders\OrderDestinationControl.resx">
       <DependentUpon>OrderDestinationControl.cs</DependentUpon>
@@ -295,6 +299,10 @@
     <ProjectReference Include="..\OfflineARM.Business\OfflineARM.Business.csproj">
       <Project>{ead7c1b5-ed07-4d09-8950-e16db02760d5}</Project>
       <Name>OfflineARM.Business</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\OfflineARM.DAO\OfflineARM.DAO.csproj">
+      <Project>{26C4EA32-8D5E-49CC-BBC6-474F295C88EB}</Project>
+      <Name>OfflineARM.DAO</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
