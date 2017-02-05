@@ -767,6 +767,12 @@
               <referencedTypeMoniker Id="17955468-6c88-4439-b7ec-01551b2895ee" LastKnownName="String" />
             </type_NamedElement>
           </property>
+          <property Id="a3b04642-1cd7-4ab0-9e76-d003b6d2e301" name="Quantity" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+            <elementDefinition Id="45cefa6f-8874-462e-9d57-31fefc15b4ea" />
+            <type_NamedElement>
+              <referencedTypeMoniker Id="560f80dd-760a-43d2-9c99-3045ad274755" LastKnownName="Integer" />
+            </type_NamedElement>
+          </property>
         </ownedAttributesInternal>
       </class>
     </logicalClassDesignerModelHasTypes>
@@ -1032,6 +1038,11 @@
     <packageHasNamedElement>
       <referencedType Id="55fa6ad7-7e19-46dc-81f4-31de9afea291" name="String" isAbstract="false" isLeaf="false" cachedFullName="String">
         <elementDefinition Id="59259974-6d55-42c6-b7bd-763d77ac8ef9" />
+      </referencedType>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <referencedType Id="560f80dd-760a-43d2-9c99-3045ad274755" name="Integer" isAbstract="false" isLeaf="false" cachedFullName="Integer">
+        <elementDefinition Id="220a3521-e091-4221-bae9-3ef9018e845c" />
       </referencedType>
     </packageHasNamedElement>
   </packagedElements>
