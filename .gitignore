@@ -24,3 +24,4 @@
 /OfflineARM.Gui/bin/x86/Debug
 /OfflineARM.Gui/obj/x86/Debug
 /assemblies
+*.suo
