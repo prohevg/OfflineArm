@@ -676,6 +676,45 @@
               </associationHasOwnedEnds>
             </relationshipOwnedElementsInternal>
           </association>
+          <association
+            Id="acc3ed9d-0634-4fb9-b42e-3ecde8eb896e"
+            isDerived="false"
+            sourceEndRoleName="Order"
+            targetEndRoleName="Delivery"
+            isLeaf="false"
+            isAbstract="false">
+            <classMoniker
+              Id="25848c40-2be4-4000-a270-76ce90188eda"
+              LastKnownName="Delivery"
+              LastKnownLocation="OrderModels.uml" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="5294803b-eb99-42fb-8fa3-ce0a9e98eef0"
+                  name="Order"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false"
+                  isNavigableOwned="false" />
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="531cee7d-097e-45eb-a784-f3849546bfd1"
+                  name="Delivery"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false" />
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+          </association>
         </targetEnds>
         <ownedAttributesInternal>
           <property
@@ -792,7 +831,7 @@
           </property>
           <property
             Id="36ff12d1-1e6b-4cd4-899a-61f1f96c7f40"
-            name="DeliveryAddress"
+            name="Delivery"
             isLeaf="false"
             isStatic="false"
             isReadOnly="false"
@@ -802,9 +841,9 @@
             aggregation="None"
             isComposite="false">
             <type_NamedElement>
-              <primitiveTypeMoniker
-                Id="59259974-6d55-42c6-b7bd-763d77ac8ef9"
-                LastKnownName="String"
+              <classMoniker
+                Id="25848c40-2be4-4000-a270-76ce90188eda"
+                LastKnownName="Delivery"
                 LastKnownLocation="OrderModels.uml" />
             </type_NamedElement>
           </property>
@@ -2035,6 +2074,216 @@
               <classMoniker
                 Id="35af408f-37b6-460c-b19d-23c2285f9917"
                 LastKnownName="Bank"
+                LastKnownLocation="OrderModels.uml" />
+            </type_NamedElement>
+          </property>
+        </ownedAttributesInternal>
+      </class>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <class
+        Id="25848c40-2be4-4000-a270-76ce90188eda"
+        name="Delivery"
+        isAbstract="false"
+        isLeaf="false"
+        isActiveClass="false">
+        <ownedAttributesInternal>
+          <property
+            Id="a00ed3b0-b14a-4b28-bc37-562e4e17d0d8"
+            name="Address"
+            isLeaf="false"
+            isStatic="false"
+            isReadOnly="false"
+            isUnique="false"
+            isDerived="false"
+            isDerivedUnion="false"
+            aggregation="None"
+            isComposite="false">
+            <type_NamedElement>
+              <primitiveTypeMoniker
+                Id="59259974-6d55-42c6-b7bd-763d77ac8ef9"
+                LastKnownName="String"
+                LastKnownLocation="OrderModels.uml" />
+            </type_NamedElement>
+          </property>
+          <property
+            Id="60144556-afa2-4530-b214-73e3436d6c78"
+            name="Porch"
+            isLeaf="false"
+            isStatic="false"
+            isReadOnly="false"
+            isUnique="false"
+            isDerived="false"
+            isDerivedUnion="false"
+            aggregation="None"
+            isComposite="false">
+            <description>Подъезд</description>
+            <type_NamedElement>
+              <primitiveTypeMoniker
+                Id="59259974-6d55-42c6-b7bd-763d77ac8ef9"
+                LastKnownName="String"
+                LastKnownLocation="OrderModels.uml" />
+            </type_NamedElement>
+          </property>
+          <property
+            Id="b53f5a6e-5fe3-407f-8d41-d1b8ca316322"
+            name="Floor"
+            isLeaf="false"
+            isStatic="false"
+            isReadOnly="false"
+            isUnique="false"
+            isDerived="false"
+            isDerivedUnion="false"
+            aggregation="None"
+            isComposite="false">
+            <type_NamedElement>
+              <primitiveTypeMoniker
+                Id="59259974-6d55-42c6-b7bd-763d77ac8ef9"
+                LastKnownName="String"
+                LastKnownLocation="OrderModels.uml" />
+            </type_NamedElement>
+          </property>
+          <property
+            Id="a9be7ddb-2ed3-4738-8043-f2e9905a4a28"
+            name="Flat"
+            isLeaf="false"
+            isStatic="false"
+            isReadOnly="false"
+            isUnique="false"
+            isDerived="false"
+            isDerivedUnion="false"
+            aggregation="None"
+            isComposite="false">
+            <type_NamedElement>
+              <primitiveTypeMoniker
+                Id="59259974-6d55-42c6-b7bd-763d77ac8ef9"
+                LastKnownName="String"
+                LastKnownLocation="OrderModels.uml" />
+            </type_NamedElement>
+          </property>
+          <property
+            Id="69e221cf-3a4e-404e-893c-1d43dc841e34"
+            name="IsClimb"
+            isLeaf="false"
+            isStatic="false"
+            isReadOnly="false"
+            isUnique="false"
+            isDerived="false"
+            isDerivedUnion="false"
+            aggregation="None"
+            isComposite="false">
+            <type_NamedElement>
+              <primitiveTypeMoniker
+                Id="8943dc84-709e-4f62-b15a-a3273aa6f165"
+                LastKnownName="Boolean"
+                LastKnownLocation="OrderModels.uml" />
+            </type_NamedElement>
+          </property>
+          <property
+            Id="48e01594-1b45-4312-8477-47a63126561b"
+            name="IsCargoLift"
+            isLeaf="false"
+            isStatic="false"
+            isReadOnly="false"
+            isUnique="false"
+            isDerived="false"
+            isDerivedUnion="false"
+            aggregation="None"
+            isComposite="false">
+            <type_NamedElement>
+              <primitiveTypeMoniker
+                Id="8943dc84-709e-4f62-b15a-a3273aa6f165"
+                LastKnownName="Boolean"
+                LastKnownLocation="OrderModels.uml" />
+            </type_NamedElement>
+          </property>
+          <property
+            Id="80de064b-ad48-47ab-b5b5-8bd5d1b0b074"
+            name="Intercom"
+            isLeaf="false"
+            isStatic="false"
+            isReadOnly="false"
+            isUnique="false"
+            isDerived="false"
+            isDerivedUnion="false"
+            aggregation="None"
+            isComposite="false">
+            <type_NamedElement>
+              <primitiveTypeMoniker
+                Id="59259974-6d55-42c6-b7bd-763d77ac8ef9"
+                LastKnownName="String"
+                LastKnownLocation="OrderModels.uml" />
+            </type_NamedElement>
+          </property>
+          <property
+            Id="3e33df05-a863-4b6a-a807-96dc0f601bd5"
+            name="ContactPhoneMain"
+            isLeaf="false"
+            isStatic="false"
+            isReadOnly="false"
+            isUnique="false"
+            isDerived="false"
+            isDerivedUnion="false"
+            aggregation="None"
+            isComposite="false">
+            <type_NamedElement>
+              <primitiveTypeMoniker
+                Id="59259974-6d55-42c6-b7bd-763d77ac8ef9"
+                LastKnownName="String"
+                LastKnownLocation="OrderModels.uml" />
+            </type_NamedElement>
+          </property>
+          <property
+            Id="60923be9-0e1a-451b-abf9-d3efb8eb6e20"
+            name="ContactPhoneSecondary"
+            isLeaf="false"
+            isStatic="false"
+            isReadOnly="false"
+            isUnique="false"
+            isDerived="false"
+            isDerivedUnion="false"
+            aggregation="None"
+            isComposite="false">
+            <type_NamedElement>
+              <primitiveTypeMoniker
+                Id="59259974-6d55-42c6-b7bd-763d77ac8ef9"
+                LastKnownName="String"
+                LastKnownLocation="OrderModels.uml" />
+            </type_NamedElement>
+          </property>
+          <property
+            Id="403acdc4-d740-477b-a75b-44f60620227d"
+            name="ContactPersonName"
+            isLeaf="false"
+            isStatic="false"
+            isReadOnly="false"
+            isUnique="false"
+            isDerived="false"
+            isDerivedUnion="false"
+            aggregation="None"
+            isComposite="false">
+            <type_NamedElement>
+              <primitiveTypeMoniker
+                Id="59259974-6d55-42c6-b7bd-763d77ac8ef9"
+                LastKnownName="String"
+                LastKnownLocation="OrderModels.uml" />
+            </type_NamedElement>
+          </property>
+          <property
+            Id="068e9585-6adb-411c-a74b-9f356fb69d5f"
+            name="DeliveryDate"
+            isLeaf="false"
+            isStatic="false"
+            isReadOnly="false"
+            isUnique="false"
+            isDerived="false"
+            isDerivedUnion="false"
+            aggregation="None"
+            isComposite="false">
+            <type_NamedElement>
+              <classMoniker
+                Id="984bfa86-3cfc-4fe7-9709-c3b7d9914c75"
+                LastKnownName="Datetime"
                 LastKnownLocation="OrderModels.uml" />
             </type_NamedElement>
           </property>
