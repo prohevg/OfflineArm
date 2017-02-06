@@ -366,6 +366,7 @@ namespace OfflineARM.Gui.Forms.Orders
                     Feature = model.Feature,
                     Count = 1,
                     Price = model.Price,
+                    PriceWithDiscount = 1 * model.Price
                 });
             }
             else
@@ -379,14 +380,16 @@ namespace OfflineARM.Gui.Forms.Orders
 
         private void RemoveFromOrderSpecifics(IOrderSpecificationItemModel model)
         {
-            var exist = _specifications.FirstOrDefault(os => os == model);
+            _specifications.Remove(model);
 
-            if (exist != null)
+            var source = gcExposition.DataSource as List<IExpositionModel>;
+            if (source != null)
             {
-                _specifications.Remove(exist);
-                gcOrderSpecifications.DataSource = _specifications;
-                gcOrderSpecifications.RefreshDataSource();
+
             }
+
+            gcOrderSpecifications.DataSource = _specifications;
+            gcOrderSpecifications.RefreshDataSource();
         }
 
         #endregion

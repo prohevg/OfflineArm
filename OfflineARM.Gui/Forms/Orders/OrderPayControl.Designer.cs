@@ -228,6 +228,7 @@
             this.ceCashInputManual.Properties.Caption = "Чек пробит вручную";
             this.ceCashInputManual.Size = new System.Drawing.Size(147, 19);
             this.ceCashInputManual.TabIndex = 3;
+            this.ceCashInputManual.EditValueChanged += new System.EventHandler(this.ceCashInputManual_EditValueChanged);
             // 
             // smCashCheckManual
             // 
@@ -348,6 +349,7 @@
             this.ceCardManual.Properties.Caption = "Оплата вручную";
             this.ceCardManual.Size = new System.Drawing.Size(129, 19);
             this.ceCardManual.TabIndex = 3;
+            this.ceCardManual.EditValueChanged += new System.EventHandler(this.ceCardManual_EditValueChanged);
             // 
             // teCardNumber
             // 

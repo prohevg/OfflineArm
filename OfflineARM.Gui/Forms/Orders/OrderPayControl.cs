@@ -10,6 +10,7 @@ using OfflineARM.Gui.Base.Controls;
 using OfflineARM.Gui.Forms.Orders.Interfaces;
 using DevExpress.XtraEditors.Controls;
 using OfflineARM.Gui.Controls.EventArg;
+using DevExpress.XtraEditors;
 
 namespace OfflineARM.Gui.Forms.Orders
 {
@@ -50,8 +51,10 @@ namespace OfflineARM.Gui.Forms.Orders
             SetEnableCash(ceCashPayment.Checked);
             SetEnableCard(ceCardPayment.Checked);
             SetEnableCredit(ceCreditPayment.Checked);
-        }
 
+            this.teCashFiscalReceipt.Enabled = false;
+            this.teCardNumber.Enabled = false;
+        }
 
         #endregion
 
@@ -72,7 +75,6 @@ namespace OfflineARM.Gui.Forms.Orders
 
             gcPays.OnGridCommand += gcPays_OnGridCommand;
         }
-
 
         /// <summary>
         /// Обработчик удаления из оплат
@@ -111,8 +113,13 @@ namespace OfflineARM.Gui.Forms.Orders
         {
             this.teCashAmount.Enabled = isEnable;
             this.teCashFiscalReceipt.Enabled = isEnable;
-            this.ceCashInputManual.Enabled = isEnable;
             this.smCashCheckManual.Enabled = isEnable;
+            this.ceCashInputManual.Enabled = isEnable;
+
+            if (isEnable)
+            {
+                this.teCashFiscalReceipt.Enabled = this.ceCashInputManual.Checked;
+            }
         }
 
         /// <summary>
@@ -125,6 +132,11 @@ namespace OfflineARM.Gui.Forms.Orders
             this.teCardNumber.Enabled = isEnable;
             this.ceCardManual.Enabled = isEnable;
             this.sbCardPay.Enabled = isEnable;
+
+            if (isEnable)
+            {
+                this.teCardNumber.Enabled = this.ceCardManual.Checked;
+            }
         }
 
         /// <summary>
@@ -285,6 +297,26 @@ namespace OfflineARM.Gui.Forms.Orders
             SetEnableCredit(ceCreditPayment.Checked);
         }
 
+        /// <summary>
+        /// Вручную наличкой
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void ceCashInputManual_EditValueChanged(object sender, EventArgs e)
+        {
+            teCashFiscalReceipt.Enabled = (bool)((CheckEdit)sender).EditValue;
+        }
+
+        /// <summary>
+        /// Вручную картой
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void ceCardManual_EditValueChanged(object sender, EventArgs e)
+        {
+            teCardNumber.Enabled = (bool)((CheckEdit)sender).EditValue;
+        }
+
         #endregion
 
         #region IOrderPayControl
@@ -310,5 +342,6 @@ namespace OfflineARM.Gui.Forms.Orders
         }
 
         #endregion
+
     }
 }

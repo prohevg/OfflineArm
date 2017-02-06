@@ -1,5 +1,4 @@
 ﻿using DevExpress.Data;
-using DevExpress.XtraEditors;
 using DevExpress.XtraEditors.Controls;
 using DevExpress.XtraEditors.Repository;
 using DevExpress.XtraGrid;
@@ -151,7 +150,7 @@ namespace OfflineARM.Gui.Controls
             GridHitInfo info = view.CalcHitInfo(pt);
             if (info.InRow)
             {
-                var row = this.GridView.GetFocusedRow();
+                var row = view.GetFocusedRow();
                 if (row != null)
                 {
                     RaiseGridCommand(row);
@@ -166,7 +165,11 @@ namespace OfflineARM.Gui.Controls
         /// <param name="e"></param>
         private void AddButton_ButtonClick(object sender, ButtonPressedEventArgs e)
         {
-            RaiseGridCommand(e.Button.Tag);
+            var row = GridView.GetFocusedRow();
+            if (row != null)
+            {
+                RaiseGridCommand(row);
+            }
         }
 
         #endregion

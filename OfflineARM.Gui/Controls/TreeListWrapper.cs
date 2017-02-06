@@ -37,6 +37,7 @@ namespace OfflineARM.Gui.Controls
         /// </summary>
         public TreeListWrapper()
         {
+            this.OptionsBehavior.Editable = false;
             this.BeforeExpand += TreeListWrapper_BeforeExpand;
         }
 
