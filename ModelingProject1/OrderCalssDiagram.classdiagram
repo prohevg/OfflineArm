@@ -445,6 +445,12 @@
               <referencedTypeMoniker Id="fef069f1-9aba-4e0b-8c15-a4d5260dbf43" LastKnownName="Delivery" />
             </type_NamedElement>
           </property>
+          <property Id="d82799af-4471-40c6-b95d-6b0604078d35" name="TotalAmount" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+            <elementDefinition Id="dec6f2a2-82d3-4cea-b826-c997ebdc3e9e" />
+            <type_NamedElement>
+              <referencedTypeMoniker Id="e7ee89a3-bed3-45d0-a69d-121abedbb55f" LastKnownName="UnlimitedNatural" />
+            </type_NamedElement>
+          </property>
         </ownedAttributesInternal>
       </class>
     </logicalClassDesignerModelHasTypes>
@@ -787,6 +793,12 @@
             <elementDefinition Id="45cefa6f-8874-462e-9d57-31fefc15b4ea" />
             <type_NamedElement>
               <referencedTypeMoniker Id="560f80dd-760a-43d2-9c99-3045ad274755" LastKnownName="Integer" />
+            </type_NamedElement>
+          </property>
+          <property Id="73f92516-9132-4bc3-b55a-1836d02d152d" name="TotalAmount" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+            <elementDefinition Id="b2556fc9-2c12-48b9-adc8-b9ef620d7165" />
+            <type_NamedElement>
+              <referencedTypeMoniker Id="58a3e0b9-ae37-4d2c-8510-9cd362613c20" LastKnownName="UnlimitedNatural" />
             </type_NamedElement>
           </property>
         </ownedAttributesInternal>
@@ -1199,6 +1211,16 @@
     <packageHasNamedElement>
       <referencedType Id="4588d64d-727b-48b5-8122-e4f10c6dbbb0" name="String" isAbstract="false" isLeaf="false" cachedFullName="String">
         <elementDefinition Id="59259974-6d55-42c6-b7bd-763d77ac8ef9" />
+      </referencedType>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <referencedType Id="58a3e0b9-ae37-4d2c-8510-9cd362613c20" name="UnlimitedNatural" isAbstract="false" isLeaf="false" cachedFullName="UnlimitedNatural">
+        <elementDefinition Id="3ab42e7d-4969-445a-b209-471f5cb8209c" />
+      </referencedType>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <referencedType Id="e7ee89a3-bed3-45d0-a69d-121abedbb55f" name="UnlimitedNatural" isAbstract="false" isLeaf="false" cachedFullName="UnlimitedNatural">
+        <elementDefinition Id="3ab42e7d-4969-445a-b209-471f5cb8209c" />
       </referencedType>
     </packageHasNamedElement>
   </packagedElements>
