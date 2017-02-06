@@ -161,6 +161,15 @@ namespace OfflineARM.Gui {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Сумма.
+        /// </summary>
+        internal static string OrderListControl_GridOrderCaption_TotalAmount {
+            get {
+                return ResourceManager.GetString("OrderListControl_GridOrderCaption_TotalAmount", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Ответственный.
         /// </summary>
         internal static string OrderListControl_GridOrderCaption_User {
@@ -260,7 +269,7 @@ namespace OfflineARM.Gui {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Добавить в заказ.
+        ///   Looks up a localized string similar to В заказ.
         /// </summary>
         internal static string OrderSpecificControl_GridExpositionCaption_Count_AddInOrder {
             get {
@@ -305,7 +314,7 @@ namespace OfflineARM.Gui {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Добавить в заказ.
+        ///   Looks up a localized string similar to В заказ.
         /// </summary>
         internal static string OrderSpecificControl_GridNomenclatureFeatureCaption_AddInOrder {
             get {
@@ -350,7 +359,7 @@ namespace OfflineARM.Gui {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Удалить из заказа.
+        ///   Looks up a localized string similar to Удалить.
         /// </summary>
         internal static string OrderSpecificControl_OrderSpecifications_DeleteFromOrder {
             get {

@@ -152,7 +152,7 @@
     <value>Наименование</value>
   </data>
   <data name="OrderSpecificControl_GridNomenclatureFeatureCaption_AddInOrder" xml:space="preserve">
-    <value>Добавить в заказ</value>
+    <value>В заказ</value>
   </data>
   <data name="OrderSpecificControl_GridNomenclatureFeatureCaption_Name" xml:space="preserve">
     <value>Наименование</value>
@@ -164,7 +164,7 @@
     <value>Количество</value>
   </data>
   <data name="OrderSpecificControl_GridExpositionCaption_Count_AddInOrder" xml:space="preserve">
-    <value>Добавить в заказ</value>
+    <value>В заказ</value>
   </data>
   <data name="OrderSpecificControl_GridExpositionCaption_IsEnabled" xml:space="preserve">
     <value>Доступно</value>
@@ -200,7 +200,7 @@
     <value>Сумма</value>
   </data>
   <data name="OrderSpecificControl_OrderSpecifications_DeleteFromOrder" xml:space="preserve">
-    <value>Удалить из заказа</value>
+    <value>Удалить</value>
   </data>
   <data name="OrderPayControl_GridPayCaption_Date" xml:space="preserve">
     <value>Дата</value>
@@ -243,5 +243,8 @@
   </data>
   <data name="OrderListControl_GridOrderCaption_DelivaryDate" xml:space="preserve">
     <value>Дата доставки</value>
+  </data>
+  <data name="OrderListControl_GridOrderCaption_TotalAmount" xml:space="preserve">
+    <value>Сумма</value>
   </data>
 </root>

@@ -3,6 +3,8 @@ using DevExpress.XtraTreeList.Columns;
 using DevExpress.XtraTreeList.Nodes;
 using System;
 using System.Collections.Generic;
+using System.Drawing;
+using System.Windows.Forms;
 
 namespace OfflineARM.Gui.Controls
 {
@@ -38,7 +40,11 @@ namespace OfflineARM.Gui.Controls
         public TreeListWrapper()
         {
             this.OptionsBehavior.Editable = false;
+            this.OptionsView.ShowHorzLines = false;
+            this.OptionsView.ShowVertLines = false;
+
             this.BeforeExpand += TreeListWrapper_BeforeExpand;
+            this.CustomDrawNodeButton += TreeListWrapper_CustomDrawNodeButton;
         }
 
         #endregion
@@ -53,6 +59,22 @@ namespace OfflineARM.Gui.Controls
         private void TreeListWrapper_BeforeExpand(object sender, BeforeExpandEventArgs e)
         {
             LoadNodes(e.Node.Tag, e.Node);
+        }
+
+        private void TreeListWrapper_CustomDrawNodeButton(object sender, CustomDrawNodeButtonEventArgs e)
+        {
+            Brush backBrush = e.Cache.GetSolidBrush(Color.White);
+            e.Graphics.FillRectangle(backBrush, e.Bounds);
+            //ControlPaint.DrawBorder(e.Graphics, e.Bounds, Color.Gray, ButtonBorderStyle.Solid);
+            string displayCharacter = e.Expanded ? "-" : "+";
+            StringFormat outCharacterFormat = new StringFormat
+            {
+                Alignment = StringAlignment.Center,
+                LineAlignment = StringAlignment.Center
+            };
+
+            e.Graphics.DrawString(displayCharacter, new Font("Verdana", 8), new SolidBrush(Color.Black), e.Bounds, outCharacterFormat);
+            e.Handled = true;
         }
 
         #endregion

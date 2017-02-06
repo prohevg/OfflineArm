@@ -118,6 +118,15 @@ namespace OfflineARM.DAO.Entities.Business
         }
 
         /// <summary>
+        /// Сумма заказа
+        /// </summary>
+        public decimal TotalAmount
+        {
+            get;
+            set;
+        }
+
+        /// <summary>
         /// Список оплат наличными
         /// </summary>
         public virtual ICollection<CashPayment> CashPayments

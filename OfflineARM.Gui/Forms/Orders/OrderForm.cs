@@ -169,7 +169,8 @@ namespace OfflineARM.Gui.Forms.Orders
                 User = this.lueResponsiable.EditValue as IUserModel, 
                 Specifications = this.orderSpecificControl.Specifications,
                 Payments = this.orderPayControl.Payments, 
-                Delivery = this.orderDestination.Delivery
+                Delivery = this.orderDestination.Delivery,
+                TotalAmount = this.orderSpecificControl.TotalAmount
             };
 
             _orderImp.Insert(orderModel);

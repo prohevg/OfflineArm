@@ -83,6 +83,15 @@ namespace OfflineARM.Business.Models.Businesses.Interfaces
         }
 
         /// <summary>
+        /// Сумма заказа
+        /// </summary>
+        decimal TotalAmount
+        {
+            get;
+            set;
+        }
+
+        /// <summary>
         /// Список оплат 
         /// </summary>
         List<IPaymentModel> Payments

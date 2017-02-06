@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using DevExpress.Data;
 using OfflineARM.Business.Businesses.Interfaces;
 using OfflineARM.Gui.Base.Controls;
 using OfflineARM.Gui.Commands;
@@ -51,7 +52,7 @@ namespace OfflineARM.Gui.Forms.Orders
             gcOrders.AddColumn(GuiResource.OrderListControl_GridOrderCaption_User, "User.Fio", 2);
             gcOrders.AddColumn(GuiResource.OrderListControl_GridOrderCaption_Customer, "Customer.Name", 3);
             gcOrders.AddColumn(GuiResource.OrderListControl_GridOrderCaption_DelivaryDate, "Delivery.DeliveryDate", 4);
-           // gcOrders.AddColumn(GuiResource.OrderListControl_GridOrderCaption_Delivary, "Delivery.DelivaryAddress", 5);
+            gcOrders.AddColumn(GuiResource.OrderListControl_GridOrderCaption_TotalAmount, "TotalAmount", 5, UnboundColumnType.Decimal);
             gcOrders.EndUpdate();
         }
 

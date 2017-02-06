@@ -30,7 +30,6 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(OrderForm));
             this.tlpMain = new System.Windows.Forms.TableLayoutPanel();
-            this.lueResponsiable = new DevExpress.XtraEditors.LookUpEdit();
             this.tcMain = new DevExpress.XtraTab.XtraTabControl();
             this.tpSpecific = new DevExpress.XtraTab.XtraTabPage();
             this.orderSpecificControl = new OfflineARM.Gui.Forms.Orders.OrderSpecificControl();
@@ -41,14 +40,18 @@
             this.tlpButtons = new System.Windows.Forms.TableLayoutPanel();
             this.sbNext = new DevExpress.XtraEditors.SimpleButton();
             this.sbPrevios = new DevExpress.XtraEditors.SimpleButton();
+            this.tlpResponsable = new System.Windows.Forms.TableLayoutPanel();
+            this.lueResponsiable = new DevExpress.XtraEditors.LookUpEdit();
+            this.lcResponsable = new DevExpress.XtraEditors.LabelControl();
             this.tlpMain.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.lueResponsiable.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.tcMain)).BeginInit();
             this.tcMain.SuspendLayout();
             this.tpSpecific.SuspendLayout();
             this.tpDelivary.SuspendLayout();
             this.tpBuy.SuspendLayout();
             this.tlpButtons.SuspendLayout();
+            this.tlpResponsable.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.lueResponsiable.Properties)).BeginInit();
             this.SuspendLayout();
             // 
             // tlpMain
@@ -57,9 +60,9 @@
             this.tlpMain.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 20F));
             this.tlpMain.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.tlpMain.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.tlpMain.Controls.Add(this.lueResponsiable, 1, 1);
             this.tlpMain.Controls.Add(this.tcMain, 1, 2);
             this.tlpMain.Controls.Add(this.tlpButtons, 1, 3);
+            this.tlpMain.Controls.Add(this.tlpResponsable, 1, 1);
             this.tlpMain.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tlpMain.Location = new System.Drawing.Point(0, 29);
             this.tlpMain.Name = "tlpMain";
@@ -71,18 +74,6 @@
             this.tlpMain.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
             this.tlpMain.Size = new System.Drawing.Size(784, 532);
             this.tlpMain.TabIndex = 0;
-            // 
-            // lueResponsiable
-            // 
-            this.lueResponsiable.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.lueResponsiable.Location = new System.Drawing.Point(23, 23);
-            this.lueResponsiable.Name = "lueResponsiable";
-            this.lueResponsiable.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.lueResponsiable.Size = new System.Drawing.Size(738, 20);
-            this.lueResponsiable.TabIndex = 0;
             // 
             // tcMain
             // 
@@ -112,12 +103,17 @@
             this.orderSpecificControl.Size = new System.Drawing.Size(732, 378);
             this.orderSpecificControl.Specifications = ((System.Collections.Generic.List<OfflineARM.Business.Models.Businesses.Interfaces.IOrderSpecificationItemModel>)(resources.GetObject("orderSpecificControl.Specifications")));
             this.orderSpecificControl.TabIndex = 0;
+            this.orderSpecificControl.TotalAmount = new decimal(new int[] {
+            0,
+            0,
+            0,
+            0});
             // 
             // tpDelivary
             // 
             this.tpDelivary.Controls.Add(this.orderDestination);
             this.tpDelivary.Name = "tpDelivary";
-            this.tpDelivary.Size = new System.Drawing.Size(732, 448);
+            this.tpDelivary.Size = new System.Drawing.Size(732, 378);
             this.tpDelivary.Text = "Доставка";
             // 
             // orderDestination
@@ -125,14 +121,14 @@
             this.orderDestination.Dock = System.Windows.Forms.DockStyle.Fill;
             this.orderDestination.Location = new System.Drawing.Point(0, 0);
             this.orderDestination.Name = "orderDestination";
-            this.orderDestination.Size = new System.Drawing.Size(732, 448);
+            this.orderDestination.Size = new System.Drawing.Size(732, 378);
             this.orderDestination.TabIndex = 0;
             // 
             // tpBuy
             // 
             this.tpBuy.Controls.Add(this.orderPayControl);
             this.tpBuy.Name = "tpBuy";
-            this.tpBuy.Size = new System.Drawing.Size(732, 448);
+            this.tpBuy.Size = new System.Drawing.Size(732, 378);
             this.tpBuy.Text = "Оплата";
             // 
             // orderPayControl
@@ -141,8 +137,13 @@
             this.orderPayControl.Location = new System.Drawing.Point(0, 0);
             this.orderPayControl.Name = "orderPayControl";
             this.orderPayControl.Payments = ((System.Collections.Generic.List<OfflineARM.Business.Models.Businesses.Bases.IPaymentModel>)(resources.GetObject("orderPayControl.Payments")));
-            this.orderPayControl.Size = new System.Drawing.Size(732, 448);
+            this.orderPayControl.Size = new System.Drawing.Size(732, 378);
             this.orderPayControl.TabIndex = 0;
+            this.orderPayControl.TotalAmount = new decimal(new int[] {
+            0,
+            0,
+            0,
+            0});
             // 
             // tlpButtons
             // 
@@ -182,6 +183,43 @@
             this.sbPrevios.TabIndex = 3;
             this.sbPrevios.Text = "spPrevios";
             // 
+            // tlpResponsable
+            // 
+            this.tlpResponsable.ColumnCount = 2;
+            this.tlpResponsable.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 120F));
+            this.tlpResponsable.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tlpResponsable.Controls.Add(this.lueResponsiable, 1, 0);
+            this.tlpResponsable.Controls.Add(this.lcResponsable, 0, 0);
+            this.tlpResponsable.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tlpResponsable.Location = new System.Drawing.Point(23, 23);
+            this.tlpResponsable.Name = "tlpResponsable";
+            this.tlpResponsable.RowCount = 1;
+            this.tlpResponsable.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tlpResponsable.Size = new System.Drawing.Size(738, 24);
+            this.tlpResponsable.TabIndex = 3;
+            // 
+            // lueResponsiable
+            // 
+            this.lueResponsiable.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left)));
+            this.lueResponsiable.Location = new System.Drawing.Point(123, 3);
+            this.lueResponsiable.Name = "lueResponsiable";
+            this.lueResponsiable.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.lueResponsiable.Size = new System.Drawing.Size(321, 20);
+            this.lueResponsiable.TabIndex = 0;
+            // 
+            // lcResponsable
+            // 
+            this.lcResponsable.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.lcResponsable.Appearance.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.lcResponsable.Location = new System.Drawing.Point(26, 3);
+            this.lcResponsable.Name = "lcResponsable";
+            this.lcResponsable.Size = new System.Drawing.Size(91, 16);
+            this.lcResponsable.TabIndex = 1;
+            this.lcResponsable.Text = "Ответственный";
+            // 
             // OrderForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -192,13 +230,15 @@
             this.Name = "OrderForm";
             this.Text = "OrderForm";
             this.tlpMain.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.lueResponsiable.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.tcMain)).EndInit();
             this.tcMain.ResumeLayout(false);
             this.tpSpecific.ResumeLayout(false);
             this.tpDelivary.ResumeLayout(false);
             this.tpBuy.ResumeLayout(false);
             this.tlpButtons.ResumeLayout(false);
+            this.tlpResponsable.ResumeLayout(false);
+            this.tlpResponsable.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.lueResponsiable.Properties)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -217,5 +257,7 @@
         private System.Windows.Forms.TableLayoutPanel tlpButtons;
         private DevExpress.XtraEditors.SimpleButton sbNext;
         private DevExpress.XtraEditors.SimpleButton sbPrevios;
+        private System.Windows.Forms.TableLayoutPanel tlpResponsable;
+        private DevExpress.XtraEditors.LabelControl lcResponsable;
     }
 }

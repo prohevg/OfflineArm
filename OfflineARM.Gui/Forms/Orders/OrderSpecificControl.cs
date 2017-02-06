@@ -203,8 +203,8 @@ namespace OfflineARM.Gui.Forms.Orders
         {
             gcNomenclatureFeatures.BeginUpdate();
             gcNomenclatureFeatures.AddColumn(GuiResource.OrderSpecificControl_GridNomenclatureFeatureCaption_Name, "Name");
-            gcNomenclatureFeatures.AddColumn(GuiResource.OrderSpecificControl_GridNomenclatureFeatureCaption_Price, "Price", 1, UnboundColumnType.Decimal);
-            gcNomenclatureFeatures.AddColumnCommand(GuiResource.OrderSpecificControl_GridNomenclatureFeatureCaption_AddInOrder);
+            gcNomenclatureFeatures.AddColumn(GuiResource.OrderSpecificControl_GridNomenclatureFeatureCaption_Price, "Price", 1, UnboundColumnType.Decimal, 75);
+            gcNomenclatureFeatures.AddColumnCommand(GuiResource.OrderSpecificControl_GridNomenclatureFeatureCaption_AddInOrder, visibleIndex: 2, width: 50);
             gcNomenclatureFeatures.EndUpdate();
 
             gcNomenclatureFeatures.OnGridCommand += NomenclatureFeatures_OnGridCommand;
@@ -262,11 +262,11 @@ namespace OfflineARM.Gui.Forms.Orders
         {
             gcExposition.BeginUpdate();
             gcExposition.AddColumn(GuiResource.OrderSpecificControl_GridExpositionCaption_Nomeclature, "Nomenclature.Name");
-            gcExposition.AddColumn(GuiResource.OrderSpecificControl_GridExpositionCaption_Name, "Feature.Name");
-            gcExposition.AddColumn(GuiResource.OrderSpecificControl_GridExpositionCaption_Price, "Price");
-            gcExposition.AddColumn(GuiResource.OrderSpecificControl_GridExpositionCaption_Count, "Count");
-            gcExposition.AddColumn(GuiResource.OrderSpecificControl_GridExpositionCaption_IsEnabled, "IsEnabled");
-            gcExposition.AddColumnCommand(GuiResource.OrderSpecificControl_GridExpositionCaption_Count_AddInOrder);
+            gcExposition.AddColumn(GuiResource.OrderSpecificControl_GridExpositionCaption_Name, "Feature.Name", 1);
+            gcExposition.AddColumn(GuiResource.OrderSpecificControl_GridExpositionCaption_Price, "Price", 2, UnboundColumnType.Decimal, 75);
+            gcExposition.AddColumn(GuiResource.OrderSpecificControl_GridExpositionCaption_Count, "Count", 3, UnboundColumnType.Integer, 75);
+            gcExposition.AddColumnCommand(GuiResource.OrderSpecificControl_GridExpositionCaption_Count_AddInOrder, visibleIndex: 4, width: 50);
+            gcExposition.AddColumn(GuiResource.OrderSpecificControl_GridExpositionCaption_IsEnabled, "IsEnabled", 5, width: 50);
             gcExposition.EndUpdate();
 
             gcExposition.OnGridCommand += Exposition_OnGridCommand;
@@ -321,12 +321,12 @@ namespace OfflineARM.Gui.Forms.Orders
             gcOrderSpecifications.BeginUpdate();
             gcOrderSpecifications.AddColumn(GuiResource.OrderSpecificControl_OrderSpecifications_Nomenclature, "Nomenclature.Name");
             gcOrderSpecifications.AddColumn(GuiResource.OrderSpecificControl_OrderSpecifications_Characteristic, "Feature.Name", 1);
-            gcOrderSpecifications.AddColumn(GuiResource.OrderSpecificControl_OrderSpecifications_Price, "Price", 2);
-            gcOrderSpecifications.AddColumn(GuiResource.OrderSpecificControl_OrderSpecifications_DiscountProcent, "DiscountPercent", 3);
-            gcOrderSpecifications.AddColumn(GuiResource.OrderSpecificControl_OrderSpecifications_DiscountSum, "DiscountAmount", 4);
-            gcOrderSpecifications.AddColumn(GuiResource.OrderSpecificControl_OrderSpecifications_Count, "Count", 5);
-            gcOrderSpecifications.AddColumn(GuiResource.OrderSpecificControl_OrderSpecifications_TotalSum, "PriceWithDiscount", 6);
-            gcOrderSpecifications.AddColumnCommand(GuiResource.OrderSpecificControl_OrderSpecifications_DeleteFromOrder, ButtonPredefines.Delete);
+            gcOrderSpecifications.AddColumn(GuiResource.OrderSpecificControl_OrderSpecifications_Price, "Price", 2, UnboundColumnType.Decimal, 75);
+            gcOrderSpecifications.AddColumn(GuiResource.OrderSpecificControl_OrderSpecifications_DiscountProcent, "DiscountPercent", 3, UnboundColumnType.Decimal, 50);
+            gcOrderSpecifications.AddColumn(GuiResource.OrderSpecificControl_OrderSpecifications_DiscountSum, "DiscountAmount", 4, UnboundColumnType.Decimal, 75);
+            gcOrderSpecifications.AddColumn(GuiResource.OrderSpecificControl_OrderSpecifications_Count, "Count", 5, UnboundColumnType.Integer, 50);
+            gcOrderSpecifications.AddColumn(GuiResource.OrderSpecificControl_OrderSpecifications_TotalSum, "PriceWithDiscount", 6, UnboundColumnType.Decimal, 75);
+            gcOrderSpecifications.AddColumnCommand(GuiResource.OrderSpecificControl_OrderSpecifications_DeleteFromOrder, ButtonPredefines.Delete, 7, 50);
             gcOrderSpecifications.EndUpdate();
 
             gcOrderSpecifications.OnGridCommand += OrderSpecifications_OnGridCommand;
@@ -365,13 +365,17 @@ namespace OfflineARM.Gui.Forms.Orders
                     Nomenclature = model.Nomenclature,
                     Feature = model.Feature,
                     Count = 1,
-                    Price = model.Price,
-                    PriceWithDiscount = 1 * model.Price
+                    Price = model.Price
                 });
             }
             else
             {
                 exist.Count++;
+            }
+
+            foreach (var itemModel in _specifications)
+            {
+                itemModel.PriceWithDiscount = itemModel.Count * itemModel.Price;
             }
 
             gcOrderSpecifications.DataSource = _specifications;

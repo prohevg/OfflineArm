@@ -2,6 +2,7 @@
 using System.Drawing;
 using System.Windows.Forms;
 using DevExpress.XtraEditors.Controls;
+using OfflineARM.Business;
 using OfflineARM.Business.Dictionaries.Interfaces;
 using OfflineARM.Business.Models.Businesses;
 using OfflineARM.Business.Models.Businesses.Interfaces;
@@ -30,6 +31,8 @@ namespace OfflineARM.Gui.Forms.Orders
             InitializeComponent();
             this.WindowState = FormWindowState.Normal;
             this.MinimizeBox = false;
+
+            _basisActionImp = IoCBusiness.Instance.Get<IBasisActionImp>();
         }
 
         #region override
