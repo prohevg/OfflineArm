@@ -12,5 +12,14 @@ namespace OfflineARM.Gui.Forms.Orders.Interfaces
         /// Оплаты
         /// </summary>
         List<IPaymentModel> Payments { get; set; }
+
+        /// <summary>
+        /// Сумма заказа
+        /// </summary>
+        decimal TotalAmount
+        {
+            get;
+            set;
+        }
     }
 }

@@ -16,5 +16,14 @@ namespace OfflineARM.Gui.Forms.Orders.Interfaces
             get;
             set;
         }
+
+        /// <summary>
+        /// Сумма заказа
+        /// </summary>
+        decimal TotalAmount
+        {
+            get;
+            set;
+        }
     }
 }

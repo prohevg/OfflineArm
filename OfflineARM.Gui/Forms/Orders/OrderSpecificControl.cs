@@ -376,6 +376,8 @@ namespace OfflineARM.Gui.Forms.Orders
 
             gcOrderSpecifications.DataSource = _specifications;
             gcOrderSpecifications.RefreshDataSource();
+
+            RecalculateTotalAmmout();
         }
 
         private void RemoveFromOrderSpecifics(IOrderSpecificationItemModel model)
@@ -390,6 +392,19 @@ namespace OfflineARM.Gui.Forms.Orders
 
             gcOrderSpecifications.DataSource = _specifications;
             gcOrderSpecifications.RefreshDataSource();
+
+            RecalculateTotalAmmout();
+        }
+
+        private void RecalculateTotalAmmout()
+        {
+            decimal ammount = 0;
+            foreach (var item in this._specifications)
+            {
+                ammount += item.PriceWithDiscount;
+            }
+
+            TotalAmount = ammount;
         }
 
         #endregion
@@ -414,6 +429,15 @@ namespace OfflineARM.Gui.Forms.Orders
             {
                 _specifications = value;
             }
+        }
+
+        /// <summary>
+        /// Сумма заказа
+        /// </summary>
+        public decimal TotalAmount
+        {
+            get;
+            set;
         }
 
         #endregion

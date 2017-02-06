@@ -103,6 +103,8 @@ namespace OfflineARM.Gui.Forms.Orders
 
             gcPays.DataSource = _paymentRows;
             gcPays.RefreshDataSource();
+
+            RecalculatePayment();
         }
 
         /// <summary>
@@ -174,6 +176,19 @@ namespace OfflineARM.Gui.Forms.Orders
 
             gcPays.DataSource = _paymentRows;
             gcPays.RefreshDataSource();
+
+            RecalculatePayment();
+        }
+
+        /// <summary>
+        /// Сумма оплат
+        /// </summary>
+        private void RecalculatePayment()
+        {
+            decimal ammount = this._paymentRows.Sum(item => item.Amount);
+
+            lcAmountPayment.Text = string.Format("Оплачено {0} р.", ammount);
+            lcBalance.Text = string.Format("Остаток {0} р.", TotalAmount - ammount);
         }
 
         /// <summary>
@@ -210,7 +225,7 @@ namespace OfflineARM.Gui.Forms.Orders
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        private void smCheckManual_Click(object sender, System.EventArgs e)
+        private void smCheckManual_Click(object sender, EventArgs e)
         {
             var cashPayment = new CashPaymentModel()
             {
@@ -229,7 +244,7 @@ namespace OfflineARM.Gui.Forms.Orders
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        private void sbCardPay_Click(object sender, System.EventArgs e)
+        private void sbCardPay_Click(object sender, EventArgs e)
         {
             var cardPayment = new CardPaymentModel()
             {
@@ -249,7 +264,7 @@ namespace OfflineARM.Gui.Forms.Orders
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        private void sbCreditApply_Click(object sender, System.EventArgs e)
+        private void sbCreditApply_Click(object sender, EventArgs e)
         {
             var creditPayment = new CreditPaymentModel()
             {
@@ -327,6 +342,11 @@ namespace OfflineARM.Gui.Forms.Orders
         private List<IPaymentModel> _payments = new List<IPaymentModel>();
 
         /// <summary>
+        /// Сумма заказа
+        /// </summary>
+        private decimal _totalAmount;
+
+        /// <summary>
         /// Оплаты
         /// </summary>
         public List<IPaymentModel> Payments
@@ -341,7 +361,22 @@ namespace OfflineARM.Gui.Forms.Orders
             }
         }
 
-        #endregion
+        /// <summary>
+        /// Сумма заказа
+        /// </summary>
+        public decimal TotalAmount
+        {
+            get
+            {
+                return _totalAmount;
+            }
+            set
+            {
+                _totalAmount = value;
+                lcAmountOrder.Text = string.Format("Итого заказа {0} р.", value);
+            }
+        }
 
+        #endregion
     }
 }

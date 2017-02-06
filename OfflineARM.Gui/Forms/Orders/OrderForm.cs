@@ -112,6 +112,8 @@ namespace OfflineARM.Gui.Forms.Orders
                 sbNext.Visible = false;
 
                 sbPrevios.Text = tpDelivary.Text;
+
+                this.orderPayControl.TotalAmount = this.orderSpecificControl.TotalAmount;
             }
         }
 

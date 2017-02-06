@@ -68,9 +68,9 @@
             this.teCreditAmount = new DevExpress.XtraEditors.TextEdit();
             this.meCreditScanner = new DevExpress.XtraEditors.MemoEdit();
             this.tlpItog = new System.Windows.Forms.TableLayoutPanel();
-            this.labelControl10 = new DevExpress.XtraEditors.LabelControl();
-            this.labelControl8 = new DevExpress.XtraEditors.LabelControl();
-            this.labelControl9 = new DevExpress.XtraEditors.LabelControl();
+            this.lcBalance = new DevExpress.XtraEditors.LabelControl();
+            this.lcAmountOrder = new DevExpress.XtraEditors.LabelControl();
+            this.lcAmountPayment = new DevExpress.XtraEditors.LabelControl();
             this.gcPays = new OfflineARM.Gui.Controls.GridControlWrapper();
             this.gridView1 = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.tlpMain.SuspendLayout();
@@ -569,9 +569,9 @@
             this.tlpItog.ColumnCount = 2;
             this.tlpItog.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tlpItog.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tlpItog.Controls.Add(this.labelControl10, 0, 2);
-            this.tlpItog.Controls.Add(this.labelControl8, 0, 0);
-            this.tlpItog.Controls.Add(this.labelControl9, 0, 1);
+            this.tlpItog.Controls.Add(this.lcBalance, 0, 2);
+            this.tlpItog.Controls.Add(this.lcAmountOrder, 0, 0);
+            this.tlpItog.Controls.Add(this.lcAmountPayment, 0, 1);
             this.tlpItog.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tlpItog.Location = new System.Drawing.Point(3, 514);
             this.tlpItog.Name = "tlpItog";
@@ -582,35 +582,35 @@
             this.tlpItog.Size = new System.Drawing.Size(694, 94);
             this.tlpItog.TabIndex = 1;
             // 
-            // labelControl10
+            // lcBalance
             // 
-            this.labelControl10.Appearance.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.labelControl10.Location = new System.Drawing.Point(35, 65);
-            this.labelControl10.Margin = new System.Windows.Forms.Padding(35, 3, 3, 3);
-            this.labelControl10.Name = "labelControl10";
-            this.labelControl10.Size = new System.Drawing.Size(46, 19);
-            this.labelControl10.TabIndex = 4;
-            this.labelControl10.Text = "Сумма";
+            this.lcBalance.Appearance.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.lcBalance.Location = new System.Drawing.Point(35, 65);
+            this.lcBalance.Margin = new System.Windows.Forms.Padding(35, 3, 3, 3);
+            this.lcBalance.Name = "lcBalance";
+            this.lcBalance.Size = new System.Drawing.Size(93, 19);
+            this.lcBalance.TabIndex = 4;
+            this.lcBalance.Text = "Остаток 0 р.";
             // 
-            // labelControl8
+            // lcAmountOrder
             // 
-            this.labelControl8.Appearance.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.labelControl8.Location = new System.Drawing.Point(35, 3);
-            this.labelControl8.Margin = new System.Windows.Forms.Padding(35, 3, 3, 3);
-            this.labelControl8.Name = "labelControl8";
-            this.labelControl8.Size = new System.Drawing.Size(46, 19);
-            this.labelControl8.TabIndex = 2;
-            this.labelControl8.Text = "Сумма";
+            this.lcAmountOrder.Appearance.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.lcAmountOrder.Location = new System.Drawing.Point(35, 3);
+            this.lcAmountOrder.Margin = new System.Windows.Forms.Padding(35, 3, 3, 3);
+            this.lcAmountOrder.Name = "lcAmountOrder";
+            this.lcAmountOrder.Size = new System.Drawing.Size(128, 19);
+            this.lcAmountOrder.TabIndex = 2;
+            this.lcAmountOrder.Text = "Итого заказа 0 р.";
             // 
-            // labelControl9
+            // lcAmountPayment
             // 
-            this.labelControl9.Appearance.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.labelControl9.Location = new System.Drawing.Point(35, 34);
-            this.labelControl9.Margin = new System.Windows.Forms.Padding(35, 3, 3, 3);
-            this.labelControl9.Name = "labelControl9";
-            this.labelControl9.Size = new System.Drawing.Size(46, 19);
-            this.labelControl9.TabIndex = 3;
-            this.labelControl9.Text = "Сумма";
+            this.lcAmountPayment.Appearance.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.lcAmountPayment.Location = new System.Drawing.Point(35, 34);
+            this.lcAmountPayment.Margin = new System.Windows.Forms.Padding(35, 3, 3, 3);
+            this.lcAmountPayment.Name = "lcAmountPayment";
+            this.lcAmountPayment.Size = new System.Drawing.Size(106, 19);
+            this.lcAmountPayment.TabIndex = 3;
+            this.lcAmountPayment.Text = "Оплачено 0 р.";
             // 
             // gcPays
             // 
@@ -716,9 +716,9 @@
         private DevExpress.XtraEditors.TextEdit teCreditAmount;
         private DevExpress.XtraEditors.MemoEdit meCreditScanner;
         private System.Windows.Forms.TableLayoutPanel tlpItog;
-        private DevExpress.XtraEditors.LabelControl labelControl10;
-        private DevExpress.XtraEditors.LabelControl labelControl8;
-        private DevExpress.XtraEditors.LabelControl labelControl9;
+        private DevExpress.XtraEditors.LabelControl lcBalance;
+        private DevExpress.XtraEditors.LabelControl lcAmountOrder;
+        private DevExpress.XtraEditors.LabelControl lcAmountPayment;
         private DevExpress.XtraEditors.GroupControl gcCard;
         private DevExpress.XtraEditors.GroupControl gcCredit;
         private Controls.GridControlWrapper gcPays;
