@@ -72,7 +72,7 @@
             this.tlpMain.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.tlpMain.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 50F));
             this.tlpMain.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.tlpMain.Size = new System.Drawing.Size(784, 532);
+            this.tlpMain.Size = new System.Drawing.Size(784, 533);
             this.tlpMain.TabIndex = 0;
             // 
             // tcMain
@@ -81,7 +81,7 @@
             this.tcMain.Location = new System.Drawing.Point(23, 53);
             this.tcMain.Name = "tcMain";
             this.tcMain.SelectedTabPage = this.tpSpecific;
-            this.tcMain.Size = new System.Drawing.Size(738, 406);
+            this.tcMain.Size = new System.Drawing.Size(738, 407);
             this.tcMain.TabIndex = 1;
             this.tcMain.TabPages.AddRange(new DevExpress.XtraTab.XtraTabPage[] {
             this.tpSpecific,
@@ -92,7 +92,7 @@
             // 
             this.tpSpecific.Controls.Add(this.orderSpecificControl);
             this.tpSpecific.Name = "tpSpecific";
-            this.tpSpecific.Size = new System.Drawing.Size(732, 378);
+            this.tpSpecific.Size = new System.Drawing.Size(732, 379);
             this.tpSpecific.Text = "Спецификация";
             // 
             // orderSpecificControl
@@ -100,7 +100,7 @@
             this.orderSpecificControl.Dock = System.Windows.Forms.DockStyle.Fill;
             this.orderSpecificControl.Location = new System.Drawing.Point(0, 0);
             this.orderSpecificControl.Name = "orderSpecificControl";
-            this.orderSpecificControl.Size = new System.Drawing.Size(732, 378);
+            this.orderSpecificControl.Size = new System.Drawing.Size(732, 379);
             this.orderSpecificControl.Specifications = ((System.Collections.Generic.List<OfflineARM.Business.Models.Businesses.Interfaces.IOrderSpecificationItemModel>)(resources.GetObject("orderSpecificControl.Specifications")));
             this.orderSpecificControl.TabIndex = 0;
             this.orderSpecificControl.TotalAmount = new decimal(new int[] {
@@ -113,15 +113,14 @@
             // 
             this.tpDelivary.Controls.Add(this.orderDestination);
             this.tpDelivary.Name = "tpDelivary";
-            this.tpDelivary.Size = new System.Drawing.Size(732, 378);
+            this.tpDelivary.Size = new System.Drawing.Size(732, 379);
             this.tpDelivary.Text = "Доставка";
             // 
             // orderDestination
             // 
-            this.orderDestination.Dock = System.Windows.Forms.DockStyle.Fill;
             this.orderDestination.Location = new System.Drawing.Point(0, 0);
             this.orderDestination.Name = "orderDestination";
-            this.orderDestination.Size = new System.Drawing.Size(732, 378);
+            this.orderDestination.Size = new System.Drawing.Size(732, 380);
             this.orderDestination.TabIndex = 0;
             // 
             // tpBuy
@@ -153,7 +152,7 @@
             this.tlpButtons.Controls.Add(this.sbNext, 1, 0);
             this.tlpButtons.Controls.Add(this.sbPrevios, 0, 0);
             this.tlpButtons.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tlpButtons.Location = new System.Drawing.Point(23, 465);
+            this.tlpButtons.Location = new System.Drawing.Point(23, 466);
             this.tlpButtons.Name = "tlpButtons";
             this.tlpButtons.RowCount = 1;
             this.tlpButtons.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
@@ -224,7 +223,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(784, 561);
+            this.ClientSize = new System.Drawing.Size(784, 562);
             this.Controls.Add(this.tlpMain);
             this.MinimumSize = new System.Drawing.Size(800, 600);
             this.Name = "OrderForm";

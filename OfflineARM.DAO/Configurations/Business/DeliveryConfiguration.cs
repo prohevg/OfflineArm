@@ -30,6 +30,9 @@ namespace OfflineARM.DAO.Configurations.Business
             Property(p => p.Comment)
                .HasMaxLength(1000);
 
+            Property(p => p.House)
+              .HasMaxLength(10);
+
             Property(p => p.Flat)
                .HasMaxLength(5);
 

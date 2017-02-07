@@ -142,6 +142,9 @@
     <Compile Include="Commands\ICommandMetadataBase.cs" />
     <Compile Include="Commands\ItemData.cs" />
     <Compile Include="Controls\EventArg\GridCommandEventArgs.cs" />
+    <Compile Include="Controls\PhoneControl.cs">
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="Controls\GridControlWrapper.cs">
       <SubType>Component</SubType>
     </Compile>
@@ -272,6 +275,7 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\Orders\OrderForm.resx">
       <DependentUpon>OrderForm.cs</DependentUpon>
+      <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\Orders\OrderListControl.resx">
       <DependentUpon>OrderListControl.cs</DependentUpon>

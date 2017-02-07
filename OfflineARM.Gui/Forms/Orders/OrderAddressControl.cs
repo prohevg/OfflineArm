@@ -31,12 +31,13 @@ namespace OfflineARM.Gui.Forms.Orders
                     ContactPhoneMain = teContactPhoneMain.Text,
                     ContactPhoneSecondary = teContactPersonName.Text,
                     DeliveryDate = deDeliveryDate.DateTime,
-                    Flat = teFloor.Text,
+                    House = teHouse.Text,
+                    Flat = teFlat.Text,
+                    Porch = tePorch.Text,
                     Floor = teFloor.Text,
                     Intercom = teIntercom.Text,
                     IsCargoLift = ceCargoLift.Checked,
                     IsClimb = ceClimb.Checked,
-                    Porch = tePorch.Text
                 };
             }
         }

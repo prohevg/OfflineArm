@@ -96,7 +96,7 @@ namespace OfflineARM.Business
         /// </summary>
         public virtual Task<PagedResult<TModelEntity>> GetAllAsync()
         {
-            return Task.Factory.StartNew(GetAll);
+            return Task.Factory.StartNew(() => GetAll());
         }
 
         /// <summary>
