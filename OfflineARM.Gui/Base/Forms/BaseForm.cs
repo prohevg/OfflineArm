@@ -49,7 +49,7 @@ namespace OfflineARM.Gui.Base.Forms
         {
             if (!size.HasValue)
             {
-                this.MinimumSize = new Size(800, 600);
+                this.MinimumSize = new Size(1024, 768);
             }
             else
             {

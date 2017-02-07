@@ -68,9 +68,9 @@
             this.teCreditAmount = new DevExpress.XtraEditors.TextEdit();
             this.meCreditScanner = new DevExpress.XtraEditors.MemoEdit();
             this.tlpItog = new System.Windows.Forms.TableLayoutPanel();
-            this.lcBalance = new DevExpress.XtraEditors.LabelControl();
             this.lcAmountOrder = new DevExpress.XtraEditors.LabelControl();
             this.lcAmountPayment = new DevExpress.XtraEditors.LabelControl();
+            this.lcBalance = new DevExpress.XtraEditors.LabelControl();
             this.gcPays = new OfflineARM.Gui.Controls.GridControlWrapper();
             this.gridView1 = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.tlpMain.SuspendLayout();
@@ -117,27 +117,26 @@
             this.tlpMain.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tlpMain.Location = new System.Drawing.Point(0, 0);
             this.tlpMain.Name = "tlpMain";
-            this.tlpMain.RowCount = 4;
-            this.tlpMain.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 400F));
+            this.tlpMain.RowCount = 3;
+            this.tlpMain.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 300F));
             this.tlpMain.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.tlpMain.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 100F));
-            this.tlpMain.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 50F));
             this.tlpMain.Size = new System.Drawing.Size(867, 661);
             this.tlpMain.TabIndex = 0;
             // 
             // tlpPays
             // 
             this.tlpPays.ColumnCount = 2;
-            this.tlpPays.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tlpPays.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tlpPays.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 300F));
+            this.tlpPays.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.tlpPays.Controls.Add(this.tlpPays2, 0, 0);
             this.tlpPays.Controls.Add(this.gcCredit, 1, 0);
             this.tlpPays.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tlpPays.Location = new System.Drawing.Point(3, 3);
             this.tlpPays.Name = "tlpPays";
             this.tlpPays.RowCount = 1;
-            this.tlpPays.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tlpPays.Size = new System.Drawing.Size(694, 394);
+            this.tlpPays.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tlpPays.Size = new System.Drawing.Size(694, 294);
             this.tlpPays.TabIndex = 0;
             // 
             // tlpPays2
@@ -152,7 +151,7 @@
             this.tlpPays2.RowCount = 2;
             this.tlpPays2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tlpPays2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tlpPays2.Size = new System.Drawing.Size(341, 388);
+            this.tlpPays2.Size = new System.Drawing.Size(294, 288);
             this.tlpPays2.TabIndex = 0;
             // 
             // gcNal
@@ -162,15 +161,15 @@
             this.gcNal.Location = new System.Drawing.Point(3, 3);
             this.gcNal.Name = "gcNal";
             this.gcNal.ShowCaption = false;
-            this.gcNal.Size = new System.Drawing.Size(335, 188);
+            this.gcNal.Size = new System.Drawing.Size(288, 138);
             this.gcNal.TabIndex = 0;
             this.gcNal.Text = "Наличные";
             // 
             // tlpNal
             // 
             this.tlpNal.ColumnCount = 2;
-            this.tlpNal.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tlpNal.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tlpNal.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 120F));
+            this.tlpNal.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.tlpNal.Controls.Add(this.ceCashPayment, 0, 0);
             this.tlpNal.Controls.Add(this.lcCashAmount, 0, 1);
             this.tlpNal.Controls.Add(this.lkCashFiscalReceipt, 0, 2);
@@ -183,11 +182,11 @@
             this.tlpNal.Name = "tlpNal";
             this.tlpNal.RowCount = 5;
             this.tlpNal.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 30F));
-            this.tlpNal.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 30F));
-            this.tlpNal.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 30F));
-            this.tlpNal.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 30F));
-            this.tlpNal.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 30F));
-            this.tlpNal.Size = new System.Drawing.Size(331, 184);
+            this.tlpNal.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 25F));
+            this.tlpNal.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 25F));
+            this.tlpNal.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 25F));
+            this.tlpNal.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 25F));
+            this.tlpNal.Size = new System.Drawing.Size(284, 134);
             this.tlpNal.TabIndex = 0;
             // 
             // ceCashPayment
@@ -202,28 +201,28 @@
             // lcCashAmount
             // 
             this.lcCashAmount.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.lcCashAmount.Appearance.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.lcCashAmount.Location = new System.Drawing.Point(109, 35);
+            this.lcCashAmount.Appearance.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.lcCashAmount.Location = new System.Drawing.Point(73, 35);
             this.lcCashAmount.Margin = new System.Windows.Forms.Padding(3, 5, 10, 3);
             this.lcCashAmount.Name = "lcCashAmount";
-            this.lcCashAmount.Size = new System.Drawing.Size(46, 19);
+            this.lcCashAmount.Size = new System.Drawing.Size(37, 16);
             this.lcCashAmount.TabIndex = 1;
             this.lcCashAmount.Text = "Сумма";
             // 
             // lkCashFiscalReceipt
             // 
             this.lkCashFiscalReceipt.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.lkCashFiscalReceipt.Appearance.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.lkCashFiscalReceipt.Location = new System.Drawing.Point(99, 65);
+            this.lkCashFiscalReceipt.Appearance.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.lkCashFiscalReceipt.Location = new System.Drawing.Point(64, 60);
             this.lkCashFiscalReceipt.Margin = new System.Windows.Forms.Padding(3, 5, 10, 3);
             this.lkCashFiscalReceipt.Name = "lkCashFiscalReceipt";
-            this.lkCashFiscalReceipt.Size = new System.Drawing.Size(56, 19);
+            this.lkCashFiscalReceipt.Size = new System.Drawing.Size(46, 16);
             this.lkCashFiscalReceipt.TabIndex = 2;
             this.lkCashFiscalReceipt.Text = "№ чека";
             // 
             // ceCashInputManual
             // 
-            this.ceCashInputManual.Location = new System.Drawing.Point(168, 93);
+            this.ceCashInputManual.Location = new System.Drawing.Point(123, 83);
             this.ceCashInputManual.Name = "ceCashInputManual";
             this.ceCashInputManual.Properties.Caption = "Чек пробит вручную";
             this.ceCashInputManual.Size = new System.Drawing.Size(147, 19);
@@ -232,7 +231,7 @@
             // 
             // smCashCheckManual
             // 
-            this.smCashCheckManual.Location = new System.Drawing.Point(168, 123);
+            this.smCashCheckManual.Location = new System.Drawing.Point(123, 108);
             this.smCashCheckManual.Name = "smCashCheckManual";
             this.smCashCheckManual.Size = new System.Drawing.Size(75, 23);
             this.smCashCheckManual.TabIndex = 4;
@@ -242,37 +241,37 @@
             // teCashAmount
             // 
             this.teCashAmount.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.teCashAmount.Location = new System.Drawing.Point(168, 33);
+            this.teCashAmount.Location = new System.Drawing.Point(123, 33);
             this.teCashAmount.Name = "teCashAmount";
             this.teCashAmount.Properties.Mask.EditMask = "c";
             this.teCashAmount.Properties.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.Numeric;
-            this.teCashAmount.Size = new System.Drawing.Size(160, 20);
+            this.teCashAmount.Size = new System.Drawing.Size(158, 20);
             this.teCashAmount.TabIndex = 5;
             // 
             // teCashFiscalReceipt
             // 
             this.teCashFiscalReceipt.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.teCashFiscalReceipt.Location = new System.Drawing.Point(168, 63);
+            this.teCashFiscalReceipt.Location = new System.Drawing.Point(123, 58);
             this.teCashFiscalReceipt.Name = "teCashFiscalReceipt";
-            this.teCashFiscalReceipt.Size = new System.Drawing.Size(160, 20);
+            this.teCashFiscalReceipt.Size = new System.Drawing.Size(158, 20);
             this.teCashFiscalReceipt.TabIndex = 6;
             // 
             // gcCard
             // 
             this.gcCard.Controls.Add(this.tableLayoutPanel1);
             this.gcCard.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.gcCard.Location = new System.Drawing.Point(3, 197);
+            this.gcCard.Location = new System.Drawing.Point(3, 147);
             this.gcCard.Name = "gcCard";
             this.gcCard.ShowCaption = false;
-            this.gcCard.Size = new System.Drawing.Size(335, 188);
+            this.gcCard.Size = new System.Drawing.Size(288, 138);
             this.gcCard.TabIndex = 1;
             this.gcCard.Text = "Карта";
             // 
             // tableLayoutPanel1
             // 
             this.tableLayoutPanel1.ColumnCount = 2;
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 120F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.tableLayoutPanel1.Controls.Add(this.ceCardPayment, 0, 0);
             this.tableLayoutPanel1.Controls.Add(this.lcCardAmount, 0, 1);
             this.tableLayoutPanel1.Controls.Add(this.sbCardPay, 1, 4);
@@ -285,11 +284,11 @@
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
             this.tableLayoutPanel1.RowCount = 5;
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 30F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 30F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 30F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 30F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 30F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(331, 184);
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 25F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 25F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 25F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 25F));
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(284, 134);
             this.tableLayoutPanel1.TabIndex = 1;
             // 
             // ceCardPayment
@@ -297,24 +296,24 @@
             this.ceCardPayment.Location = new System.Drawing.Point(3, 3);
             this.ceCardPayment.Name = "ceCardPayment";
             this.ceCardPayment.Properties.Caption = "Пластиковая карта";
-            this.ceCardPayment.Size = new System.Drawing.Size(152, 19);
+            this.ceCardPayment.Size = new System.Drawing.Size(114, 19);
             this.ceCardPayment.TabIndex = 0;
             this.ceCardPayment.CheckedChanged += new System.EventHandler(this.ceCardPayment_CheckedChanged);
             // 
             // lcCardAmount
             // 
             this.lcCardAmount.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.lcCardAmount.Appearance.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.lcCardAmount.Location = new System.Drawing.Point(109, 35);
+            this.lcCardAmount.Appearance.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.lcCardAmount.Location = new System.Drawing.Point(73, 35);
             this.lcCardAmount.Margin = new System.Windows.Forms.Padding(3, 5, 10, 3);
             this.lcCardAmount.Name = "lcCardAmount";
-            this.lcCardAmount.Size = new System.Drawing.Size(46, 19);
+            this.lcCardAmount.Size = new System.Drawing.Size(37, 16);
             this.lcCardAmount.TabIndex = 1;
             this.lcCardAmount.Text = "Сумма";
             // 
             // sbCardPay
             // 
-            this.sbCardPay.Location = new System.Drawing.Point(168, 123);
+            this.sbCardPay.Location = new System.Drawing.Point(123, 108);
             this.sbCardPay.Name = "sbCardPay";
             this.sbCardPay.Size = new System.Drawing.Size(75, 23);
             this.sbCardPay.TabIndex = 4;
@@ -324,27 +323,27 @@
             // teCardAmount
             // 
             this.teCardAmount.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.teCardAmount.Location = new System.Drawing.Point(168, 33);
+            this.teCardAmount.Location = new System.Drawing.Point(123, 33);
             this.teCardAmount.Name = "teCardAmount";
             this.teCardAmount.Properties.Mask.EditMask = "c";
             this.teCardAmount.Properties.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.Numeric;
-            this.teCardAmount.Size = new System.Drawing.Size(160, 20);
+            this.teCardAmount.Size = new System.Drawing.Size(158, 20);
             this.teCardAmount.TabIndex = 5;
             // 
             // lcCardNumber
             // 
             this.lcCardNumber.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.lcCardNumber.Appearance.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.lcCardNumber.Location = new System.Drawing.Point(88, 95);
+            this.lcCardNumber.Appearance.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.lcCardNumber.Location = new System.Drawing.Point(56, 85);
             this.lcCardNumber.Margin = new System.Windows.Forms.Padding(3, 5, 10, 3);
             this.lcCardNumber.Name = "lcCardNumber";
-            this.lcCardNumber.Size = new System.Drawing.Size(67, 19);
+            this.lcCardNumber.Size = new System.Drawing.Size(54, 16);
             this.lcCardNumber.TabIndex = 2;
             this.lcCardNumber.Text = "№ карты";
             // 
             // ceCardManual
             // 
-            this.ceCardManual.Location = new System.Drawing.Point(168, 63);
+            this.ceCardManual.Location = new System.Drawing.Point(123, 58);
             this.ceCardManual.Name = "ceCardManual";
             this.ceCardManual.Properties.Caption = "Оплата вручную";
             this.ceCardManual.Size = new System.Drawing.Size(129, 19);
@@ -354,27 +353,27 @@
             // teCardNumber
             // 
             this.teCardNumber.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.teCardNumber.Location = new System.Drawing.Point(168, 93);
+            this.teCardNumber.Location = new System.Drawing.Point(123, 83);
             this.teCardNumber.Name = "teCardNumber";
-            this.teCardNumber.Size = new System.Drawing.Size(160, 20);
+            this.teCardNumber.Size = new System.Drawing.Size(158, 20);
             this.teCardNumber.TabIndex = 6;
             // 
             // gcCredit
             // 
             this.gcCredit.Controls.Add(this.tlpCredit);
             this.gcCredit.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.gcCredit.Location = new System.Drawing.Point(350, 3);
+            this.gcCredit.Location = new System.Drawing.Point(303, 3);
             this.gcCredit.Name = "gcCredit";
             this.gcCredit.ShowCaption = false;
-            this.gcCredit.Size = new System.Drawing.Size(341, 388);
+            this.gcCredit.Size = new System.Drawing.Size(388, 288);
             this.gcCredit.TabIndex = 1;
             this.gcCredit.Text = "Кредит";
             // 
             // tlpCredit
             // 
             this.tlpCredit.ColumnCount = 2;
-            this.tlpCredit.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tlpCredit.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tlpCredit.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 150F));
+            this.tlpCredit.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.tlpCredit.Controls.Add(this.ceCreditPayment, 0, 0);
             this.tlpCredit.Controls.Add(this.lkCreditBank, 0, 1);
             this.tlpCredit.Controls.Add(this.lkCreditProgramm, 0, 2);
@@ -396,16 +395,16 @@
             this.tlpCredit.Name = "tlpCredit";
             this.tlpCredit.RowCount = 10;
             this.tlpCredit.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 30F));
-            this.tlpCredit.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 30F));
-            this.tlpCredit.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 30F));
-            this.tlpCredit.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 30F));
-            this.tlpCredit.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 30F));
-            this.tlpCredit.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 30F));
-            this.tlpCredit.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 30F));
-            this.tlpCredit.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 50F));
-            this.tlpCredit.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 75F));
+            this.tlpCredit.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 25F));
+            this.tlpCredit.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 25F));
+            this.tlpCredit.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 25F));
+            this.tlpCredit.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 25F));
+            this.tlpCredit.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 25F));
+            this.tlpCredit.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 25F));
             this.tlpCredit.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.tlpCredit.Size = new System.Drawing.Size(337, 384);
+            this.tlpCredit.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 50F));
+            this.tlpCredit.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.tlpCredit.Size = new System.Drawing.Size(384, 284);
             this.tlpCredit.TabIndex = 2;
             // 
             // ceCreditPayment
@@ -419,29 +418,31 @@
             // 
             // lkCreditBank
             // 
-            this.lkCreditBank.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.lkCreditBank.Appearance.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.lkCreditBank.Location = new System.Drawing.Point(77, 35);
+            this.lkCreditBank.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.lkCreditBank.Appearance.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.lkCreditBank.Location = new System.Drawing.Point(74, 35);
             this.lkCreditBank.Margin = new System.Windows.Forms.Padding(3, 5, 10, 3);
             this.lkCreditBank.Name = "lkCreditBank";
-            this.lkCreditBank.Size = new System.Drawing.Size(81, 19);
+            this.lkCreditBank.Size = new System.Drawing.Size(66, 16);
             this.lkCreditBank.TabIndex = 1;
             this.lkCreditBank.Text = "Банк по БС";
             // 
             // lkCreditProgramm
             // 
-            this.lkCreditProgramm.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.lkCreditProgramm.Appearance.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.lkCreditProgramm.Location = new System.Drawing.Point(30, 65);
+            this.lkCreditProgramm.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.lkCreditProgramm.Appearance.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.lkCreditProgramm.Location = new System.Drawing.Point(38, 60);
             this.lkCreditProgramm.Margin = new System.Windows.Forms.Padding(3, 5, 10, 3);
             this.lkCreditProgramm.Name = "lkCreditProgramm";
-            this.lkCreditProgramm.Size = new System.Drawing.Size(128, 19);
+            this.lkCreditProgramm.Size = new System.Drawing.Size(102, 16);
             this.lkCreditProgramm.TabIndex = 2;
             this.lkCreditProgramm.Text = "Программа по БС";
             // 
             // sbCreditApply
             // 
-            this.sbCreditApply.Location = new System.Drawing.Point(171, 338);
+            this.sbCreditApply.Location = new System.Drawing.Point(153, 253);
             this.sbCreditApply.Name = "sbCreditApply";
             this.sbCreditApply.Size = new System.Drawing.Size(75, 23);
             this.sbCreditApply.TabIndex = 4;
@@ -450,147 +451,140 @@
             // 
             // lkCreditBankOrderNumber
             // 
-            this.lkCreditBankOrderNumber.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.lkCreditBankOrderNumber.Appearance.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.lkCreditBankOrderNumber.Location = new System.Drawing.Point(67, 95);
+            this.lkCreditBankOrderNumber.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.lkCreditBankOrderNumber.Appearance.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.lkCreditBankOrderNumber.Location = new System.Drawing.Point(67, 85);
             this.lkCreditBankOrderNumber.Margin = new System.Windows.Forms.Padding(3, 5, 10, 3);
             this.lkCreditBankOrderNumber.Name = "lkCreditBankOrderNumber";
-            this.lkCreditBankOrderNumber.Size = new System.Drawing.Size(91, 19);
+            this.lkCreditBankOrderNumber.Size = new System.Drawing.Size(73, 16);
             this.lkCreditBankOrderNumber.TabIndex = 5;
             this.lkCreditBankOrderNumber.Text = "№ договора";
             // 
             // lcCreditNameInOrder
             // 
-            this.lcCreditNameInOrder.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.lcCreditNameInOrder.Appearance.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.lcCreditNameInOrder.Location = new System.Drawing.Point(59, 125);
+            this.lcCreditNameInOrder.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.lcCreditNameInOrder.Appearance.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.lcCreditNameInOrder.Location = new System.Drawing.Point(62, 110);
             this.lcCreditNameInOrder.Margin = new System.Windows.Forms.Padding(3, 5, 10, 3);
             this.lcCreditNameInOrder.Name = "lcCreditNameInOrder";
-            this.lcCreditNameInOrder.Size = new System.Drawing.Size(99, 19);
+            this.lcCreditNameInOrder.Size = new System.Drawing.Size(78, 16);
             this.lcCreditNameInOrder.TabIndex = 6;
             this.lcCreditNameInOrder.Text = "ФИО клиента";
             // 
             // lkCreditInitialFee
             // 
-            this.lkCreditInitialFee.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.lkCreditInitialFee.Appearance.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.lkCreditInitialFee.Location = new System.Drawing.Point(40, 155);
+            this.lkCreditInitialFee.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.lkCreditInitialFee.Appearance.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.lkCreditInitialFee.Location = new System.Drawing.Point(46, 135);
             this.lkCreditInitialFee.Margin = new System.Windows.Forms.Padding(3, 5, 10, 3);
             this.lkCreditInitialFee.Name = "lkCreditInitialFee";
-            this.lkCreditInitialFee.Size = new System.Drawing.Size(118, 19);
+            this.lkCreditInitialFee.Size = new System.Drawing.Size(94, 16);
             this.lkCreditInitialFee.TabIndex = 7;
             this.lkCreditInitialFee.Text = "Сумма ПВ по БС";
             // 
             // lcCreditAmount
             // 
-            this.lcCreditAmount.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.lcCreditAmount.Appearance.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.lcCreditAmount.Location = new System.Drawing.Point(3, 185);
+            this.lcCreditAmount.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.lcCreditAmount.Appearance.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.lcCreditAmount.Location = new System.Drawing.Point(14, 160);
             this.lcCreditAmount.Margin = new System.Windows.Forms.Padding(3, 5, 10, 3);
             this.lcCreditAmount.Name = "lcCreditAmount";
-            this.lcCreditAmount.Size = new System.Drawing.Size(157, 19);
+            this.lcCreditAmount.Size = new System.Drawing.Size(126, 16);
             this.lcCreditAmount.TabIndex = 8;
             this.lcCreditAmount.Text = "Сумма кредита по БС";
             // 
             // teCreditScanner
             // 
             this.teCreditScanner.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.teCreditScanner.Appearance.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.teCreditScanner.Location = new System.Drawing.Point(28, 265);
+            this.teCreditScanner.Appearance.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.teCreditScanner.Location = new System.Drawing.Point(35, 205);
             this.teCreditScanner.Margin = new System.Windows.Forms.Padding(3, 5, 10, 3);
             this.teCreditScanner.Name = "teCreditScanner";
-            this.teCreditScanner.Size = new System.Drawing.Size(130, 19);
+            this.teCreditScanner.Size = new System.Drawing.Size(105, 16);
             this.teCreditScanner.TabIndex = 9;
             this.teCreditScanner.Text = "Поле для сканера";
             // 
             // teCreditBank
             // 
             this.teCreditBank.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.teCreditBank.Location = new System.Drawing.Point(171, 33);
+            this.teCreditBank.Location = new System.Drawing.Point(153, 33);
             this.teCreditBank.Name = "teCreditBank";
-            this.teCreditBank.Size = new System.Drawing.Size(163, 20);
+            this.teCreditBank.Size = new System.Drawing.Size(228, 20);
             this.teCreditBank.TabIndex = 10;
             // 
             // teCreditProgramm
             // 
             this.teCreditProgramm.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.teCreditProgramm.Location = new System.Drawing.Point(171, 63);
+            this.teCreditProgramm.Location = new System.Drawing.Point(153, 58);
             this.teCreditProgramm.Name = "teCreditProgramm";
-            this.teCreditProgramm.Size = new System.Drawing.Size(163, 20);
+            this.teCreditProgramm.Size = new System.Drawing.Size(228, 20);
             this.teCreditProgramm.TabIndex = 11;
             // 
             // teCreditBankOrderNumber
             // 
             this.teCreditBankOrderNumber.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.teCreditBankOrderNumber.Location = new System.Drawing.Point(171, 93);
+            this.teCreditBankOrderNumber.Location = new System.Drawing.Point(153, 83);
             this.teCreditBankOrderNumber.Name = "teCreditBankOrderNumber";
-            this.teCreditBankOrderNumber.Size = new System.Drawing.Size(163, 20);
+            this.teCreditBankOrderNumber.Size = new System.Drawing.Size(228, 20);
             this.teCreditBankOrderNumber.TabIndex = 12;
             // 
             // teCreditNameInOrder
             // 
             this.teCreditNameInOrder.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.teCreditNameInOrder.Location = new System.Drawing.Point(171, 123);
+            this.teCreditNameInOrder.Location = new System.Drawing.Point(153, 108);
             this.teCreditNameInOrder.Name = "teCreditNameInOrder";
-            this.teCreditNameInOrder.Size = new System.Drawing.Size(163, 20);
+            this.teCreditNameInOrder.Size = new System.Drawing.Size(228, 20);
             this.teCreditNameInOrder.TabIndex = 13;
             // 
             // teCreditInitialFee
             // 
             this.teCreditInitialFee.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.teCreditInitialFee.Location = new System.Drawing.Point(171, 153);
+            this.teCreditInitialFee.Location = new System.Drawing.Point(153, 133);
             this.teCreditInitialFee.Name = "teCreditInitialFee";
             this.teCreditInitialFee.Properties.Mask.EditMask = "c";
             this.teCreditInitialFee.Properties.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.Numeric;
-            this.teCreditInitialFee.Size = new System.Drawing.Size(163, 20);
+            this.teCreditInitialFee.Size = new System.Drawing.Size(228, 20);
             this.teCreditInitialFee.TabIndex = 14;
             // 
             // teCreditAmount
             // 
             this.teCreditAmount.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.teCreditAmount.Location = new System.Drawing.Point(171, 183);
+            this.teCreditAmount.Location = new System.Drawing.Point(153, 158);
             this.teCreditAmount.Name = "teCreditAmount";
             this.teCreditAmount.Properties.Mask.EditMask = "c";
             this.teCreditAmount.Properties.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.Numeric;
-            this.teCreditAmount.Size = new System.Drawing.Size(163, 20);
+            this.teCreditAmount.Size = new System.Drawing.Size(228, 20);
             this.teCreditAmount.TabIndex = 15;
             // 
             // meCreditScanner
             // 
             this.meCreditScanner.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.meCreditScanner.Location = new System.Drawing.Point(171, 263);
+            this.meCreditScanner.Location = new System.Drawing.Point(153, 203);
             this.meCreditScanner.Name = "meCreditScanner";
-            this.meCreditScanner.Size = new System.Drawing.Size(163, 69);
+            this.meCreditScanner.Size = new System.Drawing.Size(228, 44);
             this.meCreditScanner.TabIndex = 16;
             this.meCreditScanner.UseOptimizedRendering = true;
             // 
             // tlpItog
             // 
-            this.tlpItog.ColumnCount = 2;
-            this.tlpItog.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tlpItog.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tlpItog.Controls.Add(this.lcBalance, 0, 2);
+            this.tlpItog.ColumnCount = 3;
+            this.tlpItog.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
+            this.tlpItog.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33.33334F));
+            this.tlpItog.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33.33334F));
             this.tlpItog.Controls.Add(this.lcAmountOrder, 0, 0);
-            this.tlpItog.Controls.Add(this.lcAmountPayment, 0, 1);
+            this.tlpItog.Controls.Add(this.lcAmountPayment, 1, 0);
+            this.tlpItog.Controls.Add(this.lcBalance, 2, 0);
             this.tlpItog.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tlpItog.Location = new System.Drawing.Point(3, 514);
+            this.tlpItog.Location = new System.Drawing.Point(3, 564);
             this.tlpItog.Name = "tlpItog";
-            this.tlpItog.RowCount = 3;
-            this.tlpItog.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
-            this.tlpItog.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
-            this.tlpItog.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
+            this.tlpItog.RowCount = 1;
+            this.tlpItog.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.tlpItog.Size = new System.Drawing.Size(694, 94);
             this.tlpItog.TabIndex = 1;
-            // 
-            // lcBalance
-            // 
-            this.lcBalance.Appearance.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.lcBalance.Location = new System.Drawing.Point(35, 65);
-            this.lcBalance.Margin = new System.Windows.Forms.Padding(35, 3, 3, 3);
-            this.lcBalance.Name = "lcBalance";
-            this.lcBalance.Size = new System.Drawing.Size(93, 19);
-            this.lcBalance.TabIndex = 4;
-            this.lcBalance.Text = "Остаток 0 р.";
             // 
             // lcAmountOrder
             // 
@@ -605,20 +599,30 @@
             // lcAmountPayment
             // 
             this.lcAmountPayment.Appearance.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.lcAmountPayment.Location = new System.Drawing.Point(35, 34);
+            this.lcAmountPayment.Location = new System.Drawing.Point(266, 3);
             this.lcAmountPayment.Margin = new System.Windows.Forms.Padding(35, 3, 3, 3);
             this.lcAmountPayment.Name = "lcAmountPayment";
             this.lcAmountPayment.Size = new System.Drawing.Size(106, 19);
             this.lcAmountPayment.TabIndex = 3;
             this.lcAmountPayment.Text = "Оплачено 0 р.";
             // 
+            // lcBalance
+            // 
+            this.lcBalance.Appearance.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.lcBalance.Location = new System.Drawing.Point(497, 3);
+            this.lcBalance.Margin = new System.Windows.Forms.Padding(35, 3, 3, 3);
+            this.lcBalance.Name = "lcBalance";
+            this.lcBalance.Size = new System.Drawing.Size(93, 19);
+            this.lcBalance.TabIndex = 4;
+            this.lcBalance.Text = "Остаток 0 р.";
+            // 
             // gcPays
             // 
             this.gcPays.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.gcPays.Location = new System.Drawing.Point(3, 403);
+            this.gcPays.Location = new System.Drawing.Point(3, 303);
             this.gcPays.MainView = this.gridView1;
             this.gcPays.Name = "gcPays";
-            this.gcPays.Size = new System.Drawing.Size(694, 105);
+            this.gcPays.Size = new System.Drawing.Size(694, 255);
             this.gcPays.TabIndex = 2;
             this.gcPays.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView1});
@@ -716,12 +720,12 @@
         private DevExpress.XtraEditors.TextEdit teCreditAmount;
         private DevExpress.XtraEditors.MemoEdit meCreditScanner;
         private System.Windows.Forms.TableLayoutPanel tlpItog;
-        private DevExpress.XtraEditors.LabelControl lcBalance;
-        private DevExpress.XtraEditors.LabelControl lcAmountOrder;
-        private DevExpress.XtraEditors.LabelControl lcAmountPayment;
         private DevExpress.XtraEditors.GroupControl gcCard;
         private DevExpress.XtraEditors.GroupControl gcCredit;
         private Controls.GridControlWrapper gcPays;
         private DevExpress.XtraGrid.Views.Grid.GridView gridView1;
+        private DevExpress.XtraEditors.LabelControl lcAmountOrder;
+        private DevExpress.XtraEditors.LabelControl lcAmountPayment;
+        private DevExpress.XtraEditors.LabelControl lcBalance;
     }
 }

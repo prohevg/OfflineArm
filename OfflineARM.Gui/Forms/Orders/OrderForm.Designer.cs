@@ -60,28 +60,28 @@
             this.tlpMain.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 20F));
             this.tlpMain.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.tlpMain.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.tlpMain.Controls.Add(this.tcMain, 1, 2);
-            this.tlpMain.Controls.Add(this.tlpButtons, 1, 3);
-            this.tlpMain.Controls.Add(this.tlpResponsable, 1, 1);
+            this.tlpMain.Controls.Add(this.tcMain, 1, 1);
+            this.tlpMain.Controls.Add(this.tlpButtons, 1, 2);
+            this.tlpMain.Controls.Add(this.tlpResponsable, 1, 0);
             this.tlpMain.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tlpMain.Location = new System.Drawing.Point(0, 29);
             this.tlpMain.Name = "tlpMain";
-            this.tlpMain.RowCount = 5;
-            this.tlpMain.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.tlpMain.RowCount = 3;
             this.tlpMain.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 30F));
             this.tlpMain.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.tlpMain.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 50F));
             this.tlpMain.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.tlpMain.Size = new System.Drawing.Size(784, 533);
+            this.tlpMain.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.tlpMain.Size = new System.Drawing.Size(1008, 701);
             this.tlpMain.TabIndex = 0;
             // 
             // tcMain
             // 
             this.tcMain.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tcMain.Location = new System.Drawing.Point(23, 53);
+            this.tcMain.Location = new System.Drawing.Point(23, 33);
             this.tcMain.Name = "tcMain";
             this.tcMain.SelectedTabPage = this.tpSpecific;
-            this.tcMain.Size = new System.Drawing.Size(738, 407);
+            this.tcMain.Size = new System.Drawing.Size(962, 615);
             this.tcMain.TabIndex = 1;
             this.tcMain.TabPages.AddRange(new DevExpress.XtraTab.XtraTabPage[] {
             this.tpSpecific,
@@ -92,7 +92,7 @@
             // 
             this.tpSpecific.Controls.Add(this.orderSpecificControl);
             this.tpSpecific.Name = "tpSpecific";
-            this.tpSpecific.Size = new System.Drawing.Size(732, 379);
+            this.tpSpecific.Size = new System.Drawing.Size(956, 587);
             this.tpSpecific.Text = "Спецификация";
             // 
             // orderSpecificControl
@@ -100,7 +100,7 @@
             this.orderSpecificControl.Dock = System.Windows.Forms.DockStyle.Fill;
             this.orderSpecificControl.Location = new System.Drawing.Point(0, 0);
             this.orderSpecificControl.Name = "orderSpecificControl";
-            this.orderSpecificControl.Size = new System.Drawing.Size(732, 379);
+            this.orderSpecificControl.Size = new System.Drawing.Size(956, 587);
             this.orderSpecificControl.Specifications = ((System.Collections.Generic.List<OfflineARM.Business.Models.Businesses.Interfaces.IOrderSpecificationItemModel>)(resources.GetObject("orderSpecificControl.Specifications")));
             this.orderSpecificControl.TabIndex = 0;
             this.orderSpecificControl.TotalAmount = new decimal(new int[] {
@@ -113,7 +113,7 @@
             // 
             this.tpDelivary.Controls.Add(this.orderDestination);
             this.tpDelivary.Name = "tpDelivary";
-            this.tpDelivary.Size = new System.Drawing.Size(732, 379);
+            this.tpDelivary.Size = new System.Drawing.Size(956, 587);
             this.tpDelivary.Text = "Доставка";
             // 
             // orderDestination
@@ -125,18 +125,20 @@
             // 
             // tpBuy
             // 
+            this.tpBuy.AutoScroll = true;
             this.tpBuy.Controls.Add(this.orderPayControl);
             this.tpBuy.Name = "tpBuy";
-            this.tpBuy.Size = new System.Drawing.Size(732, 378);
+            this.tpBuy.Size = new System.Drawing.Size(956, 587);
             this.tpBuy.Text = "Оплата";
             // 
             // orderPayControl
             // 
             this.orderPayControl.Dock = System.Windows.Forms.DockStyle.Fill;
             this.orderPayControl.Location = new System.Drawing.Point(0, 0);
+            this.orderPayControl.MinimumSize = new System.Drawing.Size(700, 500);
             this.orderPayControl.Name = "orderPayControl";
             this.orderPayControl.Payments = ((System.Collections.Generic.List<OfflineARM.Business.Models.Businesses.Bases.IPaymentModel>)(resources.GetObject("orderPayControl.Payments")));
-            this.orderPayControl.Size = new System.Drawing.Size(732, 378);
+            this.orderPayControl.Size = new System.Drawing.Size(956, 587);
             this.orderPayControl.TabIndex = 0;
             this.orderPayControl.TotalAmount = new decimal(new int[] {
             0,
@@ -152,11 +154,11 @@
             this.tlpButtons.Controls.Add(this.sbNext, 1, 0);
             this.tlpButtons.Controls.Add(this.sbPrevios, 0, 0);
             this.tlpButtons.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tlpButtons.Location = new System.Drawing.Point(23, 466);
+            this.tlpButtons.Location = new System.Drawing.Point(23, 654);
             this.tlpButtons.Name = "tlpButtons";
             this.tlpButtons.RowCount = 1;
             this.tlpButtons.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tlpButtons.Size = new System.Drawing.Size(738, 44);
+            this.tlpButtons.Size = new System.Drawing.Size(962, 44);
             this.tlpButtons.TabIndex = 2;
             // 
             // sbNext
@@ -164,7 +166,7 @@
             this.sbNext.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.sbNext.Image = global::OfflineARM.Gui.CommandResources.forward_16x16;
             this.sbNext.ImageLocation = DevExpress.XtraEditors.ImageLocation.MiddleRight;
-            this.sbNext.Location = new System.Drawing.Point(643, 3);
+            this.sbNext.Location = new System.Drawing.Point(867, 3);
             this.sbNext.Margin = new System.Windows.Forms.Padding(3, 3, 20, 15);
             this.sbNext.Name = "sbNext";
             this.sbNext.Size = new System.Drawing.Size(75, 23);
@@ -190,11 +192,11 @@
             this.tlpResponsable.Controls.Add(this.lueResponsiable, 1, 0);
             this.tlpResponsable.Controls.Add(this.lcResponsable, 0, 0);
             this.tlpResponsable.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tlpResponsable.Location = new System.Drawing.Point(23, 23);
+            this.tlpResponsable.Location = new System.Drawing.Point(23, 3);
             this.tlpResponsable.Name = "tlpResponsable";
             this.tlpResponsable.RowCount = 1;
             this.tlpResponsable.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tlpResponsable.Size = new System.Drawing.Size(738, 24);
+            this.tlpResponsable.Size = new System.Drawing.Size(962, 24);
             this.tlpResponsable.TabIndex = 3;
             // 
             // lueResponsiable
@@ -223,7 +225,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(784, 562);
+            this.ClientSize = new System.Drawing.Size(1008, 730);
             this.Controls.Add(this.tlpMain);
             this.MinimumSize = new System.Drawing.Size(800, 600);
             this.Name = "OrderForm";

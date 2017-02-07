@@ -67,10 +67,10 @@ namespace OfflineARM.Gui.Forms.Orders
         {
             gcPays.BeginUpdate();
             gcPays.AddColumn(GuiResource.OrderPayControl_GridPayCaption_PayType, "Type");
-            gcPays.AddColumn(GuiResource.OrderPayControl_GridPayCaption_Summ, "Amount", 1, UnboundColumnType.Decimal);
-            gcPays.AddColumn(GuiResource.OrderPayControl_GridPayCaption_Date, "PaymentDate", 2);
-            gcPays.AddColumn(GuiResource.OrderPayControl_GridPayCaption_IsManual, "IsManual", 3);
-            gcPays.AddColumnCommand(GuiResource.OrderPayControl_GridPayCaption_DeleteFromPays, ButtonPredefines.Delete);
+            gcPays.AddColumn(GuiResource.OrderPayControl_GridPayCaption_Date, "PaymentDate", 1, UnboundColumnType.DateTime, 100);
+            gcPays.AddColumn(GuiResource.OrderPayControl_GridPayCaption_Summ, "Amount", 2, UnboundColumnType.Decimal, 120);
+            gcPays.AddColumn(GuiResource.OrderPayControl_GridPayCaption_IsManual, "IsManual", 3, width: 50);
+            gcPays.AddColumnCommand(GuiResource.OrderPayControl_GridPayCaption_DeleteFromPays, ButtonPredefines.Delete, 4, 100);
             gcPays.EndUpdate();
 
             gcPays.OnGridCommand += gcPays_OnGridCommand;
@@ -231,7 +231,7 @@ namespace OfflineARM.Gui.Forms.Orders
             {
                 Guid = Guid.NewGuid(),
                 PaymentDate = DateTime.Now,
-                Amount = (decimal)teCashAmount.EditValue,
+                Amount = GetValue(teCashAmount.EditValue),
                 Manual = ceCashInputManual.Checked,
                 FiscalReceipt = teCashFiscalReceipt.Text,
             };
@@ -249,7 +249,7 @@ namespace OfflineARM.Gui.Forms.Orders
             var cardPayment = new CardPaymentModel()
             {
                 Guid = Guid.NewGuid(),
-                Amount = (decimal) teCardAmount.EditValue,
+                Amount = GetValue(teCardAmount.EditValue),
                 CardNumber = teCardNumber.Text,
                 Manual = ceCardManual.Checked,
                 PaymentDate = DateTime.Now,
@@ -269,13 +269,13 @@ namespace OfflineARM.Gui.Forms.Orders
             var creditPayment = new CreditPaymentModel()
             {
                 Guid = Guid.NewGuid(),
-                Amount = (decimal)teCreditAmount.EditValue,
+                Amount = GetValue(teCreditAmount.EditValue),
                 PaymentDate = DateTime.Now,
                 Bank = new BankModel() { Id = 1},
                 BankProduct = new BankProductModel() { Id = 1 },
                 BankOrderNumber = teCreditBankOrderNumber.Text,
-                CreditAmount = (decimal)teCreditAmount.EditValue,
-                InitialFee = (decimal)teCreditInitialFee.EditValue,
+                CreditAmount =  GetValue(teCreditAmount.EditValue),
+                InitialFee = GetValue(teCreditInitialFee.EditValue),
                 NameInOrder = teCreditNameInOrder.Text
             };
 
@@ -330,6 +330,16 @@ namespace OfflineARM.Gui.Forms.Orders
         private void ceCardManual_EditValueChanged(object sender, EventArgs e)
         {
             teCardNumber.Enabled = (bool)((CheckEdit)sender).EditValue;
+        }
+
+        /// <summary>
+        /// Значение
+        /// </summary>
+        /// <param name="value"></param>
+        /// <returns></returns>
+        private decimal GetValue(object value)
+        {
+            return value != null ? (decimal) value : 0;
         }
 
         #endregion

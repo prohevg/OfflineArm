@@ -94,6 +94,7 @@ namespace OfflineARM.Gui.Forms.Orders
             if (e.Page == tpSpecific)
             {
                 sbPrevios.Visible = false;
+                sbNext.Visible = true;
                 sbNext.Text = tpDelivary.Text;
             }
             else if (e.Page == tpDelivary)
