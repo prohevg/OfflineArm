@@ -248,6 +248,9 @@
     <Compile Include="Interfaces\Windows\IMainForm.cs" />
     <Compile Include="BarCreator.cs" />
     <Compile Include="Starter.cs" />
+    <Compile Include="Validators\TextEditValidationProvider.cs">
+      <SubType>Component</SubType>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="AboutBoxProgram.resx">

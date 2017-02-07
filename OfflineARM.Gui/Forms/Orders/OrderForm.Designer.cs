@@ -207,6 +207,7 @@
             this.lueResponsiable.Name = "lueResponsiable";
             this.lueResponsiable.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.lueResponsiable.Properties.EditValueChanged += new System.EventHandler(this.lueResponsiable_Properties_EditValueChanged);
             this.lueResponsiable.Size = new System.Drawing.Size(321, 20);
             this.lueResponsiable.TabIndex = 0;
             // 
