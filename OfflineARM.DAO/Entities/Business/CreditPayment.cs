@@ -53,19 +53,20 @@ namespace OfflineARM.DAO.Entities.Business
             set;
         }
 
+
         /// <summary>
-        /// Сумма ПВ по БС
+        /// Сумма кредита по БС
         /// </summary>
-        public decimal InitialFee
+        public decimal CreditAmount
         {
             get;
             set;
         }
 
         /// <summary>
-        /// Сумма кредита по БС
+        /// Сумма ПВ по БС
         /// </summary>
-        public decimal CreditAmount
+        public decimal InitialFee
         {
             get;
             set;
