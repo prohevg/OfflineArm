@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.tlpMain = new System.Windows.Forms.TableLayoutPanel();
             this.tlpPays = new System.Windows.Forms.TableLayoutPanel();
             this.tlpPays2 = new System.Windows.Forms.TableLayoutPanel();
@@ -73,6 +74,9 @@
             this.lcBalance = new DevExpress.XtraEditors.LabelControl();
             this.gcPays = new OfflineARM.Gui.Controls.GridControlWrapper();
             this.gridView1 = new DevExpress.XtraGrid.Views.Grid.GridView();
+            this.creditValidationProvider = new OfflineARM.Gui.Validators.TextEditValidationProvider(this.components);
+            this.cashValidationProvider = new OfflineARM.Gui.Validators.TextEditValidationProvider(this.components);
+            this.cardValidationProvider = new OfflineARM.Gui.Validators.TextEditValidationProvider(this.components);
             this.tlpMain.SuspendLayout();
             this.tlpPays.SuspendLayout();
             this.tlpPays2.SuspendLayout();
@@ -104,6 +108,9 @@
             this.tlpItog.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gcPays)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.creditValidationProvider)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.cashValidationProvider)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.cardValidationProvider)).BeginInit();
             this.SuspendLayout();
             // 
             // tlpMain
@@ -676,6 +683,9 @@
             this.tlpItog.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gcPays)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.creditValidationProvider)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.cashValidationProvider)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.cardValidationProvider)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -727,5 +737,8 @@
         private DevExpress.XtraEditors.LabelControl lcAmountOrder;
         private DevExpress.XtraEditors.LabelControl lcAmountPayment;
         private DevExpress.XtraEditors.LabelControl lcBalance;
+        private Validators.TextEditValidationProvider creditValidationProvider;
+        private Validators.TextEditValidationProvider cashValidationProvider;
+        private Validators.TextEditValidationProvider cardValidationProvider;
     }
 }

@@ -11,6 +11,7 @@ using OfflineARM.Gui.Forms.Orders.Interfaces;
 using DevExpress.XtraEditors.Controls;
 using OfflineARM.Gui.Controls.EventArg;
 using DevExpress.XtraEditors;
+using DevExpress.XtraEditors.DXErrorProvider;
 
 namespace OfflineARM.Gui.Forms.Orders
 {
@@ -26,12 +27,18 @@ namespace OfflineARM.Gui.Forms.Orders
         /// </summary>
         private readonly List<PaymentRowModel> _paymentRows = new List<PaymentRowModel>();
 
+        /// <summary>
+        /// Правило - поле не должно быть пустым
+        /// </summary>
+        private ConditionValidationRule _vrNotEmpty;
+
         #endregion
 
         public OrderPayControl()
         {
             InitializeComponent();
             Initialization();
+            InitializationValidators();
         }
 
         #region override
@@ -74,6 +81,29 @@ namespace OfflineARM.Gui.Forms.Orders
             gcPays.EndUpdate();
 
             gcPays.OnGridCommand += gcPays_OnGridCommand;
+        }
+
+        /// <summary>
+        /// Валидация контролов
+        /// </summary>
+        private void InitializationValidators()
+        {
+            _vrNotEmpty = new ConditionValidationRule
+            {
+                ConditionOperator = ConditionOperator.NotEquals,
+                Value1 = "",
+            };
+
+            creditValidationProvider.SetValidationRule(teCreditBank, _vrNotEmpty);
+            creditValidationProvider.SetValidationRule(teCreditProgramm, _vrNotEmpty);
+            creditValidationProvider.SetValidationRule(teCreditNameInOrder, _vrNotEmpty);
+            creditValidationProvider.SetValidationRule(teCreditAmount, _vrNotEmpty);
+            creditValidationProvider.SetValidationRule(teCreditInitialFee, _vrNotEmpty);
+            creditValidationProvider.SetValidationRule(teCreditBankOrderNumber, _vrNotEmpty);
+
+            cashValidationProvider.SetValidationRule(teCashAmount, _vrNotEmpty);
+
+            cardValidationProvider.SetValidationRule(teCardAmount, _vrNotEmpty);
         }
 
         /// <summary>
@@ -227,6 +257,11 @@ namespace OfflineARM.Gui.Forms.Orders
         /// <param name="e"></param>
         private void smCheckManual_Click(object sender, EventArgs e)
         {
+            if (!cashValidationProvider.Validate())
+            {
+                return;
+            }
+
             var cashPayment = new CashPaymentModel()
             {
                 Guid = Guid.NewGuid(),
@@ -246,6 +281,11 @@ namespace OfflineARM.Gui.Forms.Orders
         /// <param name="e"></param>
         private void sbCardPay_Click(object sender, EventArgs e)
         {
+            if (!cardValidationProvider.Validate())
+            {
+                return;
+            }
+
             var cardPayment = new CardPaymentModel()
             {
                 Guid = Guid.NewGuid(),
@@ -266,6 +306,11 @@ namespace OfflineARM.Gui.Forms.Orders
         /// <param name="e"></param>
         private void sbCreditApply_Click(object sender, EventArgs e)
         {
+            if (!creditValidationProvider.Validate())
+            {
+                return;
+            }
+
             var creditPayment = new CreditPaymentModel()
             {
                 Guid = Guid.NewGuid(),
@@ -290,6 +335,12 @@ namespace OfflineARM.Gui.Forms.Orders
         private void ceCashPayment_CheckedChanged(object sender, EventArgs e)
         {
             SetEnableCash(ceCashPayment.Checked);
+
+            if (!ceCashPayment.Checked)
+            {
+                cashValidationProvider.ResetValidate();
+                cashValidationProvider.RemoveControl(teCashFiscalReceipt);
+            }
         }
 
         /// <summary>
@@ -300,6 +351,11 @@ namespace OfflineARM.Gui.Forms.Orders
         private void ceCardPayment_CheckedChanged(object sender, EventArgs e)
         {
             SetEnableCard(ceCardPayment.Checked);
+
+            if (!ceCashPayment.Checked)
+            {
+                cashValidationProvider.ResetValidate();
+            }
         }
 
         /// <summary>
@@ -310,6 +366,11 @@ namespace OfflineARM.Gui.Forms.Orders
         private void ceCredit_CheckedChanged(object sender, EventArgs e)
         {
             SetEnableCredit(ceCreditPayment.Checked);
+
+            if (!ceCashPayment.Checked)
+            {
+                cashValidationProvider.ResetValidate();
+            }
         }
 
         /// <summary>
@@ -320,6 +381,15 @@ namespace OfflineARM.Gui.Forms.Orders
         private void ceCashInputManual_EditValueChanged(object sender, EventArgs e)
         {
             teCashFiscalReceipt.Enabled = (bool)((CheckEdit)sender).EditValue;
+
+            if (teCashFiscalReceipt.Enabled)
+            {
+                cashValidationProvider.SetValidationRule(teCashFiscalReceipt, _vrNotEmpty);
+            }
+            else
+            {
+                cashValidationProvider.RemoveControl(teCashFiscalReceipt);
+            }
         }
 
         /// <summary>
@@ -330,6 +400,15 @@ namespace OfflineARM.Gui.Forms.Orders
         private void ceCardManual_EditValueChanged(object sender, EventArgs e)
         {
             teCardNumber.Enabled = (bool)((CheckEdit)sender).EditValue;
+
+            if (teCardNumber.Enabled)
+            {
+                cardValidationProvider.SetValidationRule(teCardNumber, _vrNotEmpty);
+            }
+            else
+            {
+                cardValidationProvider.RemoveControl(teCardNumber);
+            }
         }
 
         /// <summary>

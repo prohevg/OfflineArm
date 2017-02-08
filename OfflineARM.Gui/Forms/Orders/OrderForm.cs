@@ -5,6 +5,7 @@ using OfflineARM.Gui.Forms.Orders.Commands;
 using OfflineARM.Gui.Forms.Orders.Interfaces;
 using System.Collections.Generic;
 using System.Linq;
+using System.Windows.Forms;
 using DevExpress.XtraEditors.Controls;
 using DevExpress.XtraTab;
 using OfflineARM.Business;
@@ -13,6 +14,7 @@ using OfflineARM.Business.Dictionaries.Interfaces;
 using OfflineARM.Business.Models.Businesses;
 using OfflineARM.Business.Models.Dictionaries.Interfaces;
 using OfflineARM.Gui.Helpers;
+using OfflineARM.Gui.Interfaces.Windows;
 
 namespace OfflineARM.Gui.Forms.Orders
 {
@@ -37,6 +39,11 @@ namespace OfflineARM.Gui.Forms.Orders
         /// Статус заказа 
         /// </summary>
         private readonly IOrderStatusImp _orderStatusImp;
+
+        /// <summary>
+        /// Текущий ответсвенный
+        /// </summary>
+        private IUserModel _currentUser;
 
         #endregion
 
@@ -115,6 +122,32 @@ namespace OfflineARM.Gui.Forms.Orders
                 sbPrevios.Text = tpDelivary.Text;
 
                 this.orderPayControl.TotalAmount = this.orderSpecificControl.TotalAmount;
+            }
+        }
+
+        /// <summary>
+        /// Смена ответсвенного
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void lueResponsiable_Properties_EditValueChanged(object sender, EventArgs e)
+        {
+            var current = lueResponsiable.EditValue as IUserModel;
+            if (current == null)
+            {
+                return;
+            }
+
+            if (current.Guid != _currentUser.Guid)
+            {
+                var loginForm = IoCForm.Instance.ResolveForm<ILoginForm>();
+                if (loginForm.ShowDialog() != DialogResult.OK)
+                {
+                    lueResponsiable.EditValue = _currentUser;
+                    return;
+                }
+
+                _currentUser = current;
             }
         }
 
@@ -197,7 +230,8 @@ namespace OfflineARM.Gui.Forms.Orders
 
             if (allUsers.Data.Count > 0)
             {
-                this.lueResponsiable.EditValue = allUsers.Data[0];
+                _currentUser = allUsers.Data[0];
+                this.lueResponsiable.EditValue = _currentUser;
             }
         }
 
