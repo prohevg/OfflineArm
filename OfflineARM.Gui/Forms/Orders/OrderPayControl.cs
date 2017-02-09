@@ -419,7 +419,7 @@ namespace OfflineARM.Gui.Forms.Orders
         /// <returns></returns>
         private decimal GetValue(object value)
         {
-            return value != null ? (decimal) value : 0;
+            return value != null ? decimal.Parse(value.ToString()) : 0;
         }
 
         private void sbReadCode_Click(object sender, EventArgs e)
