@@ -864,6 +864,23 @@
                 LastKnownLocation="OrderModels.uml" />
             </type_NamedElement>
           </property>
+          <property
+            Id="3a2b49d4-6bec-441a-8dce-3a0aaadb4ff1"
+            name="CreateDate"
+            isLeaf="false"
+            isStatic="false"
+            isReadOnly="false"
+            isDerived="false"
+            isDerivedUnion="false"
+            aggregation="None"
+            isComposite="false">
+            <type_NamedElement>
+              <classMoniker
+                Id="984bfa86-3cfc-4fe7-9709-c3b7d9914c75"
+                LastKnownName="Datetime"
+                LastKnownLocation="OrderModels.uml" />
+            </type_NamedElement>
+          </property>
         </ownedAttributesInternal>
       </class>
     </packageHasNamedElement>
@@ -1583,24 +1600,6 @@
               <classMoniker
                 Id="064aa5fb-fd6b-4eab-99db-04fa7dc54bb3"
                 LastKnownName="Order"
-                LastKnownLocation="OrderModels.uml" />
-            </type_NamedElement>
-          </property>
-          <property
-            Id="c3f41941-329c-40c3-9623-b2415390e51b"
-            name="DeliveryAddress"
-            isLeaf="false"
-            isStatic="false"
-            isReadOnly="false"
-            isUnique="false"
-            isDerived="false"
-            isDerivedUnion="false"
-            aggregation="None"
-            isComposite="false">
-            <type_NamedElement>
-              <primitiveTypeMoniker
-                Id="59259974-6d55-42c6-b7bd-763d77ac8ef9"
-                LastKnownName="String"
                 LastKnownLocation="OrderModels.uml" />
             </type_NamedElement>
           </property>
@@ -2342,6 +2341,285 @@
           </property>
         </ownedAttributesInternal>
       </class>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <class
+        Id="f1b3486c-3842-4557-b143-c82d50e7f886"
+        name="OrderCorrection"
+        isAbstract="false"
+        isLeaf="false"
+        isActiveClass="false">
+        <targetEnds>
+          <association
+            Id="210833f3-c023-4215-9c9f-c251f74e5e80"
+            isDerived="false"
+            sourceEndRoleName="OrderCorrection"
+            targetEndRoleName="Order"
+            isLeaf="false"
+            isAbstract="false">
+            <classMoniker
+              Id="064aa5fb-fd6b-4eab-99db-04fa7dc54bb3"
+              LastKnownName="Order"
+              LastKnownLocation="OrderModels.uml" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="26708252-315c-49d4-8474-281bb62b8cbe"
+                  name="OrderCorrection"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false"
+                  isNavigableOwned="false">
+                  <lowerValueInternal>
+                    <literalString
+                      Id="95c68d14-f0c3-4422-9849-b22ff2f1065a"
+                      name="Lower"
+                      value="*" />
+                  </lowerValueInternal>
+                  <upperValueInternal>
+                    <literalString
+                      Id="1e29a15d-9da8-43bb-9eb2-b95f969f195a"
+                      name="Upper"
+                      value="*" />
+                  </upperValueInternal>
+                </memberEnd>
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="099cf75c-1808-4786-8a6b-37f67f5a1e75"
+                  name="Order"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false" />
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+          </association>
+          <association
+            Id="37d7653c-66bb-4f5d-a4b0-7c80b1038317"
+            isDerived="false"
+            sourceEndRoleName="OrderCorrection"
+            targetEndRoleName="OrderSpecificationItem"
+            isLeaf="false"
+            isAbstract="false">
+            <classMoniker
+              Id="b8108448-5bdb-4cd0-b5d1-0dd0fd8c0973"
+              LastKnownName="OrderSpecificationItem"
+              LastKnownLocation="OrderModels.uml" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="46243e4d-d362-49fa-934b-fcbc5cd5b7d0"
+                  name="OrderCorrection"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="Composite"
+                  isComposite="false"
+                  isNavigableOwned="false" />
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="c7af5266-63d3-47f8-9b44-017c93433b34"
+                  name="OrderSpecificationItem"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="true" />
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+          </association>
+        </targetEnds>
+        <ownedAttributesInternal>
+          <property
+            Id="690a1344-1626-4f77-937e-2f5420f47d73"
+            name="GUID"
+            isLeaf="false"
+            isStatic="false"
+            isReadOnly="false"
+            isUnique="false"
+            isDerived="false"
+            isDerivedUnion="false"
+            aggregation="None"
+            isComposite="false">
+            <type_NamedElement>
+              <undefinedTypeMoniker
+                Id="feb9a5fd-ebd1-4a85-8cf4-9cae0e7527a7"
+                LastKnownName="Guid"
+                LastKnownLocation="OrderModels.uml" />
+            </type_NamedElement>
+          </property>
+          <property
+            Id="3ff57e3f-803f-495e-b0f7-8905f7de61ac"
+            name="Order"
+            isLeaf="false"
+            isStatic="false"
+            isReadOnly="false"
+            isUnique="false"
+            isDerived="false"
+            isDerivedUnion="false"
+            aggregation="None"
+            isComposite="false">
+            <type_NamedElement>
+              <classMoniker
+                Id="064aa5fb-fd6b-4eab-99db-04fa7dc54bb3"
+                LastKnownName="Order"
+                LastKnownLocation="OrderModels.uml" />
+            </type_NamedElement>
+          </property>
+          <property
+            Id="ee39e033-a8f8-4a96-844f-b86d558d442f"
+            name="CreateDate"
+            isLeaf="false"
+            isStatic="false"
+            isReadOnly="false"
+            isUnique="false"
+            isDerived="false"
+            isDerivedUnion="false"
+            aggregation="None"
+            isComposite="false">
+            <type_NamedElement>
+              <undefinedTypeMoniker
+                Id="2dcf1d2c-0086-45ae-8beb-79497bc08002"
+                LastKnownName="DateTime"
+                LastKnownLocation="OrderModels.uml" />
+            </type_NamedElement>
+          </property>
+          <property
+            Id="89a472fb-0978-4d5c-9d96-6a620c7c70fb"
+            name="User"
+            isLeaf="false"
+            isStatic="false"
+            isReadOnly="false"
+            isUnique="false"
+            isDerived="false"
+            isDerivedUnion="false"
+            aggregation="None"
+            isComposite="false">
+            <type_NamedElement>
+              <undefinedTypeMoniker
+                Id="de308d66-5205-48a3-9d97-a62ca045f5f0"
+                LastKnownName="User"
+                LastKnownLocation="OrderModels.uml" />
+            </type_NamedElement>
+          </property>
+          <property
+            Id="3c1c8b6f-a4eb-4ce9-84e5-86555802046d"
+            name="OrderCorrectionNumber"
+            isLeaf="false"
+            isStatic="false"
+            isReadOnly="false"
+            isUnique="false"
+            isDerived="false"
+            isDerivedUnion="false"
+            aggregation="None"
+            isComposite="false">
+            <type_NamedElement>
+              <primitiveTypeMoniker
+                Id="59259974-6d55-42c6-b7bd-763d77ac8ef9"
+                LastKnownName="String"
+                LastKnownLocation="OrderModels.uml" />
+            </type_NamedElement>
+          </property>
+          <property
+            Id="4e7ff244-6215-47ed-ba46-9b0263b70384"
+            name="Payments"
+            isLeaf="false"
+            isStatic="false"
+            isReadOnly="false"
+            isUnique="false"
+            isDerived="false"
+            isDerivedUnion="false"
+            aggregation="None"
+            isComposite="false">
+            <lowerValueInternal>
+              <literalString
+                Id="b7dd17be-02bd-4340-955f-0646d0f33d77"
+                name="Lower"
+                value="1" />
+            </lowerValueInternal>
+            <upperValueInternal>
+              <literalString
+                Id="d9dd6a09-7476-4a0c-a77a-1dae9d96c623"
+                name="Upper"
+                value="*" />
+            </upperValueInternal>
+            <type_NamedElement>
+              <undefinedTypeMoniker
+                Id="5bab932c-e501-4ff1-9c95-9ddb3c9e64ee"
+                LastKnownName="Paument"
+                LastKnownLocation="OrderModels.uml" />
+            </type_NamedElement>
+          </property>
+          <property
+            Id="96cea79e-786b-407b-9001-5c7acaad0533"
+            name="Specification"
+            isLeaf="false"
+            isStatic="false"
+            isReadOnly="false"
+            isUnique="false"
+            isDerived="false"
+            isDerivedUnion="false"
+            aggregation="None"
+            isComposite="false">
+            <lowerValueInternal>
+              <literalString
+                Id="442bdd17-61d5-4280-86c1-8273c1401752"
+                name="Lower"
+                value="*" />
+            </lowerValueInternal>
+            <upperValueInternal>
+              <literalString
+                Id="8f57d529-5ffd-40c6-9d95-1fd779223643"
+                name="Upper"
+                value="*" />
+            </upperValueInternal>
+            <type_NamedElement>
+              <undefinedTypeMoniker
+                Id="34e72ffa-e390-48fd-9d31-224d45cab5e2"
+                LastKnownName="Specificaton"
+                LastKnownLocation="OrderModels.uml" />
+            </type_NamedElement>
+          </property>
+        </ownedAttributesInternal>
+      </class>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <undefinedType
+        Id="2dcf1d2c-0086-45ae-8beb-79497bc08002"
+        name="DateTime" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <undefinedType
+        Id="feb9a5fd-ebd1-4a85-8cf4-9cae0e7527a7"
+        name="Guid" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <undefinedType
+        Id="5bab932c-e501-4ff1-9c95-9ddb3c9e64ee"
+        name="Paument" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <undefinedType
+        Id="de308d66-5205-48a3-9d97-a62ca045f5f0"
+        name="User" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <undefinedType
+        Id="34e72ffa-e390-48fd-9d31-224d45cab5e2"
+        name="Specificaton" />
     </packageHasNamedElement>
   </packagedElements>
   <primitiveType
