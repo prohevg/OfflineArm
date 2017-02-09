@@ -6,6 +6,7 @@ using OfflineARM.Business.Models.Businesses;
 using OfflineARM.Business.Models.Businesses.Bases;
 using OfflineARM.Business.Models.Businesses.Interfaces;
 using OfflineARM.Business.Models.Dictionaries;
+using OfflineARM.Business.ParsingCodes;
 using OfflineARM.Gui.Base.Controls;
 using OfflineARM.Gui.Forms.Orders.Interfaces;
 using DevExpress.XtraEditors.Controls;
@@ -184,7 +185,7 @@ namespace OfflineARM.Gui.Forms.Orders
             this.teCreditInitialFee.Enabled = isEnable;
             this.teCreditNameInOrder.Enabled = isEnable;
             this.meCreditScanner.Enabled = isEnable;
-            this.sbCreditApply.Enabled = isEnable;
+            this.sbCreditApply2.Enabled = isEnable;
         }
 
         /// <summary>
@@ -419,6 +420,49 @@ namespace OfflineARM.Gui.Forms.Orders
         private decimal GetValue(object value)
         {
             return value != null ? (decimal) value : 0;
+        }
+
+        private void sbReadCode_Click(object sender, EventArgs e)
+        {
+            if (string.IsNullOrWhiteSpace(meCreditScanner.Text))
+            {
+                XtraMessageBox.Show("Введите штрихкод!");
+            }
+
+            try
+            {
+                var result = ParseContext.Execute(meCreditScanner.Text);
+                
+                var bankContractNumberParseResult = result as BankContractNumberParseResult;
+                if (bankContractNumberParseResult != null)
+                {
+                    teCreditBankOrderNumber.Text = bankContractNumberParseResult.Number;
+                }
+
+                var clientNameParseResult = result as ClientNameParseResult;
+                if (clientNameParseResult != null)
+                {
+                    teCreditNameInOrder.Text = clientNameParseResult.Fio;
+                }
+
+                var creditProductParsingResult = result as CreditProductParseResult;
+                if (creditProductParsingResult != null)
+                {
+                    teCreditBank.Text = creditProductParsingResult.BankId;
+                    teCreditProgramm.Text = creditProductParsingResult.BankProductId;
+                }
+
+                var additionalInfoParseResult = result as AdditionalInfoParseResult;
+                if (additionalInfoParseResult != null)
+                {
+                    teCreditAmount.Text = additionalInfoParseResult.CreditAmount.ToString();
+                    teCreditInitialFee.Text = additionalInfoParseResult.InitialFee.ToString();
+                }
+            }
+            catch (Exception ex)
+            {
+                XtraMessageBox.Show(ex.Message);
+            }
         }
 
         #endregion

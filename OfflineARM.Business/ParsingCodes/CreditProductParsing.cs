@@ -5,7 +5,7 @@ namespace OfflineARM.Business.ParsingCodes
     /// <summary>
     /// Парсинг кредитного продукта
     /// </summary>
-    public class CreditProductParsing : ICodeParsing<CreditProductParsingParseResult>
+    public class CreditProductParsing : ICodeParsing<CreditProductParseResult>
     {
         #region поля и свойства
 
@@ -53,9 +53,9 @@ namespace OfflineARM.Business.ParsingCodes
         /// Распарсить строку
         /// </summary>
         /// <returns></returns>
-        public CreditProductParsingParseResult Parse()
+        public CreditProductParseResult Parse()
         {
-            var result = new CreditProductParsingParseResult
+            var result = new CreditProductParseResult
             {
                 IsInsurance = _code.StartsWith(BegginerPattern1),
                 BankId = _code.Substring(4, 3),

@@ -55,7 +55,7 @@
             this.ceCreditPayment = new DevExpress.XtraEditors.CheckEdit();
             this.lkCreditBank = new DevExpress.XtraEditors.LabelControl();
             this.lkCreditProgramm = new DevExpress.XtraEditors.LabelControl();
-            this.sbCreditApply = new DevExpress.XtraEditors.SimpleButton();
+            this.sbCreditApply2 = new DevExpress.XtraEditors.SimpleButton();
             this.lkCreditBankOrderNumber = new DevExpress.XtraEditors.LabelControl();
             this.lcCreditNameInOrder = new DevExpress.XtraEditors.LabelControl();
             this.lkCreditInitialFee = new DevExpress.XtraEditors.LabelControl();
@@ -77,6 +77,7 @@
             this.creditValidationProvider = new OfflineARM.Gui.Validators.TextEditValidationProvider(this.components);
             this.cashValidationProvider = new OfflineARM.Gui.Validators.TextEditValidationProvider(this.components);
             this.cardValidationProvider = new OfflineARM.Gui.Validators.TextEditValidationProvider(this.components);
+            this.sbCreditApply = new DevExpress.XtraEditors.SimpleButton();
             this.tlpMain.SuspendLayout();
             this.tlpPays.SuspendLayout();
             this.tlpPays2.SuspendLayout();
@@ -384,7 +385,6 @@
             this.tlpCredit.Controls.Add(this.ceCreditPayment, 0, 0);
             this.tlpCredit.Controls.Add(this.lkCreditBank, 0, 1);
             this.tlpCredit.Controls.Add(this.lkCreditProgramm, 0, 2);
-            this.tlpCredit.Controls.Add(this.sbCreditApply, 1, 9);
             this.tlpCredit.Controls.Add(this.lkCreditBankOrderNumber, 0, 3);
             this.tlpCredit.Controls.Add(this.lcCreditNameInOrder, 0, 4);
             this.tlpCredit.Controls.Add(this.lkCreditInitialFee, 0, 5);
@@ -397,6 +397,8 @@
             this.tlpCredit.Controls.Add(this.teCreditInitialFee, 1, 5);
             this.tlpCredit.Controls.Add(this.teCreditAmount, 1, 6);
             this.tlpCredit.Controls.Add(this.meCreditScanner, 1, 8);
+            this.tlpCredit.Controls.Add(this.sbCreditApply2, 0, 9);
+            this.tlpCredit.Controls.Add(this.sbCreditApply, 1, 9);
             this.tlpCredit.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tlpCredit.Location = new System.Drawing.Point(2, 2);
             this.tlpCredit.Name = "tlpCredit";
@@ -447,14 +449,15 @@
             this.lkCreditProgramm.TabIndex = 2;
             this.lkCreditProgramm.Text = "Программа по БС";
             // 
-            // sbCreditApply
+            // sbCreditApply2
             // 
-            this.sbCreditApply.Location = new System.Drawing.Point(153, 253);
-            this.sbCreditApply.Name = "sbCreditApply";
-            this.sbCreditApply.Size = new System.Drawing.Size(75, 23);
-            this.sbCreditApply.TabIndex = 4;
-            this.sbCreditApply.Text = "Применить";
-            this.sbCreditApply.Click += new System.EventHandler(this.sbCreditApply_Click);
+            this.sbCreditApply2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.sbCreditApply2.Location = new System.Drawing.Point(72, 253);
+            this.sbCreditApply2.Name = "sbCreditApply2";
+            this.sbCreditApply2.Size = new System.Drawing.Size(75, 23);
+            this.sbCreditApply2.TabIndex = 4;
+            this.sbCreditApply2.Text = "Считать ШК";
+            this.sbCreditApply2.Click += new System.EventHandler(this.sbReadCode_Click);
             // 
             // lkCreditBankOrderNumber
             // 
@@ -520,6 +523,7 @@
             this.teCreditBank.Dock = System.Windows.Forms.DockStyle.Fill;
             this.teCreditBank.Location = new System.Drawing.Point(153, 33);
             this.teCreditBank.Name = "teCreditBank";
+            this.teCreditBank.Properties.ReadOnly = true;
             this.teCreditBank.Size = new System.Drawing.Size(228, 20);
             this.teCreditBank.TabIndex = 10;
             // 
@@ -528,6 +532,7 @@
             this.teCreditProgramm.Dock = System.Windows.Forms.DockStyle.Fill;
             this.teCreditProgramm.Location = new System.Drawing.Point(153, 58);
             this.teCreditProgramm.Name = "teCreditProgramm";
+            this.teCreditProgramm.Properties.ReadOnly = true;
             this.teCreditProgramm.Size = new System.Drawing.Size(228, 20);
             this.teCreditProgramm.TabIndex = 11;
             // 
@@ -536,6 +541,7 @@
             this.teCreditBankOrderNumber.Dock = System.Windows.Forms.DockStyle.Fill;
             this.teCreditBankOrderNumber.Location = new System.Drawing.Point(153, 83);
             this.teCreditBankOrderNumber.Name = "teCreditBankOrderNumber";
+            this.teCreditBankOrderNumber.Properties.ReadOnly = true;
             this.teCreditBankOrderNumber.Size = new System.Drawing.Size(228, 20);
             this.teCreditBankOrderNumber.TabIndex = 12;
             // 
@@ -544,6 +550,7 @@
             this.teCreditNameInOrder.Dock = System.Windows.Forms.DockStyle.Fill;
             this.teCreditNameInOrder.Location = new System.Drawing.Point(153, 108);
             this.teCreditNameInOrder.Name = "teCreditNameInOrder";
+            this.teCreditNameInOrder.Properties.ReadOnly = true;
             this.teCreditNameInOrder.Size = new System.Drawing.Size(228, 20);
             this.teCreditNameInOrder.TabIndex = 13;
             // 
@@ -641,6 +648,15 @@
             this.gridView1.OptionsBehavior.ReadOnly = true;
             this.gridView1.OptionsView.ShowGroupPanel = false;
             // 
+            // sbCreditApply
+            // 
+            this.sbCreditApply.Location = new System.Drawing.Point(153, 253);
+            this.sbCreditApply.Name = "sbCreditApply";
+            this.sbCreditApply.Size = new System.Drawing.Size(75, 23);
+            this.sbCreditApply.TabIndex = 17;
+            this.sbCreditApply.Text = "Применить";
+            this.sbCreditApply.Click += new System.EventHandler(this.sbCreditApply_Click);
+            // 
             // OrderPayControl
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -702,7 +718,7 @@
         private DevExpress.XtraEditors.CheckEdit ceCreditPayment;
         private DevExpress.XtraEditors.LabelControl lkCreditBank;
         private DevExpress.XtraEditors.LabelControl lkCreditProgramm;
-        private DevExpress.XtraEditors.SimpleButton sbCreditApply;
+        private DevExpress.XtraEditors.SimpleButton sbCreditApply2;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
         private DevExpress.XtraEditors.CheckEdit ceCardPayment;
         private DevExpress.XtraEditors.LabelControl lcCardAmount;
@@ -740,5 +756,6 @@
         private Validators.TextEditValidationProvider creditValidationProvider;
         private Validators.TextEditValidationProvider cashValidationProvider;
         private Validators.TextEditValidationProvider cardValidationProvider;
+        private DevExpress.XtraEditors.SimpleButton sbCreditApply;
     }
 }

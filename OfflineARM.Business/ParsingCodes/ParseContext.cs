@@ -1,8 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace OfflineARM.Business.ParsingCodes
 {
@@ -15,10 +11,36 @@ namespace OfflineARM.Business.ParsingCodes
         /// Выполнить парсинг строки
         /// </summary>
         /// <param name="code">Штрихкод</param>
-        public static void Execute(string code)
+        public static ParseResult Execute(string code)
         {
             code = code.ToUpper();
-           
+
+            var additionalInfoParsing = new AdditionalInfoParsing(code);
+            if (additionalInfoParsing.CanParse())
+            {
+                return additionalInfoParsing.Parse();
+            }
+
+            var creditProductParsing = new CreditProductParsing(code);
+            if (creditProductParsing.CanParse())
+            {
+                return creditProductParsing.Parse();
+            }
+
+
+            var clientNameParsing = new ClientNameParsing(code);
+            if (clientNameParsing.CanParse())
+            {
+                return clientNameParsing.Parse();
+            }
+
+            var bankContractNumberParsing = new BankContractNumberParsing(code);
+            if (bankContractNumberParsing.CanParse())
+            {
+                return bankContractNumberParsing.Parse();
+            }
+
+            throw new NotImplementedException("parsing NotImplementedException");
         }
     }
 }

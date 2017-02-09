@@ -5,7 +5,7 @@ namespace OfflineARM.Business.ParsingCodes
     /// <summary>
     /// Парсинг кредитного продукта
     /// </summary>
-    public class CreditProductParsingParseResult : ParseResult
+    public class CreditProductParseResult : ParseResult
     {
         /// <summary>
         /// Признак наличия страховки
