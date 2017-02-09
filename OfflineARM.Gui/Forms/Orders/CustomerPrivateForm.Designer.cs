@@ -30,7 +30,6 @@
         {
             this.tlpMain = new System.Windows.Forms.TableLayoutPanel();
             this.tePhone = new DevExpress.XtraEditors.TextEdit();
-            this.teAddress = new DevExpress.XtraEditors.TextEdit();
             this.lcFIO = new DevExpress.XtraEditors.LabelControl();
             this.lcAddress = new DevExpress.XtraEditors.LabelControl();
             this.lcPhone = new DevExpress.XtraEditors.LabelControl();
@@ -38,9 +37,9 @@
             this.tlpButtons = new System.Windows.Forms.TableLayoutPanel();
             this.sbSave = new DevExpress.XtraEditors.SimpleButton();
             this.sbCancel = new DevExpress.XtraEditors.SimpleButton();
+            this.daDataAddress = new OfflineARM.Gui.Controls.DaDataAddress();
             this.tlpMain.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.tePhone.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.teAddress.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.teFio.Properties)).BeginInit();
             this.tlpButtons.SuspendLayout();
             this.SuspendLayout();
@@ -51,12 +50,12 @@
             this.tlpMain.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 100F));
             this.tlpMain.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.tlpMain.Controls.Add(this.tePhone, 1, 2);
-            this.tlpMain.Controls.Add(this.teAddress, 1, 1);
             this.tlpMain.Controls.Add(this.lcFIO, 0, 0);
             this.tlpMain.Controls.Add(this.lcAddress, 0, 1);
             this.tlpMain.Controls.Add(this.lcPhone, 0, 2);
             this.tlpMain.Controls.Add(this.teFio, 1, 0);
             this.tlpMain.Controls.Add(this.tlpButtons, 1, 3);
+            this.tlpMain.Controls.Add(this.daDataAddress, 1, 1);
             this.tlpMain.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tlpMain.Location = new System.Drawing.Point(0, 0);
             this.tlpMain.Name = "tlpMain";
@@ -65,7 +64,7 @@
             this.tlpMain.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 30F));
             this.tlpMain.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 30F));
             this.tlpMain.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 30F));
-            this.tlpMain.Size = new System.Drawing.Size(584, 141);
+            this.tlpMain.Size = new System.Drawing.Size(584, 142);
             this.tlpMain.TabIndex = 0;
             // 
             // tePhone
@@ -78,16 +77,6 @@
             this.tePhone.Properties.NullText = "Телефон";
             this.tePhone.Size = new System.Drawing.Size(154, 20);
             this.tePhone.TabIndex = 3;
-            // 
-            // teAddress
-            // 
-            this.teAddress.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.teAddress.Location = new System.Drawing.Point(103, 35);
-            this.teAddress.Margin = new System.Windows.Forms.Padding(3, 5, 3, 3);
-            this.teAddress.Name = "teAddress";
-            this.teAddress.Properties.NullText = "Адрес";
-            this.teAddress.Size = new System.Drawing.Size(478, 20);
-            this.teAddress.TabIndex = 2;
             // 
             // lcFIO
             // 
@@ -140,7 +129,7 @@
             this.tlpButtons.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tlpButtons.Controls.Add(this.sbSave, 0, 0);
             this.tlpButtons.Controls.Add(this.sbCancel, 1, 0);
-            this.tlpButtons.Location = new System.Drawing.Point(381, 93);
+            this.tlpButtons.Location = new System.Drawing.Point(381, 94);
             this.tlpButtons.Name = "tlpButtons";
             this.tlpButtons.RowCount = 1;
             this.tlpButtons.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
@@ -166,19 +155,26 @@
             this.sbCancel.TabIndex = 5;
             this.sbCancel.Text = "Отмена";
             // 
-            // ClientPrivateForm
+            // daDataAddress
+            // 
+            this.daDataAddress.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.daDataAddress.Location = new System.Drawing.Point(103, 33);
+            this.daDataAddress.Name = "daDataAddress";
+            this.daDataAddress.Size = new System.Drawing.Size(478, 24);
+            this.daDataAddress.TabIndex = 9;
+            // 
+            // CustomerPrivateForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(584, 141);
+            this.ClientSize = new System.Drawing.Size(584, 142);
             this.Controls.Add(this.tlpMain);
             this.MinimumSize = new System.Drawing.Size(600, 180);
-            this.Name = "ClientPrivateForm";
+            this.Name = "CustomerPrivateForm";
             this.Text = "Новый клиент - физическое лицо";
             this.tlpMain.ResumeLayout(false);
             this.tlpMain.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.tePhone.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.teAddress.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.teFio.Properties)).EndInit();
             this.tlpButtons.ResumeLayout(false);
             this.ResumeLayout(false);
@@ -192,10 +188,10 @@
         private DevExpress.XtraEditors.LabelControl lcAddress;
         private DevExpress.XtraEditors.LabelControl lcPhone;
         private DevExpress.XtraEditors.TextEdit tePhone;
-        private DevExpress.XtraEditors.TextEdit teAddress;
         private DevExpress.XtraEditors.TextEdit teFio;
         private System.Windows.Forms.TableLayoutPanel tlpButtons;
         private DevExpress.XtraEditors.SimpleButton sbSave;
         private DevExpress.XtraEditors.SimpleButton sbCancel;
+        private Controls.DaDataAddress daDataAddress;
     }
 }

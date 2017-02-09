@@ -63,6 +63,8 @@ namespace OfflineARM.Business
         /// <param name="container"></param>
         private static void RegisterImp(IKernel container)
         {
+            container.Bind<ApplicationParameters>().ToSelf().InSingletonScope();
+
             container.Bind<IAutorizationImp>().To<AutorizationImp>();
 
             container.Bind<INomenclatureImp>().To<NomenclatureImp>();
@@ -97,6 +99,8 @@ namespace OfflineARM.Business
 
             container.Bind<IDeliveryImp>().To<DeliveryImp>();
             container.Bind<IDeliveryValidator>().To<DeliveryValidator>();
+
+            container.Bind<IDaDataImp>().To<DaDataImp>();
         }
 
         #endregion

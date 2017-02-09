@@ -39,7 +39,6 @@
             this.sbSave = new DevExpress.XtraEditors.SimpleButton();
             this.sbCancel = new DevExpress.XtraEditors.SimpleButton();
             this.tlpAddress = new System.Windows.Forms.TableLayoutPanel();
-            this.teAddress = new DevExpress.XtraEditors.TextEdit();
             this.labelControl1 = new DevExpress.XtraEditors.LabelControl();
             this.tePhone = new DevExpress.XtraEditors.TextEdit();
             this.tlpFace = new System.Windows.Forms.TableLayoutPanel();
@@ -55,11 +54,11 @@
             this.teInn = new DevExpress.XtraEditors.TextEdit();
             this.lcKpp = new DevExpress.XtraEditors.LabelControl();
             this.teKpp = new DevExpress.XtraEditors.TextEdit();
+            this.daDataAddress = new OfflineARM.Gui.Controls.DaDataAddress();
             this.tlpMain.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.teName.Properties)).BeginInit();
             this.tlpButtons.SuspendLayout();
             this.tlpAddress.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.teAddress.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.tePhone.Properties)).BeginInit();
             this.tlpFace.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.tePosition.Properties)).BeginInit();
@@ -208,9 +207,9 @@
             this.tlpAddress.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.tlpAddress.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 100F));
             this.tlpAddress.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 100F));
-            this.tlpAddress.Controls.Add(this.teAddress, 0, 0);
             this.tlpAddress.Controls.Add(this.labelControl1, 1, 0);
             this.tlpAddress.Controls.Add(this.tePhone, 2, 0);
+            this.tlpAddress.Controls.Add(this.daDataAddress, 0, 0);
             this.tlpAddress.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tlpAddress.Location = new System.Drawing.Point(150, 30);
             this.tlpAddress.Margin = new System.Windows.Forms.Padding(0);
@@ -219,16 +218,6 @@
             this.tlpAddress.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.tlpAddress.Size = new System.Drawing.Size(584, 30);
             this.tlpAddress.TabIndex = 9;
-            // 
-            // teAddress
-            // 
-            this.teAddress.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.teAddress.Location = new System.Drawing.Point(3, 5);
-            this.teAddress.Margin = new System.Windows.Forms.Padding(3, 5, 3, 3);
-            this.teAddress.Name = "teAddress";
-            this.teAddress.Properties.NullText = "Юридический адрес";
-            this.teAddress.Size = new System.Drawing.Size(378, 20);
-            this.teAddress.TabIndex = 2;
             // 
             // labelControl1
             // 
@@ -414,6 +403,14 @@
             this.teKpp.Size = new System.Drawing.Size(248, 20);
             this.teKpp.TabIndex = 10;
             // 
+            // daDataAddress
+            // 
+            this.daDataAddress.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.daDataAddress.Location = new System.Drawing.Point(3, 3);
+            this.daDataAddress.Name = "daDataAddress";
+            this.daDataAddress.Size = new System.Drawing.Size(378, 24);
+            this.daDataAddress.TabIndex = 7;
+            // 
             // CustomerLegalForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -429,7 +426,6 @@
             this.tlpButtons.ResumeLayout(false);
             this.tlpAddress.ResumeLayout(false);
             this.tlpAddress.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.teAddress.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.tePhone.Properties)).EndInit();
             this.tlpFace.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.tePosition.Properties)).EndInit();
@@ -459,7 +455,6 @@
         private DevExpress.XtraEditors.SimpleButton sbSave;
         private DevExpress.XtraEditors.SimpleButton sbCancel;
         private System.Windows.Forms.TableLayoutPanel tlpAddress;
-        private DevExpress.XtraEditors.TextEdit teAddress;
         private DevExpress.XtraEditors.LabelControl labelControl1;
         private DevExpress.XtraEditors.TextEdit tePhone;
         private DevExpress.XtraEditors.LabelControl lcFace;
@@ -477,5 +472,6 @@
         private DevExpress.XtraEditors.TextEdit teInn;
         private DevExpress.XtraEditors.LabelControl lcKpp;
         private DevExpress.XtraEditors.TextEdit teKpp;
+        private Controls.DaDataAddress daDataAddress;
     }
 }

@@ -58,6 +58,12 @@
     <Reference Include="NLog">
       <HintPath>S:\basic\NLog.dll</HintPath>
     </Reference>
+    <Reference Include="RestSharp">
+      <HintPath>S:\DaData\RestSharp.dll</HintPath>
+    </Reference>
+    <Reference Include="suggestions-csharp">
+      <HintPath>S:\DaData\suggestions-csharp.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
@@ -68,10 +74,13 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ApplicationParameters.cs" />
     <Compile Include="AutoMapperConfig.cs" />
     <Compile Include="Autorizations\AutorizationImp.cs" />
     <Compile Include="Autorizations\IAutorizationImp.cs" />
     <Compile Include="Businesses\CustomerPrivateImp.cs" />
+    <Compile Include="Businesses\DaDataImp.cs" />
+    <Compile Include="Businesses\Interfaces\IDaDataImp.cs" />
     <Compile Include="Businesses\Interfaces\ICustomerPrivateImp.cs" />
     <Compile Include="Businesses\Interfaces\ICustomerLegalImp.cs" />
     <Compile Include="Businesses\Interfaces\IDeliveryImp.cs" />
@@ -85,6 +94,8 @@
     <Compile Include="Businesses\Interfaces\IOrderSpecificationImp.cs" />
     <Compile Include="Businesses\Interfaces\IOrderImp.cs" />
     <Compile Include="Businesses\Interfaces\IExpositionImp.cs" />
+    <Compile Include="DaData\DaDataClient.cs" />
+    <Compile Include="DaData\DaDataModel.cs" />
     <Compile Include="Dictionaries\BasisActionImp.cs" />
     <Compile Include="Dictionaries\Interfaces\IOrderStatusImp.cs" />
     <Compile Include="Dictionaries\OrderStatusImp.cs" />

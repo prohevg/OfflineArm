@@ -1,7 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Windows.Forms;
-using OfflineARM.Gui.Commands;
+﻿using System.Windows.Forms;
 
 namespace OfflineARM.Gui.Base.Controls
 {

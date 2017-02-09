@@ -144,14 +144,14 @@ namespace OfflineARM.Gui.Forms.Orders
             CustomerPrivate = this.lueCustomer.EditValue as ICustomerPrivateModel;
             if (CustomerPrivate != null)
             {
-                this.teAddress.Text = CustomerPrivate.Address;
+                this.daDataAddress.Text = CustomerPrivate.Address;
                 this.tePhone.Text = CustomerPrivate.Phone;
             }
 
             CustomerLegal = this.lueCustomer.EditValue as ICustomerLegalModel;
             if (CustomerLegal != null)
             {
-                this.teAddress.Text = CustomerLegal.Address;
+                this.daDataAddress.Text = CustomerLegal.Address;
                 this.tePhone.Text = CustomerLegal.Phone;
             }
         }

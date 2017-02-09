@@ -37,7 +37,7 @@
             this.lueCustomer = new DevExpress.XtraEditors.LookUpEdit();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.tePhone = new DevExpress.XtraEditors.TextEdit();
-            this.teAddress = new DevExpress.XtraEditors.TextEdit();
+            this.daDataAddress = new OfflineARM.Gui.Controls.DaDataAddress();
             this.tlpMain.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl)).BeginInit();
             this.panelControl.SuspendLayout();
@@ -46,7 +46,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.lueCustomer.Properties)).BeginInit();
             this.tableLayoutPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.tePhone.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.teAddress.Properties)).BeginInit();
             this.SuspendLayout();
             // 
             // tlpMain
@@ -134,7 +133,7 @@
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 80F));
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 20F));
             this.tableLayoutPanel1.Controls.Add(this.tePhone, 1, 0);
-            this.tableLayoutPanel1.Controls.Add(this.teAddress, 0, 0);
+            this.tableLayoutPanel1.Controls.Add(this.daDataAddress, 0, 0);
             this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel1.Location = new System.Drawing.Point(3, 83);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
@@ -154,21 +153,20 @@
             this.tePhone.Size = new System.Drawing.Size(144, 20);
             this.tePhone.TabIndex = 2;
             // 
-            // teAddress
+            // daDataAddress
             // 
-            this.teAddress.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.teAddress.Location = new System.Drawing.Point(3, 3);
-            this.teAddress.Name = "teAddress";
-            this.teAddress.Properties.NullText = "Адрес";
-            this.teAddress.Size = new System.Drawing.Size(591, 20);
-            this.teAddress.TabIndex = 3;
+            this.daDataAddress.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.daDataAddress.Location = new System.Drawing.Point(3, 3);
+            this.daDataAddress.Name = "daDataAddress";
+            this.daDataAddress.Size = new System.Drawing.Size(591, 28);
+            this.daDataAddress.TabIndex = 3;
             // 
-            // OrderClientControl
+            // OrderCustomerControl
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.Controls.Add(this.tlpMain);
-            this.Name = "OrderClientControl";
+            this.Name = "OrderCustomerControl";
             this.Size = new System.Drawing.Size(753, 120);
             this.tlpMain.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.panelControl)).EndInit();
@@ -179,7 +177,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.lueCustomer.Properties)).EndInit();
             this.tableLayoutPanel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.tePhone.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.teAddress.Properties)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -193,7 +190,7 @@
         private DevExpress.XtraEditors.LookUpEdit lueCustomer;
         private DevExpress.XtraEditors.TextEdit tePhone;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
-        private DevExpress.XtraEditors.TextEdit teAddress;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel2;
+        private Controls.DaDataAddress daDataAddress;
     }
 }

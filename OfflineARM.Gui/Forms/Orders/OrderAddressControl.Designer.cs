@@ -38,20 +38,22 @@ namespace OfflineARM.Gui.Forms.Orders
             this.tlpHouse = new System.Windows.Forms.TableLayoutPanel();
             this.lcHouse = new DevExpress.XtraEditors.LabelControl();
             this.teHouse = new DevExpress.XtraEditors.TextEdit();
+            this.teIntercom = new DevExpress.XtraEditors.TextEdit();
             this.teFlat = new DevExpress.XtraEditors.TextEdit();
-            this.tePorch = new DevExpress.XtraEditors.TextEdit();
-            this.teFloor = new DevExpress.XtraEditors.TextEdit();
+            this.lc = new DevExpress.XtraEditors.LabelControl();
             this.lkFlat = new DevExpress.XtraEditors.LabelControl();
-            this.lkPorch = new DevExpress.XtraEditors.LabelControl();
             this.lkFloor = new DevExpress.XtraEditors.LabelControl();
+            this.teFloor = new DevExpress.XtraEditors.TextEdit();
+            this.lkPorch = new DevExpress.XtraEditors.LabelControl();
+            this.tePorch = new DevExpress.XtraEditors.TextEdit();
             this.tlpIntercom = new System.Windows.Forms.TableLayoutPanel();
             this.ceClimb = new DevExpress.XtraEditors.CheckEdit();
             this.ceCargoLift = new DevExpress.XtraEditors.CheckEdit();
-            this.teIntercom = new DevExpress.XtraEditors.TextEdit();
-            this.lc = new DevExpress.XtraEditors.LabelControl();
             this.tlpPhones = new System.Windows.Forms.TableLayoutPanel();
             this.lkContPhone = new DevExpress.XtraEditors.LabelControl();
             this.teContactPersonName = new DevExpress.XtraEditors.TextEdit();
+            this.teContactPhoneSecondary = new OfflineARM.Gui.Controls.PhoneControl();
+            this.teContactPhoneMain = new OfflineARM.Gui.Controls.PhoneControl();
             this.lcAdditPhone = new DevExpress.XtraEditors.LabelControl();
             this.lсContactPersonName = new DevExpress.XtraEditors.LabelControl();
             this.tableLayoutPanel5 = new System.Windows.Forms.TableLayoutPanel();
@@ -60,9 +62,7 @@ namespace OfflineARM.Gui.Forms.Orders
             this.meComment = new DevExpress.XtraEditors.MemoEdit();
             this.tlpAddress = new System.Windows.Forms.TableLayoutPanel();
             this.lcAddress = new DevExpress.XtraEditors.LabelControl();
-            this.teAddress = new DevExpress.XtraEditors.TextEdit();
-            this.teContactPhoneSecondary = new OfflineARM.Gui.Controls.PhoneControl();
-            this.teContactPhoneMain = new OfflineARM.Gui.Controls.PhoneControl();
+            this.daDataAddress = new OfflineARM.Gui.Controls.DaDataAddress();
             this.tlpMain.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl)).BeginInit();
             this.panelControl.SuspendLayout();
@@ -70,23 +70,22 @@ namespace OfflineARM.Gui.Forms.Orders
             ((System.ComponentModel.ISupportInitialize)(this.chIsSelf.Properties)).BeginInit();
             this.tlpHouse.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.teHouse.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.teIntercom.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.teFlat.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.tePorch.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.teFloor.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tePorch.Properties)).BeginInit();
             this.tlpIntercom.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.ceClimb.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ceCargoLift.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.teIntercom.Properties)).BeginInit();
             this.tlpPhones.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.teContactPersonName.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.teContactPhoneSecondary.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.teContactPhoneMain.Properties)).BeginInit();
             this.tableLayoutPanel5.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.deDeliveryDate.Properties.CalendarTimeProperties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.deDeliveryDate.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.meComment.Properties)).BeginInit();
             this.tlpAddress.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.teAddress.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.teContactPhoneSecondary.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.teContactPhoneMain.Properties)).BeginInit();
             this.SuspendLayout();
             // 
             // tlpMain
@@ -217,6 +216,14 @@ namespace OfflineARM.Gui.Forms.Orders
             this.teHouse.Size = new System.Drawing.Size(69, 20);
             this.teHouse.TabIndex = 1;
             // 
+            // teIntercom
+            // 
+            this.teIntercom.Location = new System.Drawing.Point(583, 3);
+            this.teIntercom.Name = "teIntercom";
+            this.teIntercom.Properties.MaxLength = 10;
+            this.teIntercom.Size = new System.Drawing.Size(69, 20);
+            this.teIntercom.TabIndex = 5;
+            // 
             // teFlat
             // 
             this.teFlat.Location = new System.Drawing.Point(208, 3);
@@ -225,21 +232,16 @@ namespace OfflineARM.Gui.Forms.Orders
             this.teFlat.Size = new System.Drawing.Size(69, 20);
             this.teFlat.TabIndex = 2;
             // 
-            // tePorch
+            // lc
             // 
-            this.tePorch.Location = new System.Drawing.Point(458, 3);
-            this.tePorch.Name = "tePorch";
-            this.tePorch.Properties.MaxLength = 5;
-            this.tePorch.Size = new System.Drawing.Size(44, 20);
-            this.tePorch.TabIndex = 3;
-            // 
-            // teFloor
-            // 
-            this.teFloor.Location = new System.Drawing.Point(333, 3);
-            this.teFloor.Name = "teFloor";
-            this.teFloor.Properties.MaxLength = 5;
-            this.teFloor.Size = new System.Drawing.Size(44, 20);
-            this.teFloor.TabIndex = 4;
+            this.lc.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.lc.Appearance.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.lc.Location = new System.Drawing.Point(522, 3);
+            this.lc.Name = "lc";
+            this.lc.Size = new System.Drawing.Size(55, 16);
+            this.lc.TabIndex = 6;
+            this.lc.Text = "Домофон";
             // 
             // lkFlat
             // 
@@ -252,6 +254,25 @@ namespace OfflineARM.Gui.Forms.Orders
             this.lkFlat.TabIndex = 6;
             this.lkFlat.Text = "Квартира";
             // 
+            // lkFloor
+            // 
+            this.lkFloor.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.lkFloor.Appearance.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.lkFloor.Location = new System.Drawing.Point(296, 3);
+            this.lkFloor.Name = "lkFloor";
+            this.lkFloor.Size = new System.Drawing.Size(31, 16);
+            this.lkFloor.TabIndex = 8;
+            this.lkFloor.Text = "Этаж";
+            // 
+            // teFloor
+            // 
+            this.teFloor.Location = new System.Drawing.Point(333, 3);
+            this.teFloor.Name = "teFloor";
+            this.teFloor.Properties.MaxLength = 5;
+            this.teFloor.Size = new System.Drawing.Size(44, 20);
+            this.teFloor.TabIndex = 4;
+            // 
             // lkPorch
             // 
             this.lkPorch.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
@@ -263,16 +284,13 @@ namespace OfflineARM.Gui.Forms.Orders
             this.lkPorch.TabIndex = 7;
             this.lkPorch.Text = "Подъезд";
             // 
-            // lkFloor
+            // tePorch
             // 
-            this.lkFloor.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.lkFloor.Appearance.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.lkFloor.Location = new System.Drawing.Point(296, 3);
-            this.lkFloor.Name = "lkFloor";
-            this.lkFloor.Size = new System.Drawing.Size(31, 16);
-            this.lkFloor.TabIndex = 8;
-            this.lkFloor.Text = "Этаж";
+            this.tePorch.Location = new System.Drawing.Point(458, 3);
+            this.tePorch.Name = "tePorch";
+            this.tePorch.Properties.MaxLength = 5;
+            this.tePorch.Size = new System.Drawing.Size(44, 20);
+            this.tePorch.TabIndex = 3;
             // 
             // tlpIntercom
             // 
@@ -305,25 +323,6 @@ namespace OfflineARM.Gui.Forms.Orders
             this.ceCargoLift.Properties.Caption = "Грузовой лифт";
             this.ceCargoLift.Size = new System.Drawing.Size(108, 19);
             this.ceCargoLift.TabIndex = 1;
-            // 
-            // teIntercom
-            // 
-            this.teIntercom.Location = new System.Drawing.Point(583, 3);
-            this.teIntercom.Name = "teIntercom";
-            this.teIntercom.Properties.MaxLength = 10;
-            this.teIntercom.Size = new System.Drawing.Size(69, 20);
-            this.teIntercom.TabIndex = 5;
-            // 
-            // lc
-            // 
-            this.lc.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.lc.Appearance.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.lc.Location = new System.Drawing.Point(522, 3);
-            this.lc.Name = "lc";
-            this.lc.Size = new System.Drawing.Size(55, 16);
-            this.lc.TabIndex = 6;
-            this.lc.Text = "Домофон";
             // 
             // tlpPhones
             // 
@@ -366,6 +365,22 @@ namespace OfflineARM.Gui.Forms.Orders
             this.teContactPersonName.Name = "teContactPersonName";
             this.teContactPersonName.Size = new System.Drawing.Size(431, 20);
             this.teContactPersonName.TabIndex = 8;
+            // 
+            // teContactPhoneSecondary
+            // 
+            this.teContactPhoneSecondary.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.teContactPhoneSecondary.Location = new System.Drawing.Point(303, 3);
+            this.teContactPhoneSecondary.Name = "teContactPhoneSecondary";
+            this.teContactPhoneSecondary.Size = new System.Drawing.Size(94, 20);
+            this.teContactPhoneSecondary.TabIndex = 7;
+            // 
+            // teContactPhoneMain
+            // 
+            this.teContactPhoneMain.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.teContactPhoneMain.Location = new System.Drawing.Point(103, 3);
+            this.teContactPhoneMain.Name = "teContactPhoneMain";
+            this.teContactPhoneMain.Size = new System.Drawing.Size(94, 20);
+            this.teContactPhoneMain.TabIndex = 6;
             // 
             // lcAdditPhone
             // 
@@ -442,7 +457,7 @@ namespace OfflineARM.Gui.Forms.Orders
             this.tlpAddress.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 50F));
             this.tlpAddress.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.tlpAddress.Controls.Add(this.lcAddress, 0, 0);
-            this.tlpAddress.Controls.Add(this.teAddress, 1, 0);
+            this.tlpAddress.Controls.Add(this.daDataAddress, 1, 0);
             this.tlpAddress.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tlpAddress.Location = new System.Drawing.Point(3, 53);
             this.tlpAddress.Name = "tlpAddress";
@@ -462,29 +477,13 @@ namespace OfflineARM.Gui.Forms.Orders
             this.lcAddress.TabIndex = 20;
             this.lcAddress.Text = "Адрес";
             // 
-            // teAddress
+            // daDataAddress
             // 
-            this.teAddress.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.teAddress.Location = new System.Drawing.Point(53, 3);
-            this.teAddress.Name = "teAddress";
-            this.teAddress.Size = new System.Drawing.Size(856, 20);
-            this.teAddress.TabIndex = 0;
-            // 
-            // teContactPhoneSecondary
-            // 
-            this.teContactPhoneSecondary.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.teContactPhoneSecondary.Location = new System.Drawing.Point(303, 3);
-            this.teContactPhoneSecondary.Name = "teContactPhoneSecondary";
-            this.teContactPhoneSecondary.Size = new System.Drawing.Size(94, 20);
-            this.teContactPhoneSecondary.TabIndex = 7;
-            // 
-            // teContactPhoneMain
-            // 
-            this.teContactPhoneMain.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.teContactPhoneMain.Location = new System.Drawing.Point(103, 3);
-            this.teContactPhoneMain.Name = "teContactPhoneMain";
-            this.teContactPhoneMain.Size = new System.Drawing.Size(94, 20);
-            this.teContactPhoneMain.TabIndex = 6;
+            this.daDataAddress.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.daDataAddress.Location = new System.Drawing.Point(53, 3);
+            this.daDataAddress.Name = "daDataAddress";
+            this.daDataAddress.Size = new System.Drawing.Size(856, 18);
+            this.daDataAddress.TabIndex = 21;
             // 
             // OrderAddressControl
             // 
@@ -502,16 +501,18 @@ namespace OfflineARM.Gui.Forms.Orders
             this.tlpHouse.ResumeLayout(false);
             this.tlpHouse.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.teHouse.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.teIntercom.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.teFlat.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.tePorch.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.teFloor.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tePorch.Properties)).EndInit();
             this.tlpIntercom.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.ceClimb.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.ceCargoLift.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.teIntercom.Properties)).EndInit();
             this.tlpPhones.ResumeLayout(false);
             this.tlpPhones.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.teContactPersonName.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.teContactPhoneSecondary.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.teContactPhoneMain.Properties)).EndInit();
             this.tableLayoutPanel5.ResumeLayout(false);
             this.tableLayoutPanel5.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.deDeliveryDate.Properties.CalendarTimeProperties)).EndInit();
@@ -519,9 +520,6 @@ namespace OfflineARM.Gui.Forms.Orders
             ((System.ComponentModel.ISupportInitialize)(this.meComment.Properties)).EndInit();
             this.tlpAddress.ResumeLayout(false);
             this.tlpAddress.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.teAddress.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.teContactPhoneSecondary.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.teContactPhoneMain.Properties)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -535,7 +533,6 @@ namespace OfflineARM.Gui.Forms.Orders
         private DevExpress.XtraEditors.CheckEdit chIsSelf;
         private System.Windows.Forms.TableLayoutPanel tlpHouse;
         private DevExpress.XtraEditors.TextEdit teHouse;
-        private DevExpress.XtraEditors.TextEdit teAddress;
         private DevExpress.XtraEditors.TextEdit tePorch;
         private DevExpress.XtraEditors.TextEdit teFloor;
         private DevExpress.XtraEditors.TextEdit teFlat;
@@ -545,8 +542,8 @@ namespace OfflineARM.Gui.Forms.Orders
         private DevExpress.XtraEditors.TextEdit teIntercom;
         private System.Windows.Forms.TableLayoutPanel tlpPhones;
         private DevExpress.XtraEditors.TextEdit teContactPersonName;
-        private PhoneControl teContactPhoneSecondary;
-        private PhoneControl teContactPhoneMain;
+        private OfflineARM.Gui.Controls.PhoneControl teContactPhoneSecondary;
+        private OfflineARM.Gui.Controls.PhoneControl teContactPhoneMain;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel5;
         private DevExpress.XtraEditors.LabelControl lbDateDelivery;
         private DevExpress.XtraEditors.DateEdit deDeliveryDate;
@@ -561,5 +558,6 @@ namespace OfflineARM.Gui.Forms.Orders
         private DevExpress.XtraEditors.LabelControl lcAdditPhone;
         private DevExpress.XtraEditors.LabelControl lсContactPersonName;
         private DevExpress.XtraEditors.LabelControl lc;
+        private DaDataAddress daDataAddress;
     }
 }

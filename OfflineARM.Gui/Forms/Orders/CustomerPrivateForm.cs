@@ -51,7 +51,7 @@ namespace OfflineARM.Gui.Forms.Orders
             }
 
             CustomerPrivate.Name = teFio.Text;
-            CustomerPrivate.Address = teAddress.Text;
+            CustomerPrivate.Address = daDataAddress.Text;
             CustomerPrivate.Phone = tePhone.Text;
         }
 

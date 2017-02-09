@@ -118,7 +118,7 @@ namespace OfflineARM.Gui.Forms.Orders
             CustomerLegal.Inn = this.teInn.Text;
             CustomerLegal.Kpp = this.teKpp.Text;
             CustomerLegal.Position = this.tePosition.Text;
-            CustomerLegal.Address = this.teAddress.Text;
+            CustomerLegal.Address = this.daDataAddress.Text;
             CustomerLegal.Name = this.teName.Name;
             CustomerLegal.Phone = this.tePhone.Text;
         }

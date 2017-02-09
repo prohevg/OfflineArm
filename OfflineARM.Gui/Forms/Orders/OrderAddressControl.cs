@@ -25,7 +25,7 @@ namespace OfflineARM.Gui.Forms.Orders
                 return new DeliveryModel()
                 {
                     Guid = Guid.NewGuid(),
-                    Address = teAddress.Text,
+                    Address = daDataAddress.Address,
                     Comment = meComment.Text,
                     ContactPersonName = teContactPersonName.Text,
                     ContactPhoneMain = teContactPhoneMain.Text,
