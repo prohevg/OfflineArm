@@ -2403,20 +2403,20 @@
             </relationshipOwnedElementsInternal>
           </association>
           <association
-            Id="37d7653c-66bb-4f5d-a4b0-7c80b1038317"
+            Id="c257ba71-2c62-499e-a73d-8e56fcbac940"
             isDerived="false"
             sourceEndRoleName="OrderCorrection"
-            targetEndRoleName="OrderSpecificationItem"
+            targetEndRoleName="OrderCorrectionItem"
             isLeaf="false"
             isAbstract="false">
             <classMoniker
-              Id="b8108448-5bdb-4cd0-b5d1-0dd0fd8c0973"
-              LastKnownName="OrderSpecificationItem"
+              Id="fbfce4a7-d100-45e3-b812-2a0f1dd1e606"
+              LastKnownName="OrderCorrectionItem"
               LastKnownLocation="OrderModels.uml" />
             <relationshipOwnedElementsInternal>
               <associationHasOwnedEnds>
                 <memberEnd
-                  Id="46243e4d-d362-49fa-934b-fcbc5cd5b7d0"
+                  Id="3bf32902-f93a-4b3a-8a56-887d05b15e82"
                   name="OrderCorrection"
                   isLeaf="false"
                   isStatic="false"
@@ -2429,15 +2429,28 @@
               </associationHasOwnedEnds>
               <associationHasOwnedEnds>
                 <memberEnd
-                  Id="c7af5266-63d3-47f8-9b44-017c93433b34"
-                  name="OrderSpecificationItem"
+                  Id="d628527a-b3e0-454f-9648-f7d92ddc1107"
+                  name="OrderCorrectionItem"
                   isLeaf="false"
                   isStatic="false"
                   isReadOnly="false"
                   isDerived="false"
                   isDerivedUnion="false"
                   aggregation="None"
-                  isComposite="true" />
+                  isComposite="true">
+                  <lowerValueInternal>
+                    <literalString
+                      Id="aa9cda12-019b-45fa-91f9-3ede8b82ea42"
+                      name="Lower"
+                      value="1" />
+                  </lowerValueInternal>
+                  <upperValueInternal>
+                    <literalString
+                      Id="3fe6d269-71f7-440a-9989-6443a025a80f"
+                      name="Upper"
+                      value="*" />
+                  </upperValueInternal>
+                </memberEnd>
               </associationHasOwnedEnds>
             </relationshipOwnedElementsInternal>
           </association>
@@ -2563,36 +2576,6 @@
                 LastKnownLocation="OrderModels.uml" />
             </type_NamedElement>
           </property>
-          <property
-            Id="96cea79e-786b-407b-9001-5c7acaad0533"
-            name="Specification"
-            isLeaf="false"
-            isStatic="false"
-            isReadOnly="false"
-            isUnique="false"
-            isDerived="false"
-            isDerivedUnion="false"
-            aggregation="None"
-            isComposite="false">
-            <lowerValueInternal>
-              <literalString
-                Id="442bdd17-61d5-4280-86c1-8273c1401752"
-                name="Lower"
-                value="*" />
-            </lowerValueInternal>
-            <upperValueInternal>
-              <literalString
-                Id="8f57d529-5ffd-40c6-9d95-1fd779223643"
-                name="Upper"
-                value="*" />
-            </upperValueInternal>
-            <type_NamedElement>
-              <undefinedTypeMoniker
-                Id="34e72ffa-e390-48fd-9d31-224d45cab5e2"
-                LastKnownName="Specificaton"
-                LastKnownLocation="OrderModels.uml" />
-            </type_NamedElement>
-          </property>
         </ownedAttributesInternal>
       </class>
     </packageHasNamedElement>
@@ -2620,6 +2603,104 @@
       <undefinedType
         Id="34e72ffa-e390-48fd-9d31-224d45cab5e2"
         name="Specificaton" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <class
+        Id="fbfce4a7-d100-45e3-b812-2a0f1dd1e606"
+        name="OrderCorrectionItem"
+        isAbstract="false"
+        isLeaf="false"
+        isActiveClass="false">
+        <ownedAttributesInternal>
+          <property
+            Id="0e71d0e8-72f2-4188-aa61-39b10ec820cb"
+            name="OrderCorrection"
+            isLeaf="false"
+            isStatic="false"
+            isReadOnly="false"
+            isUnique="false"
+            isDerived="false"
+            isDerivedUnion="false"
+            aggregation="None"
+            isComposite="false">
+            <type_NamedElement>
+              <classMoniker
+                Id="f1b3486c-3842-4557-b143-c82d50e7f886"
+                LastKnownName="OrderCorrection"
+                LastKnownLocation="OrderModels.uml" />
+            </type_NamedElement>
+          </property>
+          <property
+            Id="7b33d650-8f5c-499d-8ded-276bc78241be"
+            name="Nomenclature"
+            isLeaf="false"
+            isStatic="false"
+            isReadOnly="false"
+            isUnique="false"
+            isDerived="false"
+            isDerivedUnion="false"
+            aggregation="None"
+            isComposite="false">
+            <type_NamedElement>
+              <classMoniker
+                Id="49c6b3c9-1705-444d-b40c-a5efbb822316"
+                LastKnownName="Nomenclature"
+                LastKnownLocation="OrderModels.uml" />
+            </type_NamedElement>
+          </property>
+          <property
+            Id="f51ec178-1051-42a2-afa5-7aedda76fca7"
+            name="Feature"
+            isLeaf="false"
+            isStatic="false"
+            isReadOnly="false"
+            isUnique="false"
+            isDerived="false"
+            isDerivedUnion="false"
+            aggregation="None"
+            isComposite="false">
+            <type_NamedElement>
+              <classMoniker
+                Id="781f6b6f-e73f-40d0-a5fc-a8fb7a2b148e"
+                LastKnownName="Feature"
+                LastKnownLocation="OrderModels.uml" />
+            </type_NamedElement>
+          </property>
+          <property
+            Id="a9d8678a-f22a-4ca1-b720-edf3ab1e9ed0"
+            name="Quantity"
+            isLeaf="false"
+            isStatic="false"
+            isReadOnly="false"
+            isUnique="false"
+            isDerived="false"
+            isDerivedUnion="false"
+            aggregation="None"
+            isComposite="false" />
+          <property
+            Id="f03930f0-8680-44ad-a2b8-efe757de96fd"
+            name="Price"
+            isLeaf="false"
+            isStatic="false"
+            isReadOnly="false"
+            isUnique="false"
+            isDerived="false"
+            isDerivedUnion="false"
+            aggregation="None"
+            isComposite="false" />
+          <property
+            Id="858c95de-e490-4f94-a14a-dc47f131de24"
+            name="TotalAmount"
+            isLeaf="false"
+            isStatic="false"
+            isReadOnly="false"
+            isUnique="false"
+            isDerived="false"
+            isDerivedUnion="false"
+            aggregation="None"
+            isComposite="false" />
+        </ownedAttributesInternal>
+      </class>
     </packageHasNamedElement>
   </packagedElements>
   <primitiveType

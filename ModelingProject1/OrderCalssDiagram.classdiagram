@@ -1379,21 +1379,31 @@
             </relationshipOwnedElementsInternal>
             <elementDefinition Id="210833f3-c023-4215-9c9f-c251f74e5e80" />
           </association>
-          <association Id="0223a509-02a8-43f7-afeb-545b1638778b" isDerived="false" sourceEndRoleName="OrderCorrection" targetEndRoleName="OrderSpecificationItem" isLeaf="false" isAbstract="false">
-            <classMoniker Id="1ea23462-0e23-4587-872f-8d6e8dd17719" LastKnownName="OrderSpecificationItem" />
+          <association Id="14b4c6d6-ae94-44e0-92db-6cd9a8bf402e" isDerived="false" sourceEndRoleName="OrderCorrection" targetEndRoleName="OrderCorrectionItem" isLeaf="false" isAbstract="false">
+            <classMoniker Id="db49d055-c666-4475-a9df-4310bd35fffa" LastKnownName="OrderCorrectionItem" />
             <relationshipOwnedElementsInternal>
               <associationHasOwnedEnds>
-                <memberEnd Id="0c3e5337-f860-46cd-ad25-750f3227ffd0" name="OrderCorrection" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="Composite" isComposite="false" isNavigableOwned="false">
-                  <elementDefinition Id="46243e4d-d362-49fa-934b-fcbc5cd5b7d0" />
+                <memberEnd Id="9f38f0f1-c369-437d-913b-896e103c5cc3" name="OrderCorrection" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="Composite" isComposite="false" isNavigableOwned="false">
+                  <elementDefinition Id="3bf32902-f93a-4b3a-8a56-887d05b15e82" />
                 </memberEnd>
               </associationHasOwnedEnds>
               <associationHasOwnedEnds>
-                <memberEnd Id="d2dfb3b3-0c6d-49a9-adf8-ae679421d7b6" name="OrderSpecificationItem" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="true">
-                  <elementDefinition Id="c7af5266-63d3-47f8-9b44-017c93433b34" />
+                <memberEnd Id="84c563bb-2f6a-4ce6-a4c0-be8a9e8c7c33" name="OrderCorrectionItem" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="true">
+                  <lowerValueInternal>
+                    <literalString Id="47903804-dbe0-42d8-8d8b-05e87287aa26" name="Lower" value="1">
+                      <elementDefinition Id="aa9cda12-019b-45fa-91f9-3ede8b82ea42" />
+                    </literalString>
+                  </lowerValueInternal>
+                  <upperValueInternal>
+                    <literalString Id="6314eb0a-8d8a-40d8-89c9-b36fe7be7d4a" name="Upper" value="*">
+                      <elementDefinition Id="3fe6d269-71f7-440a-9989-6443a025a80f" />
+                    </literalString>
+                  </upperValueInternal>
+                  <elementDefinition Id="d628527a-b3e0-454f-9648-f7d92ddc1107" />
                 </memberEnd>
               </associationHasOwnedEnds>
             </relationshipOwnedElementsInternal>
-            <elementDefinition Id="37d7653c-66bb-4f5d-a4b0-7c80b1038317" />
+            <elementDefinition Id="c257ba71-2c62-499e-a73d-8e56fcbac940" />
           </association>
         </targetEnds>
         <ownedAttributesInternal>
@@ -1443,22 +1453,6 @@
               <referencedTypeMoniker Id="e52d4ccf-64b0-4d93-a89b-540e06ce6096" LastKnownName="Paument" />
             </type_NamedElement>
           </property>
-          <property Id="2e45a4fc-25db-4d68-a333-c00819e5105a" name="Specification" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
-            <lowerValueInternal>
-              <literalString Id="ff7ade07-bf01-485c-93f2-3b966a9f1e4b" name="Lower" value="*">
-                <elementDefinition Id="442bdd17-61d5-4280-86c1-8273c1401752" />
-              </literalString>
-            </lowerValueInternal>
-            <upperValueInternal>
-              <literalString Id="6cceb940-9cbd-4f53-938c-510bdeed33ce" name="Upper" value="*">
-                <elementDefinition Id="8f57d529-5ffd-40c6-9d95-1fd779223643" />
-              </literalString>
-            </upperValueInternal>
-            <elementDefinition Id="96cea79e-786b-407b-9001-5c7acaad0533" />
-            <type_NamedElement>
-              <referencedTypeMoniker Id="c291e0bc-e4f1-4d73-9eca-7de52ba48ba4" LastKnownName="Specificaton" />
-            </type_NamedElement>
-          </property>
         </ownedAttributesInternal>
       </class>
     </logicalClassDesignerModelHasTypes>
@@ -1482,9 +1476,53 @@
         <elementDefinition Id="5bab932c-e501-4ff1-9c95-9ddb3c9e64ee" />
       </referencedType>
     </packageHasNamedElement>
+    <logicalClassDesignerModelHasTypes>
+      <class Id="db49d055-c666-4475-a9df-4310bd35fffa" name="OrderCorrectionItem" isAbstract="false" isLeaf="false" isActiveClass="false">
+        <elementDefinition Id="fbfce4a7-d100-45e3-b812-2a0f1dd1e606" />
+        <ownedAttributesInternal>
+          <property Id="cc44b91f-2008-4412-862e-5ece321b8a8e" name="OrderCorrection" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+            <elementDefinition Id="0e71d0e8-72f2-4188-aa61-39b10ec820cb" />
+            <type_NamedElement>
+              <referencedTypeMoniker Id="3b860828-26fd-4155-ba1b-0a8547b83157" LastKnownName="OrderCorrection" />
+            </type_NamedElement>
+          </property>
+          <property Id="9b014949-0b9c-4b47-9fdc-b6b386de1336" name="Nomenclature" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+            <elementDefinition Id="7b33d650-8f5c-499d-8ded-276bc78241be" />
+            <type_NamedElement>
+              <referencedTypeMoniker Id="fb6add4b-a946-43fb-91f5-8a6c6928b35a" LastKnownName="Nomenclature" />
+            </type_NamedElement>
+          </property>
+          <property Id="da0c2d3d-685b-4c0b-bd96-119a212944fb" name="Feature" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+            <elementDefinition Id="f51ec178-1051-42a2-afa5-7aedda76fca7" />
+            <type_NamedElement>
+              <referencedTypeMoniker Id="1d526add-e8d1-4c19-9083-75bae15f54ea" LastKnownName="Feature" />
+            </type_NamedElement>
+          </property>
+          <property Id="5a137faa-97c8-4b43-9803-7b3b11c66eca" name="Quantity" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+            <elementDefinition Id="a9d8678a-f22a-4ca1-b720-edf3ab1e9ed0" />
+          </property>
+          <property Id="c884e8e0-e8ff-4bdc-891f-77be152b1309" name="Price" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+            <elementDefinition Id="f03930f0-8680-44ad-a2b8-efe757de96fd" />
+          </property>
+          <property Id="0cc20a5c-dd0e-4895-b967-8b6042c54198" name="TotalAmount" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+            <elementDefinition Id="858c95de-e490-4f94-a14a-dc47f131de24" />
+          </property>
+        </ownedAttributesInternal>
+      </class>
+    </logicalClassDesignerModelHasTypes>
     <packageHasNamedElement>
-      <referencedType Id="c291e0bc-e4f1-4d73-9eca-7de52ba48ba4" name="Specificaton" isAbstract="false" isLeaf="false" cachedFullName="Specificaton">
-        <elementDefinition Id="34e72ffa-e390-48fd-9d31-224d45cab5e2" />
+      <referencedType Id="1d526add-e8d1-4c19-9083-75bae15f54ea" name="Feature" isAbstract="false" isLeaf="false" cachedFullName="OrderModels::Feature">
+        <elementDefinition Id="781f6b6f-e73f-40d0-a5fc-a8fb7a2b148e" />
+      </referencedType>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <referencedType Id="fb6add4b-a946-43fb-91f5-8a6c6928b35a" name="Nomenclature" isAbstract="false" isLeaf="false" cachedFullName="OrderModels::Nomenclature">
+        <elementDefinition Id="49c6b3c9-1705-444d-b40c-a5efbb822316" />
+      </referencedType>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <referencedType Id="3b860828-26fd-4155-ba1b-0a8547b83157" name="OrderCorrection" isAbstract="false" isLeaf="false" cachedFullName="OrderModels::OrderCorrection">
+        <elementDefinition Id="f1b3486c-3842-4557-b143-c82d50e7f886" />
       </referencedType>
     </packageHasNamedElement>
   </packagedElements>
