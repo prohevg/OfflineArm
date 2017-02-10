@@ -1453,6 +1453,22 @@
               <referencedTypeMoniker Id="e52d4ccf-64b0-4d93-a89b-540e06ce6096" LastKnownName="Paument" />
             </type_NamedElement>
           </property>
+          <property Id="19a2f11d-0db3-405a-83b9-60bdc3f468ab" name="Corrections" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+            <lowerValueInternal>
+              <literalString Id="734c7052-0af8-4208-87c1-d0bfad56f035" name="Lower" value="1">
+                <elementDefinition Id="1c71a2aa-1e7a-4ed6-bacb-df1486b7fa29" />
+              </literalString>
+            </lowerValueInternal>
+            <upperValueInternal>
+              <literalString Id="3c228c78-79e1-4398-ad9e-5bad471204bc" name="Upper" value="*">
+                <elementDefinition Id="ee922d7b-43c8-497b-8275-b3a0f4cb0e3e" />
+              </literalString>
+            </upperValueInternal>
+            <elementDefinition Id="2c249ad3-1295-4fe4-89a7-7828224ce6c2" />
+            <type_NamedElement>
+              <referencedTypeMoniker Id="c6805f56-b6ef-4252-af6c-ca3f3ebd9f5f" LastKnownName="OrderCorrectionItems" />
+            </type_NamedElement>
+          </property>
         </ownedAttributesInternal>
       </class>
     </logicalClassDesignerModelHasTypes>
@@ -1523,6 +1539,11 @@
     <packageHasNamedElement>
       <referencedType Id="3b860828-26fd-4155-ba1b-0a8547b83157" name="OrderCorrection" isAbstract="false" isLeaf="false" cachedFullName="OrderModels::OrderCorrection">
         <elementDefinition Id="f1b3486c-3842-4557-b143-c82d50e7f886" />
+      </referencedType>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <referencedType Id="c6805f56-b6ef-4252-af6c-ca3f3ebd9f5f" name="OrderCorrectionItems" isAbstract="false" isLeaf="false" cachedFullName="OrderCorrectionItems">
+        <elementDefinition Id="34340ac6-6c0f-4b96-8584-9c57b366a0f7" />
       </referencedType>
     </packageHasNamedElement>
   </packagedElements>
