@@ -7,6 +7,6 @@ namespace OfflineARM.Repositories.Repositories.Businesses.Interfaces
     /// </summary>
     public interface IOrderRepository : IBaseRepository<Order>
     {
-       
+    
     }
 }

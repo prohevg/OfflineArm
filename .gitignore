@@ -25,3 +25,7 @@
 /OfflineARM.Gui/obj/x86/Debug
 /assemblies
 *.suo
+/OfflineARM.Controller/bin/Debug
+/OfflineARM.Controller/obj/Debug
+/OfflineARM.View/bin/Debug
+/OfflineARM.View/obj/Debug

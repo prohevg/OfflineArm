@@ -1,10 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace OfflineARM.DAO.Entities.Business.Bases
+﻿namespace OfflineARM.DAO.Entities.Business.Bases
 {
     /// <summary>
     /// Базовый тип покупателя

@@ -53,7 +53,6 @@ namespace OfflineARM.DAO.Entities.Business
             set;
         }
 
-
         /// <summary>
         /// Сумма кредита по БС
         /// </summary>

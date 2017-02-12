@@ -1,4 +1,6 @@
 ﻿using System.Collections.Generic;
+using System.Threading.Tasks;
+using OfflineARM.DAO;
 using OfflineARM.DAO.Entities;
 
 namespace OfflineARM.Repositories.Repositories
@@ -45,7 +47,12 @@ namespace OfflineARM.Repositories.Repositories
         /// <summary>  
         /// Получить все записи
         /// </summary>  
-        IEnumerable<TDaoEntity> GetAll();
+        PagedResult<TDaoEntity> GetAll();
+
+        /// <summary>  
+        /// Получить все записи асинхронно
+        /// </summary>  
+        Task<PagedResult<TDaoEntity>> GetAllAsync();
 
         /// <summary>  
         /// Получить количество записей

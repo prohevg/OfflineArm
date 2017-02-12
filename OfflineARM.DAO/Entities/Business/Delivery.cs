@@ -53,15 +53,6 @@ namespace OfflineARM.DAO.Entities.Business
         }
 
         /// <summary>
-        /// Дом
-        /// </summary>
-        public string House
-        {
-            get;
-            set;
-        }
-
-        /// <summary>
         /// Квартира
         /// </summary>
         public string Flat
@@ -105,7 +96,6 @@ namespace OfflineARM.DAO.Entities.Business
             get;
             set;
         }
-
 
         /// <summary>
         /// Подъезд

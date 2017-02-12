@@ -1,9 +1,9 @@
 ﻿using System;
 using System.Windows.Forms;
-using OfflineARM.Business;
-using OfflineARM.Gui;
-using OfflineARM.Business.Loggers;
-using OfflineARM.Gui.Interfaces.Windows;
+using OfflineARM.Controller;
+using OfflineARM.Controller.Loggers;
+using OfflineARM.Controller.ViewInterfaces;
+using OfflineARM.View;
 
 namespace OfflineARM
 {
@@ -23,16 +23,18 @@ namespace OfflineARM
                 var starter = new Starter();
                 starter.Start();
 
-                var loginForm = IoCForm.Instance.Resolve<ILoginForm>();
-                if (loginForm.ShowDialog() != DialogResult.OK)
+                var autorizationView = IoCView.Instance.Resolve<IAutorizationView>();
+                autorizationView.Controller.LoadView();
+                if (!autorizationView.ShowDialog())
                 {
                     return;
                 }
 
                 InitDatabaseFull.Init();
 
-                var mainForm = IoCForm.Instance.ResolveForm<IMainForm>();
-                Application.Run(mainForm);
+                var mainView = IoCView.Instance.Resolve<IMainView>();
+                mainView.Controller.LoadView();
+                Application.Run(mainView as Form);
             }
             catch(Exception e)
             {

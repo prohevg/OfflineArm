@@ -120,13 +120,13 @@
     </None>
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\OfflineARM.Business\OfflineARM.Business.csproj">
-      <Project>{EAD7C1B5-ED07-4D09-8950-E16DB02760D5}</Project>
-      <Name>OfflineARM.Business</Name>
+    <ProjectReference Include="..\OfflineARM.Controller\OfflineARM.Controller.csproj">
+      <Project>{26005742-1278-4444-B16A-A098DF39D9FE}</Project>
+      <Name>OfflineARM.Controller</Name>
     </ProjectReference>
-    <ProjectReference Include="..\OfflineARM.Gui\OfflineARM.Gui.csproj">
-      <Project>{52c3e2c6-b045-45c5-bf94-3eec665548d5}</Project>
-      <Name>OfflineARM.Gui</Name>
+    <ProjectReference Include="..\OfflineARM.View\OfflineARM.View.csproj">
+      <Project>{C12FB3AE-364A-4684-AC27-C4FA70486A85}</Project>
+      <Name>OfflineARM.View</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

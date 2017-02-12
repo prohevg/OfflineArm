@@ -63,6 +63,15 @@ namespace OfflineARM.DAO.Entities.Business
         }
 
         /// <summary>
+        /// Кол-во
+        /// </summary>
+        public int Count
+        {
+            get;
+            set;
+        }
+
+        /// <summary>
         /// Цена
         /// </summary>
         public decimal Price

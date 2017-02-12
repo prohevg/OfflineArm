@@ -1,6 +1,7 @@
 ﻿using System.Collections.Generic;
 using System.Data.Entity;
 using System.Linq;
+using System.Threading.Tasks;
 using OfflineARM.DAO;
 using OfflineARM.DAO.Entities;
 
@@ -98,9 +99,24 @@ namespace OfflineARM.Repositories.Repositories
         /// <summary>  
         /// Получить все записи
         /// </summary>  
-        public virtual IEnumerable<TDaoEntity> GetAll()
+        public virtual PagedResult<TDaoEntity> GetAll()
         {
-            return DbSet;
+            var list = DbSet;
+            if (list == null)
+            {
+                return new PagedResult<TDaoEntity>(new List<TDaoEntity>(), 1, 1, 0);
+            }
+
+            var count = DbSet.Count();
+            return new PagedResult<TDaoEntity>(list, 1, 1, count);
+        }
+
+        /// <summary>  
+        /// Получить все записи
+        /// </summary>  
+        public virtual Task<PagedResult<TDaoEntity>> GetAllAsync()
+        {
+            return Task.Factory.StartNew(() => GetAll());
         }
 
         /// <summary>  
