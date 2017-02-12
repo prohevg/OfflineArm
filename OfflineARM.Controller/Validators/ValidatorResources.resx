@@ -129,4 +129,19 @@
   <data name="NomenclatureValidator_NameIsNull" xml:space="preserve">
     <value>Наименование номенклатуры не может быть пустым!</value>
   </data>
+  <data name="OrderValidator_CustomerIsNull" xml:space="preserve">
+    <value>Не указан покупатель!</value>
+  </data>
+  <data name="OrderValidator_DeliveryDateIsNull" xml:space="preserve">
+    <value>Не указана дата доставки!</value>
+  </data>
+  <data name="OrderValidator_DeliveryIsNull" xml:space="preserve">
+    <value>Не указан адрес доставки!</value>
+  </data>
+  <data name="OrderValidator_OrderSpecificationsIsNull" xml:space="preserve">
+    <value>Не указана спецификация в заказе!</value>
+  </data>
+  <data name="OrderValidator_PaymentLess30" xml:space="preserve">
+    <value>Минимальная оплата заказа 30%!</value>
+  </data>
 </root>

@@ -102,9 +102,9 @@ namespace OfflineARM.Controller.Controllers.Orders
                 order.CustomerPrivate = unitOfWork.BusinessesRepositories.CustomerPrivateRepository.GetById(order.CustomerPrivateId.Value);
             }
 
-            if (order.Delivery == null)
+            if (order.Delivery == null && order.DeliveryId.HasValue)
             {
-                order.Delivery = unitOfWork.BusinessesRepositories.DeliveryRepository.GetById(order.DeliveryId);
+                order.Delivery = unitOfWork.BusinessesRepositories.DeliveryRepository.GetById(order.DeliveryId.Value);
             }
         }
 

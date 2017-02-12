@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Windows.Forms;
 using OfflineARM.Controller.ControllerInterfaces.Orders;
 using OfflineARM.Controller.ViewInterfaces.Orders;
 using OfflineARM.View.Base.Controls;
@@ -202,6 +203,46 @@ namespace OfflineARM.View.Views.Orders
             {
                 deDeliveryDate.DateTime = value;
             }
+        }
+
+        /// <summary>
+        /// Самовывоз
+        /// </summary>
+        public bool IsSelf
+        {
+            get
+            {
+                return chIsSelf.Checked;
+            }
+            set
+            {
+                chIsSelf.Checked = value;
+            }
+        }
+
+        #endregion
+
+        #region private
+
+        private void chIsSelf_CheckedChanged(object sender, EventArgs e)
+        {
+            SetEnable(!chIsSelf.Checked);
+        }
+
+        private void SetEnable(bool isEnabled)
+        {
+            daDataAddress.Enabled = isEnabled;
+            teFlat.Enabled = isEnabled;
+            tePorch.Enabled = isEnabled;
+            teFloor.Enabled = isEnabled;
+            teIntercom.Enabled = isEnabled;
+            teContactPhoneMain.Enabled = isEnabled;
+            teContactPhoneSecondary.Enabled = isEnabled;
+            teContactPersonName.Enabled = isEnabled;
+            ceCargoLift.Enabled = isEnabled;
+            ceClimb.Enabled = isEnabled;
+            meComment.Enabled = isEnabled;
+            deDeliveryDate.Enabled = isEnabled;
         }
 
         #endregion

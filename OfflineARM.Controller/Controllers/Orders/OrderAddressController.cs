@@ -56,6 +56,11 @@ namespace OfflineARM.Controller.Controllers.Orders
         {
             get
             {
+                if (_orderAddressView.IsSelf)
+                {
+                    return null;
+                }
+
                 _delivery = new Delivery()
                 {
                     Guid = Guid.NewGuid(),

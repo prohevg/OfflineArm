@@ -6,6 +6,7 @@ using OfflineARM.Controller.Commands;
 using OfflineARM.Controller.ControllerInterfaces;
 using OfflineARM.Controller.ControllerInterfaces.Orders;
 using OfflineARM.Controller.Controllers.Orders.Commands;
+using OfflineARM.Controller.Validators.Businesses.Interfaces;
 using OfflineARM.Controller.ViewInterfaces;
 using OfflineARM.Controller.ViewInterfaces.Base;
 using OfflineARM.Controller.ViewInterfaces.Orders;
@@ -193,6 +194,16 @@ namespace OfflineARM.Controller.Controllers.Orders
                     AddOrderSpecifications(_order, unitOfWork);
                     AddPayments(_order);
 
+                    var validator = IoCControllers.Instance.Get<IOrderValidator>();
+                    var validatorResult = validator.Validate(_order);
+
+                    if (!validatorResult.IsSucceeded)
+                    {
+                        var error = validatorResult.Errors.First().Message;
+                        IoCControllers.Instance.Get<IMessageBoxView>().Show(error);
+                        return;
+                    }
+
                     unitOfWork.BusinessesRepositories.OrderRepository.Insert(_order);
                     unitOfWork.Save();
 
@@ -242,6 +253,8 @@ namespace OfflineARM.Controller.Controllers.Orders
             {
                 item.Nomenclature = unitOfWork.DictionaryRepositories.NomenclatureRepository.GetById(item.NomenclatureId);
                 item.Feature = unitOfWork.DictionaryRepositories.FeatureRepository.GetById(item.FeatureId);
+
+                order.OrderSpecifications.Add(item);
             }
         }
 
@@ -286,7 +299,14 @@ namespace OfflineARM.Controller.Controllers.Orders
         private void AddDelivery(Order order, UnitOfWork unitOfWork)
         {
             var delivary = this._delivaryController.Delivery;
+            //самовывоз
+            if (delivary == null)
+            {
+                return;
+            }
+
             unitOfWork.BusinessesRepositories.DeliveryRepository.Insert(delivary);
+            order.Delivery = delivary;
             order.DeliveryId = delivary.Id;
         }
 

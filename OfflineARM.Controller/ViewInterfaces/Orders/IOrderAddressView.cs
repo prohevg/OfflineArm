@@ -66,5 +66,11 @@ namespace OfflineARM.Controller.ViewInterfaces.Orders
         /// Дата доставки
         /// </summary>
         DateTime DeliveryDate { get; set; }
+
+
+        /// <summary>
+        /// Самовывоз
+        /// </summary>
+        bool IsSelf { get; set; }
     }
 }

@@ -84,7 +84,7 @@ namespace OfflineARM.DAO.Entities.Business
         /// <summary>
         /// Адрес доставки в заказе
         /// </summary>
-        public int DeliveryId
+        public int? DeliveryId
         {
             get;
             set;

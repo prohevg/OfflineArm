@@ -95,5 +95,50 @@ namespace OfflineARM.Controller.Validators {
                 return ResourceManager.GetString("NomenclatureValidator_NameIsNull", resourceCulture);
             }
         }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Не указан покупатель!.
+        /// </summary>
+        internal static string OrderValidator_CustomerIsNull {
+            get {
+                return ResourceManager.GetString("OrderValidator_CustomerIsNull", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Не указана дата доставки!.
+        /// </summary>
+        internal static string OrderValidator_DeliveryDateIsNull {
+            get {
+                return ResourceManager.GetString("OrderValidator_DeliveryDateIsNull", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Не указан адрес доставки!.
+        /// </summary>
+        internal static string OrderValidator_DeliveryIsNull {
+            get {
+                return ResourceManager.GetString("OrderValidator_DeliveryIsNull", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Не указана спецификация в заказе!.
+        /// </summary>
+        internal static string OrderValidator_OrderSpecificationsIsNull {
+            get {
+                return ResourceManager.GetString("OrderValidator_OrderSpecificationsIsNull", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Минимальная оплата заказа 30%!.
+        /// </summary>
+        internal static string OrderValidator_PaymentLess30 {
+            get {
+                return ResourceManager.GetString("OrderValidator_PaymentLess30", resourceCulture);
+            }
+        }
     }
 }

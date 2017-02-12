@@ -107,7 +107,7 @@ namespace OfflineARM.View.Views.Orders
             this.tlpMain.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 30F));
             this.tlpMain.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 30F));
             this.tlpMain.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 30F));
-            this.tlpMain.Size = new System.Drawing.Size(918, 456);
+            this.tlpMain.Size = new System.Drawing.Size(953, 666);
             this.tlpMain.TabIndex = 0;
             // 
             // panelControl
@@ -116,7 +116,7 @@ namespace OfflineARM.View.Views.Orders
             this.panelControl.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panelControl.Location = new System.Drawing.Point(3, 3);
             this.panelControl.Name = "panelControl";
-            this.panelControl.Size = new System.Drawing.Size(912, 44);
+            this.panelControl.Size = new System.Drawing.Size(947, 44);
             this.panelControl.TabIndex = 0;
             // 
             // tableLayoutPanel1
@@ -132,7 +132,7 @@ namespace OfflineARM.View.Views.Orders
             this.tableLayoutPanel1.RowCount = 1;
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 40F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(908, 40);
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(943, 40);
             this.tableLayoutPanel1.TabIndex = 0;
             // 
             // lcDelivaryCaption
@@ -159,6 +159,7 @@ namespace OfflineARM.View.Views.Orders
             this.chIsSelf.Properties.Caption = "Самовывоз";
             this.chIsSelf.Size = new System.Drawing.Size(132, 23);
             this.chIsSelf.TabIndex = 1;
+            this.chIsSelf.CheckedChanged += new System.EventHandler(this.chIsSelf_CheckedChanged);
             // 
             // tlpHouse
             // 
@@ -188,7 +189,7 @@ namespace OfflineARM.View.Views.Orders
             this.tlpHouse.Name = "tlpHouse";
             this.tlpHouse.RowCount = 1;
             this.tlpHouse.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tlpHouse.Size = new System.Drawing.Size(912, 24);
+            this.tlpHouse.Size = new System.Drawing.Size(947, 24);
             this.tlpHouse.TabIndex = 1;
             // 
             // teIntercom
@@ -280,7 +281,7 @@ namespace OfflineARM.View.Views.Orders
             this.tlpIntercom.Name = "tlpIntercom";
             this.tlpIntercom.RowCount = 1;
             this.tlpIntercom.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tlpIntercom.Size = new System.Drawing.Size(912, 24);
+            this.tlpIntercom.Size = new System.Drawing.Size(947, 24);
             this.tlpIntercom.TabIndex = 2;
             // 
             // ceClimb
@@ -319,7 +320,7 @@ namespace OfflineARM.View.Views.Orders
             this.tlpPhones.Name = "tlpPhones";
             this.tlpPhones.RowCount = 1;
             this.tlpPhones.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tlpPhones.Size = new System.Drawing.Size(912, 24);
+            this.tlpPhones.Size = new System.Drawing.Size(947, 24);
             this.tlpPhones.TabIndex = 3;
             // 
             // lkContPhone
@@ -338,7 +339,7 @@ namespace OfflineARM.View.Views.Orders
             this.teContactPersonName.Dock = System.Windows.Forms.DockStyle.Fill;
             this.teContactPersonName.Location = new System.Drawing.Point(478, 3);
             this.teContactPersonName.Name = "teContactPersonName";
-            this.teContactPersonName.Size = new System.Drawing.Size(431, 20);
+            this.teContactPersonName.Size = new System.Drawing.Size(466, 20);
             this.teContactPersonName.TabIndex = 8;
             // 
             // teContactPhoneSecondary
@@ -391,7 +392,7 @@ namespace OfflineARM.View.Views.Orders
             this.tableLayoutPanel5.Name = "tableLayoutPanel5";
             this.tableLayoutPanel5.RowCount = 1;
             this.tableLayoutPanel5.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel5.Size = new System.Drawing.Size(912, 24);
+            this.tableLayoutPanel5.Size = new System.Drawing.Size(947, 24);
             this.tableLayoutPanel5.TabIndex = 4;
             // 
             // lbDateDelivery
@@ -422,7 +423,7 @@ namespace OfflineARM.View.Views.Orders
             this.meComment.Location = new System.Drawing.Point(3, 203);
             this.meComment.Name = "meComment";
             this.meComment.Properties.NullText = "Комментарий";
-            this.meComment.Size = new System.Drawing.Size(912, 250);
+            this.meComment.Size = new System.Drawing.Size(947, 460);
             this.meComment.TabIndex = 10;
             this.meComment.UseOptimizedRendering = true;
             // 
@@ -438,7 +439,7 @@ namespace OfflineARM.View.Views.Orders
             this.tlpAddress.Name = "tlpAddress";
             this.tlpAddress.RowCount = 1;
             this.tlpAddress.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tlpAddress.Size = new System.Drawing.Size(912, 24);
+            this.tlpAddress.Size = new System.Drawing.Size(947, 24);
             this.tlpAddress.TabIndex = 6;
             // 
             // lcAddress
@@ -454,11 +455,11 @@ namespace OfflineARM.View.Views.Orders
             // 
             // daDataAddress
             // 
-            this.daDataAddress.Address = null;
+            this.daDataAddress.Address = "";
             this.daDataAddress.Dock = System.Windows.Forms.DockStyle.Fill;
             this.daDataAddress.Location = new System.Drawing.Point(53, 3);
             this.daDataAddress.Name = "daDataAddress";
-            this.daDataAddress.Size = new System.Drawing.Size(856, 18);
+            this.daDataAddress.Size = new System.Drawing.Size(891, 18);
             this.daDataAddress.TabIndex = 21;
             // 
             // OrderAddressView
@@ -467,7 +468,7 @@ namespace OfflineARM.View.Views.Orders
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.Controls.Add(this.tlpMain);
             this.Name = "OrderAddressView";
-            this.Size = new System.Drawing.Size(918, 456);
+            this.Size = new System.Drawing.Size(953, 666);
             this.tlpMain.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.panelControl)).EndInit();
             this.panelControl.ResumeLayout(false);
