@@ -1,5 +1,4 @@
 ﻿using OfflineARM.Controller.ViewInterfaces.Base;
-using OfflineARM.DAO.Entities.Business.Bases;
 
 namespace OfflineARM.Controller.Base
 {
@@ -8,11 +7,6 @@ namespace OfflineARM.Controller.Base
     /// </summary>
     public abstract class BaseController : IBaseController
     {
-        /// <summary>
-        /// Покупатель
-        /// </summary>
-        Customer Customer { get; }
-
         /// <summary>
         /// View для контролера
         /// </summary>

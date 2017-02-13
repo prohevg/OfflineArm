@@ -35,6 +35,8 @@ namespace OfflineARM.View
         {
             InitializeComponent();
 
+            this.Text = string.Empty;
+
             CreateController();
 
             _orderListView = orderListView;
