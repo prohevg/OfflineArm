@@ -12,6 +12,21 @@ namespace OfflineARM.Controller.ViewInterfaces.Orders
     public interface IOrderEditView : IBaseView<IOrderEditController>
     {
         /// <summary>
+        /// Сумма заказа
+        /// </summary>
+        string AmountOrder { get; set; }
+
+        /// <summary>
+        /// Сумма оплат
+        /// </summary>
+        string AmountPayments { get; set; }
+
+        /// <summary>
+        /// Сумма остатка
+        /// </summary>
+        string Balance { get; set; }
+
+        /// <summary>
         /// Показать окно добавления заказа
         /// </summary>
         bool AddNewOrder();

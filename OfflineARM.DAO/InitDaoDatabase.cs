@@ -12,28 +12,20 @@ namespace OfflineARM.DAO
         {
             Task.Factory.StartNew(() =>
             {
-                try
+                using (var unit = new ApplicationDbContext())
                 {
-                    using (var unit = new ApplicationDbContext())
+                    if (unit.Set<User>().Any())
                     {
-                        if (unit.Set<User>().Any())
-                        {
-                            return;
-                        }
+                        return;
                     }
-
-                    AddUserShopOrgs();
-                    AddOrderStatus();
-                    AddBankAndPoduct();
-                    AddCustomerPrivate();
-                    AddCustomerLegal();
-                    AddNomencl();
-
                 }
-                catch (Exception e)
-                {
-                    throw;
-                }
+
+                AddUserShopOrgs();
+                AddOrderStatus();
+                AddBankAndPoduct();
+                AddCustomerPrivate();
+                AddCustomerLegal();
+                AddNomencl();
             });
         }
 

@@ -70,6 +70,33 @@ namespace OfflineARM.Controller {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Остаток {0} р..
+        /// </summary>
+        internal static string OrderEditController_AmountBalance {
+            get {
+                return ResourceManager.GetString("OrderEditController_AmountBalance", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Итого заказа {0} р..
+        /// </summary>
+        internal static string OrderEditController_AmountOrder {
+            get {
+                return ResourceManager.GetString("OrderEditController_AmountOrder", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Оплачено {0} р..
+        /// </summary>
+        internal static string OrderEditController_AmountPayments {
+            get {
+                return ResourceManager.GetString("OrderEditController_AmountPayments", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Карта.
         /// </summary>
         internal static string OrderPayControl_CardPaymentType {
@@ -93,6 +120,15 @@ namespace OfflineARM.Controller {
         internal static string OrderPayControl_CreditPaymentType {
             get {
                 return ResourceManager.GetString("OrderPayControl_CreditPaymentType", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Не найден конфигурационный файл OfflineARM.config!.
+        /// </summary>
+        internal static string SettingApplicationController_ConfigFileNotFounded {
+            get {
+                return ResourceManager.GetString("SettingApplicationController_ConfigFileNotFounded", resourceCulture);
             }
         }
     }

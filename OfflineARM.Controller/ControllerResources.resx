@@ -120,6 +120,15 @@
   <data name="HolderCannotReplaceValueFormat" xml:space="preserve">
     <value>Значение для элемента с ключом "{0}" в холдере {1} не может быть заменено</value>
   </data>
+  <data name="OrderEditController_AmountBalance" xml:space="preserve">
+    <value>Остаток {0} р.</value>
+  </data>
+  <data name="OrderEditController_AmountOrder" xml:space="preserve">
+    <value>Итого заказа {0} р.</value>
+  </data>
+  <data name="OrderEditController_AmountPayments" xml:space="preserve">
+    <value>Оплачено {0} р.</value>
+  </data>
   <data name="OrderPayControl_CardPaymentType" xml:space="preserve">
     <value>Карта</value>
   </data>
@@ -128,5 +137,8 @@
   </data>
   <data name="OrderPayControl_CreditPaymentType" xml:space="preserve">
     <value>Кредит</value>
+  </data>
+  <data name="SettingApplicationController_ConfigFileNotFounded" xml:space="preserve">
+    <value>Не найден конфигурационный файл OfflineARM.config!</value>
   </data>
 </root>

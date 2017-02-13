@@ -4,8 +4,10 @@ using Ninject.Parameters;
 using OfflineARM.Controller.Base;
 using OfflineARM.Controller.ControllerInterfaces;
 using OfflineARM.Controller.ControllerInterfaces.Orders;
+using OfflineARM.Controller.ControllerInterfaces.Settings;
 using OfflineARM.Controller.Controllers;
 using OfflineARM.Controller.Controllers.Orders;
+using OfflineARM.Controller.Controllers.Settings;
 using OfflineARM.Controller.Validators.Businesses;
 using OfflineARM.Controller.Validators.Businesses.Interfaces;
 using OfflineARM.Controller.Validators.Dictionaries;
@@ -107,6 +109,13 @@ namespace OfflineARM.Controller
             container.Bind<IOrderPartDeliveryController>().To<OrderPartDeliveryController>();
             container.Bind<IOrderPartPayController>().To<OrderPartPayController>();
             container.Bind<IOrderPartSpecificController>().To<OrderPartSpecificController>();
+
+            #endregion
+
+            #region settings
+
+            container.Bind<ISettingsController>().To<SettingsController>();
+            container.Bind<ISettingApplicationController>().To<SettingApplicationController>();
 
             #endregion
         }

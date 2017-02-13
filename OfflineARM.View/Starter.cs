@@ -1,6 +1,11 @@
-﻿using Ninject;
+﻿using System.IO;
+using System.Reflection;
+using Ninject;
 using OfflineARM.Controller;
 using OfflineARM.Controller.Controllers.Orders.Commands;
+using OfflineARM.Controller.Controllers.Settings.Commands;
+using OfflineARM.Controller.CustomConfigFile;
+using OfflineARM.Controller.CustomConfigFile.Sections;
 using OfflineARM.Controller.Holders;
 using OfflineARM.View.Forms.Orders.Commands;
 
@@ -17,6 +22,11 @@ namespace OfflineARM.View
         public virtual void Start(string[] args = null)
         {
             RegisterInject();
+
+            ConfigFileDispatcher.Instance.ConfigFile = new AppConfigFile();
+
+            InitializationConfig();
+
             FillCommandMetadataHolder();
             FillDispatchedCommandHolder();
         }
@@ -57,6 +67,16 @@ namespace OfflineARM.View
                 CommandResources.OrderPrintCommandHint);
 
             #endregion
+
+            #region Команлы настроек приложения
+
+            CommandMetadataHolder.Instance.SetMetadata(
+               SettingsCommands.ApplicationSettings,
+               CommandResources.save_32x32,
+               CommandResources.ApplicationSettingsCommandCaption,
+               CommandResources.ApplicationSettingsCommandHint);
+
+            #endregion
         }
 
         /// <summary>
@@ -66,6 +86,21 @@ namespace OfflineARM.View
         {
             //DispatchedCommandHolder.Instance.SetType(OrderCommands.OrderAdd, typeof(OrderAddCommandHandler));
             DispatchedCommandHolder.Instance.SetType(OrderCommands.OrderPrint, typeof(OrderPrintCommandHandler));
+        }
+
+        /// <summary>
+        /// Инициализация конфигурационного файла
+        /// </summary>
+        protected void InitializationConfig()
+        {
+            var armConfig = ConfigFileDispatcher.Instance.GetConfigFile<AppConfigFile>() ?? new AppConfigFile();
+            var section = armConfig.GetSection<ArmConfigurationSection>(ArmConfigurationSection.SectionName);
+
+            if (string.IsNullOrWhiteSpace(section.Main.PathToDocuments))
+            {
+                section.Main.PathToDocuments = Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location) + "\\Documents";
+                armConfig.Save(section, ArmConfigurationSection.SectionName);
+            }
         }
     }
 }

@@ -57,7 +57,7 @@ namespace OfflineARM.Controller.Controllers.Orders
         /// </summary>
         public override void LoadView()
         {
-            _orderPayView.AmountOrder = string.Format("Итого заказа {0} р.", this.OrderAmount);
+            
         }
 
         #endregion
@@ -119,6 +119,15 @@ namespace OfflineARM.Controller.Controllers.Orders
         }
 
         /// <summary>
+        /// Контроллер главной формы
+        /// </summary>
+        public OrderEditController MainController
+        {
+            get;
+            set;
+        }
+
+        /// <summary>
         /// Добавить оплату наличными
         /// </summary>
         public void AddNewCashPayment()
@@ -130,6 +139,7 @@ namespace OfflineARM.Controller.Controllers.Orders
                 Amount = _orderPayView.CashAmount,
                 Manual = _orderPayView.CashInputManual,
                 FiscalReceipt = _orderPayView.CashFiscalReceipt,
+                DocumentName = _orderPayView.CashPathToFile
             };
 
             _cashPayments.Add(cashPayment);
@@ -138,7 +148,7 @@ namespace OfflineARM.Controller.Controllers.Orders
 
             _orderPayView.AddPaymentToGrid(paymentRow);
 
-            RecalculatePayment();
+            MainController.RecalculatePayment();
         }
 
         /// <summary>
@@ -154,6 +164,7 @@ namespace OfflineARM.Controller.Controllers.Orders
                 CardNumber = _orderPayView.CardNumber,
                 Manual = _orderPayView.CardInputManual,
                 RNN = _orderPayView.CardNumber,
+                DocumentName = _orderPayView.CardPathToFile
             };
 
             _cardPayments.Add(cardPayment);
@@ -162,7 +173,7 @@ namespace OfflineARM.Controller.Controllers.Orders
 
             _orderPayView.AddPaymentToGrid(paymentRow);
 
-            RecalculatePayment();
+            MainController.RecalculatePayment();
         }
 
         /// <summary>
@@ -189,7 +200,7 @@ namespace OfflineARM.Controller.Controllers.Orders
 
             _orderPayView.AddPaymentToGrid(paymentRow);
 
-            RecalculatePayment();
+            MainController.RecalculatePayment();
         }
 
         /// <summary>
@@ -251,25 +262,6 @@ namespace OfflineARM.Controller.Controllers.Orders
             }
 
             _orderPayView.RemovePaymentFromGrid(paymentRow);
-        }
-
-        #endregion
-
-        #region private
-
-        /// <summary>
-        /// Сумма оплат
-        /// </summary>
-        private void RecalculatePayment()
-        {
-            var amountCashPayments = this._cashPayments.Sum(item => item.Amount);
-            var amountCardPayments = this._cardPayments.Sum(item => item.Amount);
-            var amountCreditPayments = this._creditPayments.Sum(item => item.Amount);
-            var allAmount = amountCashPayments + amountCardPayments + amountCreditPayments;
-
-
-            _orderPayView.AmountPayments = string.Format("Оплачено {0} р.", allAmount);
-            _orderPayView.Balance = string.Format("Остаток {0} р.", OrderAmount - allAmount);
         }
 
         #endregion

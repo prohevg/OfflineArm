@@ -8,6 +8,7 @@ using OfflineARM.Controller.Commands;
 using OfflineARM.Controller.ControllerInterfaces;
 using OfflineARM.Controller.ViewInterfaces;
 using OfflineARM.Controller.ViewInterfaces.Orders;
+using OfflineARM.Controller.ViewInterfaces.Settings;
 
 namespace OfflineARM.View
 {
@@ -23,6 +24,11 @@ namespace OfflineARM.View
         /// </summary>
         private readonly IOrderListView _orderListView;
 
+        /// <summary>
+        /// Настройки приложения
+        /// </summary>
+        private readonly ISettingsView _settingsView;
+
         #endregion
 
         #region Конструктор
@@ -31,15 +37,18 @@ namespace OfflineARM.View
         /// Конструктор
         /// </summary>
         /// <param name="orderListView">Список заказов</param>
-        public MainView(IOrderListView orderListView)
+        /// <param name="settingsView">Настройки приложения</param>
+        public MainView(IOrderListView orderListView, ISettingsView settingsView)
         {
             InitializeComponent();
 
+            this.MinimumSize = new Size(1024, 768);
             this.Text = string.Empty;
 
             CreateController();
 
             _orderListView = orderListView;
+            _settingsView = settingsView;
 
             this.WindowState = FormWindowState.Maximized;
 
@@ -56,6 +65,7 @@ namespace OfflineARM.View
             }
 
             tabControl.TabPages[0].Controls.Add(orderListView as Control);
+            tabControl.TabPages[2].Controls.Add(settingsView as Control);
 
             orderListView.Controller.LoadView();
 
@@ -128,6 +138,14 @@ namespace OfflineARM.View
             if (ribbonControl.SelectedPage.PageIndex == 0)
             {
                 tabControl.TabPages[0].Controls[0].Visible = true;
+                BarCreator.CreateBars(rpOrders, _orderListView.Controller.GetCommands(), item_ItemClick);
+            }
+
+            if (ribbonControl.SelectedPage.PageIndex == 2)
+            {
+                tabControl.TabPages[2].Controls[0].Visible = true;
+                BarCreator.CreateBars(rpSettings, _settingsView.Controller.GetCommands(), item_ItemClick);
+
             }
         }
 

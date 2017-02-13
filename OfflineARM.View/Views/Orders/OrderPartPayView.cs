@@ -8,7 +8,6 @@ using DevExpress.XtraEditors;
 using DevExpress.XtraEditors.DXErrorProvider;
 using OfflineARM.Controller.ControllerInterfaces.Orders;
 using OfflineARM.Controller.Models.Orders;
-using OfflineARM.Controller.ParsingCodes;
 using OfflineARM.Controller.ViewInterfaces.Orders;
 
 namespace OfflineARM.View.Views.Orders
@@ -79,7 +78,8 @@ namespace OfflineARM.View.Views.Orders
             gcPays.AddColumn(GuiResource.OrderPayControl_GridPayCaption_Date, "PaymentDate", 1, UnboundColumnType.DateTime, 100);
             gcPays.AddColumn(GuiResource.OrderPayControl_GridPayCaption_Summ, "Amount", 2, UnboundColumnType.Decimal, 120);
             gcPays.AddColumn(GuiResource.OrderPayControl_GridPayCaption_IsManual, "IsManual", 3, width: 50);
-            gcPays.AddColumnCommand(GuiResource.OrderPayControl_GridPayCaption_DeleteFromPays, ButtonPredefines.Delete, 4, 100);
+            gcPays.AddColumn(GuiResource.OrderPayControl_GridPayCaption_IsManual, "DocumentName", 4, width: 150);
+            gcPays.AddColumnCommand(GuiResource.OrderPayControl_GridPayCaption_DeleteFromPays, ButtonPredefines.Delete, 5, 100);
             gcPays.EndUpdate();
 
             gcPays.OnGridCommand += gcPays_OnGridCommand;
@@ -128,10 +128,12 @@ namespace OfflineARM.View.Views.Orders
             this.teCashFiscalReceipt.Enabled = isEnable;
             this.smCashCheckManual.Enabled = isEnable;
             this.ceCashInputManual.Enabled = isEnable;
+            this.deCashScanDocument.Enabled = isEnable;
 
             if (isEnable)
             {
                 this.teCashFiscalReceipt.Enabled = this.ceCashInputManual.Checked;
+                this.deCashScanDocument.Enabled = this.ceCashInputManual.Checked;
             }
         }
 
@@ -145,10 +147,12 @@ namespace OfflineARM.View.Views.Orders
             this.teCardNumber.Enabled = isEnable;
             this.ceCardInputManual.Enabled = isEnable;
             this.sbCardPay.Enabled = isEnable;
+            this.deCardScanDocument.Enabled = isEnable;
 
             if (isEnable)
             {
                 this.teCardNumber.Enabled = this.ceCardInputManual.Checked;
+                this.deCardScanDocument.Enabled = this.ceCardInputManual.Checked;
             }
         }
 
@@ -280,7 +284,9 @@ namespace OfflineARM.View.Views.Orders
         /// <param name="e"></param>
         private void ceCashInputManual_EditValueChanged(object sender, EventArgs e)
         {
-            teCashFiscalReceipt.Enabled = (bool)((CheckEdit)sender).EditValue;
+            var isEnabled = (bool) ((CheckEdit) sender).EditValue;
+            teCashFiscalReceipt.Enabled = isEnabled;
+            deCashScanDocument.Enabled = isEnabled;
 
             if (teCashFiscalReceipt.Enabled)
             {
@@ -299,7 +305,9 @@ namespace OfflineARM.View.Views.Orders
         /// <param name="e"></param>
         private void ceCardManual_EditValueChanged(object sender, EventArgs e)
         {
-            teCardNumber.Enabled = (bool)((CheckEdit)sender).EditValue;
+            var isEnabled = (bool)((CheckEdit)sender).EditValue;
+            teCardNumber.Enabled = isEnabled;
+            deCardScanDocument.Enabled = isEnabled;
 
             if (teCardNumber.Enabled)
             {
@@ -383,6 +391,21 @@ namespace OfflineARM.View.Views.Orders
         }
 
         /// <summary>
+        /// Путь к файлу для скана документа наличными
+        /// </summary>
+        public string CashPathToFile
+        {
+            get
+            {
+                return deCashScanDocument.Path;
+            }
+            set
+            {
+                deCashScanDocument.Path = value;
+            }
+        }
+
+        /// <summary>
         /// Сумма картой
         /// </summary>
         public decimal CardAmount
@@ -424,6 +447,21 @@ namespace OfflineARM.View.Views.Orders
             set
             {
                 ceCardInputManual.Checked = value;
+            }
+        }
+
+        /// <summary>
+        /// Путь к файлу для скана документа картой
+        /// </summary>
+        public string CardPathToFile
+        {
+            get
+            {
+                return deCardScanDocument.Path;
+            }
+            set
+            {
+                deCardScanDocument.Path = value;
             }
         }
 
@@ -529,51 +567,6 @@ namespace OfflineARM.View.Views.Orders
             set
             {
                 teCreditScanner.Text = value;
-            }
-        }
-
-        /// <summary>
-        /// Сумма заказа
-        /// </summary>
-        public string AmountOrder
-        {
-            get
-            {
-                return lcAmountOrder.Text;
-            }
-            set
-            {
-                lcAmountOrder.Text = value;
-            }
-        }
-
-        /// <summary>
-        /// Сумма оплат
-        /// </summary>
-        public string AmountPayments
-        {
-            get
-            {
-                return lcAmountPayment.Text;
-            }
-            set
-            {
-                lcAmountPayment.Text = value;
-            }
-        }
-
-        /// <summary>
-        /// Сумма остатка
-        /// </summary>
-        public string Balance
-        {
-            get
-            {
-                return lcBalance.Text;
-            }
-            set
-            {
-                lcBalance.Text = value;
             }
         }
 

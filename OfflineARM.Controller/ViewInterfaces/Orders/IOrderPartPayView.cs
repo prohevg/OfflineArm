@@ -25,6 +25,11 @@ namespace OfflineARM.Controller.ViewInterfaces.Orders
         bool CashInputManual { get; set; }
 
         /// <summary>
+        /// Путь к файлу для скана документа наличными
+        /// </summary>
+        string CashPathToFile { get; set; }
+
+        /// <summary>
         /// Сумма картой
         /// </summary>
         decimal CardAmount { get; set; }
@@ -38,6 +43,11 @@ namespace OfflineARM.Controller.ViewInterfaces.Orders
         /// Оплата в ручную
         /// </summary>
         bool CardInputManual { get; set; }
+
+        /// <summary>
+        /// Путь к файлу для скана документа картой
+        /// </summary>
+        string CardPathToFile { get; set; }
 
         /// <summary>
         /// Банк
@@ -73,21 +83,6 @@ namespace OfflineARM.Controller.ViewInterfaces.Orders
         /// Штрих код кредита
         /// </summary>
         string CreditScannerCode { get; set; }
-
-        /// <summary>
-        /// Сумма заказа
-        /// </summary>
-        string AmountOrder { get; set; }
-
-        /// <summary>
-        /// Сумма оплат
-        /// </summary>
-        string AmountPayments { get; set; }
-
-        /// <summary>
-        /// Сумма остатка
-        /// </summary>
-        string Balance { get; set; }
 
         /// <summary>
         /// Добавить в таблицу оплат

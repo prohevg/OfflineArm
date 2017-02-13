@@ -1,5 +1,4 @@
-﻿using System;
-using OfflineARM.DAO.Entities.Business.Bases;
+﻿using OfflineARM.DAO.Entities.Business.Bases;
 
 namespace OfflineARM.DAO.Entities.Business
 {
@@ -30,6 +29,15 @@ namespace OfflineARM.DAO.Entities.Business
         /// Номер карты
         /// </summary>
         public string RNN
+        {
+            get;
+            set;
+        }
+
+        /// <summary>
+        /// Наименование документа
+        /// </summary>
+        public string DocumentName
         {
             get;
             set;

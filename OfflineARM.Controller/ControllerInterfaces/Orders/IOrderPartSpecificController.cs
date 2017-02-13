@@ -1,5 +1,6 @@
 ﻿using System.Collections.Generic;
 using OfflineARM.Controller.Base;
+using OfflineARM.Controller.Controllers.Orders;
 using OfflineARM.DAO.Entities.Business;
 using OfflineARM.DAO.Entities.Dictionaries;
 
@@ -16,9 +17,9 @@ namespace OfflineARM.Controller.ControllerInterfaces.Orders
         List<OrderSpecificationItem> SpecificationItems { get; }
 
         /// <summary>
-        /// Сумма заказа
+        /// Контроллер главной формы
         /// </summary>
-        decimal OrderAmount { get; set; }
+        OrderEditController MainController { get; set; }
 
         /// <summary>
         /// Поиск дочерних номенклатур

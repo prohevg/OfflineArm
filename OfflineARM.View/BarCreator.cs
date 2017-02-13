@@ -28,6 +28,7 @@ namespace OfflineARM.View
 
             var ribbonPageGroup = new RibbonPageGroup();
 
+            ribbonPage.Groups.Clear();
             ribbonPage.Groups.Add(ribbonPageGroup);
 
             ribbonPageGroup.AllowTextClipping = false;

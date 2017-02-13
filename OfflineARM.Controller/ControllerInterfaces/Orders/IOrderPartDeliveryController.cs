@@ -30,5 +30,10 @@ namespace OfflineARM.Controller.ControllerInterfaces.Orders
         /// Доставка
         /// </summary>
         Delivery Delivery { get; set; }
+
+        /// <summary>
+        /// Контроллер главной формы
+        /// </summary>
+        OrderEditController MainController { get; set; }
     }
 }

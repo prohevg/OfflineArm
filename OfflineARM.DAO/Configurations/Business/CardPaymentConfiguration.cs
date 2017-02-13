@@ -23,6 +23,9 @@ namespace OfflineARM.DAO.Configurations.Business
 
             Property(p => p.RNN)
               .HasMaxLength(50);
+
+            Property(p => p.DocumentName)
+              .HasMaxLength(255);
         }
 
         #endregion

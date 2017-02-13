@@ -71,6 +71,24 @@ namespace OfflineARM.View {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Настройки приложения.
+        /// </summary>
+        internal static string ApplicationSettingsCommandCaption {
+            get {
+                return ResourceManager.GetString("ApplicationSettingsCommandCaption", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Настройки приложения.
+        /// </summary>
+        internal static string ApplicationSettingsCommandHint {
+            get {
+                return ResourceManager.GetString("ApplicationSettingsCommandHint", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
         internal static System.Drawing.Bitmap backward_16x16 {

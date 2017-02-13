@@ -18,28 +18,56 @@ namespace OfflineARM.View.Views.Orders
     /// </summary>
     public partial class OrderEditView : BaseCommandView<IOrderEditController>, IOrderEditView
     {
+        #region поля и свойства
+
+        /// <summary>
+        /// Спецификация
+        /// </summary>
+        private readonly IOrderPartSpecificView _specificView;
+
+        /// <summary>
+        /// Доставка
+        /// </summary>
+        private readonly IOrderPartDeliveryView _deliveryView;
+
+        /// <summary>
+        /// Оплата
+        /// </summary>
+        private readonly IOrderPartPayView _payView;
+
+        #endregion
+
         #region Конструктор
 
         /// <summary>
         /// Конструктор
         /// </summary>
-        public OrderEditView()
+        /// <param name="specificView">Спецификация</param>
+        /// <param name="deliveryView">Доставка</param>
+        /// <param name="payView">Оплата</param>
+        public OrderEditView(IOrderPartSpecificView specificView, IOrderPartDeliveryView deliveryView, IOrderPartPayView payView) 
         {
             InitializeComponent();
+            
+            this._specificView = specificView;
+            this._deliveryView = deliveryView;
+            this._payView = payView;
+
+            this.tpSpecific.Controls.Add(specificView as Control);
+            this.tpDelivary.Controls.Add(deliveryView as Control);
+            this.tpBuy.Controls.Add(payView as Control);
 
             this.tcMain.SelectedPageChanged += TcMain_SelectedPageChanged;
             this.sbPrevios.Click += SbPrevios_Click;
             this.sbNext.Click += SbNext_Click;
 
+            this.Controller.SetControllers(specificView.Controller, deliveryView.Controller, payView.Controller);
+
             TcMain_SelectedPageChanged(tcMain, new TabPageChangedEventArgs(tpSpecific, tpSpecific));
 
-            this.Controller.SetControllers(this.orderPartSpecificControl.Controller, this.orderPartDelivary.Controller, this.orderPartPayControl.Controller);
-
-            this.orderPartSpecificControl.Controller.LoadView();
-            this.orderPartDelivary.Controller.LoadView();
-            this.orderPartPayControl.Controller.LoadView();
-
             this.Text = GuiResource.OrderForm_CaptionCreateOrder;
+            this.ShowInTaskbar = false;
+            this.MinimizeBox = false;
         }
 
         #endregion
@@ -101,9 +129,6 @@ namespace OfflineARM.View.Views.Orders
                 sbNext.Visible = false;
 
                 sbPrevios.Text = tpDelivary.Text;
-
-                this.orderPartPayControl.Controller.OrderAmount = this.orderPartSpecificControl.Controller.OrderAmount;
-                this.orderPartPayControl.Controller.LoadView();
             }
         }
 
@@ -133,6 +158,51 @@ namespace OfflineARM.View.Views.Orders
         #endregion
 
         #region IOrderEditView
+
+        /// <summary>
+        /// Сумма заказа
+        /// </summary>
+        public string AmountOrder
+        {
+            get
+            {
+                return lcAmountOrder.Text;
+            }
+            set
+            {
+                lcAmountOrder.Text = value;
+            }
+        }
+
+        /// <summary>
+        /// Сумма оплат
+        /// </summary>
+        public string AmountPayments
+        {
+            get
+            {
+                return lcAmountPayment.Text;
+            }
+            set
+            {
+                lcAmountPayment.Text = value;
+            }
+        }
+
+        /// <summary>
+        /// Сумма остатка
+        /// </summary>
+        public string Balance
+        {
+            get
+            {
+                return lcBalance.Text;
+            }
+            set
+            {
+                lcBalance.Text = value;
+            }
+        }
 
         /// <summary>
         /// Показать окно добавления заказа

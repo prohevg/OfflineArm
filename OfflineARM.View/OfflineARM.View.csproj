@@ -81,6 +81,7 @@
       <HintPath>..\assemblies\basic\Ninject.dll</HintPath>
     </Reference>
     <Reference Include="System" />
+    <Reference Include="System.Configuration" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
@@ -123,8 +124,12 @@
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
     </Compile>
+    <Compile Include="ConfigFileDispatcher.cs" />
     <Compile Include="Controls\DaDataAddress.cs">
       <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\DocumentEdit.cs">
+      <SubType>Component</SubType>
     </Compile>
     <Compile Include="Controls\EventArg\GridCommandEventArgs.cs" />
     <Compile Include="Controls\GridControlWrapper.cs">
@@ -215,6 +220,21 @@
     <Compile Include="Validators\TextEditValidationProvider.cs">
       <SubType>Component</SubType>
     </Compile>
+    <Compile Include="Views\Settings\SettingApplicationView.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\Settings\SettingApplicationView.Designer.cs">
+      <DependentUpon>SettingApplicationView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Settings\SettingProxyView.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\Settings\SettingProxyView.Designer.cs">
+      <DependentUpon>SettingProxyView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Settings\SettingsView.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
     <EmbeddedResource Include="AboutBoxProgramView.resx">
       <DependentUpon>AboutBoxProgramView.cs</DependentUpon>
     </EmbeddedResource>
@@ -273,6 +293,9 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
+    <EmbeddedResource Include="Views\Settings\SettingApplicationView.resx">
+      <DependentUpon>SettingApplicationView.cs</DependentUpon>
+    </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -314,6 +337,7 @@
       <Name>OfflineARM.DAO</Name>
     </ProjectReference>
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

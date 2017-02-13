@@ -241,4 +241,10 @@
   <data name="MessageBoxView_Error" xml:space="preserve">
     <value>Ошибка</value>
   </data>
+  <data name="DocumentEdit_AddToolTip" xml:space="preserve">
+    <value>Добавить документ</value>
+  </data>
+  <data name="DocumentEdit_ErrorOpenDocument" xml:space="preserve">
+    <value>Ошибка при открытии документа "{0}"!</value>
+  </data>
 </root>

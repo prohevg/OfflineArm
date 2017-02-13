@@ -52,6 +52,15 @@ namespace OfflineARM.Controller.Models.Orders
             get;
             set;
         }
+
+        /// <summary>
+        /// Наименование документа
+        /// </summary>
+        public string DocumentName
+        {
+            get;
+            set;
+        }
     
         /// <summary>
         /// Конструктор
@@ -64,6 +73,7 @@ namespace OfflineARM.Controller.Models.Orders
             this.Type = ControllerResources.OrderPayControl_CashPaymentType;
             this.Amount = cashPayment.Amount;
             this.IsManual = cashPayment.Manual;
+            this.DocumentName = cashPayment.DocumentName;
         }
 
         /// <summary>
@@ -77,6 +87,7 @@ namespace OfflineARM.Controller.Models.Orders
             this.Type = ControllerResources.OrderPayControl_CardPaymentType;
             this.Amount = cardPayment.Amount;
             this.IsManual = cardPayment.Manual;
+            this.DocumentName = cardPayment.DocumentName;
         }
 
         /// <summary>

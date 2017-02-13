@@ -76,11 +76,11 @@ namespace OfflineARM.Controller.Controllers.Orders
         }
 
         /// <summary>
-        /// Сумма заказа
+        /// Контроллер главной формы
         /// </summary>
-        public decimal OrderAmount
+        public OrderEditController MainController
         {
-            get;
+            get; 
             set;
         }
 
@@ -212,7 +212,7 @@ namespace OfflineARM.Controller.Controllers.Orders
                 _specificationItems.Add(orderSpesific);
             }
 
-            this.OrderAmount = _specificationItems.Sum(item => item.PriceWithDiscount);
+            MainController.RecalculatePayment();
 
             return orderSpesific;
         }

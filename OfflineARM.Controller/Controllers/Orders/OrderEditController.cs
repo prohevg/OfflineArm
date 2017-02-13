@@ -3,7 +3,6 @@ using System.Collections.Generic;
 using System.Linq;
 using OfflineARM.Controller.Base;
 using OfflineARM.Controller.Commands;
-using OfflineARM.Controller.ControllerInterfaces;
 using OfflineARM.Controller.ControllerInterfaces.Orders;
 using OfflineARM.Controller.Controllers.Orders.Commands;
 using OfflineARM.Controller.Validators.Businesses.Interfaces;
@@ -83,6 +82,10 @@ namespace OfflineARM.Controller.Controllers.Orders
 
                 _orderEditView.LoadResponsibles(allUsers, _user);
             }
+
+            _specificController.LoadView();
+            _delivaryController.LoadView();
+            _payController.LoadView();
         }
 
         #endregion
@@ -109,6 +112,10 @@ namespace OfflineARM.Controller.Controllers.Orders
             _specificController = specificController;
             _delivaryController = delivaryController;
             _payController = payController;
+
+            _specificController.MainController = this;
+            _delivaryController.MainController = this;
+            _payController.MainController = this;
         }
 
         /// <summary>
@@ -132,6 +139,22 @@ namespace OfflineARM.Controller.Controllers.Orders
             }
 
             return _user;
+        }
+
+        /// <summary>
+        /// Сумма оплат
+        /// </summary>
+        public void RecalculatePayment()
+        {
+            var orderAmount = this._specificController.SpecificationItems.Sum(item => item.PriceWithDiscount);
+            var amountCashPayments = this._payController.CashPayments.Sum(item => item.Amount);
+            var amountCardPayments = this._payController.CardPayments.Sum(item => item.Amount);
+            var amountCreditPayments = this._payController.CreditPayments.Sum(item => item.Amount);
+            var allAmount = amountCashPayments + amountCardPayments + amountCreditPayments;
+
+            _orderEditView.AmountOrder = string.Format(ControllerResources.OrderEditController_AmountOrder, orderAmount);
+            _orderEditView.AmountPayments = string.Format(ControllerResources.OrderEditController_AmountPayments, allAmount);
+            _orderEditView.Balance = string.Format(ControllerResources.OrderEditController_AmountBalance, orderAmount - allAmount);
         }
 
         #endregion
@@ -185,7 +208,6 @@ namespace OfflineARM.Controller.Controllers.Orders
                         Guid = Guid.NewGuid(),
                         DateCreate = DateTime.Now,
                         OrderStatus = unitOfWork.DictionaryRepositories.OrderStatusRepository.GetAllAsync().Result.Data.FirstOrDefault(),
-                        TotalAmount = this._specificController.OrderAmount,
                     };
 
                     AddResponsable(_order);
@@ -256,6 +278,8 @@ namespace OfflineARM.Controller.Controllers.Orders
 
                 order.OrderSpecifications.Add(item);
             }
+
+            _order.TotalAmount = this._specificController.SpecificationItems.Sum(item => item.PriceWithDiscount);
         }
 
         /// <summary>

@@ -1,5 +1,6 @@
 ﻿using System.Collections.Generic;
 using OfflineARM.Controller.Base;
+using OfflineARM.Controller.Controllers.Orders;
 using OfflineARM.Controller.Models.Orders;
 using OfflineARM.DAO.Entities.Business;
 
@@ -29,6 +30,11 @@ namespace OfflineARM.Controller.ControllerInterfaces.Orders
         /// Оплата кредитом
         /// </summary>
         List<CreditPayment> CreditPayments { get; set; }
+
+        /// <summary>
+        /// Контроллер главной формы
+        /// </summary>
+        OrderEditController MainController { get; set; }
 
         /// <summary>
         /// Добавить оплату наличными

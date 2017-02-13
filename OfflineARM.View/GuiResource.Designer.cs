@@ -70,6 +70,24 @@ namespace OfflineARM.View {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Добавить документ.
+        /// </summary>
+        internal static string DocumentEdit_AddToolTip {
+            get {
+                return ResourceManager.GetString("DocumentEdit_AddToolTip", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Ошибка при открытии документа &quot;{0}&quot;!.
+        /// </summary>
+        internal static string DocumentEdit_ErrorOpenDocument {
+            get {
+                return ResourceManager.GetString("DocumentEdit_ErrorOpenDocument", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
         internal static System.Drawing.Bitmap knowledgebasearticle_32x32 {

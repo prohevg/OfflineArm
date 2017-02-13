@@ -157,4 +157,10 @@
   <data name="backward_16x16" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>Resources\backward_16x16.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="ApplicationSettingsCommandCaption" xml:space="preserve">
+    <value>Настройки приложения</value>
+  </data>
+  <data name="ApplicationSettingsCommandHint" xml:space="preserve">
+    <value>Настройки приложения</value>
+  </data>
 </root>

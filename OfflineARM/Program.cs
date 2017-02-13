@@ -17,6 +17,8 @@ namespace OfflineARM
         {
             try
             {
+                AppDomain.CurrentDomain.UnhandledException += CurrentDomain_UnhandledException;
+
                 Application.EnableVisualStyles();
                 Application.SetCompatibleTextRenderingDefault(false);
 
@@ -40,8 +42,21 @@ namespace OfflineARM
             {
                 Logger.Error(e.Message);
                 Logger.Error(e.StackTrace);
+            }
+        }
 
-                throw;
+        /// <summary>
+        /// Ообработчка ошибок
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        static void CurrentDomain_UnhandledException(object sender, UnhandledExceptionEventArgs e)
+        {
+            var exp = e.ExceptionObject as Exception;
+            if (exp != null)
+            {
+                Logger.Error(exp.Message);
+                Logger.Error(exp.StackTrace);
             }
         }
     }

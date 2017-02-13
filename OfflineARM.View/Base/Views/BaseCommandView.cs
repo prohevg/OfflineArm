@@ -36,7 +36,6 @@ namespace OfflineARM.View.Base.Views
         public BaseCommandView()
         {
             InitializeComponent();
-
             BarCreator.CreateBars(BarManager, this.GetCommands(), item_ItemClick);
         }
 

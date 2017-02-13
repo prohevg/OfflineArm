@@ -99,6 +99,15 @@ namespace OfflineARM.Controller.Controllers.Orders
         }
 
         /// <summary>
+        /// Контроллер главной формы
+        /// </summary>
+        public OrderEditController MainController
+        {
+            get;
+            set;
+        }
+
+        /// <summary>
         /// Контроллеры для вкладки доставка
         /// </summary>
         /// <param name="orderClientController">Клиент</param>

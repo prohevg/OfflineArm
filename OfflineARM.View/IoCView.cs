@@ -1,7 +1,9 @@
 ﻿using Ninject;
 using OfflineARM.Controller.ViewInterfaces;
 using OfflineARM.Controller.ViewInterfaces.Orders;
+using OfflineARM.Controller.ViewInterfaces.Settings;
 using OfflineARM.View.Views.Orders;
+using OfflineARM.View.Views.Settings;
 
 namespace OfflineARM.View
 {
@@ -62,12 +64,26 @@ namespace OfflineARM.View
             container.Bind<IAboutBoxProgramView>().To<AboutBoxProgramView>();
             container.Bind<IMessageBoxView>().To<MessageBoxView>();
 
+            #region orders
+
             container.Bind<IOrderListView>().To<OrderListView>();
             container.Bind<IOrderEditView>().To<OrderEditView>();
+            container.Bind<IOrderPartSpecificView>().To<OrderPartSpecificView>();
+            container.Bind<IOrderPartDeliveryView>().To<OrderPartDeliveryView>();
+            container.Bind<IOrderPartPayView>().To<OrderPartPayView>();
 
             container.Bind<ICustomerPrivateView>().To<CustomerPrivateView>();
             container.Bind<ICustomerLegalView>().To<CustomerLegalView>();
             container.Bind<IOrderAddressView>().To<OrderAddressView>();
+
+            #endregion
+
+            #region settings
+
+            container.Bind<ISettingsView>().To<SettingsView>();
+            container.Bind<ISettingApplicationView>().To<SettingApplicationView>();
+
+            #endregion
         }
 
         #endregion

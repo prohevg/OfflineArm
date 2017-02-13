@@ -1,4 +1,5 @@
-﻿using System.Windows.Forms;
+﻿using System.Drawing;
+using System.Windows.Forms;
 using OfflineARM.Controller;
 using OfflineARM.Controller.Base;
 using OfflineARM.Controller.ViewInterfaces.Base;
@@ -20,6 +21,7 @@ namespace OfflineARM.View.Base.Views
         {
             this.StartPosition = FormStartPosition.CenterScreen;
             this.WindowState = FormWindowState.Maximized;
+            this.MinimumSize = new Size(1024, 768);
 
             CreateController();
         }
