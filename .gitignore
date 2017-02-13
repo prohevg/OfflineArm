@@ -29,3 +29,7 @@
 /OfflineARM.Controller/obj/Debug
 /OfflineARM.View/bin/Debug
 /OfflineARM.View/obj/Debug
+/OfflineARM.Controller/bin/x86/Debug
+/OfflineARM.Controller/obj/x86/Debug
+/OfflineARM.View/bin/x86/Debug
+/OfflineARM.View/obj/x86/Debug
