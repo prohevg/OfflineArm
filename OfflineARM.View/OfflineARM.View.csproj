@@ -296,6 +296,9 @@
     <EmbeddedResource Include="Views\Settings\SettingApplicationView.resx">
       <DependentUpon>SettingApplicationView.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Views\Settings\SettingProxyView.resx">
+      <DependentUpon>SettingProxyView.cs</DependentUpon>
+    </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -337,7 +340,9 @@
       <Name>OfflineARM.DAO</Name>
     </ProjectReference>
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <None Include="Resources\properties_32x32.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

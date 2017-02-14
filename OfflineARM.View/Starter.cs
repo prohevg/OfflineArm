@@ -72,7 +72,7 @@ namespace OfflineARM.View
 
             CommandMetadataHolder.Instance.SetMetadata(
                SettingsCommands.ApplicationSettings,
-               CommandResources.save_32x32,
+               CommandResources.properties_32x32,
                CommandResources.ApplicationSettingsCommandCaption,
                CommandResources.ApplicationSettingsCommandHint);
 
@@ -93,7 +93,7 @@ namespace OfflineARM.View
         /// </summary>
         protected void InitializationConfig()
         {
-            var armConfig = ConfigFileDispatcher.Instance.GetConfigFile<AppConfigFile>() ?? new AppConfigFile();
+            var armConfig = IoCControllers.Instance.Get<AppConfigFile>();
             var section = armConfig.GetSection<ArmConfigurationSection>(ArmConfigurationSection.SectionName);
 
             if (string.IsNullOrWhiteSpace(section.Main.PathToDocuments))

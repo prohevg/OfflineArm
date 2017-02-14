@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using OfflineARM.Controller.Base;
 using OfflineARM.Controller.Commands;
@@ -226,6 +227,18 @@ namespace OfflineARM.Controller.Controllers.Orders
                         return;
                     }
 
+                    foreach (var orderDocument in _payController.OrderDocuments)
+                    {
+                        if (!File.Exists(orderDocument.Path))
+                        {
+                            var error = string.Format(ControllerResources.OrderEditController_FileDownloadedNotExists, orderDocument.Path);
+                            throw new Exception(error);
+                        }
+
+                        var path = GetPathToDocument(orderDocument.Path);
+                        File.WriteAllBytes(path, orderDocument.FileStream);
+                    }
+
                     unitOfWork.BusinessesRepositories.OrderRepository.Insert(_order);
                     unitOfWork.Save();
 
@@ -235,7 +248,8 @@ namespace OfflineARM.Controller.Controllers.Orders
             catch (Exception e)
             {
                 _order = null;
-                IoCControllers.Instance.Get<IMessageBoxView>().Show(e.Message);
+                var error = string.Format(ControllerResources.OrderEditController_ErrorSave, e.Message);
+                IoCControllers.Instance.Get<IMessageBoxView>().Show(error);
             }
         }
 
@@ -259,7 +273,7 @@ namespace OfflineARM.Controller.Controllers.Orders
         }
 
         /// <summary>
-        /// Добавить специфификацию
+        /// Добавить спецификацию
         /// </summary>
         /// <param name="order"></param>
         /// <param name="unitOfWork"></param>
@@ -340,9 +354,27 @@ namespace OfflineARM.Controller.Controllers.Orders
         /// <param name="order"></param>
         private void AddPayments(Order order)
         {
+            this._payController.CardPayments.ForEach(c => c.DocumentName = GetPathToDocument(c.DocumentName));
+
             order.CashPayments = this._payController.CashPayments;
             order.CardPayments = this._payController.CardPayments;
             order.CreditPayments = this._payController.CreditPayments;
+        }
+
+        /// <summary>
+        /// Получить путь к документов при сохранении в БД
+        /// </summary>
+        /// <param name="documentName"></param>
+        /// <returns></returns>
+        private string GetPathToDocument(string documentName)
+        {
+            if (string.IsNullOrWhiteSpace(documentName))
+            {
+                return documentName;
+            }
+
+            var parametres = IoCControllers.Instance.Get<ApplicationParameters>();
+            return Path.Combine(parametres.PathToDocuments, Path.GetFileName(documentName));
         }
 
         #endregion

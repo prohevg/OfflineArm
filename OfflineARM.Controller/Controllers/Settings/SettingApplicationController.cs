@@ -22,7 +22,7 @@ namespace OfflineARM.Controller.Controllers.Settings
 
         #endregion
 
-        #region ISettingApplicationController
+        #region override
 
         /// <summary>
         /// Представление контроллера
@@ -38,15 +38,7 @@ namespace OfflineARM.Controller.Controllers.Settings
         /// </summary>
         public override void LoadView()
         {
-            var armConfig = ConfigFileDispatcher.Instance.GetConfigFile<AppConfigFile>() ?? new AppConfigFile();
-            var section = armConfig.GetSection<ArmConfigurationSection>(ArmConfigurationSection.SectionName);
-
-            if (string.IsNullOrWhiteSpace(section.Main.PathToDocuments))
-            {
-                
-            }
-
-            _view.PathToDocuments = section.Main.PathToDocuments;
+            _view.PathToDocuments = IoCControllers.Instance.Get<ApplicationParameters>().PathToDocuments;
         }
 
         #endregion

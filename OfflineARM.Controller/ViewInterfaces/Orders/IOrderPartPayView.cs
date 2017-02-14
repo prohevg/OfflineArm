@@ -25,11 +25,6 @@ namespace OfflineARM.Controller.ViewInterfaces.Orders
         bool CashInputManual { get; set; }
 
         /// <summary>
-        /// Путь к файлу для скана документа наличными
-        /// </summary>
-        string CashPathToFile { get; set; }
-
-        /// <summary>
         /// Сумма картой
         /// </summary>
         decimal CardAmount { get; set; }
@@ -48,6 +43,11 @@ namespace OfflineARM.Controller.ViewInterfaces.Orders
         /// Путь к файлу для скана документа картой
         /// </summary>
         string CardPathToFile { get; set; }
+
+        /// <summary>
+        /// Поток файла
+        /// </summary>
+        byte[] CardFileStream { get; }
 
         /// <summary>
         /// Банк

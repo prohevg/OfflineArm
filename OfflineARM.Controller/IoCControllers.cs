@@ -8,6 +8,7 @@ using OfflineARM.Controller.ControllerInterfaces.Settings;
 using OfflineARM.Controller.Controllers;
 using OfflineARM.Controller.Controllers.Orders;
 using OfflineARM.Controller.Controllers.Settings;
+using OfflineARM.Controller.CustomConfigFile;
 using OfflineARM.Controller.Validators.Businesses;
 using OfflineARM.Controller.Validators.Businesses.Interfaces;
 using OfflineARM.Controller.Validators.Dictionaries;
@@ -80,6 +81,7 @@ namespace OfflineARM.Controller
         private static void RegisterImp(IKernel container)
         {
             container.Bind<ApplicationParameters>().ToSelf().InSingletonScope();
+            container.Bind<AppConfigFile>().ToSelf().InSingletonScope();
 
             RegisterControllers(container);
             RegisterValidators(container);

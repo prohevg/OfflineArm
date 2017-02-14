@@ -29,46 +29,58 @@
         private void InitializeComponent()
         {
             this.bePathToDocuments = new DevExpress.XtraEditors.ButtonEdit();
-            this.simpleButton1 = new DevExpress.XtraEditors.SimpleButton();
-            this.simpleButton2 = new DevExpress.XtraEditors.SimpleButton();
+            this.cbOk = new DevExpress.XtraEditors.SimpleButton();
+            this.sbCancel = new DevExpress.XtraEditors.SimpleButton();
+            this.labelControl1 = new DevExpress.XtraEditors.LabelControl();
             ((System.ComponentModel.ISupportInitialize)(this.bePathToDocuments.Properties)).BeginInit();
             this.SuspendLayout();
             // 
             // bePathToDocuments
             // 
             this.bePathToDocuments.EditValue = "Введите путь к документам";
-            this.bePathToDocuments.Location = new System.Drawing.Point(13, 22);
+            this.bePathToDocuments.Location = new System.Drawing.Point(150, 20);
             this.bePathToDocuments.Name = "bePathToDocuments";
             this.bePathToDocuments.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton()});
-            this.bePathToDocuments.Size = new System.Drawing.Size(543, 20);
+            this.bePathToDocuments.Size = new System.Drawing.Size(411, 20);
             this.bePathToDocuments.TabIndex = 0;
+            this.bePathToDocuments.ButtonClick += new DevExpress.XtraEditors.Controls.ButtonPressedEventHandler(this.bePathToDocuments_ButtonClick);
             // 
-            // simpleButton1
+            // cbOk
             // 
-            this.simpleButton1.Location = new System.Drawing.Point(105, 132);
-            this.simpleButton1.Name = "simpleButton1";
-            this.simpleButton1.Size = new System.Drawing.Size(75, 23);
-            this.simpleButton1.TabIndex = 1;
-            this.simpleButton1.Text = "Ок";
-            this.simpleButton1.Click += new System.EventHandler(this.simpleButton1_Click);
+            this.cbOk.Location = new System.Drawing.Point(388, 132);
+            this.cbOk.Name = "cbOk";
+            this.cbOk.Size = new System.Drawing.Size(75, 23);
+            this.cbOk.TabIndex = 1;
+            this.cbOk.Text = "Ок";
+            this.cbOk.Click += new System.EventHandler(this.sbOk_Click);
             // 
-            // simpleButton2
+            // sbCancel
             // 
-            this.simpleButton2.DialogResult = System.Windows.Forms.DialogResult.Cancel;
-            this.simpleButton2.Location = new System.Drawing.Point(186, 132);
-            this.simpleButton2.Name = "simpleButton2";
-            this.simpleButton2.Size = new System.Drawing.Size(75, 23);
-            this.simpleButton2.TabIndex = 2;
-            this.simpleButton2.Text = "Отмена";
+            this.sbCancel.DialogResult = System.Windows.Forms.DialogResult.Cancel;
+            this.sbCancel.Location = new System.Drawing.Point(486, 132);
+            this.sbCancel.Name = "sbCancel";
+            this.sbCancel.Size = new System.Drawing.Size(75, 23);
+            this.sbCancel.TabIndex = 2;
+            this.sbCancel.Text = "Отмена";
+            // 
+            // labelControl1
+            // 
+            this.labelControl1.Appearance.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.labelControl1.Location = new System.Drawing.Point(12, 23);
+            this.labelControl1.Name = "labelControl1";
+            this.labelControl1.Size = new System.Drawing.Size(132, 16);
+            this.labelControl1.TabIndex = 3;
+            this.labelControl1.Text = "Папка для документов";
             // 
             // SettingApplicationView
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(626, 162);
-            this.Controls.Add(this.simpleButton2);
-            this.Controls.Add(this.simpleButton1);
+            this.ClientSize = new System.Drawing.Size(584, 161);
+            this.Controls.Add(this.labelControl1);
+            this.Controls.Add(this.sbCancel);
+            this.Controls.Add(this.cbOk);
             this.Controls.Add(this.bePathToDocuments);
             this.MaximizeBox = false;
             this.MinimizeBox = false;
@@ -76,13 +88,15 @@
             this.Text = "Настройки приложения";
             ((System.ComponentModel.ISupportInitialize)(this.bePathToDocuments.Properties)).EndInit();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
         #endregion
 
         private DevExpress.XtraEditors.ButtonEdit bePathToDocuments;
-        private DevExpress.XtraEditors.SimpleButton simpleButton1;
-        private DevExpress.XtraEditors.SimpleButton simpleButton2;
+        private DevExpress.XtraEditors.SimpleButton cbOk;
+        private DevExpress.XtraEditors.SimpleButton sbCancel;
+        private DevExpress.XtraEditors.LabelControl labelControl1;
     }
 }

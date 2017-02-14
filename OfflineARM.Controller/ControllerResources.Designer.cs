@@ -97,6 +97,24 @@ namespace OfflineARM.Controller {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Заказа не сохранен! Произошла ошибка: &quot;{0}&quot;!.
+        /// </summary>
+        internal static string OrderEditController_ErrorSave {
+            get {
+                return ResourceManager.GetString("OrderEditController_ErrorSave", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Файла не сущесмтвует: &quot;{0}&quot;!.
+        /// </summary>
+        internal static string OrderEditController_FileDownloadedNotExists {
+            get {
+                return ResourceManager.GetString("OrderEditController_FileDownloadedNotExists", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Карта.
         /// </summary>
         internal static string OrderPayControl_CardPaymentType {
