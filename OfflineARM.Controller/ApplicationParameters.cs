@@ -1,4 +1,7 @@
-﻿namespace OfflineARM.Controller
+﻿using OfflineARM.Controller.CustomConfigFile;
+using OfflineARM.Controller.CustomConfigFile.Sections;
+
+namespace OfflineARM.Controller
 {
     /// <summary>
     /// Параметры приложений
@@ -35,6 +38,19 @@
             get
             {
                 return "6daee90893e9d5196f2881c7973fb2d3e5bd1e55";
+            }
+        }
+
+        /// <summary>
+        /// Путь к документам
+        /// </summary>
+        public string PathToDocuments
+        {
+            get
+            {
+                var armConfig = IoCControllers.Instance.Get<AppConfigFile>();
+                var section = armConfig.GetSection<ArmConfigurationSection>(ArmConfigurationSection.SectionName);
+                return section.Main.PathToDocuments;
             }
         }
     }

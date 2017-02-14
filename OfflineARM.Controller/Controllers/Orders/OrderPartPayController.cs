@@ -39,6 +39,11 @@ namespace OfflineARM.Controller.Controllers.Orders
         /// </summary>
         private List<CreditPayment> _creditPayments = new List<CreditPayment>();
 
+        /// <summary>
+        /// Список документов на оплату
+        /// </summary>
+        private readonly List<OrderDocument> _orderDocuments = new List<OrderDocument>();
+
         #endregion
 
         #region override
@@ -128,6 +133,17 @@ namespace OfflineARM.Controller.Controllers.Orders
         }
 
         /// <summary>
+        /// Список документов на оплату
+        /// </summary>
+        public IReadOnlyList<OrderDocument> OrderDocuments
+        {
+            get
+            {
+                return _orderDocuments;
+            }
+        }
+
+        /// <summary>
         /// Добавить оплату наличными
         /// </summary>
         public void AddNewCashPayment()
@@ -139,7 +155,6 @@ namespace OfflineARM.Controller.Controllers.Orders
                 Amount = _orderPayView.CashAmount,
                 Manual = _orderPayView.CashInputManual,
                 FiscalReceipt = _orderPayView.CashFiscalReceipt,
-                DocumentName = _orderPayView.CashPathToFile
             };
 
             _cashPayments.Add(cashPayment);
@@ -147,6 +162,10 @@ namespace OfflineARM.Controller.Controllers.Orders
             var paymentRow = new PaymentRow(cashPayment);
 
             _orderPayView.AddPaymentToGrid(paymentRow);
+
+            _orderPayView.CashAmount = 0;
+            _orderPayView.CashInputManual = false;
+            _orderPayView.CashFiscalReceipt = string.Empty;
 
             MainController.RecalculatePayment();
         }
@@ -169,9 +188,19 @@ namespace OfflineARM.Controller.Controllers.Orders
 
             _cardPayments.Add(cardPayment);
 
+            if (!string.IsNullOrWhiteSpace(cardPayment.DocumentName))
+            {
+                _orderDocuments.Add(new OrderDocument(cardPayment.DocumentName, _orderPayView.CardFileStream));
+            }
+
             var paymentRow = new PaymentRow(cardPayment);
 
             _orderPayView.AddPaymentToGrid(paymentRow);
+            _orderPayView.CardAmount = 0;
+            _orderPayView.CardNumber = string.Empty;
+            _orderPayView.CardInputManual = false;
+            _orderPayView.CardNumber = string.Empty;
+            _orderPayView.CardPathToFile = string.Empty;
 
             MainController.RecalculatePayment();
         }
@@ -199,6 +228,14 @@ namespace OfflineARM.Controller.Controllers.Orders
             var paymentRow = new PaymentRow(creditPayment);
 
             _orderPayView.AddPaymentToGrid(paymentRow);
+
+            _orderPayView.CreditAmount = 0;
+            _orderPayView.CreditBank = string.Empty;
+            _orderPayView.CreditBankProduct = string.Empty;
+            _orderPayView.CreditBankOrderNumber = string.Empty;
+            _orderPayView.CreditAmount = 0;
+            _orderPayView.CreditInitialFee = 0;
+            _orderPayView.CreditNameInOrder = string.Empty;
 
             MainController.RecalculatePayment();
         }
@@ -266,4 +303,33 @@ namespace OfflineARM.Controller.Controllers.Orders
 
         #endregion
     }
+
+    public class OrderDocument
+    {
+        private readonly string _path;
+        private readonly byte[] _fileStream;
+
+        public string Path
+        {
+            get
+            {
+                return _path;
+            }
+        }
+
+        public byte[] FileStream
+        {
+            get
+            {
+                return _fileStream;
+            }
+        }
+
+        public OrderDocument(string path, byte[] fileStream)
+        {
+            _path = path;
+            _fileStream = fileStream;
+        }
+    }
+
 }

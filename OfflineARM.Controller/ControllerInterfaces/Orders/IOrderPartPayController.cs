@@ -37,6 +37,11 @@ namespace OfflineARM.Controller.ControllerInterfaces.Orders
         OrderEditController MainController { get; set; }
 
         /// <summary>
+        /// Список документов на оплату
+        /// </summary>
+        IReadOnlyList<OrderDocument> OrderDocuments { get; }
+
+        /// <summary>
         /// Добавить оплату наличными
         /// </summary>
         void AddNewCashPayment();

@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Drawing;
 using System.Windows.Forms;
+using DevExpress.Utils.Internal;
 using OfflineARM.Controller.ControllerInterfaces.Settings;
 using OfflineARM.Controller.ViewInterfaces.Settings;
 using OfflineARM.View.Base.Views;
@@ -17,21 +18,12 @@ namespace OfflineARM.View.Views.Settings
             InitializeComponent();
             this.WindowState = FormWindowState.Normal;
             this.StartPosition = FormStartPosition.CenterParent;
-            this.MinimumSize = new Size(300, 200);
+            this.MinimumSize = new Size(600, 200);
+            this.MaximumSize = new Size(600, 200);
 
             this.bePathToDocuments.Properties.ReadOnly = true;
 
             this.Controller.LoadView();
-        }
-
-        /// <summary>
-        /// Применить настройки
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
-        private void simpleButton1_Click(object sender, EventArgs e)
-        {
-            Controller.SaveSettings();
         }
 
         #region ISettingApplicationView
@@ -60,5 +52,34 @@ namespace OfflineARM.View.Views.Settings
         }
 
         #endregion
+
+        /// <summary>
+        /// Применить настройки
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void sbOk_Click(object sender, EventArgs e)
+        {
+            Controller.SaveSettings();
+            this.Close();
+        }
+
+        /// <summary>
+        /// Выбор директории для документов
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void bePathToDocuments_ButtonClick(object sender, DevExpress.XtraEditors.Controls.ButtonPressedEventArgs e)
+        {
+            using (var folderBrowser = new FolderBrowserDialog())
+            {
+                folderBrowser.SelectedPath = this.PathToDocuments;
+                if (folderBrowser.ShowDialog() == DialogResult.OK)
+                {
+                    this.bePathToDocuments.EditValue = folderBrowser.SelectedPath;
+                    this.Controller.SaveSettings();
+                }
+            }
+        }
     }
 }

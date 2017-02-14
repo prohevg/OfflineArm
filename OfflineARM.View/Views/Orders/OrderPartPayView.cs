@@ -128,12 +128,10 @@ namespace OfflineARM.View.Views.Orders
             this.teCashFiscalReceipt.Enabled = isEnable;
             this.smCashCheckManual.Enabled = isEnable;
             this.ceCashInputManual.Enabled = isEnable;
-            this.deCashScanDocument.Enabled = isEnable;
 
             if (isEnable)
             {
                 this.teCashFiscalReceipt.Enabled = this.ceCashInputManual.Checked;
-                this.deCashScanDocument.Enabled = this.ceCashInputManual.Checked;
             }
         }
 
@@ -169,7 +167,8 @@ namespace OfflineARM.View.Views.Orders
             this.teCreditInitialFee.Enabled = isEnable;
             this.teCreditNameInOrder.Enabled = isEnable;
             this.meCreditScanner.Enabled = isEnable;
-            this.sbCreditApply2.Enabled = isEnable;
+            this.sbCreditApply.Enabled = isEnable;
+            this.sbReadCode.Enabled = isEnable;
         }
 
         /// <summary>
@@ -286,7 +285,6 @@ namespace OfflineARM.View.Views.Orders
         {
             var isEnabled = (bool) ((CheckEdit) sender).EditValue;
             teCashFiscalReceipt.Enabled = isEnabled;
-            deCashScanDocument.Enabled = isEnabled;
 
             if (teCashFiscalReceipt.Enabled)
             {
@@ -391,21 +389,6 @@ namespace OfflineARM.View.Views.Orders
         }
 
         /// <summary>
-        /// Путь к файлу для скана документа наличными
-        /// </summary>
-        public string CashPathToFile
-        {
-            get
-            {
-                return deCashScanDocument.Path;
-            }
-            set
-            {
-                deCashScanDocument.Path = value;
-            }
-        }
-
-        /// <summary>
         /// Сумма картой
         /// </summary>
         public decimal CardAmount
@@ -462,6 +445,17 @@ namespace OfflineARM.View.Views.Orders
             set
             {
                 deCardScanDocument.Path = value;
+            }
+        }
+
+        /// <summary>
+        /// Поток файла
+        /// </summary>
+        public byte[] CardFileStream
+        {
+            get
+            {
+                return deCardScanDocument.FileStream;
             }
         }
 

@@ -42,6 +42,11 @@ namespace OfflineARM.View.Controls
                     this._path = value;
                     this.EditValue = FileName;
                 }
+
+                if (string.IsNullOrWhiteSpace(value))
+                {
+                    _fileStream = null;
+                }
             }
         }
 
@@ -53,6 +58,17 @@ namespace OfflineARM.View.Controls
             get
             {
                 return string.IsNullOrWhiteSpace(Path) ? string.Empty : System.IO.Path.GetFileName(Path);
+            }
+        }
+
+        /// <summary>
+        /// Поток байт файла
+        /// </summary>
+        public byte[] FileStream
+        {
+            get
+            {
+                return _fileStream;
             }
         }
 
@@ -111,7 +127,9 @@ namespace OfflineARM.View.Controls
             var openFileDialog = new OpenFileDialog();
             if (openFileDialog.ShowDialog() == DialogResult.OK)
             {
-                Path = openFileDialog.FileName;
+                var path = openFileDialog.FileName;
+                Path = path;
+                _fileStream = File.ReadAllBytes(path);
             }
         }
 

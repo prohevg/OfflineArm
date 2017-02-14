@@ -73,7 +73,6 @@ namespace OfflineARM.Controller.Models.Orders
             this.Type = ControllerResources.OrderPayControl_CashPaymentType;
             this.Amount = cashPayment.Amount;
             this.IsManual = cashPayment.Manual;
-            this.DocumentName = cashPayment.DocumentName;
         }
 
         /// <summary>

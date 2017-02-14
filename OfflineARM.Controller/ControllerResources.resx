@@ -129,6 +129,12 @@
   <data name="OrderEditController_AmountPayments" xml:space="preserve">
     <value>Оплачено {0} р.</value>
   </data>
+  <data name="OrderEditController_ErrorSave" xml:space="preserve">
+    <value>Заказа не сохранен! Произошла ошибка: "{0}"!</value>
+  </data>
+  <data name="OrderEditController_FileDownloadedNotExists" xml:space="preserve">
+    <value>Файла не сущесмтвует: "{0}"!</value>
+  </data>
   <data name="OrderPayControl_CardPaymentType" xml:space="preserve">
     <value>Карта</value>
   </data>

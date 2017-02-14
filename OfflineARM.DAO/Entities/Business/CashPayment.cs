@@ -24,14 +24,5 @@ namespace OfflineARM.DAO.Entities.Business
             get;
             set;
         }
-
-        /// <summary>
-        /// Наименование документа
-        /// </summary>
-        public string DocumentName
-        {
-            get;
-            set;
-        }
     }
 }

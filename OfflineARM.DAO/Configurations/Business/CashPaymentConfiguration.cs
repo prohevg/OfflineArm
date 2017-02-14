@@ -20,9 +20,6 @@ namespace OfflineARM.DAO.Configurations.Business
 
             Property(p => p.FiscalReceipt)
                .HasMaxLength(50);
-
-            Property(p => p.DocumentName)
-                .HasMaxLength(255);
         }
 
         #endregion
