@@ -78,6 +78,8 @@
             this.creditValidationProvider = new OfflineARM.View.Validators.TextEditValidationProvider(this.components);
             this.cashValidationProvider = new OfflineARM.View.Validators.TextEditValidationProvider(this.components);
             this.cardValidationProvider = new OfflineARM.View.Validators.TextEditValidationProvider(this.components);
+            this.lcCreditScanDocument = new DevExpress.XtraEditors.LabelControl();
+            this.deScanCreditDocument = new OfflineARM.View.Controls.DocumentEdit();
             this.tlpMain.SuspendLayout();
             this.tlpPays.SuspendLayout();
             this.tlpPays2.SuspendLayout();
@@ -113,6 +115,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.creditValidationProvider)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.cashValidationProvider)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.cardValidationProvider)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.deScanCreditDocument.Properties)).BeginInit();
             this.SuspendLayout();
             // 
             // tlpMain
@@ -439,21 +442,24 @@
             this.tlpCredit.Controls.Add(this.lcCreditNameInOrder, 0, 4);
             this.tlpCredit.Controls.Add(this.lkCreditInitialFee, 0, 5);
             this.tlpCredit.Controls.Add(this.lcCreditAmount, 0, 6);
-            this.tlpCredit.Controls.Add(this.teCreditScanner, 0, 8);
+            this.tlpCredit.Controls.Add(this.teCreditScanner, 0, 9);
             this.tlpCredit.Controls.Add(this.teCreditBank, 1, 1);
             this.tlpCredit.Controls.Add(this.teCreditBankProduct, 1, 2);
             this.tlpCredit.Controls.Add(this.teCreditBankOrderNumber, 1, 3);
             this.tlpCredit.Controls.Add(this.teCreditNameInOrder, 1, 4);
             this.tlpCredit.Controls.Add(this.teCreditInitialFee, 1, 5);
             this.tlpCredit.Controls.Add(this.teCreditAmount, 1, 6);
-            this.tlpCredit.Controls.Add(this.meCreditScanner, 1, 8);
-            this.tlpCredit.Controls.Add(this.sbCreditApply2, 0, 9);
-            this.tlpCredit.Controls.Add(this.sbCreditApply, 1, 9);
+            this.tlpCredit.Controls.Add(this.meCreditScanner, 1, 9);
+            this.tlpCredit.Controls.Add(this.sbCreditApply2, 0, 10);
+            this.tlpCredit.Controls.Add(this.sbCreditApply, 1, 10);
+            this.tlpCredit.Controls.Add(this.lcCreditScanDocument, 0, 7);
+            this.tlpCredit.Controls.Add(this.deScanCreditDocument, 1, 7);
             this.tlpCredit.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tlpCredit.Location = new System.Drawing.Point(2, 2);
             this.tlpCredit.Name = "tlpCredit";
-            this.tlpCredit.RowCount = 10;
+            this.tlpCredit.RowCount = 11;
             this.tlpCredit.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 30F));
+            this.tlpCredit.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 25F));
             this.tlpCredit.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 25F));
             this.tlpCredit.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 25F));
             this.tlpCredit.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 25F));
@@ -551,7 +557,7 @@
             // 
             this.teCreditScanner.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.teCreditScanner.Appearance.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.teCreditScanner.Location = new System.Drawing.Point(35, 205);
+            this.teCreditScanner.Location = new System.Drawing.Point(35, 230);
             this.teCreditScanner.Margin = new System.Windows.Forms.Padding(3, 5, 10, 3);
             this.teCreditScanner.Name = "teCreditScanner";
             this.teCreditScanner.Size = new System.Drawing.Size(105, 16);
@@ -617,7 +623,7 @@
             // meCreditScanner
             // 
             this.meCreditScanner.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.meCreditScanner.Location = new System.Drawing.Point(153, 203);
+            this.meCreditScanner.Location = new System.Drawing.Point(153, 228);
             this.meCreditScanner.Name = "meCreditScanner";
             this.meCreditScanner.Size = new System.Drawing.Size(228, 44);
             this.meCreditScanner.TabIndex = 16;
@@ -626,7 +632,7 @@
             // sbCreditApply2
             // 
             this.sbCreditApply2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.sbCreditApply2.Location = new System.Drawing.Point(72, 253);
+            this.sbCreditApply2.Location = new System.Drawing.Point(72, 278);
             this.sbCreditApply2.Name = "sbCreditApply2";
             this.sbCreditApply2.Size = new System.Drawing.Size(75, 23);
             this.sbCreditApply2.TabIndex = 4;
@@ -635,7 +641,7 @@
             // 
             // sbCreditApply
             // 
-            this.sbCreditApply.Location = new System.Drawing.Point(153, 253);
+            this.sbCreditApply.Location = new System.Drawing.Point(153, 278);
             this.sbCreditApply.Name = "sbCreditApply";
             this.sbCreditApply.Size = new System.Drawing.Size(75, 23);
             this.sbCreditApply.TabIndex = 17;
@@ -659,6 +665,29 @@
             this.gridView1.Name = "gridView1";
             this.gridView1.OptionsBehavior.ReadOnly = true;
             this.gridView1.OptionsView.ShowGroupPanel = false;
+            // 
+            // lcCreditScanDocument
+            // 
+            this.lcCreditScanDocument.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.lcCreditScanDocument.Appearance.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.lcCreditScanDocument.Location = new System.Drawing.Point(43, 185);
+            this.lcCreditScanDocument.Margin = new System.Windows.Forms.Padding(3, 5, 10, 3);
+            this.lcCreditScanDocument.Name = "lcCreditScanDocument";
+            this.lcCreditScanDocument.Size = new System.Drawing.Size(97, 16);
+            this.lcCreditScanDocument.TabIndex = 18;
+            this.lcCreditScanDocument.Text = "Скан. документа";
+            // 
+            // deScanCreditDocument
+            // 
+            this.deScanCreditDocument.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.deScanCreditDocument.Location = new System.Drawing.Point(153, 183);
+            this.deScanCreditDocument.Name = "deScanCreditDocument";
+            this.deScanCreditDocument.Path = null;
+            this.deScanCreditDocument.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton()});
+            this.deScanCreditDocument.Size = new System.Drawing.Size(228, 20);
+            this.deScanCreditDocument.TabIndex = 19;
             // 
             // OrderPartPayView
             // 
@@ -705,6 +734,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.creditValidationProvider)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.cashValidationProvider)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.cardValidationProvider)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.deScanCreditDocument.Properties)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -760,5 +790,7 @@
         private DevExpress.XtraEditors.LabelControl labelControl1;
         private Controls.DocumentEdit deCashScanDocument;
         private Controls.DocumentEdit deCardScanDocument;
+        private DevExpress.XtraEditors.LabelControl lcCreditScanDocument;
+        private Controls.DocumentEdit deScanCreditDocument;
     }
 }
