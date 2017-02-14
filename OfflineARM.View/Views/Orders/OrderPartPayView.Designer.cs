@@ -61,7 +61,7 @@
             this.lcCreditNameInOrder = new DevExpress.XtraEditors.LabelControl();
             this.lkCreditInitialFee = new DevExpress.XtraEditors.LabelControl();
             this.lcCreditAmount = new DevExpress.XtraEditors.LabelControl();
-            this.teCreditScanner = new DevExpress.XtraEditors.LabelControl();
+            this.lcCreditScanner = new DevExpress.XtraEditors.LabelControl();
             this.teCreditBank = new DevExpress.XtraEditors.TextEdit();
             this.teCreditBankProduct = new DevExpress.XtraEditors.TextEdit();
             this.teCreditBankOrderNumber = new DevExpress.XtraEditors.TextEdit();
@@ -77,7 +77,7 @@
             this.cashValidationProvider = new OfflineARM.View.Validators.TextEditValidationProvider(this.components);
             this.cardValidationProvider = new OfflineARM.View.Validators.TextEditValidationProvider(this.components);
             this.lcCreditScanDocument = new DevExpress.XtraEditors.LabelControl();
-            this.deScanCreditDocument = new OfflineARM.View.Controls.DocumentEdit();
+            this.deCreditScanDocument = new OfflineARM.View.Controls.DocumentEdit();
             this.tlpMain.SuspendLayout();
             this.tlpPays.SuspendLayout();
             this.tlpPays2.SuspendLayout();
@@ -112,7 +112,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.creditValidationProvider)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.cashValidationProvider)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.cardValidationProvider)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.deScanCreditDocument.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.deCreditScanDocument.Properties)).BeginInit();
             this.SuspendLayout();
             // 
             // tlpMain
@@ -413,7 +413,7 @@
             this.tlpCredit.Controls.Add(this.lcCreditNameInOrder, 0, 4);
             this.tlpCredit.Controls.Add(this.lkCreditInitialFee, 0, 5);
             this.tlpCredit.Controls.Add(this.lcCreditAmount, 0, 6);
-            this.tlpCredit.Controls.Add(this.teCreditScanner, 0, 9);
+            this.tlpCredit.Controls.Add(this.lcCreditScanner, 0, 9);
             this.tlpCredit.Controls.Add(this.teCreditBank, 1, 1);
             this.tlpCredit.Controls.Add(this.teCreditBankProduct, 1, 2);
             this.tlpCredit.Controls.Add(this.teCreditBankOrderNumber, 1, 3);
@@ -424,7 +424,7 @@
             this.tlpCredit.Controls.Add(this.sbReadCode, 0, 10);
             this.tlpCredit.Controls.Add(this.sbCreditApply, 1, 10);
             this.tlpCredit.Controls.Add(this.lcCreditScanDocument, 0, 7);
-            this.tlpCredit.Controls.Add(this.deScanCreditDocument, 1, 7);
+            this.tlpCredit.Controls.Add(this.deCreditScanDocument, 1, 7);
             this.tlpCredit.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tlpCredit.Location = new System.Drawing.Point(2, 2);
             this.tlpCredit.Name = "tlpCredit";
@@ -524,16 +524,16 @@
             this.lcCreditAmount.TabIndex = 8;
             this.lcCreditAmount.Text = "Сумма кредита по БС";
             // 
-            // teCreditScanner
+            // lcCreditScanner
             // 
-            this.teCreditScanner.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.teCreditScanner.Appearance.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.teCreditScanner.Location = new System.Drawing.Point(35, 230);
-            this.teCreditScanner.Margin = new System.Windows.Forms.Padding(3, 5, 10, 3);
-            this.teCreditScanner.Name = "teCreditScanner";
-            this.teCreditScanner.Size = new System.Drawing.Size(105, 16);
-            this.teCreditScanner.TabIndex = 9;
-            this.teCreditScanner.Text = "Поле для сканера";
+            this.lcCreditScanner.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.lcCreditScanner.Appearance.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.lcCreditScanner.Location = new System.Drawing.Point(35, 230);
+            this.lcCreditScanner.Margin = new System.Windows.Forms.Padding(3, 5, 10, 3);
+            this.lcCreditScanner.Name = "lcCreditScanner";
+            this.lcCreditScanner.Size = new System.Drawing.Size(105, 16);
+            this.lcCreditScanner.TabIndex = 9;
+            this.lcCreditScanner.Text = "Поле для сканера";
             // 
             // teCreditBank
             // 
@@ -649,16 +649,16 @@
             this.lcCreditScanDocument.TabIndex = 18;
             this.lcCreditScanDocument.Text = "Скан. документа";
             // 
-            // deScanCreditDocument
+            // deCreditScanDocument
             // 
-            this.deScanCreditDocument.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.deScanCreditDocument.Location = new System.Drawing.Point(153, 183);
-            this.deScanCreditDocument.Name = "deScanCreditDocument";
-            this.deScanCreditDocument.Path = null;
-            this.deScanCreditDocument.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            this.deCreditScanDocument.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.deCreditScanDocument.Location = new System.Drawing.Point(153, 183);
+            this.deCreditScanDocument.Name = "deCreditScanDocument";
+            this.deCreditScanDocument.Path = null;
+            this.deCreditScanDocument.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton()});
-            this.deScanCreditDocument.Size = new System.Drawing.Size(228, 20);
-            this.deScanCreditDocument.TabIndex = 19;
+            this.deCreditScanDocument.Size = new System.Drawing.Size(228, 20);
+            this.deCreditScanDocument.TabIndex = 19;
             // 
             // OrderPartPayView
             // 
@@ -704,7 +704,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.creditValidationProvider)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.cashValidationProvider)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.cardValidationProvider)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.deScanCreditDocument.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.deCreditScanDocument.Properties)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -740,7 +740,7 @@
         private DevExpress.XtraEditors.LabelControl lcCreditNameInOrder;
         private DevExpress.XtraEditors.LabelControl lkCreditInitialFee;
         private DevExpress.XtraEditors.LabelControl lcCreditAmount;
-        private DevExpress.XtraEditors.LabelControl teCreditScanner;
+        private DevExpress.XtraEditors.LabelControl lcCreditScanner;
         private DevExpress.XtraEditors.TextEdit teCreditBank;
         private DevExpress.XtraEditors.TextEdit teCreditBankProduct;
         private DevExpress.XtraEditors.TextEdit teCreditBankOrderNumber;
@@ -759,6 +759,6 @@
         private DevExpress.XtraEditors.LabelControl labelControl1;
         private Controls.DocumentEdit deCardScanDocument;
         private DevExpress.XtraEditors.LabelControl lcCreditScanDocument;
-        private Controls.DocumentEdit deScanCreditDocument;
+        private Controls.DocumentEdit deCreditScanDocument;
     }
 }

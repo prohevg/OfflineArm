@@ -227,14 +227,14 @@ namespace OfflineARM.Controller.Controllers.Orders
                         return;
                     }
 
+                    var parameters = IoCControllers.Instance.Get<ApplicationParameters>();
+                    if (!Directory.Exists(parameters.PathToDocuments))
+                    {
+                        Directory.CreateDirectory(parameters.PathToDocuments);
+                    }
+
                     foreach (var orderDocument in _payController.OrderDocuments)
                     {
-                        if (!File.Exists(orderDocument.Path))
-                        {
-                            var error = string.Format(ControllerResources.OrderEditController_FileDownloadedNotExists, orderDocument.Path);
-                            throw new Exception(error);
-                        }
-
                         var path = GetPathToDocument(orderDocument.Path);
                         File.WriteAllBytes(path, orderDocument.FileStream);
                     }

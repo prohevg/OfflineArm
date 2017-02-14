@@ -85,6 +85,16 @@ namespace OfflineARM.Controller.ViewInterfaces.Orders
         string CreditScannerCode { get; set; }
 
         /// <summary>
+        /// Путь к файлу для скана документа кредита
+        /// </summary>
+        string CreditPathToFile { get; set; }
+
+        /// <summary>
+        /// Поток файла
+        /// </summary>
+        byte[] CreditFileStream { get; }
+
+        /// <summary>
         /// Добавить в таблицу оплат
         /// </summary>
         /// <param name="paymentRow">Оплата</param>

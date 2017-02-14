@@ -166,6 +166,7 @@ namespace OfflineARM.View.Views.Orders
             this.teCreditBankOrderNumber.Enabled = isEnable;
             this.teCreditInitialFee.Enabled = isEnable;
             this.teCreditNameInOrder.Enabled = isEnable;
+            this.deCreditScanDocument.Enabled = isEnable;
             this.meCreditScanner.Enabled = isEnable;
             this.sbCreditApply.Enabled = isEnable;
             this.sbReadCode.Enabled = isEnable;
@@ -179,6 +180,16 @@ namespace OfflineARM.View.Views.Orders
         private decimal GetValue(object value)
         {
             return value != null ? decimal.Parse(value.ToString()) : 0;
+        }
+
+        /// <summary>
+        /// Значение
+        /// </summary>
+        /// <param name="value"></param>
+        /// <returns></returns>
+        private string SetValue(decimal value)
+        {
+            return value == 0 ? string.Empty : value.ToString();
         }
 
         #endregion
@@ -354,7 +365,7 @@ namespace OfflineARM.View.Views.Orders
             }
             set
             {
-                teCashAmount.EditValue = value;
+                teCashAmount.EditValue = SetValue(value);
             }
         }
 
@@ -399,7 +410,7 @@ namespace OfflineARM.View.Views.Orders
             }
             set
             {
-                teCardAmount.EditValue = value;
+                teCardAmount.EditValue = SetValue(value);
             }
         }
 
@@ -515,7 +526,7 @@ namespace OfflineARM.View.Views.Orders
             }
             set
             {
-                teCreditAmount.EditValue = value;
+                teCreditAmount.EditValue = SetValue(value);
             }
         }
 
@@ -530,7 +541,7 @@ namespace OfflineARM.View.Views.Orders
             }
             set
             {
-                teCreditInitialFee.EditValue = value;
+                teCreditInitialFee.EditValue = SetValue(value);
             }
         }
 
@@ -556,11 +567,37 @@ namespace OfflineARM.View.Views.Orders
         {
             get
             {
-                return teCreditScanner.Text;
+                return meCreditScanner.Text;
             }
             set
             {
-                teCreditScanner.Text = value;
+                meCreditScanner.Text = value;
+            }
+        }
+
+        /// <summary>
+        /// Путь к файлу для скана документа кредита
+        /// </summary>
+        public string CreditPathToFile
+        {
+            get
+            {
+                return deCreditScanDocument.Path;
+            }
+            set
+            {
+                deCreditScanDocument.Path = value;
+            }
+        }
+
+        /// <summary>
+        /// Поток файла
+        /// </summary>
+        public byte[] CreditFileStream
+        {
+            get
+            {
+                return deCreditScanDocument.FileStream;
             }
         }
 

@@ -99,6 +99,7 @@ namespace OfflineARM.Controller.Models.Orders
             this.PaymentDate = creditPayment.PaymentDate;
             this.Type = ControllerResources.OrderPayControl_CreditPaymentType;
             this.Amount = creditPayment.Amount;
+            this.DocumentName = creditPayment.DocumentName;
         }
     }
 }

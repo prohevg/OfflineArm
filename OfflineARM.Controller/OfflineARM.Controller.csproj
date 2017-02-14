@@ -133,6 +133,7 @@
     <Compile Include="Controllers\Orders\CustomerPrivateController.cs" />
     <Compile Include="Controllers\Orders\OrderAddressController.cs" />
     <Compile Include="Controllers\Orders\OrderCustomerController.cs" />
+    <Compile Include="Controllers\Orders\OrderDocument.cs" />
     <Compile Include="Controllers\Orders\OrderPartDeliveryController.cs" />
     <Compile Include="Controllers\Orders\OrderPartPayController.cs" />
     <Compile Include="Controllers\Orders\OrderPartSpecificController.cs" />

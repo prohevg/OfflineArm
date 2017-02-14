@@ -215,15 +215,21 @@ namespace OfflineARM.Controller.Controllers.Orders
                 Guid = Guid.NewGuid(),
                 PaymentDate = DateTime.Now,
                 Amount = _orderPayView.CreditAmount,
-                Bank = new Bank() { Id = 1 },
-                BankProduct = new BankProduct() { Id = 1 },
+                BankId = 1,
+                BankProductId = 1,
                 BankOrderNumber = _orderPayView.CreditBankOrderNumber,
                 CreditAmount = _orderPayView.CreditAmount,
                 InitialFee = _orderPayView.CreditInitialFee,
-                NameInOrder = _orderPayView.CreditNameInOrder
+                NameInOrder = _orderPayView.CreditNameInOrder,
+                DocumentName = _orderPayView.CreditPathToFile
             };
 
             _creditPayments.Add(creditPayment);
+
+            if (!string.IsNullOrWhiteSpace(creditPayment.DocumentName))
+            {
+                _orderDocuments.Add(new OrderDocument(creditPayment.DocumentName, _orderPayView.CreditFileStream));
+            }
 
             var paymentRow = new PaymentRow(creditPayment);
 
@@ -236,6 +242,8 @@ namespace OfflineARM.Controller.Controllers.Orders
             _orderPayView.CreditAmount = 0;
             _orderPayView.CreditInitialFee = 0;
             _orderPayView.CreditNameInOrder = string.Empty;
+            _orderPayView.CreditPathToFile = string.Empty;
+            _orderPayView.CreditScannerCode = string.Empty;
 
             MainController.RecalculatePayment();
         }
@@ -303,33 +311,4 @@ namespace OfflineARM.Controller.Controllers.Orders
 
         #endregion
     }
-
-    public class OrderDocument
-    {
-        private readonly string _path;
-        private readonly byte[] _fileStream;
-
-        public string Path
-        {
-            get
-            {
-                return _path;
-            }
-        }
-
-        public byte[] FileStream
-        {
-            get
-            {
-                return _fileStream;
-            }
-        }
-
-        public OrderDocument(string path, byte[] fileStream)
-        {
-            _path = path;
-            _fileStream = fileStream;
-        }
-    }
-
 }
